@@ -9,14 +9,14 @@ const Navbarnew = () => {
     >
       <Navbar.Brand href="https://flowbite-react.com">
         <span className="text-white max-sm:block lg:hidden md:hidden">
-         PNY TRAININGS
+        <i class="fa-solid fa-phone"></i> 03041111774  <span className=' ml-5'></span> <i class="fa-solid fa-envelope"></i> info@pnytrainings.com
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2">
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        <p className='text-white text-base mt-2'>03041111774</p>
+      
         <Navbar.Link
           active
           href="#"
