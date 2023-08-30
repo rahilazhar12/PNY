@@ -4,7 +4,7 @@ import { Carousel } from 'flowbite-react';
 const Carousal = () => {
   return (
     <div>
-       <Carousel className='h-96 md:h-52 max-sm:mt-40'>
+       <Carousel className='max-sm:h-56 p-1   md:h-96 '>
       <img
         alt="..."
         src="https://i.ytimg.com/vi/IbreMtdL1iQ/maxresdefault.jpg"
@@ -15,7 +15,7 @@ const Carousal = () => {
       />
       <img
         alt="..."
-        src="https://www.pnytrainings.com/assets/uploads//gallery/15-image-1553593811-sms.jpg"
+        src="https://i.ytimg.com/vi/8nTg5nk3s4o/maxresdefault.jpg"
       />
       <img
         alt="..."
