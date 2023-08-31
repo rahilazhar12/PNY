@@ -65,14 +65,14 @@ const Home = () => {
       {/* Section-3 */}
       <section>
         <div className="accelerate">
-          <p className='text-center font-bold lg:text-4xl max-sm:text-2xl max-sm:p-2'>Accelerate Your Career with PNY Training Institute's</p>
+          <p className='text-center font-bold lg:text-4xl max-sm:text-2xl max-sm:px-5'>Accelerate Your Career with PNY Training Institute's</p>
         </div>
         <div className="subaccel lg:flex lg:justify-center">
-          <p className='text-center text-xl lg:w-[992px] max-sm:text-base p-1'>PNY Trainings Pakistan is the leading IT training institute, offering 100+ courses through online and physical classes. We provide internship opportunities and have a dedicated job cell to help you jumpstart your career</p>
+          <p className='text-center text-xl lg:w-[992px] max-sm:text-base max-sm:px-5'>PNY Trainings Pakistan is the leading IT training institute, offering 100+ courses through online and physical classes. We provide internship opportunities and have a dedicated job cell to help you jumpstart your career</p>
         </div>
       </section>
       {/* -------------------------------------------------------- */}
-      <section className='grid grid-cols-12 max-sm:ml-12 max-sm:mr-12'>
+      <section className='grid grid-cols-12 max-sm:ml-8 max-sm:mr-12'>
         <div className='lg:col-span-12  md:space-y-2 md:col-span-6  max-sm:space-y-2 max-sm:col-span-6 p-4 lg:flex  justify-center'>
           <div class="mainbox">
             <div class="roundedboxblue max-sm:ml-10  max-sm:w-16 max-sm:h-16  lg:w-20 lg:h-20 p-5 rounded-3xl bg-blue-600 flex justify-center lg:ml-20 ">
@@ -169,7 +169,7 @@ const Home = () => {
         </div>
 
         <div class="PNYTrainingsPakistan p-2 justify-center flex">
-          <p className='font-normal text-xl text-center lg:w-[880px] max-sm:text-base'>
+          <p className='font-normal text-xl text-center lg:w-[880px] max-sm:text-base max-sm:px-5'>
             Our journey to success has been incredible. Starting from scratch, we've achieved numerous milestones, empowering youth through skill development and opening doors to new opportunities. There's no limit to what we can accomplish.
           </p>
         </div>
@@ -187,12 +187,12 @@ const Home = () => {
           <div className="col-span-6 space-y-3 rounded-xl max-sm:order-1 p-3">
             <div className="mainboxvision rounded-xl bg-blue-600 lg:w-[510px] lg:h-[239px] lg:py-12  max-sm:p-5  lg:px-8 text-white">
               <div className="vision text-3xl max-sm:text-2xl font-semibold mt-4">Vision Statement</div>
-              <div className="visionp lg:w-[350px] max-sm:text-base text-lg max-sm:text-justify ">Nation leading professional service provider by exploring and utilizing the unique ideas in the world of digital technologies.</div>
+              <div className="visionp lg:w-[350px] max-sm:text-base text-lg ">Nation leading professional service provider by exploring and utilizing the unique ideas in the world of digital technologies.</div>
             </div>
 
             <div className="mainboxvision rounded-xl bg-red-600 lg:w-[510px] lg:h-[239px] lg:py-12  max-sm:p-4  lg:px-8 text-white">
               <div className="vision text-3xl max-sm:text-2xl font-semibold">Our Mission Statement</div>
-              <div className="visionp lg:w-[420px]  max-sm:text-base  max-sm:text-justify text-lg ">To design and maintain the quality of knowledge based capacity building programs to empower with new job oriented technical courses and bring positive transformation on their business and professional growth.</div>
+              <div className="visionp lg:w-[420px]  max-sm:text-base   text-lg ">To design and maintain the quality of knowledge based capacity building programs to empower with new job oriented technical courses and bring positive transformation on their business and professional growth.</div>
             </div>
           </div>
           <div className="col-span-6 ">
@@ -204,21 +204,21 @@ const Home = () => {
       {/* Section-5 */}
       <section className='bg-blue-500 p-15 text-white'>
         <div className="grid justify-center">
-          <div className='lg:text-4xl row-span-1 font-bold text-center max-sm:text-2xl lg:py-4'>Duration that Develop your Skills</div>
-          <div className='lg:text-lg lg:w-[990px] row-span-1 p-2 text-center max-sm:text-base'>Unlock your potential with our comprehensive range of skill programs! Choose from 1-year diploma programs, 6-month certified courses, 3-2 month certified courses, and professional boot camps. Upgrade your skills today!</div>
+          <div className='lg:text-4xl row-span-1 font-bold text-center max-sm:text-2xl lg:py-4 max-sm:py-5'>Duration that Develop your Skills</div>
+          <div className='lg:text-lg lg:w-[990px] row-span-1 p-2 text-center max-sm:text-base max-sm:px-5'>Unlock your potential with our comprehensive range of skill programs! Choose from 1-year diploma programs, 6-month certified courses, 3-2 month certified courses, and professional boot camps. Upgrade your skills today!</div>
         </div>
 
         <div className="grid grid-cols-12 p-5 max-sm:grid-cols-4 lg:ml-10">
           <div className=' col-span-3 max-sm:col-span-4 space-y-3'>
-            <div className="1yeardeploma text-2xl lg:font-semibold">1 Year Professional Diplomas Programs</div>
+            <div className="1yeardeploma text-2xl font-semibold">1 Year Professional Diplomas Programs</div>
             <div className="Immerse">Immerse yourself in our 1-year Professional Diploma programs, unlocking unlimited potential for career growth and success</div>
             <div>  <a href="">Read More</a></div>
             <div className=' max-sm:border-b-2 max-sm:w-52  max-sm:ml-20'></div>
           </div>
 
 
-          <div className=' col-span-3 max-sm:col-span-4 space-y-3'>
-            <div className="1yeardeploma text-2xl lg:font-semibold lg:w-52">6 Months Certified Courses</div>
+          <div className=' col-span-3 max-sm:col-span-4 space-y-3 max-sm:mt-3'>
+            <div className="1yeardeploma text-2xl font-semibold lg:w-52">6 Months Certified Courses</div>
             <div className="Immerse lg:w-80">Accelerate your career with our comprehensive 6-month certified Courses. Gain specialized expertise and excel in your career.</div>
             <div>  <a href="">Read More</a></div>
             <div className=' max-sm:border-b-2 max-sm:w-52  max-sm:ml-20'></div>
@@ -226,7 +226,7 @@ const Home = () => {
 
 
           <div className=' col-span-3 max-sm:col-span-4 space-y-3'>
-            <div className="1yeardeploma text-2xl lg:font-semibold lg:w-52">3-2 Months Certified Courses</div>
+            <div className="1yeardeploma text-2xl font-semibold lg:w-52 max-sm:mt-3">3-2 Months Certified Courses</div>
             <div className="Immerse lg:w-80">Elevate your expertise from 3 to 2 months with our Professional Certification Courses. Unlock new career opportunities.</div>
             <div>  <a href="">Read More</a></div>
             <div className=' max-sm:border-b-2 max-sm:w-52  max-sm:ml-20'></div>
@@ -234,7 +234,7 @@ const Home = () => {
 
 
           <div className=' col-span-3 max-sm:col-span-4 space-y-3'>
-            <div className="1yeardeploma text-2xl lg:font-semibold lg:w-52">Professional BootCamp</div>
+            <div className="1yeardeploma text-2xl font-semibold lg:w-52 max-sm:mt-3">Professional BootCamp</div>
             <div className="Immerse lg:w-80">Join our Professional Bootcamp and gain valuable insights to advance your career. Don't miss out.</div>
             <div>  <a href="">Read More</a></div>
           </div>
@@ -243,7 +243,7 @@ const Home = () => {
 
       {/* Section-6 */}
       <section>
-        <div className="startlearning lg:mt-8 flex justify-center lg:text-4xl font-bold max-sm:text-2xl mb-6">
+        <div className="startlearning lg:mt-8 flex justify-center lg:text-4xl font-bold max-sm:text-2xl mb-6 max-sm:mt-7">
           <p>Start Learning</p>
         </div>
 
