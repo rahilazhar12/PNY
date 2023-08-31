@@ -72,7 +72,7 @@ const Home = () => {
         </div>
       </section>
       {/* -------------------------------------------------------- */}
-      <section className='grid grid-cols-12 max-sm:ml-8 max-sm:mr-12'>
+      <section className='grid grid-cols-12'>
         <div className='lg:col-span-12  md:space-y-2 md:col-span-6  max-sm:space-y-2 max-sm:col-span-6 p-4 lg:flex  justify-center'>
           <div class="mainbox">
             <div class="roundedboxblue max-sm:ml-10  max-sm:w-16 max-sm:h-16  lg:w-20 lg:h-20 p-5 rounded-3xl bg-blue-600 flex justify-center lg:ml-20 ">
@@ -125,7 +125,7 @@ const Home = () => {
                 <img src={logo1} />
               </div>
             </div>
-            <div class="max-sm:text-sm md:text-center max-sm:w-28 max-sm:text-center lg:text-2xl lg:w-64">
+            <div class="max-sm:text-sm md:text-center max-sm:w-28 max-sm:text-center lg:text-2x max-sm:ml-5">
               <p>75000+ Alumni</p>
             </div>
           </div>
