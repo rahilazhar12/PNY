@@ -206,7 +206,7 @@ const Home = () => {
                 <div className="mainbox  bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement text-2xl font-semibold">IT & Software</div>
-                  <div className="paragraph w-80">Learn how to handle realistic computer problems and run operating systems fruitfully in information technology and...</div>
+                  <div className="paragraph">Learn how to handle realistic computer problems and run operating systems fruitfully in information technology and...</div>
                   <div><a href="" className=' text-blue-500 font-semibold'>View Course</a></div>
                 </div>
               </div>
@@ -238,7 +238,7 @@ const Home = () => {
 
           {/* Section -6*/}
           <section className='bg-[#F9FAFB]'>
-            <div className="grid grid-cols-12 h-[600px] max-sm:h-[700px]  max-sm:grid-cols-6">
+            <div className="grid grid-cols-12  max-sm:grid-cols-6">
               <div className='col-span-6 max-sm:p-5 lg:p-20 max-sm:order-1'>
                 <div className="whychooseus text-4xl font-bold  max-sm:text-center  max-sm:text-2xl">Why Choose US?</div>
                 <div className="list p-3">
@@ -258,14 +258,14 @@ const Home = () => {
               </div>
               <div className='col-span-6'>
                 <div className=' justify-center flex lg:p-6' >
-                  <img className="image w-[596px] max-sm:h-80" src={contentimage} alt="" />
+                  <img className="image w-[596px] max-sm:h-52" src={contentimage} alt="" />
                 </div>
               </div>
             </div>
           </section>
 
           {/* Section-7 */}
-          <section className='lg:h-[600px] lg:p-5'>
+          <section className=''>
             <div className="grid justify-center max-sm:grid-cols-6">
               <div className="leaders col-span-12 text-center lg:text-4xl font-bold lg:p-3 max-sm:text-2xl">Leaders Who Vision Your Future</div>
               <div className="leaderssub col-span-12 text-center lg:w-[990px] max-sm:p-3">PNY Trainings CEO and Director are inspiring leaders for the youth and have embarked on a transformative journey towards shared goals and prophecy for a promising future.</div>
@@ -273,7 +273,7 @@ const Home = () => {
                 <div className="wahab">
                   <img className='rounded-lg' src={wahab} alt="" />
                   <div className="name text-2xl font-semibold">Wahab Yunus
-                    <span><i class="fa-brands fa-twitter lg:p-2 lg:ml-48 max-sm:ml-20" style={{ color: "#0d63f8" }}></i></span>
+                    <span><i class="fa-brands fa-twitter lg:p-2 lg:ml-48 max-sm:ml-10" style={{ color: "#0d63f8" }}></i></span>
 
                     <span><i class="fa-brands fa-linkedin ml-5" style={{ color: "#2c66c9" }}></i></span>
                   </div>
@@ -286,7 +286,7 @@ const Home = () => {
                 <div className="wahab">
                   <img className='rounded-lg' src={suleman} alt="" />
                   <div className="name text-2xl font-semibold">Suleman Ikram
-                    <span><i class="fa-brands fa-twitter lg:p-2 lg:ml-48 max-sm:ml-20" style={{ color: "#0d63f8" }}></i></span>
+                    <span><i class="fa-brands fa-twitter lg:p-2 lg:ml-48 max-sm:ml-10" style={{ color: "#0d63f8" }}></i></span>
 
                     <span><i class="fa-brands fa-linkedin ml-5" style={{ color: "#2c66c9" }}></i></span>
                   </div>
@@ -365,9 +365,9 @@ const Home = () => {
           </section>
           {/* Section-13 */}
           <section style={{ backgroundImage: `url(${vector})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-            <div className="grid justify-center lg:p-28  max-sm:p-10 ">
+            <div className="grid justify-center lg:p-28  max-sm: ">
 
-              <div className='lg:text-5xl lg:w-[778px]  max-sm:w-[389px] font-bold text-center'>
+              <div className='lg:text-5xl lg:w-[778px]  max-sm:p-5 font-bold text-center'>
               Admissions are open for the fresh
               batch. Let’s grow together!
               </div>
