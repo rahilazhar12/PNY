@@ -14,6 +14,8 @@ import { Carousalhome, Carousalhome1 } from '../Components/Carousal'
 import frame from '../Assets/image/Frame 624.png'
 import frame2 from '../Assets/image/Frame 61.png'
 import vector from '../Assets/images/vecter.png'
+import acce from '../Assets/image/acce.png'
+import acce2 from '../Assets/image/acce2.png'
 const Home = () => {
   return (
     <>
@@ -33,9 +35,9 @@ const Home = () => {
 
               <div className='sm:col-span-1 md:col-span-2  lg:col-span-3'>
                 <ul className='flex space-x-6 justify-end py-5 mr-10 max-sm:justify-center'>
-                  <li className='subpixel-antialiased'><a href="">About</a></li>
-                  <li><a href="">Blog</a></li>
-                  <li><a href="">Contact</a></li>
+                  <li className='font-bold hover:text-blue-400'><a href="">About</a></li>
+                  <li className='font-bold hover:text-blue-400'><a href="">Blog</a></li>
+                  <li className='font-bold hover:text-blue-400'><a href="">Contact</a></li>
                 </ul>
               </div>
 
@@ -73,64 +75,15 @@ const Home = () => {
           </section>
 
           {/* Section-3 */}
-          <section>
-            <div className="accelerate">
-              <p className='text-center font-bold lg:text-4xl max-sm:text-2xl max-sm:px-5'>Accelerate Your Career with PNY Training Institute's</p>
-            </div>
-            <div className="subaccel lg:flex lg:justify-center">
-              <p className='text-center text-xl lg:w-[992px] max-sm:text-base max-sm:px-5'>PNY Trainings Pakistan is the leading IT training institute, offering 100+ courses through online and physical classes. We provide internship opportunities and have a dedicated job cell to help you jumpstart your career</p>
-            </div>
-          </section>
-          {/* -------------------------------------------------------- */}
-          <section className='grid grid-cols-12'>
-            <div className='lg:col-span-12  md:space-y-2 md:col-span-6  max-sm:space-y-2 max-sm:col-span-6 p-4 lg:flex  justify-center'>
-              <div class="mainbox">
-                <div class="roundedboxblue max-sm:ml-10  max-sm:w-16 max-sm:h-16  lg:w-20 lg:h-20 p-5 rounded-3xl bg-blue-600 flex justify-center lg:ml-20 ">
-                  <div class="icon">
-                    <img src={logo1} />
-                  </div>
-                </div>
-                <div class="max-sm:text-sm md:text-center max-sm:text-center  lg:text-2xl lg:w-64">
-                  <p>International Collaborations</p>
-                </div>
-              </div>
-              <div class="mainbox">
-                <div class="roundedboxblue max-sm:ml-10 max-sm:w-16 max-sm:h-16  lg:w-20 lg:h-20 p-5 rounded-3xl bg-blue-600 flex justify-center lg:ml-20">
-                  <div class="icon">
-                    <img class="imges" src={logo1} />
-                  </div>
-                </div>
-                <div class="max-sm:text-sm md:text-center lg:text-2xl max-sm:text-center  max-sm:w-195 lg:w-64">
-                  <p>Awarded by USA Education 2.0</p>
-                </div>
-              </div>
-              <div class="mainbox">
-                <div class="roundedboxblue max-sm:ml-10 max-sm:w-16 max-sm:h-16  lg:w-20 lg:h-20 p-5 rounded-3xl bg-blue-600 flex justify-center lg:ml-20">
-                  <div class="icon">
-                    <img class="imges" src={logo1} />
-                  </div>
-                </div>
-                <div class="max-sm:text-sm md:text-center lg:text-2xl max-sm:text-center max-sm:w-19 lg:w-64">
-                  <p>Multiple Branches in Pakistan</p>
-                </div>
-              </div>
-              <div class="mainbox">
-                <div class="roundedboxblue max-sm:ml-10 max-sm:w-16 max-sm:h-16  lg:w-20 lg:h-20 p-5 rounded-3xl bg-blue-600 flex justify-center lg:ml-20">
-                  <div class="icon">
-                    <img class="imges" src={logo1} />
-                  </div>
-                </div>
-                <div class="max-sm:text-sm md:text-center lg:text-2xl max-sm:text-center max-sm:w-195 lg:w-64">
-                  <p>Affiliated with Govt. (PSDA & PBTE)</p>
-                </div>
-              </div>
-            </div>
-
-
-            {/* Col-2 */}
-
-          </section>
-
+        <section className='bg-[#F9FAFB]'>
+          <div className="img flex justify-center max-sm:hidden">
+            <img src={acce} alt="" />
+          </div>
+          <div className="img flex justify-center max-sm:block lg:hidden">
+            <img src={acce2} alt="" />
+          </div>
+        </section>
+            
           {/* Section-3 */}
           <div class="grid">
             <div class=" flex justify-center">
@@ -164,6 +117,8 @@ const Home = () => {
                   <div className="visionp lg:w-[420px]  max-sm:text-base   text-lg ">To design and maintain the quality of knowledge based capacity building programs to empower with new job oriented technical courses and bring positive transformation on their business and professional growth.</div>
                 </div>
               </div>
+
+              
               <div className="col-span-6 ">
                 <img className='lg:w-[600px] lg:h-[500px] max-sm:w-[380px] h-[332px] p-4' src={map} alt="" />
               </div>

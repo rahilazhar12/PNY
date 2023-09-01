@@ -6,7 +6,7 @@ const Navbarnew = () => {
     <Navbar
       fluid
       active
-      className='bg-[#152438;] px-4 py-4 w-full z-50 sticky top-0 font-Inter'
+      className='bg-[#152438;]  py-4 w-full z-50 sticky top-0 font-Inter'
     >
       <Navbar.Brand href="https://flowbite-react.com">
         <span className="text-white max-sm:block lg:hidden md:hidden">
@@ -23,24 +23,24 @@ const Navbarnew = () => {
           href="#"
         >
           <p className='text-white text-base mt-2'>
-            Amazon Services
+            Amazon Services |
           </p>
         </Navbar.Link>
         <Navbar.Link href="#" className="hover:bg-transparent hover:text-white text-white text-base mt-2">
-          Kids Courses
+          Kids Courses |
         </Navbar.Link>
 
         <Navbar.Link href="#" className="hover:bg-transparent hover:text-white text-white text-base mt-2">
-          Female Courses
+          Female Courses |
         </Navbar.Link>
         <Navbar.Link href="#" className="hover:bg-transparent hover:text-white text-white text-base mt-2">
-          Training Schedule
+          Training Schedule |
         </Navbar.Link>
         <Navbar.Link href="#" className="hover:bg-transparent hover:text-white text-white text-base mt-2">
-          Fee Strcture
+          Fee Strcture |
         </Navbar.Link>
         <Navbar.Link href="#" className="hover:bg-transparent hover:text-white text-white text-base mt-2">
-          Admission
+          Admission |
         </Navbar.Link>
 
         <Button className='bg-red-600 max-sm:mt-2'>
