@@ -10,7 +10,7 @@ import g2 from '../Assets/image/g2.png'
 const Carousal = () => {
   return (
     <div>
-       <Carousel className='max-sm:h-56 p-1   md:h-96 '>
+       <Carousel className='max-sm:h-56 p-1 md:h-64 lg:h-96 '>
       <img
         alt="..."
         src="https://i.ytimg.com/vi/IbreMtdL1iQ/maxresdefault.jpg"
@@ -38,7 +38,7 @@ const Carousal = () => {
 export const Carousalhome = () => {
   return (
     <div>
-       <Carousel className='max-sm:h-36  lg:h-80   md:h-96 '>
+       <Carousel className='max-sm:h-36  lg:h-80   md:h-56 '>
       <img
         alt="..."
         src={c1}
@@ -58,7 +58,7 @@ export const Carousalhome = () => {
 export const Carousalhome1 = () => {
   return (
     <div>
-       <Carousel className='max-sm:h-20  lg:h-36   md:h-96 '>
+       <Carousel className='max-sm:h-20  lg:h-36  md:h-20 '>
       <img
         alt="..."
         src={g1}

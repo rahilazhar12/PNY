@@ -75,23 +75,23 @@ const Home = () => {
           </section>
 
           {/* Section-3 */}
-        <section className='bg-[#F9FAFB]'>
-          <div className="img flex justify-center max-sm:hidden">
-            <img src={acce} alt="" />
-          </div>
-          <div className="img flex justify-center max-sm:block lg:hidden">
-            <img src={acce2} alt="" />
-          </div>
-        </section>
-            
+          <section className='bg-[#F9FAFB]'>
+            <div className="img flex justify-center max-sm:hidden">
+              <img src={acce} alt="" />
+            </div>
+            <div className="imgmobile flex justify-center max-sm:block lg:hidden md:hidden">
+              <img src={acce2} alt="" />
+            </div>
+          </section>
+
           {/* Section-3 */}
-          <div class="grid">
+          <div class="grid md:p-5">
             <div class=" flex justify-center">
-              <p className='text-4xl text-center font-bold max-sm:text-2xl'>Our Journey to Success</p>
+              <p className='lg:text-4xl text-center font-bold max-sm:text-2xl md:text-2xl'>Our Journey to Success</p>
             </div>
 
             <div class="PNYTrainingsPakistan p-2 justify-center flex">
-              <p className='font-normal text-xl text-center lg:w-[880px] max-sm:text-base max-sm:px-5'>
+              <p className='font-normal lg:text-xl text-center lg:w-[880px] max-sm:text-base max-sm:px-5 md:text-base md:px-3'>
                 Our journey to success has been incredible. Starting from scratch, we've achieved numerous milestones, empowering youth through skill development and opening doors to new opportunities. There's no limit to what we can accomplish.
               </p>
             </div>
@@ -101,24 +101,24 @@ const Home = () => {
           </div>
 
           {/* Section-4 */}
-          <section className='mt-10'>
+          <section className='mt-10 md:mt-0'>
             <div className="grid grid-rows-1">
-              <div className="develop text-center text-4xl font-bold max-sm:text-2xl">We Build Leaders For Professional Community</div>
+              <div className="develop text-center text-4xl font-bold max-sm:text-2xl md:text-2xl">We Build Leaders For Professional Community</div>
             </div>
             <div className="grid grid-cols-12 lg:py-10 lg:px-20 max-sm:grid-cols-6">
               <div className="col-span-6 space-y-3 rounded-xl max-sm:order-1 p-3">
-                <div className="mainboxvision rounded-xl bg-blue-600 lg:w-[510px] lg:h-[239px] lg:py-12  max-sm:p-5  lg:px-8 text-white">
-                  <div className="vision text-3xl max-sm:text-2xl font-semibold mt-4">Vision Statement</div>
-                  <div className="visionp lg:w-[350px] max-sm:text-base text-lg ">Nation leading professional service provider by exploring and utilizing the unique ideas in the world of digital technologies.</div>
+                <div className="mainboxvision rounded-xl bg-blue-600 lg:w-[510px] lg:h-[239px] lg:py-12  max-sm:p-5  lg:px-8 text-white md:p-3">
+                  <div className="vision lg:text-3xl max-sm:text-2xl font-semibold mt-4 md:text-2xl">Vision Statement</div>
+                  <div className="visionp lg:w-[350px] max-sm:text-base text-lg md:text-base">Nation leading professional service provider by exploring and utilizing the unique ideas in the world of digital technologies.</div>
                 </div>
 
-                <div className="mainboxvision rounded-xl bg-red-600 lg:w-[510px] lg:h-[239px] lg:py-12  max-sm:p-4  lg:px-8 text-white">
-                  <div className="vision text-3xl max-sm:text-2xl font-semibold">Our Mission Statement</div>
-                  <div className="visionp lg:w-[420px]  max-sm:text-base   text-lg ">To design and maintain the quality of knowledge based capacity building programs to empower with new job oriented technical courses and bring positive transformation on their business and professional growth.</div>
+                <div className="mainboxvision rounded-xl bg-red-600 lg:w-[510px] lg:h-[239px] lg:py-12  max-sm:p-4  lg:px-8 text-white md:p-3">
+                  <div className="vision lg:text-3xl max-sm:text-2xl font-semibold md:text-2xl">Our Mission Statement</div>
+                  <div className="visionp lg:w-[420px]  max-sm:text-base   text-lg md:text-base">To design and maintain the quality of knowledge based capacity building programs to empower with new job oriented technical courses and bring positive transformation on their business and professional growth.</div>
                 </div>
               </div>
 
-              
+
               <div className="col-span-6 ">
                 <img className='lg:w-[600px] lg:h-[500px] max-sm:w-[380px] h-[332px] p-4' src={map} alt="" />
               </div>
@@ -126,13 +126,13 @@ const Home = () => {
           </section>
 
           {/* Section-5 */}
-          <section className='bg-blue-500 p-15 text-white'>
+          <section className='bg-blue-500 p-15 text-white md:p-5'>
             <div className="grid justify-center">
-              <div className='lg:text-4xl row-span-1 font-bold text-center max-sm:text-2xl lg:py-4 max-sm:py-5'>Duration that Develop your Skills</div>
+              <div className='lg:text-4xl row-span-1 font-bold text-center max-sm:text-2xl lg:py-4 max-sm:py-5 md:text-2xl'>Duration that Develop your Skills</div>
               <div className='lg:text-lg lg:w-[990px] row-span-1 p-2 text-center max-sm:text-base max-sm:px-5'>Unlock your potential with our comprehensive range of skill programs! Choose from 1-year diploma programs, 6-month certified courses, 3-2 month certified courses, and professional boot camps. Upgrade your skills today!</div>
             </div>
 
-            <div className="grid grid-cols-12 p-5 max-sm:grid-cols-4 lg:ml-10">
+            <div className="grid lg:grid-cols-12 p-5 max-sm:grid-cols-4 lg:ml-10 ">
               <div className=' col-span-3 max-sm:col-span-4 space-y-3'>
                 <div className="1yeardeploma text-2xl font-semibold">1 Year Professional Diplomas Programs</div>
                 <div className="Immerse">Immerse yourself in our 1-year Professional Diploma programs, unlocking unlimited potential for career growth and success</div>
@@ -167,15 +167,15 @@ const Home = () => {
 
           {/* Section-6 */}
           <section>
-            <div className="startlearning lg:mt-8 flex justify-center lg:text-4xl font-bold max-sm:text-2xl mb-6 max-sm:mt-7">
+            <div className="startlearning lg:mt-8 flex justify-center lg:text-4xl font-bold max-sm:text-2xl mb-6 max-sm:mt-7 md:text-2xl md:mt-6">
               <p>Start Learning</p>
             </div>
 
-            <div className="grid grid-cols-12 lg:px-20  max-sm:px-3.5 py-3 max-sm:py-2 max-sm:grid-cols-4 lg:gap-4 max-sm:space-y-2">
+            <div className="grid lg:grid-cols-12 lg:px-20  max-sm:px-3.5 py-3 max-sm:py-2 max-sm:grid-cols-4 lg:gap-4 max-sm:space-y-2 md:grid-cols-12  md:p-3 gap-1">
               <div className='col-span-4 '>
                 <div className="mainbox bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
-                  <div className="developement text-2xl font-semibold font-Inter">Development</div>
+                  <div className="developement lg:text-2xl font-semibold font-Inter">Development</div>
                   <div className="paragraph">By learning these advanced courses, you will understand the fundamentals of object-oriented programming and how to write...</div>
                   <div><a href="" className=' text-blue-500 font-semibold'>View Course</a></div>
                 </div>
@@ -184,7 +184,7 @@ const Home = () => {
               <div className='col-span-4 '>
                 <div className="mainbox  bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
-                  <div className="developement text-2xl font-semibold">Marketing</div>
+                  <div className="developement lg:text-2xl font-semibold">Marketing</div>
                   <div className="paragraph">Learn how to do SEO, SMO, PPC, CPL, Web analytics, and social media marketing through our highly advanced and strategic...</div>
                   <div><a href="" className=' text-blue-500 font-semibold'>View Course</a></div>
                 </div>
@@ -193,7 +193,7 @@ const Home = () => {
               <div className='col-span-4 '>
                 <div className="mainbox  bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
-                  <div className="developement text-2xl font-semibold">Art & Design</div>
+                  <div className="developement lg:text-2xl font-semibold">Art & Design</div>
                   <div className="paragraph">Our comprehensive design training classes teach you about design techniques as well as how to use various software to cr...</div>
                   <div><a href="" className=' text-blue-500 font-semibold'>View Course</a></div>
                 </div>
@@ -201,12 +201,12 @@ const Home = () => {
             </div>
 
             {/* .................. */}
-            <div className="grid grid-cols-12 lg:px-20  max-sm:px-3.5  max-sm:grid-cols-4 lg:gap-4 max-sm:space-y-2">
+            <div className="grid grid-cols-12 lg:px-20  max-sm:px-3.5  max-sm:grid-cols-4 lg:gap-4 max-sm:space-y-2 md:p-3 gap-1">
               <div className='col-span-4 '>
                 <div className="mainbox  bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
-                  <div className="developement text-2xl font-semibold">IT & Software</div>
-                  <div className="paragraph">Learn how to handle realistic computer problems and run operating systems fruitfully in information technology and...</div>
+                  <div className="developement lg:text-2xl font-semibold">IT & Software</div>
+                  <div className="paragraph">Learn how to handle realistic computer problems and run operating systems fruitfully in information technology and network management. </div>
                   <div><a href="" className=' text-blue-500 font-semibold'>View Course</a></div>
                 </div>
               </div>
@@ -214,7 +214,7 @@ const Home = () => {
               <div className='col-span-4 '>
                 <div className="mainbox  bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
-                  <div className="developement text-2xl font-semibold">Business & Accounts</div>
+                  <div className="developement lg:text-2xl font-semibold">Business & Accounts</div>
                   <div className="paragraph">Learn the business library as a professional, which teaches you how to organize software and technology that leads acros...</div>
                   <div><a href="" className=' text-blue-500 font-semibold'>View Course</a></div>
                 </div>
@@ -223,7 +223,7 @@ const Home = () => {
               <div className='col-span-4 '>
                 <div className="mainbox  bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
-                  <div className="developement text-2xl font-semibold">Multimedia</div>
+                  <div className="developement lg:text-2xl font-semibold">Multimedia</div>
                   <div className="paragraph">Learn the advanced methods of taking pictures and build a portfolio that showcases your professional photography skills....</div>
                   <div><a href="" className=' text-blue-500 font-semibold'>View Course</a></div>
                 </div>
@@ -237,7 +237,7 @@ const Home = () => {
 
 
           {/* Section -6*/}
-          <section className='bg-[#F9FAFB]'>
+          <section className='bg-[#F9FAFB] md:p-5'>
             <div className="grid grid-cols-12  max-sm:grid-cols-6">
               <div className='col-span-6 max-sm:p-5 lg:p-20 max-sm:order-1'>
                 <div className="whychooseus text-4xl font-bold  max-sm:text-center  max-sm:text-2xl">Why Choose US?</div>
@@ -265,34 +265,34 @@ const Home = () => {
           </section>
 
           {/* Section-7 */}
-          <section className=''>
-            <div className="grid justify-center max-sm:grid-cols-6">
-              <div className="leaders col-span-12 text-center lg:text-4xl font-bold lg:p-3 max-sm:text-2xl">Leaders Who Vision Your Future</div>
+          <section className='md:p-5'>
+            <div className="grid justify-center max-sm:grid-cols-6 ">
+              <div className="leaders col-span-12 text-center lg:text-4xl font-bold lg:p-3 max-sm:text-2xl md:text-2xl">Leaders Who Vision Your Future</div>
               <div className="leaderssub col-span-12 text-center lg:w-[990px] max-sm:p-3">PNY Trainings CEO and Director are inspiring leaders for the youth and have embarked on a transformative journey towards shared goals and prophecy for a promising future.</div>
-              <div className='col-span-6 p-5'>
+              <div className='col-span-6 p-5 '>
                 <div className="wahab">
                   <img className='rounded-lg' src={wahab} alt="" />
-                  <div className="name text-2xl font-semibold">Wahab Yunus
-                    <span><i class="fa-brands fa-twitter lg:p-2 lg:ml-48 max-sm:ml-10" style={{ color: "#0d63f8" }}></i></span>
+                  <div className="name text-2xl max-sm:text-xl font-semibold">Wahab Yunus
+                    <span><i class="fa-brands fa-twitter lg:p-2 lg:ml-48 max-sm:ml-10 md:ml-20" style={{ color: "#0d63f8" }}></i></span>
 
                     <span><i class="fa-brands fa-linkedin ml-5" style={{ color: "#2c66c9" }}></i></span>
                   </div>
-                  <div className="name text-lg font-medium text-blue-500">Founder & CEO</div>
+                  <div className="name text-lg font-medium text-blue-500  max-sm:text-base">Founder & CEO</div>
 
-                  <div className="logo"></div>
+                  
                 </div>
               </div>
               <div className='col-span-6 p-5 max-sm:col-span-8'>
-                <div className="wahab">
+                <div className="suleman">
                   <img className='rounded-lg' src={suleman} alt="" />
-                  <div className="name text-2xl font-semibold">Suleman Ikram
-                    <span><i class="fa-brands fa-twitter lg:p-2 lg:ml-48 max-sm:ml-10" style={{ color: "#0d63f8" }}></i></span>
+                  <div className="name text-2xl max-sm:text-xl font-semibold">Suleman Ikram
+                    <span><i class="fa-brands fa-twitter lg:p-2 lg:ml-48 max-sm:ml-10 md:ml-20" style={{ color: "#0d63f8" }}></i></span>
 
                     <span><i class="fa-brands fa-linkedin ml-5" style={{ color: "#2c66c9" }}></i></span>
                   </div>
-                  <div className="name text-lg font-medium text-blue-500">Co-Founder & Director</div>
+                  <div className="name text-lg font-medium text-blue-500 max-sm:text-base">Co-Founder & Director</div>
 
-                  <div className="logo"></div>
+                  
                 </div>
               </div>
             </div>
@@ -301,10 +301,10 @@ const Home = () => {
           {/* Section-8 */}
           <section>
             <div className="grid justify-center">
-              <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl">Our Collaboration and Partners</div>
-              <div className="collaboration text-center lg:w-[990px] max-sm:p-3">Our collaboration with esteemed partners has strengthened our mission to empower youth through skills, making a lasting impact on their lives.</div>
+              <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl md:text-2xl">Our Collaboration and Partners</div>
+              <div className="collaboration text-center lg:w-[990px] max-sm:p-3 md:px-10 md:py-2">Our collaboration with esteemed partners has strengthened our mission to empower youth through skills, making a lasting impact on their lives.</div>
 
-              <div className="carousal">
+              <div className="carousal md:px-5 max-sm:px-4">
                 <Carousalhome />
               </div>
             </div>
@@ -314,10 +314,10 @@ const Home = () => {
           {/* Section-9 */}
           <section className='lg:p-10'>
             <div className="grid justify-center">
-              <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl  lg:p-2">Our Affiliations</div>
-              <div className="collaboration text-center lg:w-[990px] max-sm:p-3">Our collaboration with esteemed partners has strengthened our mission to empower youth through skills, making a lasting impact on their lives.</div>
+              <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl  lg:p-2 md:text-2xl">Our Affiliations</div>
+              <div className="collaboration text-center lg:w-[990px] max-sm:p-3 md:px-10 md:py-2">Our collaboration with esteemed partners has strengthened our mission to empower youth through skills, making a lasting impact on their lives.</div>
 
-              <div className="imageaffiliation flex justify-center max-sm:p-2">
+              <div className="imageaffiliation flex justify-center max-sm:p-2 md:py-5">
                 <img src={frame} alt="" />
               </div>
 
@@ -331,10 +331,10 @@ const Home = () => {
           </section>
 
           {/* Section-10 */}
-          <section className='lg:p-10 max-sm:p-5'>
+          <section className='lg:p-10 max-sm:p-5 md:mt-10'>
             <div className="grid">
-              <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl">Our trainers certified from</div>
-              <div className="imageaffiliation flex justify-center max-sm:p-2 lg:py-10 ">
+              <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl md:text-2xl">Our trainers certified from</div>
+              <div className="imageaffiliation flex justify-center max-sm:p-2 lg:py-10 md:px-5 ">
                 <img src={frame2} alt="" />
               </div>
             </div>
@@ -342,7 +342,7 @@ const Home = () => {
 
           {/* Section-11 */}
           <section>
-            <div className="grid space-y-3 max-sm:p-6 lg:px-48 lg:py-10 bg-[#F9FAFB] text-justify">
+            <div className="grid space-y-3 max-sm:p-6 lg:px-48 lg:py-10 bg-[#F9FAFB] text-justify md:p-5">
               <div>PNY Trainings is the best IT institution in Lahore Pakistan that conducts different training programs aimed at helping young career seekers understand the basic information technology functioning of the sector and the job role they aspire to take on. Their insight and vision have assisted us to enhance the knowledge and skills of youngsters to take on modern-day corporate challenges. Getting a good start in a career is a cherished dream for every career candidate. However, this is easier said than done especially in today's challenging career range. To achieve this dream basic college education is rarely enough, especially in Pakistan. Today's highly competitive and demanding employment market is looking for only talented and skilled manpower with enough command of the information technology industry essentials. To make a mark you must have the necessary knowledge, skills, and capability to provide to the specific industry you aspire to enter into an increase. This is equally true across domains of Technology, Business, Development, and Designing, IT Software Development, Digital Marketing Courses, and many more.</div>
               <div>One of the ways that you can gain an advantage over your contemporaries is to undergo courses offered by reputable training institutes in Lahore. There are so many seats available in Arfa tower short courses and all you have to do is to enroll yourself in your desired course. PNY Trainings offers different courses in Lahore, Islamabad, Rawalpindi, Karachi, and other major cities of Pakistan.</div>
               <div>PNYTrainings is one of the promising and Best IT institutes in Lahore that comes up with amazing courses, training, and almost all short courses in Lahore. We are the introducers to numerous IT trends, courses, and certifications in Lahore. The motive of the PNY Arfa Tower short courses is to provide the best courses with guaranteed results for everyone.</div>
@@ -355,24 +355,24 @@ const Home = () => {
           {/* Section-12 */}
           <section>
             <div className="grid justify-center">
-              <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl">We Empower Professionals; see through Media Partner Networks</div>
-              <div className="collaboration text-center lg:w-[990px] max-sm:p-3">PNY Trainings encourage the opinions of youth by developing them professionally, trusting their abilities as leaders, and getting them excited to explore the world around them.</div>
+              <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl md:text-2xl">We Empower Professionals; see through Media Partner Networks</div>
+              <div className="collaboration text-center lg:w-[990px] max-sm:p-3 md:px-10 md:py-2">PNY Trainings encourage the opinions of youth by developing them professionally, trusting their abilities as leaders, and getting them excited to explore the world around them.</div>
 
-              <div className="carousal p-2">
+              <div className="carousal p-5 ">
                 <Carousalhome1 />
               </div>
             </div>
           </section>
           {/* Section-13 */}
           <section style={{ backgroundImage: `url(${vector})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-            <div className="grid justify-center lg:p-28  max-sm: ">
+            <div className="grid justify-center lg:p-28 md:p-20  max-sm: ">
 
               <div className='lg:text-5xl lg:w-[778px]  max-sm:p-5 font-bold text-center'>
-              Admissions are open for the fresh
-              batch. Let’s grow together!
+                Admissions are open for the fresh
+                batch. Let’s grow together!
               </div>
               <div className='text-center lg:p-5 max-sm:p-4'>
-              <button className='bg-[#49B2DF] lg:w-48 lg:h-14 rounded max-sm:w-36 max-sm:h-10'>Join us now!</button>
+                <button className='bg-[#49B2DF] lg:w-48 lg:h-14 rounded max-sm:w-36 max-sm:h-10'>Join us now!</button>
               </div>
             </div>
 
