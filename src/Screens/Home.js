@@ -22,8 +22,10 @@ const Home = () => {
   return (
     <>
       <Flowbite>
-        <main className='bg-white dark:bg-slate-800 rounded-lg  ring-1 ring-slate-900/5 shadow-xl'>
+        <main className='bg-white dark:bg-slate-800   ring-1 ring-slate-900/5 shadow-xl'>
           <Searchbar />
+
+
           {/* Section-2 */}
           <section>
             <div className="grid grid-cols-12 lg:grid-cols-12 max-sm:grid-cols-6">
@@ -152,8 +154,8 @@ const Home = () => {
             </div>
 
             <div className="grid lg:grid-cols-12 lg:px-20  max-sm:px-3.5 py-3 max-sm:py-2 max-sm:grid-cols-4 lg:gap-4 max-sm:space-y-2 md:grid-cols-12  md:p-3 gap-1">
-              <div className='col-span-4 '>
-                <div className="mainbox bg-[#F0F7FF] p-5 space-y-2 rounded">
+              <div className='col-span-4'>
+                <div className="mainbox lg:h-64 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold font-Inter">Development</div>
                   <div className="paragraph">By learning these advanced courses, you will understand the fundamentals of object-oriented programming and how to write...</div>
@@ -162,7 +164,7 @@ const Home = () => {
               </div>
 
               <div className='col-span-4 '>
-                <div className="mainbox  bg-[#F0F7FF] p-5 space-y-2 rounded">
+                <div className="mainbox lg:h-64 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">Marketing</div>
                   <div className="paragraph">Learn how to do SEO, SMO, PPC, CPL, Web analytics, and social media marketing through our highly advanced and strategic...</div>
@@ -171,7 +173,7 @@ const Home = () => {
               </div>
 
               <div className='col-span-4 '>
-                <div className="mainbox  bg-[#F0F7FF] p-5 space-y-2 rounded">
+                <div className="mainbox lg:h-64 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">Art & Design</div>
                   <div className="paragraph">Our comprehensive design training classes teach you about design techniques as well as how to use various software to cr...</div>
@@ -183,7 +185,7 @@ const Home = () => {
             {/* .................. */}
             <div className="grid grid-cols-12 lg:px-20  max-sm:px-3.5  max-sm:grid-cols-4 lg:gap-4 max-sm:space-y-2 md:p-3 gap-1">
               <div className='col-span-4 '>
-                <div className="mainbox  bg-[#F0F7FF] p-5 space-y-2 rounded">
+                <div className="mainbox lg:h-64 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">IT & Software</div>
                   <div className="paragraph">Learn how to handle realistic computer problems and run operating systems fruitfully in information technology and network management. </div>
@@ -192,7 +194,7 @@ const Home = () => {
               </div>
 
               <div className='col-span-4 '>
-                <div className="mainbox  bg-[#F0F7FF] p-5 space-y-2 rounded">
+                <div className="mainbox lg:h-64 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">Business & Accounts</div>
                   <div className="paragraph">Learn the business library as a professional, which teaches you how to organize software and technology that leads acros...</div>
@@ -201,7 +203,7 @@ const Home = () => {
               </div>
 
               <div className='col-span-4 '>
-                <div className="mainbox  bg-[#F0F7FF] p-5 space-y-2 rounded">
+                <div className="mainbox lg:h-64 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">Multimedia</div>
                   <div className="paragraph">Learn the advanced methods of taking pictures and build a portfolio that showcases your professional photography skills....</div>

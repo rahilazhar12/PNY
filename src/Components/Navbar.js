@@ -53,7 +53,7 @@ const Navbarnew = () => {
           Pay Now
         </Button>
                          
-      <DarkThemeToggle className='border bg-white'/>
+      <DarkThemeToggle className=' bg-white'/>
       </Navbar.Collapse>
     </Navbar>
     </Flowbite>

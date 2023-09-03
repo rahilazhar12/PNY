@@ -1,5 +1,6 @@
 const cardData = [
   {
+    id:1,
     imgAlt: "Alt text 1",
     imgSrc: "https://www.simplilearn.com/ice9/free_resources_article_thumb/What_is_digital_marketing.jpg",
     title: "Design",
@@ -8,6 +9,7 @@ const cardData = [
     buttonText: "View Course"
   },
   {
+    id:2,
     imgAlt: "Alt text 2",
     imgSrc: "https://live.staticflickr.com/429/19120501824_7dec99f31e_b.jpg",
     title: "Technology",
@@ -16,6 +18,7 @@ const cardData = [
     buttonText: "View Course"
   },
   {
+    id:3,
     imgAlt: "Alt text 2",
     imgSrc: "https://remunance.com/wp-content/uploads/2023/01/Expansion-of-business..jpeg",
     title: "Business",
@@ -24,6 +27,7 @@ const cardData = [
     buttonText: "View Course"
   },
   {
+    id:4,
     imgAlt: "Alt text 2",
     imgSrc: "https://i.pcmag.com/imagery/roundups/02HDufdqeRUDu3tl0NnY2qZ-2..v1649351854.jpg",
     title: "Software",
@@ -32,6 +36,7 @@ const cardData = [
     buttonText: "View Course"
   },
   {
+    id:5,
     imgAlt: "Alt text 2",
     imgSrc: "https://www.lecole.edu.pk/wp-content/uploads/2021/01/Education-Pic.jpg",
     title: "Education",
@@ -40,6 +45,7 @@ const cardData = [
     buttonText: "View Course"
   },
   {
+    id:6,
     imgAlt: "Alt text 2",
     imgSrc: "https://www.adorama.com/alc/wp-content/uploads/2021/04/photography-camera-learning-feature.jpg",
     title: "Photography",
@@ -48,6 +54,7 @@ const cardData = [
     buttonText: "View Course"
   },
   {
+    id:7,
     imgAlt: "Alt text 2",
     imgSrc: "https://twproject.com/blog/wp-content/uploads/project-management-software-in-mother-tongue.png",
     title: "IT Softwares",
@@ -56,6 +63,7 @@ const cardData = [
     buttonText: "View Course"
   },
   {
+    id:8,
     imgAlt: "Alt text 2",
     imgSrc: "https://sitechecker.pro/wp-content/uploads/2018/02/Knowledge-base-part-3_what-is-seo.jpg",
     title: "SEO",
@@ -64,6 +72,7 @@ const cardData = [
     buttonText: "View Course"
   },
   {
+    id:9,
     imgAlt: "Alt text 2",
     imgSrc: "https://www.searchenginejournal.com/wp-content/uploads/2021/08/the-ultimate-guide-to-digital-marketing-61726311bf393-sej.png",
     title: "Marketing",

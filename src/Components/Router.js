@@ -5,6 +5,7 @@ import Blog from '../Screens/Blog'
 import Navbar from '../Components/Navbar'
 import AboutUs from '../Screens/AboutUs'
 import Contact from '../Screens/Contact'
+import Blogdetails from '../Screens/Blogdetails'
 
 const Router = () => {
     return (
@@ -15,6 +16,7 @@ const Router = () => {
                 <Route path='/blog' element={<Blog />} />
                 <Route path='/about' element={<AboutUs />} />
                 <Route path='/contact' element={<Contact/>} />
+                <Route path='/blogdetails/:id' element={<Blogdetails/>} />
             </Routes>
         </>
     )
