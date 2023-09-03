@@ -1,8 +1,10 @@
 import React from 'react'
 import { Navbar } from 'flowbite-react'
 import { Button } from 'flowbite-react'
+import { DarkThemeToggle, Flowbite } from 'flowbite-react';
 const Navbarnew = () => {
   return (
+    <Flowbite>
     <Navbar
       fluid
       active
@@ -50,8 +52,11 @@ const Navbarnew = () => {
         <Button className='bg-blue-600 max-sm:mt-2'>
           Pay Now
         </Button>
+                         
+      <DarkThemeToggle className='border bg-white'/>
       </Navbar.Collapse>
     </Navbar>
+    </Flowbite>
   )
 }
 

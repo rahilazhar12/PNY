@@ -22,15 +22,15 @@ const Home = () => {
   return (
     <>
       <Flowbite>
-        <main>
-         <Searchbar/>
+        <main className='bg-white dark:bg-slate-800 rounded-lg  ring-1 ring-slate-900/5 shadow-xl'>
+          <Searchbar />
           {/* Section-2 */}
           <section>
             <div className="grid grid-cols-12 lg:grid-cols-12 max-sm:grid-cols-6">
               <div className="column1 max-sm:order-1 p-10 lg:col-span-7 md:col-span-7  max-sm:col-span-6">
-                <div className='text-3xl font-Inter fon-medium max-sm:text-center font-bold'><span className='text-[#F10900]'>PNY</span> Trainings</div>
-                <div className='font-Inter lg:text-6xl lg:w-[535px] lg:font-bold max-sm:text-center max-sm:font-bold max-sm:text-3xl'>Pakistan <span className='text-[#F10900]'>No.1</span>  IT Training Institute</div>
-                <div className='font-Inter lg:w-[520px] lg:text-xl lg:mt-6 max-sm:text-center'>Certified Courses with Money Making Skills!
+                <div className='text-3xl font-Inter fon-medium max-sm:text-center font-bold dark:text-white'><span className='text-[#F10900]'>PNY</span> Trainings</div>
+                <div className='font-Inter lg:text-6xl lg:w-[535px] lg:font-bold max-sm:text-center max-sm:font-bold max-sm:text-3xl dark:text-white'>Pakistan <span className='text-[#F10900]'>No.1</span>  IT Training Institute</div>
+                <div className='font-Inter lg:w-[520px] lg:text-xl lg:mt-6 max-sm:text-center dark:text-white'>Certified Courses with Money Making Skills!
                   Empower Yourself with Practical Skills that Open Doors
                   to Lucrative Opportunities</div>
 
@@ -67,11 +67,11 @@ const Home = () => {
           {/* Section-3 */}
           <div class="grid md:p-5">
             <div class=" flex justify-center">
-              <p className='lg:text-4xl text-center font-bold max-sm:text-2xl md:text-2xl'>Our Journey to Success</p>
+              <p className='lg:text-4xl text-center font-bold max-sm:text-2xl md:text-2xl dark:text-white'>Our Journey to Success</p>
             </div>
 
             <div class="PNYTrainingsPakistan p-2 justify-center flex">
-              <p className='font-normal lg:text-xl text-center lg:w-[880px] max-sm:text-base max-sm:px-5 md:text-base md:px-3'>
+              <p className='font-normal lg:text-xl text-center lg:w-[880px] max-sm:text-base max-sm:px-5 md:text-base md:px-3 dark:text-white'>
                 Our journey to success has been incredible. Starting from scratch, we've achieved numerous milestones, empowering youth through skill development and opening doors to new opportunities. There's no limit to what we can accomplish.
               </p>
             </div>
@@ -83,7 +83,7 @@ const Home = () => {
           {/* Section-4 */}
           <section className='mt-10 md:mt-0'>
             <div className="grid grid-rows-1">
-              <div className="develop text-center text-4xl font-bold max-sm:text-2xl md:text-2xl">We Build Leaders For Professional Community</div>
+              <div className="develop text-center text-4xl font-bold max-sm:text-2xl md:text-2xl dark:text-white">We Build Leaders For Professional Community</div>
             </div>
             <div className="grid grid-cols-12 lg:py-10 lg:px-20 max-sm:grid-cols-6">
               <div className="col-span-6 space-y-3 rounded-xl max-sm:order-1 p-3">
@@ -147,7 +147,7 @@ const Home = () => {
 
           {/* Section-6 */}
           <section>
-            <div className="startlearning lg:mt-8 flex justify-center lg:text-4xl font-bold max-sm:text-2xl mb-6 max-sm:mt-7 md:text-2xl md:mt-6">
+            <div className="startlearning lg:mt-8 flex justify-center lg:text-4xl font-bold max-sm:text-2xl mb-6 max-sm:mt-7 md:text-2xl md:mt-6 dark:text-white">
               <p>Start Learning</p>
             </div>
 
@@ -247,32 +247,32 @@ const Home = () => {
           {/* Section-7 */}
           <section className='md:p-5'>
             <div className="grid justify-center max-sm:grid-cols-6 ">
-              <div className="leaders col-span-12 text-center lg:text-4xl font-bold lg:p-3 max-sm:text-2xl md:text-2xl">Leaders Who Vision Your Future</div>
-              <div className="leaderssub col-span-12 text-center lg:w-[990px] max-sm:p-3">PNY Trainings CEO and Director are inspiring leaders for the youth and have embarked on a transformative journey towards shared goals and prophecy for a promising future.</div>
+              <div className="leaders col-span-12 text-center lg:text-4xl font-bold lg:p-3 max-sm:text-2xl md:text-2xl dark:text-white">Leaders Who Vision Your Future</div>
+              <div className="leaderssub col-span-12 text-center lg:w-[990px] max-sm:p-3 dark:text-white">PNY Trainings CEO and Director are inspiring leaders for the youth and have embarked on a transformative journey towards shared goals and prophecy for a promising future.</div>
               <div className='col-span-6 p-5 '>
                 <div className="wahab">
                   <img className='rounded-lg' src={wahab} alt="" />
-                  <div className="name text-2xl max-sm:text-xl font-semibold">Wahab Yunus
+                  <div className="name text-2xl max-sm:text-xl font-semibold dark:text-white">Wahab Yunus
                     <span><i class="fa-brands fa-twitter lg:p-2 lg:ml-48 max-sm:ml-10 md:ml-20" style={{ color: "#0d63f8" }}></i></span>
 
                     <span><i class="fa-brands fa-linkedin ml-5" style={{ color: "#2c66c9" }}></i></span>
                   </div>
                   <div className="name text-lg font-medium text-blue-500  max-sm:text-base">Founder & CEO</div>
 
-                  
+
                 </div>
               </div>
               <div className='col-span-6 p-5 max-sm:col-span-8'>
                 <div className="suleman">
                   <img className='rounded-lg' src={suleman} alt="" />
-                  <div className="name text-2xl max-sm:text-xl font-semibold">Suleman Ikram
+                  <div className="name text-2xl max-sm:text-xl font-semibold dark:text-white">Suleman Ikram
                     <span><i class="fa-brands fa-twitter lg:p-2 lg:ml-48 max-sm:ml-10 md:ml-20" style={{ color: "#0d63f8" }}></i></span>
 
                     <span><i class="fa-brands fa-linkedin ml-5" style={{ color: "#2c66c9" }}></i></span>
                   </div>
                   <div className="name text-lg font-medium text-blue-500 max-sm:text-base">Co-Founder & Director</div>
 
-                  
+
                 </div>
               </div>
             </div>
@@ -281,8 +281,8 @@ const Home = () => {
           {/* Section-8 */}
           <section>
             <div className="grid justify-center">
-              <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl md:text-2xl">Our Collaboration and Partners</div>
-              <div className="collaboration text-center lg:w-[990px] max-sm:p-3 md:px-10 md:py-2">Our collaboration with esteemed partners has strengthened our mission to empower youth through skills, making a lasting impact on their lives.</div>
+              <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl md:text-2xl dark:text-white">Our Collaboration and Partners</div>
+              <div className="collaboration text-center lg:w-[990px] max-sm:p-3 md:px-10 md:py-2 dark:text-white">Our collaboration with esteemed partners has strengthened our mission to empower youth through skills, making a lasting impact on their lives.</div>
 
               <div className="carousal md:px-5 max-sm:px-4">
                 <Carousalhome />
@@ -294,14 +294,14 @@ const Home = () => {
           {/* Section-9 */}
           <section className='lg:p-10'>
             <div className="grid justify-center">
-              <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl  lg:p-2 md:text-2xl">Our Affiliations</div>
-              <div className="collaboration text-center lg:w-[990px] max-sm:p-3 md:px-10 md:py-2">Our collaboration with esteemed partners has strengthened our mission to empower youth through skills, making a lasting impact on their lives.</div>
+              <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl  lg:p-2 md:text-2xl dark:text-white">Our Affiliations</div>
+              <div className="collaboration text-center lg:w-[990px] max-sm:p-3 md:px-10 md:py-2 dark:text-white">Our collaboration with esteemed partners has strengthened our mission to empower youth through skills, making a lasting impact on their lives.</div>
 
               <div className="imageaffiliation flex justify-center max-sm:p-2 md:py-5">
                 <img src={frame} alt="" />
               </div>
 
-              <div className="flex justify-center p-5 gap-5 max-sm:hidden">
+              <div className="flex justify-center p-5 gap-5 max-sm:hidden dark:text-white">
                 <div className=' border-b-2 border-black'>Navtech certifications</div>
                 <div className=' border-b-2 border-black'>Google scholarship programm</div>
                 <div className=' border-b-2 border-black'>Free learning courses</div>
@@ -313,7 +313,7 @@ const Home = () => {
           {/* Section-10 */}
           <section className='lg:p-10 max-sm:p-5 md:mt-10'>
             <div className="grid">
-              <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl md:text-2xl">Our trainers certified from</div>
+              <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl md:text-2xl dark:text-white">Our trainers certified from</div>
               <div className="imageaffiliation flex justify-center max-sm:p-2 lg:py-10 md:px-5 ">
                 <img src={frame2} alt="" />
               </div>
@@ -335,8 +335,8 @@ const Home = () => {
           {/* Section-12 */}
           <section>
             <div className="grid justify-center">
-              <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl md:text-2xl">We Empower Professionals; see through Media Partner Networks</div>
-              <div className="collaboration text-center lg:w-[990px] max-sm:p-3 md:px-10 md:py-2">PNY Trainings encourage the opinions of youth by developing them professionally, trusting their abilities as leaders, and getting them excited to explore the world around them.</div>
+              <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl md:text-2xl dark:text-white">We Empower Professionals; see through Media Partner Networks</div>
+              <div className="collaboration text-center lg:w-[990px] max-sm:p-3 md:px-10 md:py-2 dark:text-white">PNY Trainings encourage the opinions of youth by developing them professionally, trusting their abilities as leaders, and getting them excited to explore the world around them.</div>
 
               <div className="carousal p-5 ">
                 <Carousalhome1 />
@@ -347,12 +347,12 @@ const Home = () => {
           <section style={{ backgroundImage: `url(${vector})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <div className="grid justify-center lg:p-28 md:p-20  max-sm: ">
 
-              <div className='lg:text-5xl lg:w-[778px]  max-sm:p-5 font-bold text-center'>
+              <div className='lg:text-5xl lg:w-[778px]  max-sm:p-5 font-bold text-center dark:text-white'>
                 Admissions are open for the fresh
                 batch. Let’s grow together!
               </div>
               <div className='text-center lg:p-5 max-sm:p-4'>
-                <button className='bg-[#49B2DF] lg:w-48 lg:h-14 rounded max-sm:w-36 max-sm:h-10'>Join us now!</button>
+                <button className='bg-[#49B2DF] lg:w-48 lg:h-14 rounded max-sm:w-36 max-sm:h-10 dark:text-white'>Join us now!</button>
               </div>
             </div>
 
