@@ -1,3 +1,5 @@
+import logo19 from '../Assets/images/logo19.png'
+
 const cardData = [
   {
     id:1,
@@ -82,5 +84,51 @@ const cardData = [
   },
 ];
 
+// About data
+
+export const aboutdata = [
+  {
+    id:1,
+    imgAlt: "Alt text 1",
+    imgSrc:  logo19,
+    title: "Care about our team",
+    description: "Understand what matters to our employees. Give them what they need to do their best work.",
+  },
+  {
+    id:2,
+    imgAlt: "Alt text 1",
+    imgSrc: logo19,
+    title: "Be excellent to each other",
+    description: "We rely on our peers to help us progress. Be upfront, honest, and considerate.",
+  },
+  {
+    id:3,
+    imgAlt: "Alt text 1",
+    imgSrc: logo19,
+    title: "Pride in what we do",
+    description: "Value quality and integrity in everything we do. At all times. No exceptions.",
+  },
+  {
+    id:4,
+    imgAlt: "Alt text 1",
+    imgSrc:logo19,
+    title: "Care for our students",
+    description: "Understand what are students’ unstated needs. Make them wildly successful.",
+  },
+  {
+    id:5,
+    imgAlt: "Alt text 1",
+    imgSrc: logo19,
+    title: "Do the impossible",
+    description: "Understand what matters to our employees. Give them what they need to do their best work.",
+  },
+  {
+    id:6,
+    imgAlt: "Alt text 1",
+    imgSrc:logo19,
+    title: "Care about our team",
+    description: "Be energized by difficult problems. Revel in unknowns. Ask Why?, but always question, Why not?",
+  },
+]
 
 export default cardData

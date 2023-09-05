@@ -19,7 +19,7 @@ const Searchbar = () => {
                             <input className='w-full border px-4 h-9 md:max-w-md  rounded' placeholder='Search for the software or skills you want to learn' type="text" />
                         </div>
                        
-                        <div className='sm:col-span-1 md:col-span-2  lg:col-span-3 text-slate-900 dark:text-white  text-base font-medium tracking-tight">Writes Upside-Down'>
+                        <div className='sm:col-span-1 md:col-span-5 lg:col-span-3 text-slate-900 dark:text-white  text-base font-medium tracking-tight">Writes Upside-Down'>
                             <ul className='flex space-x-6 justify-end py-5 mr-10 max-sm:justify-center'>
                                 <li className='font-bold hover:text-blue-400'><Link to="/">Home</Link></li>
                                 <li className='font-bold hover:text-blue-400'><Link to="/about">About</Link></li>
