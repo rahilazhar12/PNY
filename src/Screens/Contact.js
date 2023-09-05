@@ -1,42 +1,62 @@
+import React, { useEffect, useState } from 'react';
 
-import React from 'react'
+const TypingAnimation = () => {
+  const [displayedText, setDisplayedText] = useState('');
+  const [cursorVisible, setCursorVisible] = useState(true);
+  const textToType = 'We and our team work for your Future';
+  const wordArray = textToType.split(' ');
 
+  useEffect(() => {
+    // Function to toggle cursor visibility
+    const toggleCursor = () => {
+      setCursorVisible((prevState) => !prevState);
+    };
 
-const Button14 = () => {
+    // Start cursor toggle interval
+    const cursorInterval = setInterval(toggleCursor, 500);
+
+    let currentWordIndex = 0;
+    let currentCharIndex = 0;
+
+    const typeChar = () => {
+      if (currentWordIndex === wordArray.length) {
+        setDisplayedText('');
+        currentWordIndex = 0;
+        currentCharIndex = 0;
+        setTimeout(typeChar, 1000);
+        return;
+      }
+
+      const currentWord = wordArray[currentWordIndex];
+      const currentChar = currentWord.charAt(currentCharIndex);
+
+      setDisplayedText((prevText) => prevText + currentChar);
+
+      currentCharIndex++;
+
+      if (currentCharIndex === currentWord.length) {
+        setDisplayedText((prevText) => prevText + ' ');
+        currentWordIndex++;
+        currentCharIndex = 0;
+      }
+
+      setTimeout(typeChar, 100);
+    };
+
+    typeChar();
+
+    // Clear interval when the component is unmounted
+    return () => {
+      clearInterval(cursorInterval);
+    };
+  }, []);
+
   return (
-    <>
+    <div className="text-center lg:text-xl lg:mt-5 min-h-[40px]">
+      {displayedText}
+      {cursorVisible ? '|' : ' '}
+    </div>
+  );
+};
 
-
-      {/* :SMALL BUTTON 14 */}
-      <button className="mx-5 group relative px-2.5 py-1.5 inline-block text-sm text-gray-800 tracking-wide active:top-0.5 active:outline-none focus:outline-none">
-        {/* Button text */}
-        <span className="block translate-3d-14S group-hover:translate-3d-h-14">About us</span>
-        {/* Rigth line */}
-        <span className="absolute -bottom-1 -top-1 -right-1 w-0.5 bg-gray-800 scale-3d-101 transition-transform delay-20 duration-200 origin-top group-hover:scale-3d-111 group-hover:delay-100 group-hover:duration-200 group-hover:origin-bottom" aria-hidden="true"/>
-        {/* Top line */}
-        <span className="absolute -top-1 -left-1 -right-1 h-0.5 bg-gray-800 scale-3d-011 transition-transform delay-200 duration-150 ease-linear origin-left group-hover:scale-3d-111 group-hover:delay-200 group-hover:duration-150 group-hover:origin-right" aria-hidden="true"/>
-        {/* Left line */}
-        <span className="absolute -bottom-1 -top-1 -left-1 w-0.5 bg-gray-800 scale-3d-101 transition-transform delay-350 duration-150 ease-linear origin-bottom group-hover:scale-3d-111 group-hover:delay-350 group-hover:duration-200 group-hover:origin-top" aria-hidden="true"/>
-        {/* Bottom line */}
-        <span className="absolute -bottom-1 -left-1 -right-1 h-0.5 bg-gray-800 scale-3d-011 transition-transform duration-100 origin-right group-hover:scale-3d-111 group-hover:delay-500 group-hover:duration-500 group-hover:origin-left" aria-hidden="true"/>
-        {/* Button ::after */}
-        <span className="absolute -bottom-1 left-3.5 right-3.5 h-0.5 bg-gray-800 transition-after-14 origin-left group-hover:scale-3d-011 group-hover:-right-1 group-hover:-left-1 group-hover:origin-right group-hover:transition-after-h-14" aria-hidden="true"/>
-      </button>
-      
-      
-      
-      
-    
-
-
-
-
-     
-
-
-
-    </>
-  )
-}
-
-export default Button14
+export default TypingAnimation;

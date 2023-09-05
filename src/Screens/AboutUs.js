@@ -7,10 +7,14 @@ import lady from '../Assets/image/lady with laptop.png'
 import wahab from '../Assets/image/Wahab-Yunuspng.png'
 import { aboutdata } from '../Components/Data';
 import ladymobile from '../Assets/image/ladymobile.png'
+import TypingAnimation from './Contact';
 
 
 
 const AboutUs = () => {
+
+  
+  
   return (
     <Flowbite>
       <main className='bg-white dark:bg-slate-800   ring-1 ring-slate-900/5 shadow-xl'>
@@ -24,8 +28,8 @@ const AboutUs = () => {
         {/* Section-1 */}
         <section className='bg-[#152438] max-sm:h-auto md:p-20 lg:p-32 text-white max-sm:py-10'>
           <div className="grid justify-center">
-            <div className=' lg:text-5xl max-sm:text-center font-bold max-sm:text-3xl md:text-center md:text-3xl'>About company</div>
-            <div className='text-center lg:text-xl lg:mt-5'>We and our team work for your Future</div>
+            <div className=' lg:text-5xl max-sm:text-center bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500  font-bold max-sm:text-3xl md:text-center md:text-3xl'>About company</div>
+            <div className='text-center'><TypingAnimation/></div>
           </div>
 
         </section>
