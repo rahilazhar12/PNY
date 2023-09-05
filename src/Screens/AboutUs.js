@@ -8,6 +8,7 @@ import wahab from '../Assets/image/Wahab-Yunuspng.png'
 import { aboutdata } from '../Components/Data';
 import ladymobile from '../Assets/image/ladymobile.png'
 import TypingAnimation from './Contact';
+import { Link } from 'react-scroll';
 
 
 
@@ -18,6 +19,9 @@ const AboutUs = () => {
   return (
     <Flowbite>
       <main className='bg-white dark:bg-slate-800   ring-1 ring-slate-900/5 shadow-xl'>
+        <section>
+          <Link to='abc' className=' cursor-pointer'>How we work at PNY Trainings</Link>
+        </section>
         <section>
           <div>
             <Searchbar />
@@ -91,7 +95,7 @@ const AboutUs = () => {
 
         {/* section-5 */}
         <section className=' bg-white dark:bg-slate-800 ring-1 ring-slate-900/5 shadow-xl lg:h-[600px] lg:p-5'>
-          <div className="howwework font-bold text-center md:text-2xl lg:text-4xl max-sm:text-2xl">How we work at PNY Trainings</div>
+          <div className="howwework font-bold text-center md:text-2xl lg:text-4xl max-sm:text-2xl" id='abc'>How we work at PNY Trainings</div>
           <div className="howwework text-center max-sm:p-2 lg:p-3">Our shared values keep us connected and guide us as one team.</div>
           
 
