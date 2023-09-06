@@ -1,19 +1,22 @@
 import React from 'react'
+import CountUp from 'react-countup'
+import { useInView } from 'react-intersection-observer'
+import { motion } from 'framer-motion'
 
 const Stats = () => {
+  const [ref, inview] = useInView({
+    threshold: 0.5,
+  })
   return (
-   <>
-   <div class="stats  shadow-2xl">
-  
-  <div class="stat ">
-    <div class="stat-figure text-primary">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-    </div>
-    <div class="text-center">Care about our team</div>
-    <div class="text-center">Understand what matters to our  employees. Give  them what they need to do their best work.</div>
-  </div>
-</div>
-   </>
+    <section ref={ref} className='h-52 md:h-auto max-sm:h-auto text-center lg:h-52'>
+      <div className='flex flex-col sm:flex-row justify-around max-sm:text-2xl  text-4xl md:text-3xl lg:text-4xl font-bold px-10 bg-transparent'>
+        <div className='mt-5 md:mt-10 lg:mt-20'> {inview ? <CountUp start={0} end={75000} duration={2} delay={0} /> : null} +Alumini</div>
+        <div className='mt-5 md:mt-10 lg:mt-20'> {inview ? <CountUp start={0} end={100} duration={2} delay={0} /> : null} +Professional Programs</div>
+        <div className='mt-5 md:mt-10 lg:mt-20'> {inview ? <CountUp start={0} end={150} duration={2} delay={0} /> : null} +Instructors</div>
+        <div className='mt-5 md:mt-10 lg:mt-20'> {inview ? <CountUp start={0} end={80} duration={2} delay={0} /> : null} +Mou's</div>
+      </div>
+    </section>
+
   )
 }
 

@@ -11,13 +11,13 @@ const Bottomnavbar = () => {
       
       <div className='w-full bg-black/20 h-[52px]  backdrop-blur-2xl rounded-full max-w-[460px] mx-auto 
       px-5 flex justify-between text-2xl items-center text-white'>
-      <Link to='journey' activeClass='active' smooth={true} spy={true} offset={-450} className='w-[60px] h-[60px] flex items-center justify-center'>
+      <Link to='journey' activeClass='active' smooth={true} spy={true} offset={-450} className='w-[60px] h-[60px] flex items-center justify-center cursor-pointer'>
       <GiJourney/></Link>
-      <Link to='duration' activeClass='active' smooth={true} spy={true} offset={-450} className='w-[60px] h-[60px] flex items-center justify-center'>
+      <Link to='duration' activeClass='active' smooth={true} spy={true} offset={-450} className='w-[60px] h-[60px] flex items-center justify-center cursor-pointer'>
       <GiDuration/></Link>
-      <Link to='trainer' activeClass='active' smooth={true} spy={true} offset={-450} className='w-[60px] h-[60px] flex items-center justify-center'>
+      <Link to='trainer' activeClass='active' smooth={true} spy={true} offset={-450} className='w-[60px] h-[60px] flex items-center justify-center cursor-pointer'>
       <SiTrainerroad/></Link>
-      <Link to='home' activeClass='active' smooth={true} spy={true} offset={-450} className='w-[60px] h-[60px] flex items-center justify-center'>
+      <Link to='home' activeClass='active' smooth={true} spy={true} offset={-450} className='w-[60px] h-[60px] flex items-center justify-center cursor-pointer'>
       <AiOutlineHome/></Link>
       </div>
     </div>

@@ -131,4 +131,33 @@ export const aboutdata = [
   },
 ]
 
+
+// Homesectiondata-----------------------------------------------------------------------------------------------------
+export const homedata = [
+  {
+    id:1,
+    imgAlt: "Alt text 1",
+    imgSrc:  logo19,
+    title:  "Care about our team",
+    description: "Understand what matters to our employees. Give them what they need to do their best work.",
+  },
+  {
+    id:2,
+    imgAlt: "Alt text 1",
+    imgSrc: logo19,
+    title: "Be excellent to each other",
+    description: "We rely on our peers to help us progress. Be upfront, honest, and considerate.",
+  },
+  {
+    id:3,
+    imgAlt: "Alt text 1",
+    imgSrc: logo19,
+    title: "Pride in what we do",
+    description: "Value quality and integrity in everything we do. At all times. No exceptions.",
+  },
+]
+
+
+
+
 export default cardData

@@ -18,17 +18,25 @@ import acce from '../Assets/image/acce.png'
 import acce2 from '../Assets/image/acce2.png'
 import Bottomnavbar from '../Components/Bottomnavbar'
 import Searchbar from '../Components/Searchbar'
+import { TypeAnimation } from 'react-type-animation'
+import { homedata } from '../Components/Data'
+import CountUp from 'react-countup'
+import Stats from '../Components/Stats'
 const Home = () => {
+
+  
   return (
     <>
       <Flowbite>
         <main id='home' className='bg-white dark:bg-slate-800   ring-1 ring-slate-900/5 shadow-xl'>
           <Searchbar />
-             
 
-             <section>
-              <Bottomnavbar/>
-             </section>
+
+          <section>
+            <Bottomnavbar />
+          </section>
+
+      
 
           {/* Section-2 */}
           <section >
@@ -44,6 +52,25 @@ const Home = () => {
                 <div className="admissionbutton max-sm:flex justify-center">
                   <button className=' p-[8px] bg-[#308AFF] rounded-lg w-[132px] text-white text-base font-Inter font-bold mt-3'>Admission !</button>
                 </div>
+
+                <div className="icons"> <TypeAnimation
+                  sequence={[
+                    // Same substring at the start will only be typed out once, initially
+                    'We offer courses for Social Media',
+                    1000, // wait 1s before replacing "Mice" with "Hamsters"
+                    'We offer courses for Web Developement',
+                    1000,
+                    'We offer courses for Amazon ',
+                    1000,
+                    'We offer courses for Graphic Designing ',
+                    1000
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  className='text-4xl bg-clip-text text-transparent bg-gradient-to-r from-black to-red-500 font-bold'
+                  style={{ fontSize: '', display: 'inline-block' }}
+                  repeat={Infinity}
+                /></div>
               </div>
 
 
@@ -62,30 +89,47 @@ const Home = () => {
 
           {/* Section-3 */}
           <section className='bg-[#F9FAFB]'>
-            <div className="img flex justify-center max-sm:hidden">
-              <img src={acce} alt="" />
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:p-3'>
+              {
+                homedata.map((data) => {
+                  return (
+                    <>
+                      <div class="stats  shadow-xl hover:bg-blue-500 hover:text-white">
+                        <div class="stat">
+                          <div className="img flex justify-center">
+                            <img className='h-16' src={data.imgSrc} alt="" />
+                          </div>
+                          <div class="text-center text-xl font-bold">{data.title}</div>
+                         <div  class="text-center">{data.description}</div>
+                        </div>
+                      </div>
+                    </>
+                  )
+                })
+              }
             </div>
-            <div className="imgmobile flex justify-center max-sm:block lg:hidden md:hidden">
-              <img src={acce2} alt="" />
-            </div>
+          </section>
+
+          <section>
+                <Stats/>
           </section>
 
           {/* Section-3 */}
           <section className=''>
-          <div class="grid md:p-5">
-            <div class=" flex justify-center">
-              <p id='journey' className='lg:text-4xl text-center font-bold max-sm:text-2xl md:text-2xl dark:text-white'>Our Journey to Success</p>
-            </div>
+            <div class="grid md:p-5">
+              <div class=" flex justify-center">
+                <p id='journey' className='lg:text-4xl text-center font-bold max-sm:text-2xl md:text-2xl dark:text-white'>Our Journey to Success</p>
+              </div>
 
-            <div class="PNYTrainingsPakistan p-2 justify-center flex">
-              <p className='font-normal lg:text-xl text-center lg:w-[880px] max-sm:text-base max-sm:px-5 md:text-base md:px-3 dark:text-white'>
-                Our journey to success has been incredible. Starting from scratch, we've achieved numerous milestones, empowering youth through skill development and opening doors to new opportunities. There's no limit to what we can accomplish.
-              </p>
+              <div class="PNYTrainingsPakistan p-2 justify-center flex">
+                <p className='font-normal lg:text-xl text-center lg:w-[880px] max-sm:text-base max-sm:px-5 md:text-base md:px-3 dark:text-white'>
+                  Our journey to success has been incredible. Starting from scratch, we've achieved numerous milestones, empowering youth through skill development and opening doors to new opportunities. There's no limit to what we can accomplish.
+                </p>
+              </div>
+              <div class="flex justify-center">
+                <img src={newgroup} class="img-fluid" alt="" />
+              </div>
             </div>
-            <div class="flex justify-center">
-              <img src={newgroup} class="img-fluid" alt="" />
-            </div>
-          </div>
           </section>
 
           {/* Section-4 */}
