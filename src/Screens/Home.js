@@ -27,7 +27,7 @@ const Home = () => {
              
 
              <section>
-              <Bottomnavbar/>
+              
              </section>
 
           {/* Section-2 */}
