@@ -16,7 +16,7 @@ import frame2 from '../Assets/image/Frame 61.png'
 import vector from '../Assets/images/vecter.png'
 import acce from '../Assets/image/acce.png'
 import acce2 from '../Assets/image/acce2.png'
-import { Link } from 'react-router-dom'
+import Bottomnavbar from '../Components/Bottomnavbar'
 import Searchbar from '../Components/Searchbar'
 const Home = () => {
   return (
@@ -24,7 +24,11 @@ const Home = () => {
       <Flowbite>
         <main className='bg-white dark:bg-slate-800   ring-1 ring-slate-900/5 shadow-xl'>
           <Searchbar />
+             
 
+             <section>
+              <Bottomnavbar/>
+             </section>
 
           {/* Section-2 */}
           <section>
