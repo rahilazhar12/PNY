@@ -22,16 +22,16 @@ const Home = () => {
   return (
     <>
       <Flowbite>
-        <main className='bg-white dark:bg-slate-800   ring-1 ring-slate-900/5 shadow-xl'>
+        <main id='home' className='bg-white dark:bg-slate-800   ring-1 ring-slate-900/5 shadow-xl'>
           <Searchbar />
              
 
              <section>
-              
+              <Bottomnavbar/>
              </section>
 
           {/* Section-2 */}
-          <section>
+          <section >
             <div className="grid grid-cols-12 lg:grid-cols-12 max-sm:grid-cols-6">
               <div className="column1 max-sm:order-1 p-10 lg:col-span-7 md:col-span-7  max-sm:col-span-6">
                 <div className='text-3xl font-Inter fon-medium max-sm:text-center font-bold dark:text-white'><span className='text-[#F10900]'>PNY</span> Trainings</div>
@@ -71,9 +71,10 @@ const Home = () => {
           </section>
 
           {/* Section-3 */}
+          <section className=''>
           <div class="grid md:p-5">
             <div class=" flex justify-center">
-              <p className='lg:text-4xl text-center font-bold max-sm:text-2xl md:text-2xl dark:text-white'>Our Journey to Success</p>
+              <p id='journey' className='lg:text-4xl text-center font-bold max-sm:text-2xl md:text-2xl dark:text-white'>Our Journey to Success</p>
             </div>
 
             <div class="PNYTrainingsPakistan p-2 justify-center flex">
@@ -85,6 +86,7 @@ const Home = () => {
               <img src={newgroup} class="img-fluid" alt="" />
             </div>
           </div>
+          </section>
 
           {/* Section-4 */}
           <section className='mt-10 md:mt-0'>
@@ -112,7 +114,7 @@ const Home = () => {
           </section>
 
           {/* Section-5 */}
-          <section className='bg-blue-500 p-15 text-white md:p-5'>
+          <section id='duration' className='bg-blue-500 p-15 text-white md:p-5'>
             <div className="grid justify-center">
               <div className='lg:text-4xl row-span-1 font-bold text-center max-sm:text-2xl lg:py-4 max-sm:py-5 md:text-2xl'>Duration that Develop your Skills</div>
               <div className='lg:text-lg lg:w-[990px] row-span-1 p-2 text-center max-sm:text-base max-sm:px-5'>Unlock your potential with our comprehensive range of skill programs! Choose from 1-year diploma programs, 6-month certified courses, 3-2 month certified courses, and professional boot camps. Upgrade your skills today!</div>
@@ -317,7 +319,7 @@ const Home = () => {
           </section>
 
           {/* Section-10 */}
-          <section className='lg:p-10 max-sm:p-5 md:mt-10'>
+          <section id='trainer' className='lg:p-10 max-sm:p-5 md:mt-10'>
             <div className="grid">
               <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl md:text-2xl dark:text-white">Our trainers certified from</div>
               <div className="imageaffiliation flex justify-center max-sm:p-2 lg:py-10 md:px-5 ">
