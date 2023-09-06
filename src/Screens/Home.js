@@ -22,6 +22,8 @@ import { TypeAnimation } from 'react-type-animation'
 import { homedata } from '../Components/Data'
 import CountUp from 'react-countup'
 import Stats from '../Components/Stats'
+import { motion } from 'framer-motion'
+import varient, { fadeIn } from '../Components/variants'
 const Home = () => {
 
   
@@ -39,7 +41,7 @@ const Home = () => {
       
 
           {/* Section-2 */}
-          <section >
+          <motion.section variants={fadeIn("up" , 0.3)} initial='hidden' whileInView={"show"}  viewport={{once:false , amount:0.7}}>
             <div className="grid grid-cols-12 lg:grid-cols-12 max-sm:grid-cols-6">
               <div className="column1 max-sm:order-1 p-10 lg:col-span-7 md:col-span-7  max-sm:col-span-6">
                 <div className='text-3xl font-Inter fon-medium max-sm:text-center font-bold dark:text-white'><span className='text-[#F10900]'>PNY</span> Trainings</div>
@@ -85,7 +87,7 @@ const Home = () => {
 
               </div>
             </div>
-          </section>
+          </motion.section>
 
           {/* Section-3 */}
           <section className='bg-[#F9FAFB]'>
@@ -110,9 +112,9 @@ const Home = () => {
             </div>
           </section>
 
-          <section>
+          <motion.section variants={fadeIn("down" , 0.3)} initial='hidden' whileInView={"show"}  viewport={{once:false , amount:0.7}}>
                 <Stats/>
-          </section>
+          </motion.section>
 
           {/* Section-3 */}
           <section className=''>
@@ -158,7 +160,7 @@ const Home = () => {
           </section>
 
           {/* Section-5 */}
-          <section id='duration' className='bg-blue-500 p-15 text-white md:p-5'>
+          <section  id='duration' className='bg-blue-500 p-15 text-white md:p-5'>
             <div className="grid justify-center">
               <div className='lg:text-4xl row-span-1 font-bold text-center max-sm:text-2xl lg:py-4 max-sm:py-5 md:text-2xl'>Duration that Develop your Skills</div>
               <div className='lg:text-lg lg:w-[990px] row-span-1 p-2 text-center max-sm:text-base max-sm:px-5'>Unlock your potential with our comprehensive range of skill programs! Choose from 1-year diploma programs, 6-month certified courses, 3-2 month certified courses, and professional boot camps. Upgrade your skills today!</div>
@@ -198,7 +200,7 @@ const Home = () => {
           </section>
 
           {/* Section-6 */}
-          <section>
+          <motion.section variants={fadeIn("down" , 0.3)} initial='hidden' whileInView={"show"}  viewport={{once:false , amount:0.7}}>
             <div className="startlearning lg:mt-8 flex justify-center lg:text-4xl font-bold max-sm:text-2xl mb-6 max-sm:mt-7 md:text-2xl md:mt-6 dark:text-white">
               <p>Start Learning</p>
             </div>
@@ -264,7 +266,7 @@ const Home = () => {
             <div className="viewmore flex justify-center p-5">
               <button className='font-semibold text-base w-28 h-12 text-blue-600 bg-[#E5F1FF] rounded-lg'>View More</button>
             </div>
-          </section>
+          </motion.section>
 
 
 

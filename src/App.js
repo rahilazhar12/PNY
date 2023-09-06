@@ -10,13 +10,6 @@ function App() {
     <>
 
     <Router/>
-    {/* <div className='bg-red-500 bg-no-repeat bg-cover overflow-hidden'>
-    <NewAboutus/>
-    <NewConatctus/>
-    <Bottomnavbar/>
-   
-   <div className='h-[4000px]'></div>
-    </div> */}
     </>
   );
 }
