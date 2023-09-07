@@ -24,6 +24,7 @@ import CountUp from 'react-countup'
 import Stats from '../Components/Stats'
 import { motion } from 'framer-motion'
 import varient, { fadeIn } from '../Components/variants'
+
 const Home = () => {
 
   
@@ -41,7 +42,7 @@ const Home = () => {
       
 
           {/* Section-2 */}
-          <motion.section variants={fadeIn("up" , 0.3)} initial='hidden' whileInView={"show"}  viewport={{once:false , amount:0.7}}>
+          <motion.section variants={fadeIn("up" ,0.1)} initial='hidden' whileInView={"show"}  viewport={{once:false , amount:0}}>
             <div className="grid grid-cols-12 lg:grid-cols-12 max-sm:grid-cols-6">
               <div className="column1 max-sm:order-1 p-10 lg:col-span-7 md:col-span-7  max-sm:col-span-6">
                 <div className='text-3xl font-Inter fon-medium max-sm:text-center font-bold dark:text-white'><span className='text-[#F10900]'>PNY</span> Trainings</div>

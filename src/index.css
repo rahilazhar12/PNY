@@ -3,3 +3,17 @@
 @tailwind utilities;
 
 
+/* Define a keyframes animation for blinking */
+@keyframes blink {
+    10% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  /* Apply the animation to the button */
+  .blinking-text {
+    animation: blink 2s infinite; /* Adjust the duration as needed */
+  }
+  
+
+
