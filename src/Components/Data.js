@@ -158,6 +158,30 @@ export const homedata = [
 ]
 
 
+export const durationdata = [
+  {
+    id:1,
+    title: "1 Year Professional Diplomas Programs",
+    description: "Immerse yourself in our 1-year Professional Diploma programs, unlocking unlimited potential for career growth and success",
+  },
+  {
+    id:2,
+    title: "6 Months Certified Courses",
+    description: "Accelerate your career with our comprehensive 6-month certified Courses. Gain specialized expertise and excel in your career.",
+  },
+  {
+    id:3,
+    title: "3-2 Months Certified Courses",
+    description: "Elevate your expertise from 3 to 2 months with our Professional Certification Courses. Unlock new career opportunities!",
+  },
+  {
+    id:4,
+    title: "Professional Boot Camp",
+    description: "Join our Professional Bootcamp and gain valuable insights to advance your career. Don't miss out!",
+  },
+]
+
+
 
 
 export default cardData

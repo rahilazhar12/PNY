@@ -24,10 +24,11 @@ import CountUp from 'react-countup'
 import Stats from '../Components/Stats'
 import { motion } from 'framer-motion'
 import varient, { fadeIn } from '../Components/variants'
+import { durationdata } from '../Components/Data'
 
 const Home = () => {
 
-  
+
   return (
     <>
       <Flowbite>
@@ -39,10 +40,10 @@ const Home = () => {
             <Bottomnavbar />
           </section>
 
-      
+
 
           {/* Section-2 */}
-          <motion.section variants={fadeIn("up" ,0.1)} initial='hidden' whileInView={"show"}  viewport={{once:false , amount:0}}>
+          <motion.section variants={fadeIn("up", 0.1)} initial='hidden' whileInView={"show"} viewport={{ once: false, amount: 0 }}>
             <div className="grid grid-cols-12 lg:grid-cols-12 max-sm:grid-cols-6">
               <div className="column1 max-sm:order-1 p-10 lg:col-span-7 md:col-span-7  max-sm:col-span-6">
                 <div className='text-3xl font-Inter fon-medium max-sm:text-center font-bold dark:text-white'><span className='text-[#F10900]'>PNY</span> Trainings</div>
@@ -56,7 +57,7 @@ const Home = () => {
                   <button className=' p-[8px] bg-[#308AFF] rounded-lg w-[132px] text-white text-base font-Inter font-bold mt-3'>Admission !</button>
                 </div>
 
-                <div className="icons"> <TypeAnimation
+                <div className="icons lg:hidden max-sm:hidden"> <TypeAnimation
                   sequence={[
                     // Same substring at the start will only be typed out once, initially
                     'We offer courses for Social Media',
@@ -103,7 +104,7 @@ const Home = () => {
                             <img className='h-16' src={data.imgSrc} alt="" />
                           </div>
                           <div class="text-center text-xl font-bold">{data.title}</div>
-                         <div  class="text-center">{data.description}</div>
+                          <div class="text-center">{data.description}</div>
                         </div>
                       </div>
                     </>
@@ -113,8 +114,8 @@ const Home = () => {
             </div>
           </section>
 
-          <motion.section variants={fadeIn("down" , 0.3)} initial='hidden' whileInView={"show"}  viewport={{once:false , amount:0.7}}>
-                <Stats/>
+          <motion.section variants={fadeIn("down", 0.3)} initial='hidden' whileInView={"show"} viewport={{ once: false, amount: 0.7 }}>
+            <Stats />
           </motion.section>
 
           {/* Section-3 */}
@@ -161,47 +162,32 @@ const Home = () => {
           </section>
 
           {/* Section-5 */}
-          <section  id='duration' className='bg-blue-500 p-15 text-white md:p-5'>
+          <section id='duration' className='bg-blue-500 p-15 text-white md:p-5'>
             <div className="grid justify-center">
               <div className='lg:text-4xl row-span-1 font-bold text-center max-sm:text-2xl lg:py-4 max-sm:py-5 md:text-2xl'>Duration that Develop your Skills</div>
               <div className='lg:text-lg lg:w-[990px] row-span-1 p-2 text-center max-sm:text-base max-sm:px-5'>Unlock your potential with our comprehensive range of skill programs! Choose from 1-year diploma programs, 6-month certified courses, 3-2 month certified courses, and professional boot camps. Upgrade your skills today!</div>
             </div>
-
-            <div className="grid lg:grid-cols-12 p-5 max-sm:grid-cols-4 lg:ml-10 ">
-              <div className=' col-span-3 max-sm:col-span-4 space-y-3'>
-                <div className="1yeardeploma text-2xl font-semibold">1 Year Professional Diplomas Programs</div>
-                <div className="Immerse">Immerse yourself in our 1-year Professional Diploma programs, unlocking unlimited potential for career growth and success</div>
-                <div>  <a href="">Read More</a></div>
-                <div className=' max-sm:border-b-2 max-sm:w-52  max-sm:ml-20'></div>
-              </div>
-
-
-              <div className=' col-span-3 max-sm:col-span-4 space-y-3 max-sm:mt-3'>
-                <div className="1yeardeploma text-2xl font-semibold lg:w-52">6 Months Certified Courses</div>
-                <div className="Immerse lg:w-80">Accelerate your career with our comprehensive 6-month certified Courses. Gain specialized expertise and excel in your career.</div>
-                <div>  <a href="">Read More</a></div>
-                <div className=' max-sm:border-b-2 max-sm:w-52  max-sm:ml-20'></div>
-              </div>
-
-
-              <div className=' col-span-3 max-sm:col-span-4 space-y-3'>
-                <div className="1yeardeploma text-2xl font-semibold lg:w-52 max-sm:mt-3">3-2 Months Certified Courses</div>
-                <div className="Immerse lg:w-80">Elevate your expertise from 3 to 2 months with our Professional Certification Courses. Unlock new career opportunities.</div>
-                <div>  <a href="">Read More</a></div>
-                <div className=' max-sm:border-b-2 max-sm:w-52  max-sm:ml-20'></div>
-              </div>
-
-
-              <div className=' col-span-3 max-sm:col-span-4 space-y-3'>
-                <div className="1yeardeploma text-2xl font-semibold lg:w-52 max-sm:mt-3">Professional BootCamp</div>
-                <div className="Immerse lg:w-80">Join our Professional Bootcamp and gain valuable insights to advance your career. Don't miss out.</div>
-                <div>  <a href="">Read More</a></div>
-              </div>
-            </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:p-3 max-sm:p-3'>
+            {
+              durationdata.map((data) => {
+                return (
+                  <>
+                    <div class="stats shadow-xl hover:bg-blue-500 hover:text-white">
+                      <div class="stat">
+                        <div class="text-center text-xl font-bold">{data.title}</div>
+                        <div class="text-center">{data.description}</div>
+                        <button className=' mt-2 btn btn-sm  hover:bg-red-500 btn-outline'>Read More</button>
+                      </div>
+                    </div>
+                  </>
+                )
+              })
+            }
+          </div>
           </section>
 
           {/* Section-6 */}
-          <motion.section variants={fadeIn("down" , 0.3)} initial='hidden' whileInView={"show"}  viewport={{once:false , amount:0.7}}>
+          <section >
             <div className="startlearning lg:mt-8 flex justify-center lg:text-4xl font-bold max-sm:text-2xl mb-6 max-sm:mt-7 md:text-2xl md:mt-6 dark:text-white">
               <p>Start Learning</p>
             </div>
@@ -267,7 +253,7 @@ const Home = () => {
             <div className="viewmore flex justify-center p-5">
               <button className='font-semibold text-base w-28 h-12 text-blue-600 bg-[#E5F1FF] rounded-lg'>View More</button>
             </div>
-          </motion.section>
+          </section>
 
 
 

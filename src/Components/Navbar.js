@@ -16,9 +16,22 @@ const Navbar = () => {
               <li><a>Training Schedule</a></li>
               <li><a>Fee Strcture</a></li>
               <li><a>Admission</a></li>
+              <div className='gap-2 flex  lg:hidden md:hidden justify-center '>
+                <div class="">
+                  <a class="btn btn-sm btn-outline btn-info rounded-lg text-white hover:text-black">Login</a>
+                </div>
+                <div class="">
+                  <a class="btn btn-sm btn-outline btn-error rounded-lg text-white hover:text-black">Pay Now</a>
+                </div>
+              </div>
 
             </ul>
           </div>
+          <div class="grid max-sm:grid-cols-6 lg:hidden md:hidden gap-10  text-xs">
+            <div className='col-span-2'><i class="fa-solid fa-phone mx-2"></i> 03041111774</div>
+            <div className='col-span-2'><i class="fa-solid fa-envelope"></i> info@pnytrainings.com</div>
+          </div>
+
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal p-0">
@@ -27,13 +40,8 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div class="lg:hidden">
-          <ul class="menu">
-            <li><a> <i class="fa-solid fa-phone"></i>03041111774</a></li>
-            <li><a><i class="fa-solid fa-envelope"></i>info@pnytrainings.com</a></li>
-          </ul>
-        </div>
-        <div  class="ml-10 hidden lg:flex">
+
+        <div class="ml-10 hidden lg:flex">
           <ul class="menu menu-horizontal px-1 " >
             <li className='hover:text-red-700'><a>Amazon Services</a></li>
             <li><a>Kids Courses</a></li>
@@ -48,7 +56,7 @@ const Navbar = () => {
             <a class="btn btn-sm btn-outline btn-info rounded-lg text-white hover:text-black">Login</a>
           </div>
           <div class="">
-          <a class="btn btn-sm btn-outline btn-error rounded-lg text-white hover:text-black">Pay Now</a>
+            <a class="btn btn-sm btn-outline btn-error rounded-lg text-white hover:text-black">Pay Now</a>
           </div>
         </div>
       </div>
