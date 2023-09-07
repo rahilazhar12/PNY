@@ -25,6 +25,8 @@ import Stats from '../Components/Stats'
 import { motion } from 'framer-motion'
 import varient, { fadeIn } from '../Components/variants'
 import { durationdata } from '../Components/Data'
+import vission from '../Assets/images/Group 327 (1).png'
+import mission from '../Assets/images/Group 328 (1).png'
 
 const Home = () => {
 
@@ -114,9 +116,9 @@ const Home = () => {
             </div>
           </section>
 
-          <motion.section variants={fadeIn("down", 0.3)} initial='hidden' whileInView={"show"} viewport={{ once: false, amount: 0.7 }}>
+          <section>
             <Stats />
-          </motion.section>
+          </section>
 
           {/* Section-3 */}
           <section className=''>
@@ -144,11 +146,17 @@ const Home = () => {
             <div className="grid grid-cols-12 lg:py-10 lg:px-20 max-sm:grid-cols-6">
               <div className="col-span-6 space-y-3 rounded-xl max-sm:order-1 p-3">
                 <div className="mainboxvision rounded-xl bg-blue-600 lg:w-[510px] lg:h-[239px] lg:py-12  max-sm:p-5  lg:px-8 text-white md:p-3">
+                  <div className="img">
+                    <img src={vission} alt="" />
+                  </div>
                   <div className="vision lg:text-3xl max-sm:text-2xl font-semibold mt-4 md:text-2xl">Vision Statement</div>
                   <div className="visionp lg:w-[350px] max-sm:text-base text-lg md:text-base">Nation leading professional service provider by exploring and utilizing the unique ideas in the world of digital technologies.</div>
                 </div>
 
-                <div className="mainboxvision rounded-xl bg-red-600 lg:w-[510px] lg:h-[239px] lg:py-12  max-sm:p-4  lg:px-8 text-white md:p-3">
+                <div className="mainboxvision rounded-xl bg-red-600 lg:w-[510px] lg:h-[270px] lg:py-12  max-sm:p-4  lg:px-8 text-white md:p-3">
+                  <div className="img">
+                    <img src={mission} alt="" />
+                  </div>
                   <div className="vision lg:text-3xl max-sm:text-2xl font-semibold md:text-2xl">Our Mission Statement</div>
                   <div className="visionp lg:w-[420px]  max-sm:text-base   text-lg md:text-base">To design and maintain the quality of knowledge based capacity building programs to empower with new job oriented technical courses and bring positive transformation on their business and professional growth.</div>
                 </div>
@@ -167,23 +175,25 @@ const Home = () => {
               <div className='lg:text-4xl row-span-1 font-bold text-center max-sm:text-2xl lg:py-4 max-sm:py-5 md:text-2xl'>Duration that Develop your Skills</div>
               <div className='lg:text-lg lg:w-[990px] row-span-1 p-2 text-center max-sm:text-base max-sm:px-5'>Unlock your potential with our comprehensive range of skill programs! Choose from 1-year diploma programs, 6-month certified courses, 3-2 month certified courses, and professional boot camps. Upgrade your skills today!</div>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:p-3 max-sm:p-3'>
-            {
-              durationdata.map((data) => {
-                return (
-                  <>
-                    <div class="stats shadow-xl hover:bg-blue-500 hover:text-white">
-                      <div class="stat">
-                        <div class="text-center text-xl font-bold">{data.title}</div>
-                        <div class="text-center">{data.description}</div>
-                        <button className=' mt-2 btn btn-sm  hover:bg-red-500 btn-outline'>Read More</button>
+            <div className='grid grid-cols-1 md:grid-cols-5 lg:ml-10 md:gap-52  lg:gap-80 max-sm:gap-3 md:p-3 max-sm:p-3'>
+              { 
+                durationdata.map((data) => {
+                  return (
+                    <>
+                      <div class="stats md:w-48 lg:w-80">
+                        <div class="stat">
+                          <div class="text-center text-xl font-bold">{data.title}</div>
+                          <div class="text-center">{data.description}</div>
+                          <div className='flex justify-center'>
+                            <a href="" className='text-blue-500'>Read More</a>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </>
-                )
-              })
-            }
-          </div>
+                    </>
+                  )
+                })
+              }
+            </div>
           </section>
 
           {/* Section-6 */}

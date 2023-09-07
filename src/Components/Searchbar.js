@@ -8,7 +8,7 @@ const Searchbar = () => {
     return (
         <Flowbite>
             <div>
-                <section>
+                <section className='shadow-xl'>
                     <div className="container-lg  mx-auto  grid grid-cols-1  md:grid-cols-7  lg:grid-cols-12">
 
                         <div className='image py-2 mx-10 col-span-1 max-sm:flex max-sm:justify-center md:col-span-1 md:w-20 h-15'>
