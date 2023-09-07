@@ -3,7 +3,7 @@ import React from 'react'
 const Navbar = () => {
   return (
     <div>
-      <div class="navbar   bg-[]">
+      <div class="navbar cursor-pointer hover:text-blue-200 text-white bg-black">
         <div class="navbar-start lg:hidden">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -16,7 +16,7 @@ const Navbar = () => {
               <li><a>Training Schedule</a></li>
               <li><a>Fee Strcture</a></li>
               <li><a>Admission</a></li>
-              <div className='gap-2 flex  lg:hidden md:hidden justify-center '>
+              <div className='gap-2 flex  justify-center '>
                 <div class="">
                   <a class="btn btn-sm btn-outline btn-info rounded-lg text-white hover:text-black">Login</a>
                 </div>
@@ -27,14 +27,14 @@ const Navbar = () => {
 
             </ul>
           </div>
-          <div class="grid max-sm:grid-cols-6 lg:hidden md:hidden gap-10  text-xs">
+          <div class="grid max-sm:grid-cols-6  lg:hidden md:hidden gap-10  text-xs">
             <div className='col-span-2'><i class="fa-solid fa-phone mx-2"></i> 03041111774</div>
             <div className='col-span-2'><i class="fa-solid fa-envelope"></i> info@pnytrainings.com</div>
           </div>
 
         </div>
         <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal p-0">
+          <ul class="menu-horizontal p-0 gap-5">
             <li><a><i class="fa-solid fa-phone"></i>03041111774</a></li>
             <li><a><i class="fa-solid fa-envelope"></i>info@pnytrainings.com</a></li>
           </ul>
@@ -42,8 +42,8 @@ const Navbar = () => {
 
 
         <div class="ml-10 hidden lg:flex">
-          <ul class="menu menu-horizontal px-1 " >
-            <li className='hover:text-red-700'><a>Amazon Services</a></li>
+          <ul class="gap-5 menu-horizontal px-1 " >
+            <li className='hover:text-blue-900'><a>Amazon Services</a></li>
             <li><a>Kids Courses</a></li>
             <li><a>Female Courses</a></li>
             <li><a>Training Schedule</a></li>
@@ -51,7 +51,7 @@ const Navbar = () => {
             <li><a>Admission</a></li>
           </ul>
         </div>
-        <div className='gap-2 flex lg:w-64 justify-end max-sm:hidden'>
+        <div className='gap-2  flex lg:w-64 justify-end max-sm:hidden'>
           <div class="">
             <a class="btn btn-sm btn-outline btn-info rounded-lg text-white hover:text-black">Login</a>
           </div>

@@ -95,7 +95,7 @@ const Home = () => {
 
           {/* Section-3 */}
           <section className='bg-[#F9FAFB]'>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:p-3'>
+            <div className='grid max-sm:p-3 grid-cols-1 md:grid-cols-3 gap-4 md:p-3'>
               {
                 homedata.map((data) => {
                   return (
@@ -116,7 +116,7 @@ const Home = () => {
             </div>
           </section>
 
-          <section>
+          <section >
             <Stats />
           </section>
 
@@ -175,12 +175,12 @@ const Home = () => {
               <div className='lg:text-4xl row-span-1 font-bold text-center max-sm:text-2xl lg:py-4 max-sm:py-5 md:text-2xl'>Duration that Develop your Skills</div>
               <div className='lg:text-lg lg:w-[990px] row-span-1 p-2 text-center max-sm:text-base max-sm:px-5'>Unlock your potential with our comprehensive range of skill programs! Choose from 1-year diploma programs, 6-month certified courses, 3-2 month certified courses, and professional boot camps. Upgrade your skills today!</div>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-5 lg:ml-10 md:gap-52  lg:gap-80 max-sm:gap-3 md:p-3 max-sm:p-3'>
+            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 lg:ml-10 md:gap-10   lg:gap-80 max-sm:gap-3 md:p-3 max-sm:p-3'>
               { 
                 durationdata.map((data) => {
                   return (
                     <>
-                      <div class="stats md:w-48 lg:w-80">
+                      <div class="stats md:w-26 lg:w-80">
                         <div class="stat">
                           <div class="text-center text-xl font-bold">{data.title}</div>
                           <div class="text-center">{data.description}</div>
@@ -204,7 +204,7 @@ const Home = () => {
 
             <div className="grid lg:grid-cols-12 lg:px-20  max-sm:px-3.5 py-3 max-sm:py-2 max-sm:grid-cols-4 lg:gap-4 max-sm:space-y-2 md:grid-cols-12  md:p-3 gap-1">
               <div className='col-span-4'>
-                <div className="mainbox lg:h-64 bg-[#F0F7FF] p-5 space-y-2 rounded">
+                <div className="mainbox lg:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold font-Inter">Development</div>
                   <div className="paragraph">By learning these advanced courses, you will understand the fundamentals of object-oriented programming and how to write...</div>
@@ -213,7 +213,7 @@ const Home = () => {
               </div>
 
               <div className='col-span-4 '>
-                <div className="mainbox lg:h-64 bg-[#F0F7FF] p-5 space-y-2 rounded">
+                <div className="mainbox lg:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">Marketing</div>
                   <div className="paragraph">Learn how to do SEO, SMO, PPC, CPL, Web analytics, and social media marketing through our highly advanced and strategic...</div>
@@ -222,7 +222,7 @@ const Home = () => {
               </div>
 
               <div className='col-span-4 '>
-                <div className="mainbox lg:h-64 bg-[#F0F7FF] p-5 space-y-2 rounded">
+                <div className="mainbox lg:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">Art & Design</div>
                   <div className="paragraph">Our comprehensive design training classes teach you about design techniques as well as how to use various software to cr...</div>
@@ -234,7 +234,7 @@ const Home = () => {
             {/* .................. */}
             <div className="grid grid-cols-12 lg:px-20  max-sm:px-3.5  max-sm:grid-cols-4 lg:gap-4 max-sm:space-y-2 md:p-3 gap-1">
               <div className='col-span-4 '>
-                <div className="mainbox lg:h-64 bg-[#F0F7FF] p-5 space-y-2 rounded">
+                <div className="mainbox lg:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">IT & Software</div>
                   <div className="paragraph">Learn how to handle realistic computer problems and run operating systems fruitfully in information technology and network management. </div>
@@ -243,7 +243,7 @@ const Home = () => {
               </div>
 
               <div className='col-span-4 '>
-                <div className="mainbox lg:h-64 bg-[#F0F7FF] p-5 space-y-2 rounded">
+                <div className="mainbox lg:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">Business & Accounts</div>
                   <div className="paragraph">Learn the business library as a professional, which teaches you how to organize software and technology that leads acros...</div>
@@ -252,7 +252,7 @@ const Home = () => {
               </div>
 
               <div className='col-span-4 '>
-                <div className="mainbox lg:h-64 bg-[#F0F7FF] p-5 space-y-2 rounded">
+                <div className="mainbox lg:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">Multimedia</div>
                   <div className="paragraph">Learn the advanced methods of taking pictures and build a portfolio that showcases your professional photography skills....</div>
