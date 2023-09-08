@@ -10,12 +10,7 @@ import pnylogonew from '../Assets/image/PNY Trainings logo.png'
 const Footer = () => {
     return (
         <div>
-            <footer class="footer footer-center p-4 bg-base-300 text-base-content">
-                <aside>
-                    <p className='lgh'>Courses We Offers in Cities</p>
-                    <p>Lahore | Rawalpindi  | Karachi  | Multan  | Sialkot  | Faisalabad  | Gujranwala  | Azad Kashmir  | Islamabad</p>
-                </aside>
-            </footer>
+            
             <footer class="footer p-10 bg-base-200 text-base-content">
                 <aside className='lg:w-[361px]'>
                     <img src={pnylogonew} alt="" width={159} />
@@ -59,26 +54,7 @@ const Footer = () => {
                     <a class="link link-hover">Pearson Test of English</a>
                 </nav>
             </footer>
-            <footer class="footer footer-center lg:p-10 bg-base-200 text-base-content rounded">
-                <nav class="grid grid-flow-col gap-4 font-bold ">
-                    <a class="hover:text-blue-200" href='/about'>About us</a>
-                    <a class="link link-hover">Careers</a>
-                    <a class="link link-hover">Contact us</a>
-                    <a class="link link-hover">Blog</a>
-                </nav>
-                <nav>
-                    <form className='max-sm:p-4'>
-                        {/* <header class="footer-title">Newsletter</header> */}
-                        <fieldset class="form-control  lg:w-80">
-                            <div class="relative">
-                                <input type="text" placeholder="username@site.com" class="input input-bordered w-full pr-16" />
-                                <button class="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
-                            </div>
-                        </fieldset>
-                    </form>
-                </nav>
-
-            </footer>
+           
             <div className=' bg-base-300 lgh'>
                 <p>Our Branches</p>
             </div>
@@ -115,6 +91,12 @@ const Footer = () => {
                     <header class="footer-title">View All Branches</header>
                     <a class="link link-hover w-[214px]"> View All Branches</a>
                 </nav>
+            </footer>
+            <footer class="footer footer-center p-4 bg-base-300 text-base-content">
+                <aside>
+                    <p className='lgh'>Courses We Offers in Cities</p>
+                    <p>Lahore | Rawalpindi  | Karachi  | Multan  | Sialkot  | Faisalabad  | Gujranwala  | Azad Kashmir  | Islamabad</p>
+                </aside>
             </footer>
 
             <footer class="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
