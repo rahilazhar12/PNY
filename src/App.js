@@ -1,14 +1,12 @@
 import './App.css';
 import Router from './Components/Router';
-import NewAboutus from './Screens/NewAboutus';
-import NewConatctus from './Screens/NewConatctus';
-import Bottomnavbar from './Components/Bottomnavbar';
+import Footer from './Components/Footer';
+
 
 
 function App() {
   return (
-    <>
-
+    <> 
     <Router/>
     </>
   );

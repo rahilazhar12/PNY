@@ -6,6 +6,7 @@ import Navbar from '../Components/Navbar'
 import AboutUs from '../Screens/AboutUs'
 import Contact from '../Screens/Contact'
 import Blogdetails from '../Screens/Blogdetails'
+import Footer from './Footer'
 
 const Router = () => {
     return (
@@ -18,7 +19,9 @@ const Router = () => {
                 <Route path='/contact' element={<Contact/>} />
                 <Route path='/blogdetails/:id' element={<Blogdetails/>} />
             </Routes>
-        </>
+
+            <Footer/>
+          </>
     )
 }
 

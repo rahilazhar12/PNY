@@ -3,7 +3,7 @@ import React from 'react'
 const Navbar = () => {
   return (
     <div>
-      <div class="navbar cursor-pointer hover:text-blue-200 text-white bg-black">
+      <div class="navbar cursor-pointer hover:text-blue-200 text-white bg-[#152438]">
         <div class="navbar-start lg:hidden">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -27,16 +27,20 @@ const Navbar = () => {
 
             </ul>
           </div>
+
+          {/* sm */}
           <div class="grid max-sm:grid-cols-6  lg:hidden md:hidden gap-10  text-xs">
             <div className='col-span-2'><i class="fa-solid fa-phone mx-2"></i> 03041111774</div>
             <div className='col-span-2'><i class="fa-solid fa-envelope"></i> info@pnytrainings.com</div>
           </div>
 
         </div>
+
+        {/* lg */}
         <div class="navbar-center hidden lg:flex">
           <ul class="menu-horizontal p-0 gap-5">
-            <li><a><i class="fa-solid fa-phone"></i>03041111774</a></li>
-            <li><a><i class="fa-solid fa-envelope"></i>info@pnytrainings.com</a></li>
+            <li><a> <span className='px-2'><i class="fa-solid fa-phone"></i></span>03041111774</a></li>
+            <li><a> <span className='px-2'><i class="fa-solid fa-envelope"></i></span>info@pnytrainings.com</a></li>
           </ul>
         </div>
 
