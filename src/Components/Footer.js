@@ -1,18 +1,24 @@
 import React from 'react'
 import PNYlogo from '../Assets/images/pny.png'
+import arfatower from '../Assets/image/arfa tower.png'
+import iqbaltown from '../Assets/image/iqbal town.png'
+import johartown from '../Assets/image/Jahor town.png'
+import multan from '../Assets/image/Multan.png'
+import allbrances from '../Assets/image/Group 48095475.png'
+import pnylogonew from '../Assets/image/PNY Trainings logo.png'
 
 const Footer = () => {
     return (
         <div>
             <footer class="footer footer-center p-4 bg-base-300 text-base-content">
                 <aside>
-                    <p>Courses We Offers in Cities</p>
+                    <p className='lgh'>Courses We Offers in Cities</p>
                     <p>Lahore | Rawalpindi  | Karachi  | Multan  | Sialkot  | Faisalabad  | Gujranwala  | Azad Kashmir  | Islamabad</p>
                 </aside>
             </footer>
             <footer class="footer p-10 bg-base-200 text-base-content">
                 <aside className='lg:w-[361px]'>
-                    <img src={PNYlogo} alt="" />
+                    <img src={pnylogonew} alt="" width={159} />
                     <p> <span className='font-bold'>Our head office is located at:</span> <br />
                         Office # 1, Level # 14, Arfa Software Technology Park,
                         Ferozepur Road Lahore, Pakistan
@@ -63,7 +69,7 @@ const Footer = () => {
                 <nav>
                     <form className='max-sm:p-4'>
                         {/* <header class="footer-title">Newsletter</header> */}
-                        <fieldset class="form-control lg:w-80">
+                        <fieldset class="form-control  lg:w-80">
                             <div class="relative">
                                 <input type="text" placeholder="username@site.com" class="input input-bordered w-full pr-16" />
                                 <button class="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
@@ -73,36 +79,44 @@ const Footer = () => {
                 </nav>
 
             </footer>
-            <div className='text-center bg-black/70 text-white shadow-xl lg:text-4xl font-bold '>
-                <marquee behavior="" direction="">Our Branches</marquee>
+            <div className=' bg-base-300 lgh'>
+                <p>Our Branches</p>
             </div>
-            <footer class="footer  p-10 bg-base-200 text-base-content">
+
+            {/* Our Branches--------------------------------------------------------------------------------------------- */}
+
+            <footer class="footer p-10 bg-base-200 text-base-content">
 
                 <nav>
-                    <img src={PNYlogo} alt="" />
+                    <img src={arfatower} alt="" />
                     <header class="footer-title">Arfa Tower (Head Office)</header>
                     <a class="link link-hover  w-[214px]">Office 1, Level #14, Arfa Software Technology Park, Ferozepur Road Lahore</a>
 
                 </nav>
                 <nav>
+                    <img src={iqbaltown} alt="" />
                     <header class="footer-title">Iqbal Town</header>
                     <a class="link link-hover  w-[214px]">743 B Kashmir Block Allama Iqbal Town Lahore</a>
 
                 </nav>
                 <nav>
+                    <img src={johartown} alt="" />
                     <header class="footer-title">Johar Town</header>
                     <a class="link link-hover  w-[214px]">1st Floor 256 / A, Block R2 Near Shaukat Khanam Hospital, next to Standard Chartered, Lahore</a>
 
                 </nav>
                 <nav>
+                    <img src={multan} alt="" />
                     <header class="footer-title">Multan</header>
                     <a class="link link-hover w-[214px]">237-B, Model Town, Main Boulevard, Multan</a>
                 </nav>
                 <nav>
+                    <img src={allbrances} alt="" />
                     <header class="footer-title">View All Branches</header>
                     <a class="link link-hover w-[214px]"> View All Branches</a>
                 </nav>
             </footer>
+
             <footer class="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
                 <aside>
                     <p>Copyright © 2023 - All right reserved by PNY Trainings</p>

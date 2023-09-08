@@ -4,6 +4,7 @@ import PNYlogo from '../Assets/images/pny.png'
 import { DarkThemeToggle, Flowbite } from 'flowbite-react';
 import { motion } from 'framer-motion';
 import {BiCategory} from 'react-icons/bi'
+import pnylogonew from '../Assets/image/PNY Trainings logo.png'
 
 const Searchbar = () => {
     return (
@@ -13,7 +14,7 @@ const Searchbar = () => {
                     <div className="container-lg  mx-auto  grid grid-cols-1  md:grid-cols-7  lg:grid-cols-12">
 
                         <div className='image py-2 mx-10 col-span-1 max-sm:flex max-sm:justify-center md:col-span-1 md:w-20 h-15'>
-                            <img src={PNYlogo} alt="PNY Logo" />
+                            <img src={pnylogonew} alt="PNY Logo" />
                         </div>
 
                         <div className='button  py-2 px-4 sm:col-span-1 md:col-span-3 lg:col-span-8 flex flex-col sm:flex-row items-center justify-center sm:justify-start'>

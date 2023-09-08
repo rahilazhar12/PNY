@@ -2,7 +2,6 @@ import React from 'react'
 
 // import mainimage from '../Assets/images/responsive.png'
 import Carousal from '../Components/Carousal'
-import logo1 from '../Assets/images/logo1.svg'
 import newgroup from '../Assets/images/newgroup.png'
 import map from '../Assets/images/noun-pakistan-264183 1.png'
 import icon from '../Assets/images/Featured icon.svg'
@@ -14,13 +13,10 @@ import { Carousalhome, Carousalhome1 } from '../Components/Carousal'
 import frame from '../Assets/image/Frame 624.png'
 import frame2 from '../Assets/image/Frame 61.png'
 import vector from '../Assets/images/vecter.png'
-import acce from '../Assets/image/acce.png'
-import acce2 from '../Assets/image/acce2.png'
 import Bottomnavbar from '../Components/Bottomnavbar'
 import Searchbar from '../Components/Searchbar'
 import { TypeAnimation } from 'react-type-animation'
 import { homedata } from '../Components/Data'
-import CountUp from 'react-countup'
 import Stats from '../Components/Stats'
 import { motion } from 'framer-motion'
 import varient, { fadeIn } from '../Components/variants'
@@ -37,11 +33,9 @@ const Home = () => {
         <main id='home' className='bg-white dark:bg-slate-800   ring-1 ring-slate-900/5 shadow-xl'>
           <Searchbar />
 
-
           <section>
             <Bottomnavbar />
           </section>
-
 
 
           {/* Section-2 */}
@@ -124,11 +118,11 @@ const Home = () => {
           <section className=''>
             <div class="grid md:p-5">
               <div class=" flex justify-center">
-                <p id='journey' className='lg:text-4xl text-center font-bold max-sm:text-2xl md:text-2xl dark:text-white'>Our Journey to Success</p>
+                <p id='journey' className='lgh  dark:text-white'>Our Journey to Success</p>
               </div>
 
               <div class="PNYTrainingsPakistan p-2 justify-center flex">
-                <p className='font-normal lg:text-xl text-center lg:w-[880px] max-sm:text-base max-sm:px-5 md:text-base md:px-3 dark:text-white'>
+                <p className=' lgp max-sm:text-base max-sm:px-5 md:text-base md:px-3 dark:text-white'>
                   Our journey to success has been incredible. Starting from scratch, we've achieved numerous milestones, empowering youth through skill development and opening doors to new opportunities. There's no limit to what we can accomplish.
                 </p>
               </div>
@@ -141,7 +135,7 @@ const Home = () => {
           {/* Section-4 */}
           <section className='mt-10 md:mt-0'>
             <div className="grid grid-rows-1">
-              <div className="develop text-center text-4xl font-bold max-sm:text-2xl md:text-2xl dark:text-white">We Build Leaders For Professional Community</div>
+              <div className="develop   lgh dark:text-white">We Build Leaders For Professional Community</div>
             </div>
             <div className="grid grid-cols-12 lg:py-10 lg:px-20 max-sm:grid-cols-6">
               <div className="col-span-6 space-y-3 rounded-xl max-sm:order-1 p-3">
@@ -172,11 +166,11 @@ const Home = () => {
           {/* Section-5 */}
           <section id='duration' className='bg-blue-500 p-15 text-white md:p-5'>
             <div className="grid justify-center">
-              <div className='lg:text-4xl row-span-1 font-bold text-center max-sm:text-2xl lg:py-4 max-sm:py-5 md:text-2xl'>Duration that Develop your Skills</div>
-              <div className='lg:text-lg lg:w-[990px] row-span-1 p-2 text-center max-sm:text-base max-sm:px-5'>Unlock your potential with our comprehensive range of skill programs! Choose from 1-year diploma programs, 6-month certified courses, 3-2 month certified courses, and professional boot camps. Upgrade your skills today!</div>
+              <div className=' row-span-1  lgh  lg:py-4 max-sm:py-5'>Duration that Develop your Skills</div>
+              <div className='lgp row-span-1 p-2 max-sm:px-5'>Unlock your potential with our comprehensive range of skill programs! Choose from 1-year diploma programs, 6-month certified courses, 3-2 month certified courses, and professional boot camps. Upgrade your skills today!</div>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 lg:ml-10 md:gap-10   lg:gap-80 max-sm:gap-3 md:p-3 max-sm:p-3'>
-              { 
+              {
                 durationdata.map((data) => {
                   return (
                     <>
@@ -198,7 +192,7 @@ const Home = () => {
 
           {/* Section-6 */}
           <section >
-            <div className="startlearning lg:mt-8 flex justify-center lg:text-4xl font-bold max-sm:text-2xl mb-6 max-sm:mt-7 md:text-2xl md:mt-6 dark:text-white">
+            <div className="startlearning lg:mt-8  lgh  mb-6 max-sm:mt-7  md:mt-6 dark:text-white">
               <p>Start Learning</p>
             </div>
 
@@ -298,8 +292,8 @@ const Home = () => {
           {/* Section-7 */}
           <section className='md:p-5'>
             <div className="grid justify-center max-sm:grid-cols-6 ">
-              <div className="leaders col-span-12 text-center lg:text-4xl font-bold lg:p-3 max-sm:text-2xl md:text-2xl dark:text-white">Leaders Who Vision Your Future</div>
-              <div className="leaderssub col-span-12 text-center lg:w-[990px] max-sm:p-3 dark:text-white">PNY Trainings CEO and Director are inspiring leaders for the youth and have embarked on a transformative journey towards shared goals and prophecy for a promising future.</div>
+              <div className=" col-span-12 lgh lg:p-3  dark:text-white">Leaders Who Vision Your Future</div>
+              <div className=" col-span-12 lgp max-sm:p-3 dark:text-white">PNY Trainings CEO and Director are inspiring leaders for the youth and have embarked on a transformative journey towards shared goals and prophecy for a promising future.</div>
               <div className='col-span-6 p-5 '>
                 <div className="wahab">
                   <img className='rounded-lg' src={wahab} alt="" />
@@ -332,8 +326,8 @@ const Home = () => {
           {/* Section-8 */}
           <section>
             <div className="grid justify-center">
-              <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl md:text-2xl dark:text-white">Our Collaboration and Partners</div>
-              <div className="collaboration text-center lg:w-[990px] max-sm:p-3 md:px-10 md:py-2 dark:text-white">Our collaboration with esteemed partners has strengthened our mission to empower youth through skills, making a lasting impact on their lives.</div>
+              <div className=" lgh dark:text-white">Our Collaboration and Partners</div>
+              <div className=" lgp max-sm:p-3 md:px-10 md:py-2 dark:text-white">Our collaboration with esteemed partners has strengthened our mission to empower youth through skills, making a lasting impact on their lives.</div>
 
               <div className="carousal md:px-5 max-sm:px-4">
                 <Carousalhome />
@@ -345,8 +339,8 @@ const Home = () => {
           {/* Section-9 */}
           <section className='lg:p-10'>
             <div className="grid justify-center">
-              <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl  lg:p-2 md:text-2xl dark:text-white">Our Affiliations</div>
-              <div className="collaboration text-center lg:w-[990px] max-sm:p-3 md:px-10 md:py-2 dark:text-white">Our collaboration with esteemed partners has strengthened our mission to empower youth through skills, making a lasting impact on their lives.</div>
+              <div className=" lgh lg:p-2  dark:text-white">Our Affiliations</div>
+              <div className="lgp max-sm:p-3 md:px-10 md:py-2 dark:text-white">Our collaboration with esteemed partners has strengthened our mission to empower youth through skills, making a lasting impact on their lives.</div>
 
               <div className="imageaffiliation flex justify-center max-sm:p-2 md:py-5">
                 <img src={frame} alt="" />
@@ -364,7 +358,7 @@ const Home = () => {
           {/* Section-10 */}
           <section id='trainer' className='lg:p-10 max-sm:p-5 md:mt-10'>
             <div className="grid">
-              <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl md:text-2xl dark:text-white">Our trainers certified from</div>
+              <div className="lgh dark:text-white">Our trainers certified from</div>
               <div className="imageaffiliation flex justify-center max-sm:p-2 lg:py-10 md:px-5 ">
                 <img src={frame2} alt="" />
               </div>
@@ -386,8 +380,8 @@ const Home = () => {
           {/* Section-12 */}
           <section>
             <div className="grid justify-center">
-              <div className="collaboration text-center lg:text-4xl font-bold max-sm:text-2xl md:text-2xl dark:text-white">We Empower Professionals; see through Media Partner Networks</div>
-              <div className="collaboration text-center lg:w-[990px] max-sm:p-3 md:px-10 md:py-2 dark:text-white">PNY Trainings encourage the opinions of youth by developing them professionally, trusting their abilities as leaders, and getting them excited to explore the world around them.</div>
+              <div className="lgh dark:text-white">We Empower Professionals; see through Media Partner Networks</div>
+              <div className="lgp max-sm:p-3 md:px-10 md:py-2 dark:text-white">PNY Trainings encourage the opinions of youth by developing them professionally, trusting their abilities as leaders, and getting them excited to explore the world around them.</div>
 
               <div className="carousal p-5 ">
                 <Carousalhome1 />

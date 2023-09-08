@@ -16,6 +16,27 @@
   }
 
 
+  @layer base {
+    .rahil {
+      @apply text-4xls
+      
+    }
+  }
+
+  input::placeholder {
+   @apply max-sm:text-[10px]
+  }
+
+
+  .lgh{
+    @apply lg:text-4xl max-sm:text-2xl md:text-2xl font-bold text-center
+  }
+  .lgp{
+    @apply  font-normal text-center lg:w-[990px] max-sm:text-base
+  }
+  
+
+
   
 
 
