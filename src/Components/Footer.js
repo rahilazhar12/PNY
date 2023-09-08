@@ -55,15 +55,19 @@ const Footer = () => {
                 </nav>
             </footer>
            
-            <div className=' bg-base-300 lgh'>
-                <p>Our Branches</p>
-            </div>
+            <div className=' border-b-2 border-blue-600  '></div>
 
             {/* Our Branches--------------------------------------------------------------------------------------------- */}
-
+            
             <footer class="footer p-10 bg-base-200 text-base-content">
+          
+                <nav className=' mt-16'>
+                    
+                  <p className='text-2xl font-bold'>Our Branches</p>
 
+                </nav>
                 <nav>
+                    
                     <img src={arfatower} alt="" />
                     <header class="footer-title">Arfa Tower (Head Office)</header>
                     <a class="link link-hover  w-[214px]">Office 1, Level #14, Arfa Software Technology Park, Ferozepur Road Lahore</a>
@@ -94,7 +98,7 @@ const Footer = () => {
             </footer>
             <footer class="footer footer-center p-4 bg-base-300 text-base-content">
                 <aside>
-                    <p className='lgh'>Courses We Offers in Cities</p>
+                    <p className='text-xl font-bold'>Courses We Offers in Cities</p>
                     <p>Lahore | Rawalpindi  | Karachi  | Multan  | Sialkot  | Faisalabad  | Gujranwala  | Azad Kashmir  | Islamabad</p>
                 </aside>
             </footer>
