@@ -4,8 +4,14 @@ import PNYlogo from '../Assets/images/pny.png'
 const Footer = () => {
     return (
         <div>
+            <footer class="footer footer-center p-4 bg-base-300 text-base-content">
+                <aside>
+                    <p>Courses We Offers in Cities</p>
+                    <p>Lahore | Rawalpindi  | Karachi  | Multan  | Sialkot  | Faisalabad  | Gujranwala  | Azad Kashmir  | Islamabad</p>
+                </aside>
+            </footer>
             <footer class="footer p-10 bg-base-200 text-base-content">
-                <aside className='w-[361px]'>
+                <aside className='lg:w-[361px]'>
                     <img src={PNYlogo} alt="" />
                     <p> <span className='font-bold'>Our head office is located at:</span> <br />
                         Office # 1, Level # 14, Arfa Software Technology Park,
@@ -13,7 +19,7 @@ const Footer = () => {
                         Phone: 03041111774
                         Whatsapp: 03201443744</p>
                 </aside>
-                <nav>
+                <nav className='max-sm:text-sm'>
                     <header class=" text-black font-bold">Quick Link</header>
                     <a class="link link-hover">FAQs</a>
                     <a class="link link-hover">Admission</a>
@@ -47,7 +53,7 @@ const Footer = () => {
                     <a class="link link-hover">Pearson Test of English</a>
                 </nav>
             </footer>
-            <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
+            <footer class="footer footer-center lg:p-10 bg-base-200 text-base-content rounded">
                 <nav class="grid grid-flow-col gap-4 font-bold ">
                     <a class="hover:text-blue-200" href='/about'>About us</a>
                     <a class="link link-hover">Careers</a>
@@ -55,9 +61,9 @@ const Footer = () => {
                     <a class="link link-hover">Blog</a>
                 </nav>
                 <nav>
-                    <form>
+                    <form className='max-sm:p-4'>
                         {/* <header class="footer-title">Newsletter</header> */}
-                        <fieldset class="form-control w-80">
+                        <fieldset class="form-control lg:w-80">
                             <div class="relative">
                                 <input type="text" placeholder="username@site.com" class="input input-bordered w-full pr-16" />
                                 <button class="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
@@ -68,7 +74,7 @@ const Footer = () => {
 
             </footer>
             <div className='text-center bg-black/70 text-white shadow-xl lg:text-4xl font-bold '>
-               <marquee behavior="" direction="">Our Branches</marquee>
+                <marquee behavior="" direction="">Our Branches</marquee>
             </div>
             <footer class="footer  p-10 bg-base-200 text-base-content">
 
