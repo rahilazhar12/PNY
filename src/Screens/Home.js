@@ -49,7 +49,7 @@ const Home = () => {
                   to Lucrative Opportunities</div>
 
 
-                <div className="admissionbutton max-sm:flex justify-center">
+                <div className="admissionbutton max-sm:flex justify-center" >
                   <button className=' p-[8px] bg-[#308AFF] rounded-lg w-[132px] text-white text-base font-Inter font-bold mt-3'>Admission !</button>
                 </div>
 
@@ -117,16 +117,20 @@ const Home = () => {
           {/* Section-3 */}
           <section className=''>
             <div class="grid md:p-5">
-              <div class=" flex justify-center">
+              <div class=" flex justify-center" data-aos="fade-right">
                 <p id='journey' className='lgh  dark:text-white'>Our Journey to Success</p>
               </div>
 
-              <div class="PNYTrainingsPakistan p-2 justify-center flex">
+              <div class="PNYTrainingsPakistan p-2 justify-center flex" data-aos="fade-left">
                 <p className=' lgp max-sm:text-base max-sm:px-5 md:text-base md:px-3 dark:text-white'>
                   Our journey to success has been incredible. Starting from scratch, we've achieved numerous milestones, empowering youth through skill development and opening doors to new opportunities. There's no limit to what we can accomplish.
                 </p>
               </div>
-              <div class="flex justify-center">
+              <div class="flex justify-center" data-aos="flip-left"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000"
+                data-aos-delay="300"
+              >
                 <img src={newgroup} class="img-fluid" alt="" />
               </div>
             </div>
@@ -134,10 +138,10 @@ const Home = () => {
 
           {/* Section-4 */}
           <section className='mt-10 md:mt-0'>
-            <div className="grid grid-rows-1">
+            <div className="grid grid-rows-1" data-aos="fade-up">
               <div className="develop   lgh dark:text-white">We Build Leaders For Professional Community</div>
             </div>
-            <div className="grid grid-cols-12 lg:py-10 lg:px-20 max-sm:grid-cols-6">
+            <div className="grid grid-cols-12 lg:py-10 lg:px-20 max-sm:grid-cols-6" data-aos="fade-up" >
               <div className="col-span-6 space-y-3 rounded-xl max-sm:order-1 p-3">
                 <div className="mainboxvision rounded-xl bg-blue-600 lg:w-[510px] lg:h-[239px] lg:py-12  max-sm:p-5  lg:px-8 text-white md:p-3">
                   <div className="img">
@@ -169,7 +173,7 @@ const Home = () => {
               <div className=' row-span-1  lgh  lg:py-4 max-sm:py-5'>Duration that Develop your Skills</div>
               <div className='lgp row-span-1 p-2 max-sm:px-5'>Unlock your potential with our comprehensive range of skill programs! Choose from 1-year diploma programs, 6-month certified courses, 3-2 month certified courses, and professional boot camps. Upgrade your skills today!</div>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 lg:ml-4 md:gap-10 xl:ml-16 lg:gap-8 max-sm:gap-3  max-sm:p-3'>
+            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 lg:ml-4 md:gap-10 xl:ml-16 lg:gap-8 max-sm:gap-3  max-sm:p-3' data-aos="fade-up"  data-aos-delay="200">
               {
                 durationdata.map((data) => {
                   return (
@@ -355,7 +359,7 @@ const Home = () => {
             </div>
           </section>
 
-       
+
           {/* Section-11 */}
           <section>
 
