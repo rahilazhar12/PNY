@@ -55,48 +55,48 @@ const Footer = () => {
                 </nav>
             </footer>
            
-            <div className=' border-b-2 border-blue-600  '></div>
+            <div className=' border-b-2 border-blue-600'></div>
 
             {/* Our Branches--------------------------------------------------------------------------------------------- */}
             
-            <footer class="footer p-10 bg-base-200 text-base-content">
+            <footer class="footer p-10 grid lg:grid-cols-12 md:grid-cols-12 bg-base-200 text-base-content">
           
-                <nav className=' mt-16'>
+                <nav className=' lg:mt-16 col-span-2 md:flex md:flex-col'>
                     
-                  <p className='text-2xl font-bold'>Our Branches</p>
+                  <p className='lg:text-2xl font-bold text-center'>Our Branches</p>
 
                 </nav>
-                <nav>
+                <nav className='col-span-2'>
                     
                     <img src={arfatower} alt="" />
-                    <header class="footer-title">Arfa Tower (Head Office)</header>
-                    <a class="link link-hover  w-[214px]">Office 1, Level #14, Arfa Software Technology Park, Ferozepur Road Lahore</a>
+                    <header class="text-black font-bold">Arfa Tower (Head Office)</header>
+                    <a class="link link-hover  lg:w-[150px]">Office 1, Level #14, Arfa Software Technology Park, Ferozepur Road Lahore</a>
 
                 </nav>
-                <nav>
+                <nav className='col-span-2' >
                     <img src={iqbaltown} alt="" />
-                    <header class="footer-title">Iqbal Town</header>
-                    <a class="link link-hover  w-[214px]">743 B Kashmir Block Allama Iqbal Town Lahore</a>
+                    <header class="text-black font-bold">Iqbal Town</header>
+                    <a class="link link-hover  lg:w-[150px]">743 B Kashmir Block Allama Iqbal Town Lahore</a>
 
                 </nav>
-                <nav>
+                <nav className='col-span-2'>
                     <img src={johartown} alt="" />
-                    <header class="footer-title">Johar Town</header>
-                    <a class="link link-hover  w-[214px]">1st Floor 256 / A, Block R2 Near Shaukat Khanam Hospital, next to Standard Chartered, Lahore</a>
+                    <header class="text-black font-bold">Johar Town</header>
+                    <a class="link link-hover  lg:w-[150px]">1st Floor 256 / A, Block R2 Near Shaukat Khanam Hospital, next to Standard Chartered, Lahore</a>
 
                 </nav>
-                <nav>
+                <nav className='col-span-2'>
                     <img src={multan} alt="" />
-                    <header class="footer-title">Multan</header>
-                    <a class="link link-hover w-[214px]">237-B, Model Town, Main Boulevard, Multan</a>
+                    <header class="text-black font-bold">Multan</header>
+                    <a class="link link-hover lg:w-[150px]">237-B, Model Town, Main Boulevard, Multan</a>
                 </nav>
                 <nav>
                     <img src={allbrances} alt="" />
-                    <header class="footer-title">View All Branches</header>
-                    <a class="link link-hover w-[214px]"> View All Branches</a>
+                    <header class="text-black font-bold">View All Branches</header>
+                    <a class="link link-hover w-[150px]"> View All Branches</a>
                 </nav>
             </footer>
-            <footer class="footer footer-center p-4 bg-base-300 text-base-content">
+            <footer class="footer footer-center p-4  bg-base-300 text-base-content">
                 <aside>
                     <p className='text-xl font-bold'>Courses We Offers in Cities</p>
                     <p>Lahore | Rawalpindi  | Karachi  | Multan  | Sialkot  | Faisalabad  | Gujranwala  | Azad Kashmir  | Islamabad</p>

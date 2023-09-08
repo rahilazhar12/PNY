@@ -37,8 +37,8 @@ const Navbar = () => {
         </div>
 
         {/* lg */}
-        <div class="navbar-center hidden lg:flex">
-          <ul class="menu-horizontal p-0 gap-5">
+        <div class="navbar-center  hidden lg:flex">
+          <ul class="menu-horizontal ">
             <li><a> <span className='px-2'><i class="fa-solid fa-phone"></i></span>03041111774</a></li>
             <li><a> <span className='px-2'><i class="fa-solid fa-envelope"></i></span>info@pnytrainings.com</a></li>
           </ul>
@@ -46,7 +46,7 @@ const Navbar = () => {
 
 
         <div class="ml-10 hidden lg:flex">
-          <ul class="gap-5 menu-horizontal px-1 " >
+          <ul class="menu-horizontal px-1 " >
             <li className='hover:text-blue-900'><a>Amazon Services</a></li>
             <li><a>Kids Courses</a></li>
             <li><a>Female Courses</a></li>

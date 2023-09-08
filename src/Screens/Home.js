@@ -169,12 +169,12 @@ const Home = () => {
               <div className=' row-span-1  lgh  lg:py-4 max-sm:py-5'>Duration that Develop your Skills</div>
               <div className='lgp row-span-1 p-2 max-sm:px-5'>Unlock your potential with our comprehensive range of skill programs! Choose from 1-year diploma programs, 6-month certified courses, 3-2 month certified courses, and professional boot camps. Upgrade your skills today!</div>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 lg:ml-10 md:gap-10   lg:gap-80 max-sm:gap-3 md:p-3 max-sm:p-3'>
+            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 lg:ml-4 md:gap-10 xl:ml-16 lg:gap-8 max-sm:gap-3  max-sm:p-3'>
               {
                 durationdata.map((data) => {
                   return (
                     <>
-                      <div class="stats md:w-26 lg:w-80">
+                      <div class="stats md:w-26  xl:w-64 lg:w-52">
                         <div class="stat">
                           <div class="text-center text-xl font-bold">{data.title}</div>
                           <div class="text-center">{data.description}</div>
@@ -277,8 +277,8 @@ const Home = () => {
                   </ul>
                 </div>
                 <div className="buttons max-sm:flex">
-                  <button className='mx-5 bg-green-400 p-3 rounded-lg'>Learn More</button>
-                  <button className='bg-blue-500 rounded-lg p-3'>Enroll Now</button>
+                  <button className='mx-5 bg-[#D0D5DD] p-3 rounded-lg'>Learn More</button>
+                  <button className='bg-[#308AFF] text-white rounded-lg p-3'>Enroll Now</button>
                 </div>
               </div>
               <div className='col-span-6'>
@@ -355,19 +355,17 @@ const Home = () => {
             </div>
           </section>
 
-          {/* Section-10 */}
-          <section id='trainer' className='lg:p-10 max-sm:p-5 md:mt-10'>
-            <div className="grid">
-              <div className="lgh dark:text-white">Our trainers certified from</div>
-              <div className="imageaffiliation flex justify-center max-sm:p-2 lg:py-10 md:px-5 ">
-                <img src={frame2} alt="" />
-              </div>
-            </div>
-          </section>
-
+       
           {/* Section-11 */}
           <section>
-            <div className="grid space-y-3 max-sm:p-6 lg:px-48 lg:py-10 bg-[#F9FAFB] text-justify md:p-5">
+
+            <div id='trainer' className="grid space-y-3 max-sm:p-6 lg:px-48 lg:py-10 bg-[#F9FAFB] text-justify md:p-5">
+              <div className="grid">
+                <div className="lgh dark:text-white">Our trainers certified from</div>
+                <div className="imageaffiliation flex justify-center max-sm:p-2 lg:py-10 md:px-5 ">
+                  <img src={frame2} alt="" />
+                </div>
+              </div>
               <div>PNY Trainings is the best IT institution in Lahore Pakistan that conducts different training programs aimed at helping young career seekers understand the basic information technology functioning of the sector and the job role they aspire to take on. Their insight and vision have assisted us to enhance the knowledge and skills of youngsters to take on modern-day corporate challenges. Getting a good start in a career is a cherished dream for every career candidate. However, this is easier said than done especially in today's challenging career range. To achieve this dream basic college education is rarely enough, especially in Pakistan. Today's highly competitive and demanding employment market is looking for only talented and skilled manpower with enough command of the information technology industry essentials. To make a mark you must have the necessary knowledge, skills, and capability to provide to the specific industry you aspire to enter into an increase. This is equally true across domains of Technology, Business, Development, and Designing, IT Software Development, Digital Marketing Courses, and many more.</div>
               <div>One of the ways that you can gain an advantage over your contemporaries is to undergo courses offered by reputable training institutes in Lahore. There are so many seats available in Arfa tower short courses and all you have to do is to enroll yourself in your desired course. PNY Trainings offers different courses in Lahore, Islamabad, Rawalpindi, Karachi, and other major cities of Pakistan.</div>
               <div>PNYTrainings is one of the promising and Best IT institutes in Lahore that comes up with amazing courses, training, and almost all short courses in Lahore. We are the introducers to numerous IT trends, courses, and certifications in Lahore. The motive of the PNY Arfa Tower short courses is to provide the best courses with guaranteed results for everyone.</div>
