@@ -9,6 +9,7 @@ import { aboutdata } from '../Components/Data';
 import ladymobile from '../Assets/image/ladymobile.png'
 import TypingAnimation from './Contact';
 import { Link } from 'react-scroll';
+import { motion } from 'framer-motion'
 
 
 
@@ -40,9 +41,9 @@ const AboutUs = () => {
         {/* Section-2 */}
         <section className='grid lg:grid-cols-12  max-sm:h-auto md:mt-5 '>
           <div className='col-span-6 max-sm:order-1 lg:p-10 max-sm:p-2 max-sm:space-y-2'>
-            <div className="who lg:text-4xl md:text-3xl max-sm:text-3xl md:text-center lg:text-st font-bold">Who we are?</div>
-            <div className=" lg:text-2xl max-sm:text-2xl md:text-2xl md:text-center md:px-20 font-bold max-sm:text-[#F10900]">PNY Trainings: A renowned IT Training institute in Pakistan since 2014</div>
-            <div className="text-base md:text-xl md:p-3 text-justify max-sm:text-center">Offering professional IT diplomas and short courses for students and professionals seeking career growth. As pioneers in comprehensive training, we have helped thousands of students secure lucrative jobs in the expanding IT industry. With top-level industry experienced instructors and multiple branches nationwide, we are committed to empowering individuals in their IT journey. Join us today and unlock your potential in the world of technology.</div>
+            <div className="lg:text-4xl md:text-3xl max-sm:text-3xl font-bold">Who we are?</div>
+            <div className=" lg:text-2xl max-sm:text-2xl md:text-2xl  font-bold max-sm:text-[#F10900]">PNY Trainings: A renowned IT Training institute in Pakistan since 2014</div>
+            <div className="text-base   text-justify max-sm:text-center">Offering professional IT diplomas and short courses for students and professionals seeking career growth. As pioneers in comprehensive training, we have helped thousands of students secure lucrative jobs in the expanding IT industry. With top-level industry experienced instructors and multiple branches nationwide, we are committed to empowering individuals in their IT journey. Join us today and unlock your potential in the world of technology.</div>
           </div>
           <div className='col-span-6 lg:h-80  flex justify-end md:justify-center md:mt-3'>
             <img className='lg:w-[650px] lg:h-[350px]'src={grouppicture} alt="" />

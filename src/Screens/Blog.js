@@ -57,15 +57,15 @@ const Blog = () => {
                         <Card
                             key={index}
                         >
-                            <img className='rounded-2xl max-sm:h-52 lg:w-[600px] lg:h-80' src={item.imgSrc} alt="" />
+                            <img className='rounded-2xl max-sm:h-52 lg:w-[462px] lg:h-[240px]' src={item.imgSrc} alt="" />
 
-                            <h5 className="text-2xl text-[#F10900] font-bold tracking-tight  dark:text-white">
+                            <h5 className="text-2xl text-[#F10900] font-bold tracking-tight  dark:text-white" data-aos="fade-up-right">
                                 {item.title}
                             </h5>
-                            <h5 className="text-xl tracking-tight text-gray-900 dark:text-white">
+                            <h5 className="text-xl tracking-tight text-gray-900 dark:text-white" data-aos="fade-up-left">
                                 {item.description1}
                             </h5>
-                            <p className="font-normal text-gray-700 dark:text-gray-400">
+                            <p className="font-normal text-gray-700 dark:text-gray-400" data-aos="fade-up-right">
                                 {item.description}
                             </p>
                             <Link to={`/blogdetails/${item.id}`}>

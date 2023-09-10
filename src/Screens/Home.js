@@ -1,5 +1,4 @@
 import React from 'react'
-
 // import mainimage from '../Assets/images/responsive.png'
 import Carousal from '../Components/Carousal'
 import newgroup from '../Assets/images/newgroup.png'
@@ -89,12 +88,12 @@ const Home = () => {
 
           {/* Section-3 */}
           <section className='bg-[#F9FAFB]'>
-            <div className='grid max-sm:p-3 grid-cols-1 md:grid-cols-3 gap-4 md:p-3'>
+            <div  className='grid max-sm:p-3 grid-cols-1 md:grid-cols-3 gap-4 md:p-3'>
               {
                 homedata.map((data) => {
                   return (
                     <>
-                      <div class="stats  shadow-xl hover:bg-blue-500 hover:text-white">
+                      <motion.div  whileHover={{marginTop:"20px"}} class="stats  shadow-xl hover:bg-blue-500 hover:text-white">
                         <div class="stat">
                           <div className="img flex justify-center">
                             <img className='h-16' src={data.imgSrc} alt="" />
@@ -102,7 +101,7 @@ const Home = () => {
                           <div class="text-center text-xl font-bold">{data.title}</div>
                           <div class="text-center">{data.description}</div>
                         </div>
-                      </div>
+                      </motion.div>
                     </>
                   )
                 })
@@ -117,16 +116,16 @@ const Home = () => {
           {/* Section-3 */}
           <section className=''>
             <div class="grid md:p-5">
-              <div class=" flex justify-center" data-aos="fade-right">
+              <div class=" flex justify-center" data-aos="fade-up"   data-aos-delay="300" >
                 <p id='journey' className='lgh  dark:text-white'>Our Journey to Success</p>
               </div>
 
-              <div class="PNYTrainingsPakistan p-2 justify-center flex" data-aos="fade-left">
+              <div class="PNYTrainingsPakistan p-2 justify-center flex" data-aos="fade-up"   data-aos-delay="300">
                 <p className=' lgp max-sm:text-base max-sm:px-5 md:text-base md:px-3 dark:text-white'>
                   Our journey to success has been incredible. Starting from scratch, we've achieved numerous milestones, empowering youth through skill development and opening doors to new opportunities. There's no limit to what we can accomplish.
                 </p>
               </div>
-              <div class="flex justify-center" data-aos="flip-left"
+              <div class="flex justify-center" data-aos="flip-up"
                 data-aos-easing="ease-out-cubic"
                 data-aos-duration="2000"
                 data-aos-delay="300"
