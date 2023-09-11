@@ -24,7 +24,7 @@
   }
 
   input::placeholder {
-   @apply max-sm:text-[10px]
+   @apply max-sm:text-[9px] 
   }
 
 

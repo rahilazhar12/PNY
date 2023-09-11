@@ -1,4 +1,7 @@
 import logo19 from '../Assets/images/logo19.png'
+import affiliated from '../Assets/images/Affiliated.png'
+import multiplebranches from '../Assets/images/Multiple.png'
+import international from '../Assets/images/International.png'
 
 const cardData = [
   {
@@ -137,23 +140,23 @@ export const homedata = [
   {
     id:1,
     imgAlt: "Alt text 1",
-    imgSrc:  logo19,
-    title:  "Care about our team",
-    description: "Understand what matters to our employees. Give them what they need to do their best work.",
+    imgSrc:  affiliated,
+    title:  "Affiliated with Govt. (PSDA & PBTE)",
+  
   },
   {
     id:2,
     imgAlt: "Alt text 1",
-    imgSrc: logo19,
-    title: "Be excellent to each other",
-    description: "We rely on our peers to help us progress. Be upfront, honest, and considerate.",
+    imgSrc: multiplebranches,
+    title: "Multiple Branches in Pakistan",
+    
   },
   {
     id:3,
     imgAlt: "Alt text 1",
-    imgSrc: logo19,
-    title: "Pride in what we do",
-    description: "Value quality and integrity in everything we do. At all times. No exceptions.",
+    imgSrc: international,
+    title: "International Collaborations",
+    
   },
 ]
 

@@ -32,6 +32,14 @@ const Home = () => {
         <main id='home' className='bg-white dark:bg-slate-800   ring-1 ring-slate-900/5 shadow-xl'>
           <Searchbar />
 
+          {/* <section>
+            <div className='text-slate-900 dark:text-white max-sm:hidden xl:hidden  text-base font-medium'>
+              <ul className=' flex justify-center'>
+                <button className='btn btn-xs blinking-text btn-warning'>Fast Track Pro Bootcamps in 2023</button>
+              </ul>
+            </div>
+          </section> */}
+
           <section>
             <Bottomnavbar />
           </section>
@@ -88,12 +96,16 @@ const Home = () => {
 
           {/* Section-3 */}
           <section className='bg-[#F9FAFB]'>
-            <div  className='grid max-sm:p-3 grid-cols-1 md:grid-cols-3 gap-4 md:p-3'>
+            <div className='lgh max-sm:px-3'>We Develop Your Inspiring Career with Standard</div>
+            <div className='flex justify-center'>
+              <p className='lgp  max-sm:px-3'>PNY Trainings Pakistan is the leading IT training institute, offering 100+ courses through online and physical classes. We provide internship opportunities and have a dedicated job cell to help you jumpstart your career</p>
+            </div>
+            <div className='grid max-sm:p-3 grid-cols-1 md:grid-cols-3 gap-4 md:p-3'>
               {
                 homedata.map((data) => {
                   return (
                     <>
-                      <motion.div  whileHover={{marginTop:"20px"}} class="stats  shadow-xl hover:bg-blue-500 hover:text-white">
+                      <motion.div whileHover={{ marginTop: "20px" }} class="stats  shadow-xl hover:bg-blue-500 hover:text-white">
                         <div class="stat">
                           <div className="img flex justify-center">
                             <img className='h-16' src={data.imgSrc} alt="" />
@@ -116,20 +128,16 @@ const Home = () => {
           {/* Section-3 */}
           <section className=''>
             <div class="grid md:p-5">
-              <div class=" flex justify-center" data-aos="fade-up"   data-aos-delay="300" >
+              <div class=" flex justify-center" data-aos="fade-up" data-aos-delay="300" >
                 <p id='journey' className='lgh  dark:text-white'>Our Journey to Success</p>
               </div>
 
-              <div class="PNYTrainingsPakistan p-2 justify-center flex" data-aos="fade-up"   data-aos-delay="300">
+              <div class="PNYTrainingsPakistan p-2 justify-center flex" data-aos="fade-up" data-aos-delay="300">
                 <p className=' lgp max-sm:text-base max-sm:px-5 md:text-base md:px-3 dark:text-white'>
                   Our journey to success has been incredible. Starting from scratch, we've achieved numerous milestones, empowering youth through skill development and opening doors to new opportunities. There's no limit to what we can accomplish.
                 </p>
               </div>
-              <div class="flex justify-center" data-aos="flip-up"
-                data-aos-easing="ease-out-cubic"
-                data-aos-duration="2000"
-                data-aos-delay="300"
-              >
+              <div class="flex justify-center">
                 <img src={newgroup} class="img-fluid" alt="" />
               </div>
             </div>
@@ -138,11 +146,11 @@ const Home = () => {
           {/* Section-4 */}
           <section className='mt-10 md:mt-0'>
             <div className="grid grid-rows-1" data-aos="fade-up">
-              <div className="develop   lgh dark:text-white">We Build Leaders For Professional Community</div>
+              <div className="develop lgh dark:text-white">We Build Leaders For Professional Community</div>
             </div>
-            <div className="grid grid-cols-12 lg:py-10 lg:px-20 max-sm:grid-cols-6" data-aos="fade-up" >
-              <div className="col-span-6 space-y-3 rounded-xl max-sm:order-1 p-3">
-                <div className="mainboxvision rounded-xl bg-blue-600 lg:w-[510px] lg:h-[239px] lg:py-12  max-sm:p-5  lg:px-8 text-white md:p-3">
+            <div className="grid grid-cols-12 lg:py-10  max-sm:grid-cols-6" data-aos="fade-up" >
+              <div className="col-span-7 space-y-3 rounded-xl max-sm:order-1 p-3">
+                <div className="mainboxvision lg:ml-10 rounded-xl bg-blue-600 lg:w-[510px] lg:h-[239px]   max-sm:p-5  lg:px-8 text-white md:p-3">
                   <div className="img">
                     <img src={vission} alt="" />
                   </div>
@@ -150,7 +158,7 @@ const Home = () => {
                   <div className="visionp lg:w-[350px] max-sm:text-base text-lg md:text-base">Nation leading professional service provider by exploring and utilizing the unique ideas in the world of digital technologies.</div>
                 </div>
 
-                <div className="mainboxvision rounded-xl bg-red-600 lg:w-[510px] lg:h-[270px] lg:py-12  max-sm:p-4  lg:px-8 text-white md:p-3">
+                <div className="mainboxvision lg:ml-10 rounded-xl bg-red-600 lg:w-[510px] lg:h-[270px] lg:py-12  max-sm:p-4  lg:px-8 text-white md:p-3">
                   <div className="img">
                     <img src={mission} alt="" />
                   </div>
@@ -160,7 +168,7 @@ const Home = () => {
               </div>
 
 
-              <div className="col-span-6 ">
+              <div className="col-span-5 ">
                 <img className='lg:w-[600px] lg:h-[500px] max-sm:w-[380px] h-[332px] p-4' src={map} alt="" />
               </div>
             </div>
@@ -172,7 +180,7 @@ const Home = () => {
               <div className=' row-span-1  lgh  lg:py-4 max-sm:py-5'>Duration that Develop your Skills</div>
               <div className='lgp row-span-1 p-2 max-sm:px-5'>Unlock your potential with our comprehensive range of skill programs! Choose from 1-year diploma programs, 6-month certified courses, 3-2 month certified courses, and professional boot camps. Upgrade your skills today!</div>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 lg:ml-4 md:gap-10 xl:ml-16 lg:gap-8 max-sm:gap-3  max-sm:p-3' data-aos="fade-up"  data-aos-delay="200">
+            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-12 lg:ml-4 md:gap-10  xl:gap-72 xl:ml-32 lg:gap-8 max-sm:gap-3  max-sm:p-3' >
               {
                 durationdata.map((data) => {
                   return (
@@ -201,7 +209,7 @@ const Home = () => {
 
             <div className="grid lg:grid-cols-12 lg:px-20  max-sm:px-3.5 py-3 max-sm:py-2 max-sm:grid-cols-4 lg:gap-4 max-sm:space-y-2 md:grid-cols-12  md:p-3 gap-1">
               <div className='col-span-4'>
-                <div className="mainbox lg:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
+                <div className="mainbox lg:h-80 xl:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold font-Inter">Development</div>
                   <div className="paragraph">By learning these advanced courses, you will understand the fundamentals of object-oriented programming and how to write...</div>
@@ -210,7 +218,7 @@ const Home = () => {
               </div>
 
               <div className='col-span-4 '>
-                <div className="mainbox lg:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
+                <div className="mainbox lg:h-80 xl:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">Marketing</div>
                   <div className="paragraph">Learn how to do SEO, SMO, PPC, CPL, Web analytics, and social media marketing through our highly advanced and strategic...</div>
@@ -219,7 +227,7 @@ const Home = () => {
               </div>
 
               <div className='col-span-4 '>
-                <div className="mainbox lg:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
+                <div className="mainbox lg:h-80 xl:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">Art & Design</div>
                   <div className="paragraph">Our comprehensive design training classes teach you about design techniques as well as how to use various software to cr...</div>
@@ -231,7 +239,7 @@ const Home = () => {
             {/* .................. */}
             <div className="grid grid-cols-12 lg:px-20  max-sm:px-3.5  max-sm:grid-cols-4 lg:gap-4 max-sm:space-y-2 md:p-3 gap-1">
               <div className='col-span-4 '>
-                <div className="mainbox lg:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
+                <div className="mainbox lg:h-80 xl:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">IT & Software</div>
                   <div className="paragraph">Learn how to handle realistic computer problems and run operating systems fruitfully in information technology and network management. </div>
@@ -240,7 +248,7 @@ const Home = () => {
               </div>
 
               <div className='col-span-4 '>
-                <div className="mainbox lg:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
+                <div className="mainbox lg:h-80 xl:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">Business & Accounts</div>
                   <div className="paragraph">Learn the business library as a professional, which teaches you how to organize software and technology that leads acros...</div>
@@ -249,7 +257,7 @@ const Home = () => {
               </div>
 
               <div className='col-span-4 '>
-                <div className="mainbox lg:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
+                <div className="mainbox lg:h-80 xl:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">Multimedia</div>
                   <div className="paragraph">Learn the advanced methods of taking pictures and build a portfolio that showcases your professional photography skills....</div>

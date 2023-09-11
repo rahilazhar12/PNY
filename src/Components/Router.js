@@ -20,7 +20,7 @@ const Router = () => {
                 <Route path='/blogdetails/:id' element={<Blogdetails/>} />
             </Routes>
 
-            {/* <Footer/> */}
+            <Footer/>
           </>
     )
 }
