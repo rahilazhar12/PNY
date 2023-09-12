@@ -15,8 +15,8 @@ import { motion } from 'framer-motion'
 
 const AboutUs = () => {
 
-  
-  
+
+
   return (
     <Flowbite>
       <main className='bg-white dark:bg-slate-800   ring-1 ring-slate-900/5 shadow-xl'>
@@ -34,7 +34,7 @@ const AboutUs = () => {
         <section className='bg-[#152438] max-sm:h-auto md:p-20 lg:p-32 text-white max-sm:py-10'>
           <div className="grid justify-center">
             <div className=' lg:text-5xl max-sm:text-center bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500  font-bold max-sm:text-3xl md:text-center md:text-3xl'>About company</div>
-            <div className='text-center'><TypingAnimation/></div>
+            <div className='text-center'><TypingAnimation /></div>
           </div>
 
         </section>
@@ -46,7 +46,7 @@ const AboutUs = () => {
             <div className="text-base   text-justify max-sm:text-center">Offering professional IT diplomas and short courses for students and professionals seeking career growth. As pioneers in comprehensive training, we have helped thousands of students secure lucrative jobs in the expanding IT industry. With top-level industry experienced instructors and multiple branches nationwide, we are committed to empowering individuals in their IT journey. Join us today and unlock your potential in the world of technology.</div>
           </div>
           <div className='col-span-6 lg:h-80  flex justify-end md:justify-center md:mt-3'>
-            <img className='lg:w-[650px] lg:h-[350px]'src={grouppicture} alt="" />
+            <img className='lg:w-[650px] lg:h-[350px]' src={grouppicture} alt="" />
           </div>
         </section>
 
@@ -85,10 +85,10 @@ const AboutUs = () => {
             </div>
 
             <div className='max-sm:block  lg:hidden md:hidden lg:col-span-6 max-sm:col-span-6 max-sm:mt-3'>
-              <img  src={wahab} alt="" />
+              <img src={wahab} alt="" />
             </div>
           </div>
-              {/* Desktop */}
+          {/* Desktop */}
           {/* <div className="img lg:block  max-sm:hidden md:hidden">
             <img src={wahab} alt="" />
           </div> */}
@@ -98,7 +98,7 @@ const AboutUs = () => {
         <section className=' bg-white dark:bg-slate-800 ring-1 ring-slate-900/5 shadow-xl lg:h-[600px] lg:p-5'>
           <div className="howwework font-bold text-center md:text-2xl lg:text-4xl max-sm:text-2xl" id='abc'>How we work at PNY Trainings</div>
           <div className="howwework text-center max-sm:p-2 lg:p-3">Our shared values keep us connected and guide us as one team.</div>
-          
+
 
           <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:p-3'>
             {
@@ -112,7 +112,7 @@ const AboutUs = () => {
                         </div>
                         <div class="text-center text-xl font-bold">{data.title}</div>
                         <div class="text-center">{data.description}</div>
-                        
+
                       </div>
                     </div>
                   </>
@@ -121,7 +121,7 @@ const AboutUs = () => {
             }
           </div>
         </section>
-       
+
       </main>
     </Flowbite>
   )

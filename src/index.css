@@ -34,8 +34,19 @@
   .lgp{
     @apply  font-normal text-center lg:w-[990px] max-sm:text-base
   }
-  
 
+  ul li{
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 15px;
+  }
+
+  .navbarbuttons{
+    position: relative;
+    top: -3px;
+  }
+
+  
 
   
 

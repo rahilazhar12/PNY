@@ -22,6 +22,8 @@ import varient, { fadeIn } from '../Components/variants'
 import { durationdata } from '../Components/Data'
 import vission from '../Assets/images/Group 327 (1).png'
 import mission from '../Assets/images/Group 328 (1).png'
+import image1 from '../Assets/image/4 logos.png'
+
 
 const Home = () => {
 
@@ -32,13 +34,7 @@ const Home = () => {
         <main id='home' className='bg-white dark:bg-slate-800   ring-1 ring-slate-900/5 shadow-xl'>
           <Searchbar />
 
-          {/* <section>
-            <div className='text-slate-900 dark:text-white max-sm:hidden xl:hidden  text-base font-medium'>
-              <ul className=' flex justify-center'>
-                <button className='btn btn-xs blinking-text btn-warning'>Fast Track Pro Bootcamps in 2023</button>
-              </ul>
-            </div>
-          </section> */}
+
 
           <section>
             <Bottomnavbar />
@@ -60,11 +56,16 @@ const Home = () => {
                   <button className=' p-[8px] bg-[#308AFF] rounded-lg w-[132px] text-white text-base font-Inter font-bold mt-3'>Admission !</button>
                 </div>
 
-                <div className="icons lg:hidden max-sm:hidden"> <TypeAnimation
+                <div className='flex space-x-10 mt-3 max-sm:hidden'>
+                  <img src={image1} />
+
+                </div>
+
+                {/* <div className="icons lg:hidden max-sm:hidden"> <TypeAnimation
                   sequence={[
-                    // Same substring at the start will only be typed out once, initially
+                   
                     'We offer courses for Social Media',
-                    1000, // wait 1s before replacing "Mice" with "Hamsters"
+                    1000, 
                     'We offer courses for Web Developement',
                     1000,
                     'We offer courses for Amazon ',
@@ -77,7 +78,7 @@ const Home = () => {
                   className='text-4xl bg-clip-text text-transparent bg-gradient-to-r from-black to-red-500 font-bold'
                   style={{ fontSize: '', display: 'inline-block' }}
                   repeat={Infinity}
-                /></div>
+                /></div> */}
               </div>
 
 
@@ -95,7 +96,7 @@ const Home = () => {
           </motion.section>
 
           {/* Section-3 */}
-          <section className='bg-[#F9FAFB]'>
+          <section className='bg-[#F9FAFB] lg:mt-10'>
             <div className='lgh max-sm:px-3'>We Develop Your Inspiring Career with Standard</div>
             <div className='flex justify-center'>
               <p className='lgp  max-sm:px-3'>PNY Trainings Pakistan is the leading IT training institute, offering 100+ courses through online and physical classes. We provide internship opportunities and have a dedicated job cell to help you jumpstart your career</p>
@@ -146,23 +147,19 @@ const Home = () => {
           {/* Section-4 */}
           <section className='mt-10 md:mt-0'>
             <div className="grid grid-rows-1" data-aos="fade-up">
-              <div className="develop lgh dark:text-white">We Build Leaders For Professional Community</div>
+              <div className="develop lgh max-sm:p-2 dark:text-white">We Build Leaders For Professional Community</div>
             </div>
             <div className="grid grid-cols-12 lg:py-10  max-sm:grid-cols-6" data-aos="fade-up" >
               <div className="col-span-7 space-y-3 rounded-xl max-sm:order-1 p-3">
-                <div className="mainboxvision lg:ml-10 rounded-xl bg-blue-600 lg:w-[510px] lg:h-[239px]   max-sm:p-5  lg:px-8 text-white md:p-3">
-                  <div className="img">
-                    <img src={vission} alt="" />
-                  </div>
-                  <div className="vision lg:text-3xl max-sm:text-2xl font-semibold mt-4 md:text-2xl">Vision Statement</div>
+
+                <div className="mainboxvision lg:ml-10  rounded-xl bg-blue-600 lg:w-[510px] lg:h-[239px]   max-sm:p-5  lg:px-8 text-white md:p-3">
+                  <div className="vision lg:text-3xl max-sm:text-2xl font-semibold mt-12 md:text-2xl"><i class="fa-solid fa-binoculars fa-fade"></i> Vision Statement</div>
                   <div className="visionp lg:w-[350px] max-sm:text-base text-lg md:text-base">Nation leading professional service provider by exploring and utilizing the unique ideas in the world of digital technologies.</div>
                 </div>
 
                 <div className="mainboxvision lg:ml-10 rounded-xl bg-red-600 lg:w-[510px] lg:h-[270px] lg:py-12  max-sm:p-4  lg:px-8 text-white md:p-3">
-                  <div className="img">
-                    <img src={mission} alt="" />
-                  </div>
-                  <div className="vision lg:text-3xl max-sm:text-2xl font-semibold md:text-2xl">Our Mission Statement</div>
+
+                  <div className="vision lg:text-3xl max-sm:text-2xl font-semibold md:text-2xl"><span className='px-1'><i class="fa-solid fa-bullseye fa-fade"></i></span> Our Mission Statement</div>
                   <div className="visionp lg:w-[420px]  max-sm:text-base   text-lg md:text-base">To design and maintain the quality of knowledge based capacity building programs to empower with new job oriented technical courses and bring positive transformation on their business and professional growth.</div>
                 </div>
               </div>
@@ -180,18 +177,19 @@ const Home = () => {
               <div className=' row-span-1  lgh  lg:py-4 max-sm:py-5'>Duration that Develop your Skills</div>
               <div className='lgp row-span-1 p-2 max-sm:px-5'>Unlock your potential with our comprehensive range of skill programs! Choose from 1-year diploma programs, 6-month certified courses, 3-2 month certified courses, and professional boot camps. Upgrade your skills today!</div>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-12 lg:ml-4 md:gap-10  xl:gap-72 xl:ml-32 lg:gap-8 max-sm:gap-3  max-sm:p-3' >
+            <div className="grid md:grid-cols-1 lg:grid-cols-4 space-x-1 space-y-1 p-2 ">
               {
                 durationdata.map((data) => {
                   return (
                     <>
-                      <div class="stats md:w-26  xl:w-64 lg:w-52">
+                      <div class="stats bg-blue-400 text-white">
                         <div class="stat">
                           <div class="text-center text-xl font-bold">{data.title}</div>
                           <div class="text-center">{data.description}</div>
                           <div className='flex justify-center'>
-                            <a href="" className='text-blue-500'>Read More</a>
+                            <a href="" className='text-white blinking-text'>Read More</a>
                           </div>
+
                         </div>
                       </div>
                     </>
