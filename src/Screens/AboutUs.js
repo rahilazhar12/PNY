@@ -21,9 +21,6 @@ const AboutUs = () => {
     <Flowbite>
       <main className='bg-white dark:bg-slate-800   ring-1 ring-slate-900/5 shadow-xl'>
         <section>
-          <Link to='abc' className=' cursor-pointer'>How we work at PNY Trainings</Link>
-        </section>
-        <section>
           <div>
             <Searchbar />
           </div>
@@ -31,9 +28,9 @@ const AboutUs = () => {
 
 
         {/* Section-1 */}
-        <section className='bg-[#152438] max-sm:h-auto md:p-20 lg:p-32 text-white max-sm:py-10'>
-          <div className="grid justify-center">
-            <div className=' lg:text-5xl max-sm:text-center bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500  font-bold max-sm:text-3xl md:text-center md:text-3xl'>About company</div>
+        <section className='bg-[#152438] max-sm:h-auto md:p-20 lg:h-[300px]  text-white max-sm:py-10'>
+          <div className="grid ">
+            <div className='lg:text-5xl max-sm:text-center bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500  font-bold max-sm:text-3xl md:text-center md:text-3xl'>About company</div>
             <div className='text-center'><TypingAnimation /></div>
           </div>
 
@@ -46,7 +43,7 @@ const AboutUs = () => {
             <div className="text-base   text-justify max-sm:text-center">Offering professional IT diplomas and short courses for students and professionals seeking career growth. As pioneers in comprehensive training, we have helped thousands of students secure lucrative jobs in the expanding IT industry. With top-level industry experienced instructors and multiple branches nationwide, we are committed to empowering individuals in their IT journey. Join us today and unlock your potential in the world of technology.</div>
           </div>
           <div className='col-span-6 lg:h-80  flex justify-end md:justify-center md:mt-3'>
-            <img className='lg:w-[650px] lg:h-[350px]' src={grouppicture} alt="" />
+            <img className='lg:w-[600px] lg:h-[300px]' src={grouppicture} alt="" />
           </div>
         </section>
 
@@ -73,26 +70,24 @@ const AboutUs = () => {
 
 
         {/* Section-4 */}
-        <section className='bg-white dark:bg-slate-800 ring-1 ring-slate-900/5 shadow-xl lg:h-[600px] lg:p-5 md:p-5'>
-          <div className="grid lg:p-5">
-            <div className="wahab lg:text-4xl md:text-2xl font-bold lg:px-32 text-center">Wahab Yunus, as the CEO of PNY Trainings, is unlocking the potential in youth to be victorious.</div>
+        <section>
+          <div className="lgh">
+            Wahab Yunus, as the CEO of PNY Trainings, is unlocking the potential in youth to be victorious.
           </div>
-          <div className="grid lg:rounded-xl md:rounded-xl lg:grid-cols-12 lg:p-8 text-white bg-[#152438]   md:mt-3">
-            <div className='col-span-6 space-y-1 md:p-3'>
-              <div className="ceo lg:text-4xl font-bold max-sm:text-center max-sm:text-3xl md:text-center md:text-2xl">CEO Message</div>
-              <div className="ceo text-justify  max-sm:p-3">Diversity and inclusion of thought, skill, knowledge, and culture make PNY Trainings more competitive, more resilient, and better. Diversity strengthens us by promoting unique viewpoints and challenging each of us, every day, to think beyond our traditional frames of reference. We are committed to building a talented and diverse workforce, and to creating an environment in which every STUDENT has the opportunity to excel based on his or her performance. We believe the best way to learn is by putting your skills to use. I warmly welcome you to visit by contacting us, and discover firsthand what makes PNY Trainings special.</div>
-              <div className="ceo lg:text-xl font-bold max-sm:text-center md:text-center md:text-xl">Wahab Yunus (CEO PNY Trainings)</div>
+          <div className="grid grid-cols-12 lg:mt-28 md:mt-16  bg-red-200">
+            <div className="col-span-6 lg:mt-12 lg:px-10 lg:ml-10">
+              <div>CEO Message</div>
+              <div className='text-justify'>Diversity and inclusion of thought, skill, knowledge, and culture make PNY Trainings more competitive, more resilient, and better. Diversity strengthens us by promoting unique viewpoints and challenging each of us, every day, to think beyond our traditional frames of reference. We are committed to building a talented and diverse workforce, and to creating an environment in which every STUDENT has the opportunity to excel based on his or her performance. We believe the best way to learn is by putting your skills to use. I warmly welcome you to visit by contacting us, and discover firsthand what makes PNY Trainings special.</div>
+              <div>Wahab Yunus (CEO PNY Trainings)</div>
             </div>
-
-            <div className='max-sm:block  lg:hidden md:hidden lg:col-span-6 max-sm:col-span-6 max-sm:mt-3'>
-              <img src={wahab} alt="" />
+            <div className="col-span-6  flex justify-end h-[350px]">
+              <div className="flex items-center relative lg:left-[-200px] lg:top-[-50px] md:top-[-16px]">
+                <img className='h-[450px]' src={wahab} alt="" />
+              </div>
             </div>
           </div>
-          {/* Desktop */}
-          {/* <div className="img lg:block  max-sm:hidden md:hidden">
-            <img src={wahab} alt="" />
-          </div> */}
         </section>
+
 
         {/* section-5 */}
         <section className=' bg-white dark:bg-slate-800 ring-1 ring-slate-900/5 shadow-xl lg:h-[600px] lg:p-5'>

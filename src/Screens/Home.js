@@ -96,12 +96,12 @@ const Home = () => {
           </motion.section>
 
           {/* Section-3 */}
-          <section className='bg-[#F9FAFB] lg:mt-10'>
+          <section className='bg-[#F9FAFB]  lg:p-[80px] space-y-2'>
             <div className='lgh max-sm:px-3'>We Develop Your Inspiring Career with Standard</div>
             <div className='flex justify-center'>
               <p className='lgp  max-sm:px-3'>PNY Trainings Pakistan is the leading IT training institute, offering 100+ courses through online and physical classes. We provide internship opportunities and have a dedicated job cell to help you jumpstart your career</p>
             </div>
-            <div className='grid max-sm:p-3 grid-cols-1 md:grid-cols-3 gap-4 md:p-3'>
+            <div className='grid max-sm:p-3 grid-cols-1 md:grid-cols-3 gap-4  md:p-3'>
               {
                 homedata.map((data) => {
                   return (
@@ -127,8 +127,8 @@ const Home = () => {
           </section>
 
           {/* Section-3 */}
-          <section className=''>
-            <div class="grid md:p-5">
+          <section className=' p-[80px]'>
+            <div class="grid md:p-5 space-y-2">
               <div class=" flex justify-center" data-aos="fade-up" data-aos-delay="300" >
                 <p id='journey' className='lgh  dark:text-white'>Our Journey to Success</p>
               </div>
@@ -152,8 +152,8 @@ const Home = () => {
             <div className="grid grid-cols-12 lg:py-10  max-sm:grid-cols-6" data-aos="fade-up" >
               <div className="col-span-7 space-y-3 rounded-xl max-sm:order-1 p-3">
 
-                <div className="mainboxvision lg:ml-10  rounded-xl bg-blue-600 lg:w-[510px] lg:h-[239px]   max-sm:p-5  lg:px-8 text-white md:p-3">
-                  <div className="vision lg:text-3xl max-sm:text-2xl font-semibold mt-12 md:text-2xl"><i class="fa-solid fa-binoculars fa-fade"></i> Vision Statement</div>
+                <div className="mainboxvision  lg:py-16 lg:ml-10  rounded-xl bg-blue-600 lg:w-[510px] lg:h-[239px]   max-sm:p-6 lg:px-8 text-white md:p-3">
+                  <div className="vision lg:text-3xl max-sm:text-2xl font-semibold  md:text-2xl"><i class="fa-solid fa-binoculars fa-fade"></i> Vision Statement</div>
                   <div className="visionp lg:w-[350px] max-sm:text-base text-lg md:text-base">Nation leading professional service provider by exploring and utilizing the unique ideas in the world of digital technologies.</div>
                 </div>
 
@@ -172,10 +172,10 @@ const Home = () => {
           </section>
 
           {/* Section-5 */}
-          <section id='duration' className='bg-blue-500 p-15 text-white md:p-5'>
+          <section id='duration' className='bg-blue-500 p-15 text-white md:p-5 lg:p-[80px]'>
             <div className="grid justify-center">
-              <div className=' row-span-1  lgh  lg:py-4 max-sm:py-5'>Duration that Develop your Skills</div>
-              <div className='lgp row-span-1 p-2 max-sm:px-5'>Unlock your potential with our comprehensive range of skill programs! Choose from 1-year diploma programs, 6-month certified courses, 3-2 month certified courses, and professional boot camps. Upgrade your skills today!</div>
+              <div className=' row-span-1  lgh   max-sm:py-5'>Duration that Develop your Skills</div>
+              <div className='lgp row-span-1  max-sm:px-5'>Unlock your potential with our comprehensive range of skill programs! Choose from 1-year diploma programs, 6-month certified courses, 3-2 month certified courses, and professional boot camps. Upgrade your skills today!</div>
             </div>
             <div className="grid md:grid-cols-1 lg:grid-cols-4 space-x-1 space-y-1 p-2 ">
               {
@@ -271,18 +271,18 @@ const Home = () => {
 
 
           {/* Section -6*/}
-          <section className='bg-[#F9FAFB] md:p-5'>
+          <section className='bg-[#F9FAFB] md:p-5 lg:p-[80px]'>
             <div className="grid grid-cols-12  max-sm:grid-cols-6">
               <div className='col-span-6 max-sm:p-5 lg:p-20 max-sm:order-1'>
                 <div className="whychooseus text-4xl font-bold  max-sm:text-center  max-sm:text-2xl">Why Choose US?</div>
-                <div className="list p-3">
-                  <ul>
-                    <li className='m-2'><i class="fa-sharp fa-regular fa-circle-check"></i> Money making skills</li>
-                    <li className='m-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Hands on Experience during Training</li>
-                    <li className='m-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Internship & job Opportunities</li>
-                    <li className='m-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> On-campus + Online Classes with recorded lecture</li>
-                    <li className='m-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Highly Experienced Instructors</li>
-                    <li className='m-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Professional Learning Environment</li>
+                <div className="list">
+                  <ul className='p-3'>
+                    <li className='text-lg'><i class="fa-sharp fa-regular fa-circle-check"></i> Money making skills</li>
+                    <li className='text-lg'> <i class="fa-sharp fa-regular fa-circle-check"></i> Hands on Experience during Training</li>
+                    <li className='text-lg'> <i class="fa-sharp fa-regular fa-circle-check"></i> Internship & job Opportunities</li>
+                    <li className='text-lg'> <i class="fa-sharp fa-regular fa-circle-check"></i> On-campus + Online Classes with recorded lecture</li>
+                    <li className='text-lg'> <i class="fa-sharp fa-regular fa-circle-check"></i> Highly Experienced Instructors</li>
+                    <li className='text-lg'> <i class="fa-sharp fa-regular fa-circle-check"></i> Professional Learning Environment</li>
                   </ul>
                 </div>
                 <div className="buttons max-sm:flex">
@@ -299,7 +299,7 @@ const Home = () => {
           </section>
 
           {/* Section-7 */}
-          <section className='md:p-5'>
+          <section className='md:p-5 lg:p-[80px]'>
             <div className="grid justify-center max-sm:grid-cols-6 ">
               <div className=" col-span-12 lgh lg:p-3  dark:text-white">Leaders Who Vision Your Future</div>
               <div className=" col-span-12 lgp max-sm:p-3 dark:text-white">PNY Trainings CEO and Director are inspiring leaders for the youth and have embarked on a transformative journey towards shared goals and prophecy for a promising future.</div>
@@ -309,7 +309,7 @@ const Home = () => {
                   <div className="name text-2xl max-sm:text-xl font-semibold dark:text-white">Wahab Yunus
                     <span><i class="fa-brands fa-twitter lg:p-2 lg:ml-48 max-sm:ml-10 md:ml-20" style={{ color: "#0d63f8" }}></i></span>
 
-                    <span><i class="fa-brands fa-linkedin ml-5" style={{ color: "#2c66c9" }}></i></span>
+                    <span><i class="fa-brands fa-linkedin" style={{ color: "#2c66c9" }}></i></span>
                   </div>
                   <div className="name text-lg font-medium text-blue-500  max-sm:text-base">Founder & CEO</div>
 
@@ -322,7 +322,7 @@ const Home = () => {
                   <div className="name text-2xl max-sm:text-xl font-semibold dark:text-white">Suleman Ikram
                     <span><i class="fa-brands fa-twitter lg:p-2 lg:ml-48 max-sm:ml-10 md:ml-20" style={{ color: "#0d63f8" }}></i></span>
 
-                    <span><i class="fa-brands fa-linkedin ml-5" style={{ color: "#2c66c9" }}></i></span>
+                    <span><i class="fa-brands fa-linkedin" style={{ color: "#2c66c9" }}></i></span>
                   </div>
                   <div className="name text-lg font-medium text-blue-500 max-sm:text-base">Co-Founder & Director</div>
 
@@ -386,7 +386,7 @@ const Home = () => {
 
           {/* Section-12 */}
           <section>
-            <div className="grid justify-center">
+            <div className="grid justify-center lg:mt-10">
               <div className="lgh dark:text-white">We Empower Professionals; see through Media Partner Networks</div>
               <div className="lgp max-sm:p-3 md:px-10 md:py-2 dark:text-white">PNY Trainings encourage the opinions of youth by developing them professionally, trusting their abilities as leaders, and getting them excited to explore the world around them.</div>
 

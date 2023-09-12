@@ -5,7 +5,7 @@ const Navbar = () => {
     <>
       <nav>
         <div className='max-sm:hidden md:hidden xl:block lg:block px-3 text-white  bg-[#152438] h-[50px]'>
-          <ul className='flex space-x-4 lg:justify-center xl:justify-around'>
+          <ul className='flex  lg:justify-center  xl:justify-center space-x-4'>
             <li><span className='mr-1'><i class="fa-solid fa-phone"></i></span>03041111774</li>
             <li><span className='mr-1'><i class="fa-solid fa-envelope"></i></span>info@pnytrainings.com</li>
             <li className='bg-[#FFBA4A] blinking-text rounded-md flex justify-center items-center lg:w-[350px] h-[21px] xl:w-[200px] text-black '>Fast Track Pro Bootcamps in 2023</li>
@@ -15,8 +15,8 @@ const Navbar = () => {
             <li>Training Schedule</li>
             <li>Fee Strcture</li>
             <li>Admission</li>
-            <li><button className='navbarbuttons bg-[#308AFF] rounded-md w-[57px] h-[25px]'>Login</button></li>
-            <li><button className='navbarbuttons bg-[#F10900] rounded-md w-[57px] h-[25px]'>Paynow</button></li>
+            <li><button className='navbarbuttons bg-[#308AFF] rounded-md px-[10px] py-[6px]'>Login</button></li>
+            <li><button className='navbarbuttons bg-[#F10900] rounded-md px-[10px] py-[6px]'>Paynow</button></li>
 
           </ul>
         </div>
