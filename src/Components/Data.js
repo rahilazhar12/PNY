@@ -2,6 +2,11 @@ import logo19 from '../Assets/images/logo19.png'
 import affiliated from '../Assets/images/Affiliated.png'
 import multiplebranches from '../Assets/images/Multiple.png'
 import international from '../Assets/images/International.png'
+import alumini from '../Assets/image/alumini.png'
+import professional from '../Assets/image/professional.png'
+import instruction from '../Assets/image/Instructor.png'
+import mou from '../Assets/image/mou.png'
+import usa from '../Assets/image/usa.png'
 
 const cardData = [
   {
@@ -156,6 +161,41 @@ export const homedata = [
     imgAlt: "Alt text 1",
     imgSrc: international,
     title: "International Collaborations",
+    
+  },
+  {
+    id:4,
+    imgAlt: "Alt text 1",
+    imgSrc: usa,
+    title: "Awarded by USA Education 2.0",
+    
+  },
+  {
+    id:5,
+    imgAlt: "Alt text 1",
+    imgSrc: alumini,
+    title: "75000+ Alumni",
+    
+  },
+  {
+    id:6,
+    imgAlt: "Alt text 1",
+    imgSrc: professional,
+    title: "100+ Professional Programs",
+    
+  },
+  {
+    id:7,
+    imgAlt: "Alt text 1",
+    imgSrc: instruction,
+    title: "150+ Instructors",
+    
+  },
+  {
+    id:8,
+    imgAlt: "Alt text 1",
+    imgSrc: mou,
+    title: "80+ Mou’s Sign",
     
   },
 ]

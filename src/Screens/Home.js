@@ -101,7 +101,7 @@ const Home = () => {
             <div className='flex justify-center'>
               <p className='lgp  max-sm:px-3'>PNY Trainings Pakistan is the leading IT training institute, offering 100+ courses through online and physical classes. We provide internship opportunities and have a dedicated job cell to help you jumpstart your career</p>
             </div>
-            <div className='grid max-sm:p-3 grid-cols-1 md:grid-cols-3 gap-4  md:p-3'>
+            <div className='grid max-sm:p-3 lg:grid-cols-4 md:grid-cols-3 gap-4  md:p-3'>
               {
                 homedata.map((data) => {
                   return (
@@ -122,9 +122,9 @@ const Home = () => {
             </div>
           </section>
 
-          <section >
+          {/* <section >
             <Stats />
-          </section>
+          </section> */}
 
           {/* Section-3 */}
           <section className=' lg:p-[80px]'>
@@ -166,7 +166,7 @@ const Home = () => {
 
 
               <div className="col-span-5 ">
-                <img className='lg:w-[600px] lg:h-[500px] max-sm:w-[380px] h-[332px] p-4' src={map} alt="" />
+                <img className='lg:w-[700px] lg:h-[500px] max-sm:w-[380px] h-[332px] p-4' src={map} alt="" />
               </div>
             </div>
           </section>

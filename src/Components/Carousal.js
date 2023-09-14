@@ -10,7 +10,7 @@ import g2 from '../Assets/image/g2.png'
 const Carousal = () => {
   return (
     <div>
-       <Carousel className='max-sm:h-56 p-1 md:h-64 lg:h-96 '>
+       <Carousel className='max-sm:h-56 p-1 md:h-64 lg:h-96'>
       <img
         alt="..."
         src="https://i.ytimg.com/vi/IbreMtdL1iQ/maxresdefault.jpg"
