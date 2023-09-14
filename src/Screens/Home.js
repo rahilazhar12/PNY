@@ -396,7 +396,7 @@ const Home = () => {
             </div>
           </section>
           {/* Section-13 */}
-          <section style={{ backgroundImage: `url(${vector})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          <section className='bg-blue-100' style={{ backgroundImage: `url(${vector})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <div className="grid justify-center lg:p-28 md:p-20  max-sm: ">
 
               <div className='lg:text-5xl lg:w-[778px]  max-sm:p-5 font-bold text-center dark:text-white'>

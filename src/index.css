@@ -35,7 +35,7 @@
     @apply  font-normal text-center lg:w-[990px] max-sm:text-base
   }
 
-  ul li{
+  nav ul li{
     font-size: 12px;
     font-weight: 400;
     margin-top: 15px;
@@ -45,6 +45,24 @@
     position: relative;
     top: -6px;
   }
+
+/* ul li{
+  @apply font-bold
+} */
+  .bdd{
+    @apply text-[18px] font-bold 
+  }
+  .bdm{
+    @apply  font-normal text-center lg:w-[990px] max-sm:text-base
+  }
+
+  .bd ul li{
+    @apply font-bold
+  }
+
+
+
+
 
   
 

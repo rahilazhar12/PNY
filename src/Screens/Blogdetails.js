@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import cardData from '../Components/Data';
 import Searchbar from '../Components/Searchbar';
 import { DarkThemeToggle, Flowbite } from 'flowbite-react';
+import fiver from '../Assets/image/fiver.png'
 
 const Blogdetails = () => {
   const [data, setData] = useState([]);
@@ -40,7 +41,7 @@ const Blogdetails = () => {
             </div>
           </section>
           <section>
-            <div className='space-y-3 p-10'>
+            <div className='space-y-3 p-10 max-sm:p-3'>
               <div>
                 Fiverr has become the biggest platform all around the world in terms of providing the facilities that people register for through it. One of the biggest advantages that freelancers get from selling their skills on this website is earning a handsome amount of revenue.
               </div>
@@ -55,16 +56,50 @@ const Blogdetails = () => {
               </div>
             </div>
             <div>
-              <img src="https://techcrunch.com/wp-content/uploads/2021/12/fiverr-header.jpeg" alt="" />
+              <img className='w-full' src={fiver} alt="" />
             </div>
           </section>
-          <section className='p-10'>
-            <div className='border-l border-black'>
-              <div className='ml-3'>How Fiverr Affiliate Works</div>
-              <div className='ml-3'>“In a world older and more complete than ours they move finished and complete, gifted with extensions of the senses we have lost or never attained, living by voices we shall never hear.”</div>
+          <section className='lg:px-10 max-sm:p-3 py-10 lg:ml-20'>
+            <div className='ml-3 lg:text-[30px] font-bold'>How Fiverr Affiliate Works</div>
+            <div className='border-l border-blue-500'>
+
+              <div className='ml-3'>
+                <p className='lg:w-[1258px] lg:text-[30px]'>“In a world older and more complete than ours they move finished and complete, gifted with extensions of the senses we have lost or never attained, living by voices we shall never hear.”</p>
+              </div>
               <div className='ml-3'>— Qasim Rizvi, Product Designer</div>
             </div>
-          
+
+          </section>
+
+          <section className='bd lg:p-10 max-sm:p-5 text-justify space-y-5 '>
+            <div>There are the following steps through which you get to know how much Fiverr affiliates pay to an individual: it includes;</div>
+            <ul className='list-disc'>
+              <li>Account Creation</li>
+            </ul>
+
+            <div>The first step is to register for any program you want to earn money through. In the Fiverr affiliation program, you have to create an affiliate account so that Fiverr can identify that you are not a fake or robot but a human by providing your correct information to Fiverr.
+              High profiles to market:
+              To get to know how much Fiverr affiliates pay, you need to target those freelancer profiles whose rating is higher and consider them top-rated sellers on Fiverr. This will help you generate more revenue.</div>
+
+            <ul className='list-disc'><li> High profiles to market</li></ul>
+            <div>When you create an account and select the high-rated profiles, now it’s time to choose the social platforms through which you can get the audience for your affiliate marketing, and you will get payments through Fiverr.
+              Facebook, Instagram, and YouTube are the best platforms for affiliate marketing, so utilize these platforms wisely and get the best revenue through them.</div>
+
+
+            <ul className='list-disc'><li> Social marketing</li></ul>
+            <div>Fiverr gives you the facility to generate the affiliate link to post on different sites to get the target audience for that. The more authentic links you have, the better you can get to know how much Fiverr affiliates pay for those links.
+              Commission-based payments:
+              As Fiverr is the biggest platform all over the world and provides facilities to its users, they are providing payments on a commission basis, in which the following categories are involved;</div>
+
+            <ul className='list-disc'><li> Affiliate link</li></ul>
+            <div>This kind of affiliate payment depends on the link that you have generated to promote. The link should be easy so that users can click and it will be a conversion for you, but this type of conversion is low.</div>
+
+            <ul className='list-disc'><li>Commission-based payments</li></ul>
+            <div>Through this, you can get a commission every time a sale is generated. That means from your created link, if the user places an order with that relevant seller, you will get a high commission on it.</div>
+
+            <ul className='list-disc'><li>Cost per click</li></ul>
+            <div>This type of commission is based on the user's ability to sign up on Fiverr, refer a website to a friend, or complete a survey—anything the affiliates get the commission on.
+              CPC and CPS are the most demanding methods for generating revenue through them.</div>
           </section>
         </main>
       </Flowbite>
