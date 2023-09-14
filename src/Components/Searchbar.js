@@ -32,7 +32,7 @@ const Searchbar = () => {
                     </div>
 
                     <div className=' lg:col-span-4 xl:col-span-5 md:col-span-12'>
-                        <div className=' text-slate-900 dark:text-white  text-base font-medium tracking-tight">Writes Upside-Down'>
+                        <div className=' text-slate-900 dark:text-white  text-base font-medium tracking-tight">Writes Upside-Down lg:mt-2'>
                             <ul className='flex max-sm:justify-center gap-5  lg:justify-end'>
                                 {/* <li className='font-bold hover:text-blue-400 mt-1 lg:hidden xl:block md:hidden max-sm:hidden'>
                                     <button className='btn btn-xs blinking-text btn-warning'>Fast Track Pro Bootcamps in 2023</button>

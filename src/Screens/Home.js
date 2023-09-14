@@ -127,14 +127,14 @@ const Home = () => {
           </section>
 
           {/* Section-3 */}
-          <section className=' p-[80px]'>
+          <section className=' lg:p-[80px]'>
             <div class="grid md:p-5 space-y-2">
               <div class=" flex justify-center" data-aos="fade-up" data-aos-delay="300" >
                 <p id='journey' className='lgh  dark:text-white'>Our Journey to Success</p>
               </div>
 
-              <div class="PNYTrainingsPakistan p-2 justify-center flex" data-aos="fade-up" data-aos-delay="300">
-                <p className=' lgp max-sm:text-base max-sm:px-5 md:text-base md:px-3 dark:text-white'>
+              <div class="PNYTrainingsPakistan  justify-center flex" data-aos="fade-up" data-aos-delay="300">
+                <p className=' lgp max-sm:text-base  md:text-base md:px-3 dark:text-white'>
                   Our journey to success has been incredible. Starting from scratch, we've achieved numerous milestones, empowering youth through skill development and opening doors to new opportunities. There's no limit to what we can accomplish.
                 </p>
               </div>
@@ -185,7 +185,7 @@ const Home = () => {
                       <div class="stats bg-blue-400 text-white">
                         <div class="stat">
                           <div class="text-center text-xl font-bold">{data.title}</div>
-                          <div class="text-center">{data.description}</div>
+                          <div class="text-center ">{data.description}</div>
                           <div className='flex justify-center'>
                             <a href="" className='text-white blinking-text'>Read More</a>
                           </div>
