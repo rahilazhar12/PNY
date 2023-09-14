@@ -404,7 +404,7 @@ const Home = () => {
                 batch. Let’s grow together!
               </div>
               <div className='text-center lg:p-5 max-sm:p-4'>
-                <button className='bg-[#49B2DF] lg:w-48 lg:h-14 rounded max-sm:w-36 max-sm:h-10 dark:text-white'>Join us now!</button>
+                <button className='bg-[#49B2DF] lg:w-48 lg:h-14 text-white rounded max-sm:w-36 max-sm:h-10 dark:text-white'>Join us now!</button>
               </div>
             </div>
 

@@ -4,12 +4,10 @@ import { DarkThemeToggle, Flowbite } from 'flowbite-react';
 import grouppicture from '../Assets/images/responsive.png'
 import five from '../Assets/image/five.png'
 import lady from '../Assets/image/lady with laptop.png'
-import wahab from '../Assets/image/Wahab-Yunuspng.png'
 import { aboutdata } from '../Components/Data';
 import ladymobile from '../Assets/image/ladymobile.png'
 import TypingAnimation from './Contact';
-import { Link } from 'react-scroll';
-import { motion } from 'framer-motion'
+
 
 
 
@@ -36,14 +34,14 @@ const AboutUs = () => {
 
         </section>
         {/* Section-2 */}
-        <section className='grid lg:grid-cols-12  max-sm:h-auto md:mt-5 '>
-          <div className='col-span-6 max-sm:order-1 lg:p-10 max-sm:p-2 max-sm:space-y-2'>
-            <div className="lg:text-4xl md:text-3xl max-sm:text-3xl font-bold">Who we are?</div>
-            <div className=" lg:text-2xl max-sm:text-2xl md:text-2xl  font-bold max-sm:text-[#F10900]">PNY Trainings: A renowned IT Training institute in Pakistan since 2014</div>
-            <div className="text-base   text-justify max-sm:text-center">Offering professional IT diplomas and short courses for students and professionals seeking career growth. As pioneers in comprehensive training, we have helped thousands of students secure lucrative jobs in the expanding IT industry. With top-level industry experienced instructors and multiple branches nationwide, we are committed to empowering individuals in their IT journey. Join us today and unlock your potential in the world of technology.</div>
+        <section className='grid lg:grid-cols-12 lg:h-[400px] max-sm:h-auto md:mt-5 '>
+          <div className='col-span-6 max-sm:order-1 lg:p-10 max-sm:p-2 max-sm:space-y-2 space-y-3'>
+            <div className="lg:text-[42px] md:text-3xl max-sm:text-3xl font-bold">Who we are?</div>
+            <div className=" lg:text-[26px] max-sm:text-2xl md:text-2xl  font-bold max-sm:text-[#F10900]">PNY Trainings: A renowned IT Training institute in Pakistan since 2014</div>
+            <div className="text-base  text-[20px] text-justify max-sm:text-center"><p className='lg:w-[550px]'>Offering professional IT diplomas and short courses for students and professionals seeking career growth. As pioneers in comprehensive training, we have helped thousands of students secure lucrative jobs in the expanding IT industry. With top-level industry experienced instructors and multiple branches nationwide, we are committed to empowering individuals in their IT journey. Join us today and unlock your potential in the world of technology.</p></div>
           </div>
           <div className='col-span-6 lg:h-80  flex justify-end md:justify-center md:mt-3'>
-            <img className='lg:w-[600px] lg:h-[300px]' src={grouppicture} alt="" />
+            <img className='lg:w-[591px] lg:h-[375px]' src={grouppicture} alt="" />
           </div>
         </section>
 
