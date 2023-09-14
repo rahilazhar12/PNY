@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Searchbar from '../Components/Searchbar'
 import vector from '../Assets/images/vecter.png'
 
 const Design = () => {
+
+    const [view, setView] = useState(false);
+
+    const toggleView = () => {
+        setView(!view);
+    };
+
     return (
         <>
             <section>
@@ -22,20 +29,37 @@ const Design = () => {
                 <div className='space-y-3'>
                     <div className='text-[32px] font-semibold mb-5 mt-5'>Design</div>
 
-                    <div className="border border-[#EAECF0]  rounded-2xl p-[32px] max-sm:p-3 space-y-2 ">
-                        <div className='text-[20px] font-semibold ]'>Product Designer</div>
+                    <div className="border border-[#EAECF0] rounded-2xl p-[32px] max-sm:p-3 space-y-2 ">
+                        <div className='text-[20px] font-semibold '>Product Designer</div>
                         <div className='text-[#667085]'>We’re looking for a mid-level product designer to join our team.</div>
                         <div className="flex gap-3">
-                            <div className='font-semibold text-[#667085]'><span className='mr-2'><i class="fa-regular fa-clock"></i></span>Full-time</div>
+                            <div className='font-semibold text-[#667085]'><span className='mr-2'><i className="fa-regular fa-clock"></i></span>Full-time</div>
                             <div className='text-[#98A2B3]'>Rs</div>
                             <div className='font-semibold text-[#667085]'>80k - 100k</div>
                         </div>
 
                         <div className='flex justify-end font-semibold gap-3 text-[#308AFF]' >
                             <div><a href="">Apply Now</a></div>
-                            <div><a href="">View More</a></div>
+                            <div><button onClick={toggleView}>{view ? "View Less" : "View More"}</button></div>
                         </div>
+
+                        {view && (
+                            <div>
+                                <div className=' border-t border-[#EAECF0]'></div>
+                                <div className=' font-semibold text-[20px] mt-3 mb-3'>Job Description</div>
+                                <div className='text-[#667085] space-y-3'>
+                                    
+                                    <div>PNY Trainings is hiring Instructors of different fields, Grab this opportunity ASAP!</div>
+                                    <div>Qualification: Minimum Graduation (Candidates with BSCS will be preferred)</div>
+                                    <div>Experience required: more than 3 years</div>
+                                </div>
+
+                            </div>
+                        )}
+
+
                     </div>
+
 
 
                     <div className="border  border-[#EAECF0]  rounded-2xl p-[32px] max-sm:p-3 space-y-2 ">
@@ -130,7 +154,7 @@ const Design = () => {
 
 
 
-            <section className='mt-10 bg-blue-100' style={{ backgroundImage: `url(${vector})` ,  backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <section className='mt-10 bg-blue-100' style={{ backgroundImage: `url(${vector})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <div className="grid justify-center lg:p-28 md:p-20  max-sm: ">
 
                     <div className='lg:text-[42px] lg:w-[980px]   max-sm:p-5 font-bold text-center dark:text-white'>

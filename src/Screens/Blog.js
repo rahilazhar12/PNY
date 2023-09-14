@@ -26,7 +26,7 @@ const Blog = () => {
                 <Searchbar />
 
                 {/* Section-2 */}
-                <section className='bg-[#152438] h-auto sm:h-96 max-sm:p-2'>
+                <section className='bg-[#152438] lg:h-[500px] h-auto sm:h-96 max-sm:p-2'>
                     <div className="main grid text-white justify-center">
                         <div className="blog text-3xl font-semibold px-6 mt-8 sm:text-5xl sm:px-20 sm:mt-20 text-center">Blogs and insights</div>
                         <div className="latest text-center mt-3 sm:mt-6">The latest industry news, interviews, technologies, and resources.</div>
