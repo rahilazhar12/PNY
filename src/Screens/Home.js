@@ -23,6 +23,7 @@ import { durationdata } from '../Components/Data'
 import vission from '../Assets/images/Group 327 (1).png'
 import mission from '../Assets/images/Group 328 (1).png'
 import image1 from '../Assets/image/4 logos.png'
+import Map from '../Components/Map'
 
 
 const Home = () => {
@@ -127,7 +128,7 @@ const Home = () => {
           </section> */}
 
           {/* Section-3 */}
-          <section className=' lg:p-[80px]'>
+          <section className=' lg:px-[80px]'>
             <div class="grid md:p-5 space-y-2">
               <div class=" flex justify-center" data-aos="fade-up" data-aos-delay="300" >
                 <p id='journey' className='lgh  dark:text-white'>Our Journey to Success</p>
@@ -145,31 +146,7 @@ const Home = () => {
           </section>
 
           {/* Section-4 */}
-          <section className='mt-10 md:mt-0'>
-            <div className="grid grid-rows-1" data-aos="fade-up">
-              <div className="develop lgh max-sm:p-2 dark:text-white">We Build Leaders For Professional Community</div>
-            </div>
-            <div className="grid grid-cols-12 lg:py-10  max-sm:grid-cols-6" data-aos="fade-up" >
-              <div className="col-span-7 space-y-3 rounded-xl max-sm:order-1 p-3">
-
-                <div className="mainboxvision  lg:py-16 lg:ml-10  rounded-xl bg-blue-600 lg:w-[510px] lg:h-[239px]   max-sm:p-6 lg:px-8 text-white md:p-3">
-                  <div className="vision lg:text-3xl max-sm:text-2xl font-semibold  md:text-2xl"><i class="fa-solid fa-binoculars fa-fade"></i> Vision Statement</div>
-                  <div className="visionp lg:w-[350px] max-sm:text-base text-lg md:text-base">Nation leading professional service provider by exploring and utilizing the unique ideas in the world of digital technologies.</div>
-                </div>
-
-                <div className="mainboxvision lg:ml-10 rounded-xl bg-red-600 lg:w-[510px] lg:h-[270px] lg:py-12  max-sm:p-4  lg:px-8 text-white md:p-3">
-
-                  <div className="vision lg:text-3xl max-sm:text-2xl font-semibold md:text-2xl"><span className='px-1'><i class="fa-solid fa-bullseye fa-fade"></i></span> Our Mission Statement</div>
-                  <div className="visionp lg:w-[420px]  max-sm:text-base   text-lg md:text-base">To design and maintain the quality of knowledge based capacity building programs to empower with new job oriented technical courses and bring positive transformation on their business and professional growth.</div>
-                </div>
-              </div>
-
-
-              <div className="col-span-5 ">
-                <img className='lg:w-[700px] lg:h-[500px] max-sm:w-[380px] h-[332px] p-4' src={map} alt="" />
-              </div>
-            </div>
-          </section>
+           <Map/>
 
           {/* Section-5 */}
           <section id='duration' className='bg-blue-500 p-15 text-white md:p-5 lg:p-[80px]'>
