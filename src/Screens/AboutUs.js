@@ -7,6 +7,7 @@ import lady from '../Assets/image/lady with laptop.png'
 import { aboutdata } from '../Components/Data';
 import ladymobile from '../Assets/image/ladymobile.png'
 import TypingAnimation from './Contact';
+import wahab from '../Assets/image/Wahab-Yunuspng.png'
 
 
 
@@ -68,23 +69,24 @@ const AboutUs = () => {
 
 
         {/* Section-4 */}
-        {/* <section className='p-[80px]'>
-          <div className=" flex justify-center text-center text-[42px] font-bold">
-            <p className='w-[1084px]'>Wahab Yunus, as the CEO of PNY Trainings, is unlocking the potential in youth to be victorious.</p>
+         <section className=' xl:h-auto lg:h-auto md:h-auto max-sm:h-auto p-5'>
+          <div className='flex justify-center'>
+            <p className=' lg:text-[42px] text-center w-[1084px] lg:font-bold'>Wahab Yunus, as the CEO of PNY Trainings, is unlocking the potential in youth to be victorious.</p>
           </div>
-          <div className="grid grid-cols-12 lg:mt-28 md:mt-16 rounded-xl h-[500px]  space-y-20 bg-[#152438] text-white">
-            <div className="col-span-6 lg:mt-12 space-y-3 lg:px-10 lg:ml-10">
-              <div className='font-bold text-[36px]'>CEO Message</div>
-              <div className='text-justify text-[18px]'>Diversity and inclusion of thought, skill, knowledge, and culture make PNY Trainings more competitive, more resilient, and better. Diversity strengthens us by promoting unique viewpoints and challenging each of us, every day, to think beyond our traditional frames of reference. We are committed to building a talented and diverse workforce, and to creating an environment in which every STUDENT has the opportunity to excel based on his or her performance. We believe the best way to learn is by putting your skills to use. I warmly welcome you to visit by contacting us, and discover firsthand what makes PNY Trainings special.</div>
-              <div className='font-bold text-[22px]'>Wahab Yunus (CEO PNY Trainings)</div>
+
+          <div className="grid xl:grid-cols-2 lg:grid-cols-2 text-white rounded md:grid-cols-1 md:h-auto max-sm:grid-cols-1 mt-20 bg-[#152438] max-sm:h-auto lg:h-[420px] xl:w-[1266px] mx-auto">
+            <div className='p-10'>
+              <div className='lg:text-[36px] font-semibold'>CEO Message</div>
+              <div className='lg:w-[530px]  xl:w-[624px] mt-[24px]'>Diversity and inclusion of thought, skill, knowledge, and culture make PNY Trainings more competitive, more resilient, and better. Diversity strengthens us by promoting unique viewpoints and challenging each of us, every day, to think beyond our traditional frames of reference. We are committed to building a talented and diverse workforce, and to creating an environment in which every STUDENT has the opportunity to excel based on his or her performance. We believe the best way to learn is by putting your skills to use. I warmly welcome you to visit by contacting us, and discover firsthand what makes PNY Trainings special.</div>
+              <div className='mt-[24px] text-[22px] font-bold'>Wahab Yunus (CEO PNY Trainings)</div>
             </div>
-            <div className="col-span-6  flex justify-end h-[350px]">
-              <div className="flex items-center relative lg:left-[-100px] lg:top-[-50px] md:top-[-16px]">
-                <img className='h-[590px]' src={wahab} alt="" />
+          
+              <div className=' lg:relative bottom-20  xl:justify-center md:justify-center lg:justify-end flex '>
+                <img className='w-[450px] h-[500px]'  src={wahab} alt="" />
               </div>
-            </div>
+           
           </div>
-        </section> */}
+         </section>
 
 
         {/* section-5 */}
