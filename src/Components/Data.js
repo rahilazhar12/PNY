@@ -7,6 +7,11 @@ import professional from '../Assets/image/professional.png'
 import instruction from '../Assets/image/Instructor.png'
 import mou from '../Assets/image/mou.png'
 import usa from '../Assets/image/usa.png'
+import arfa from '../Assets/image/arfa.png'
+import multan from '../Assets/image/mt.png'
+import johartown from '../Assets/image/jt.png'
+import rawalpindi from '../Assets/image/rp.png'
+import iqbaltown from '../Assets/image/ait.png' 
 
 const cardData = [
   {
@@ -221,6 +226,45 @@ export const durationdata = [
     id:4,
     title: "Professional Boot Camp",
     description: "Join our Professional Bootcamp and gain valuable insights to advance your career. Don't miss out!",
+  },
+]
+
+
+export const contactus = [
+  {
+    id: 1,
+    image:arfa,
+    title: "Arfa Tower",
+    description: "1st Floor 256 / A, Block R2 Near Shaukat Khanam Hospital, next to Standard Chartered, Lahore",
+    phone:"0309-7772260"
+  },
+  {
+    id: 2,
+    image:iqbaltown,
+    title: "Allama Iqbal Town Branch",
+    description: "743 B Kashmir Block Allama Iqbal Town Lahore",
+    phone:"0309-7772260"
+  },
+  {
+    id: 3,
+    image:johartown,
+    title: "Johar Town Branch",
+    description: "1st Floor 256 / A, Block R2 Near Shaukat Khanam Hospital, next to Standard Chartered, Lahore",
+    phone:"0309-7772260"
+  },
+  {
+    id: 4,
+    image:multan,
+    title: "Multan Branch",
+    description: "237-B, Model Town, Main Boulevard, Multan",
+    phone:"0309-7772260"
+  },
+  {
+    id: 5,
+    image:rawalpindi,
+    title: "Rawalpindi Branch",
+    description: "Office # 604, Alpha Techno Square NASTP, Old Airport Nur khan Airbase, Chaklala Cantt, Rawalpindi.",
+    phone:"0309-7772260"
   },
 ]
 

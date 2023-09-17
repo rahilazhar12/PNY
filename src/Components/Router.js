@@ -8,6 +8,7 @@ import Contact from '../Screens/Contact'
 import Blogdetails from '../Screens/Blogdetails'
 import Footer from './Footer'
 import Design from '../Screens/Design'
+import Contactus from '../Screens/Contactus'
 
 const Router = () => {
     return (
@@ -19,6 +20,8 @@ const Router = () => {
                 <Route path='/about' element={<AboutUs />} />
                 <Route path='/contact' element={<Design/>} />
                 <Route path='/blogdetails/:id' element={<Blogdetails/>} />
+                <Route path='/contactus' element={<Contactus/>} />
+
             </Routes>
 
             <Footer/>

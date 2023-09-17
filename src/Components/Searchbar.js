@@ -40,7 +40,8 @@ const Searchbar = () => {
                                 <li className='font-bold hover:text-blue-400 mt-1'><Link to="/">Home</Link></li>
                                 <li className='font-bold hover:text-blue-400 mt-1'><Link to="/about">About</Link></li>
                                 <li className='font-bold hover:text-blue-400 mt-1'><Link to="/blog">Blog</Link></li>
-                                <li className='font-bold hover:text-blue-400 mt-1'><Link to="/contact">Design</Link></li>
+                                {/* <li className='font-bold hover:text-blue-400 mt-1'><Link to="/contact">Design</Link></li> */}
+                                <li className='font-bold hover:text-blue-400 mt-1'><Link to="/contactus">Contact</Link></li>
                                 {/* <li className='font-bold hover:text-blue-400 mt-1 xl:hidden max-sm:hidden'>
                                     <button className='btn btn-xs blinking-text btn-warning'>Fast Track Pro Bootcamps in 2023</button>
                                 </li> */}
