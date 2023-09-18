@@ -24,6 +24,7 @@ import vission from '../Assets/images/Group 327 (1).png'
 import mission from '../Assets/images/Group 328 (1).png'
 import image1 from '../Assets/image/4 logos.png'
 import Map from '../Components/Map'
+import Testimonial from '../Components/Testimonial'
 
 
 const Home = () => {
@@ -276,7 +277,8 @@ const Home = () => {
           </section>
 
           {/* Section-7 */}
-          <section className='md:p-5 lg:p-[80px]'>
+          <Testimonial/>
+          {/* <section className='md:p-5 lg:p-[80px]'>
             <div className="grid justify-center max-sm:grid-cols-6 ">
               <div className=" col-span-12 lgh lg:p-3  dark:text-white">Leaders Who Vision Your Future</div>
               <div className=" col-span-12 lgp max-sm:p-3 dark:text-white">PNY Trainings CEO and Director are inspiring leaders for the youth and have embarked on a transformative journey towards shared goals and prophecy for a promising future.</div>
@@ -307,11 +309,11 @@ const Home = () => {
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
 
           {/* Section-8 */}
-          <section>
-            <div className="grid justify-center">
+          <section className='bg-[#F9FAFB] h-auto'>
+            <div className="grid justify-center lg:p-10">
               <div className=" lgh dark:text-white">Our Collaboration and Partners</div>
               <div className=" lgp max-sm:p-3 md:px-10 md:py-2 dark:text-white">Our collaboration with esteemed partners has strengthened our mission to empower youth through skills, making a lasting impact on their lives.</div>
 
