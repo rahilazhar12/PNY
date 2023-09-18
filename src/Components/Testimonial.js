@@ -65,10 +65,10 @@ const Testimonial = () => {
                                     </svg>
                                 </div>
                                 <div className="p-6">
-                                    <h5 className="mb-4 text-lg font-bold">Darren Randolph</h5>
-                                    <p className="mb-4 text-neutral-500 dark:text-neutral-300">Marketing expert</p>
+                                    <h5 className="mb-4 text-lg font-bold">Suleman Ikram</h5>
+                                    <p className="mb-4 text-[#308AFF] dark:text-neutral-300">Co-Founder & Director</p>
                                     <ul className="mx-auto flex list-inside justify-center">
-                                       
+
                                         <a href="#!" className="px-2">
                                             {/* Twitter */}
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-4 w-4 text-primary dark:text-primary-400">
