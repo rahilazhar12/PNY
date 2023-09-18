@@ -67,7 +67,7 @@ const Contactus = () => {
                 </div>
             </section>
 
-            <section className='mt-10'>
+            <section className='mt-10 lg:mb-10 lg:space-y-3'>
                 <div className='lgh'>Our Branches</div>
                 <div className='text-center text-[20px] font-medium'>Find our more Branches in Pakistan </div>
             </section>

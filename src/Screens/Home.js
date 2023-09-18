@@ -97,7 +97,7 @@ const Home = () => {
           </motion.section>
 
           {/* Section-3 */}
-          <section className='bg-[#F9FAFB]  lg:p-[80px] space-y-2'>
+          <section className='bg-[#F9FAFB]  lg:p-[80px] space-y-5 '>
             <div className='lgh max-sm:px-3'>We Develop Your Inspiring Career with Standard</div>
             <div className='flex justify-center'>
               <p className='lgp  max-sm:px-3'>PNY Trainings Pakistan is the leading IT training institute, offering 100+ courses through online and physical classes. We provide internship opportunities and have a dedicated job cell to help you jumpstart your career</p>
@@ -128,8 +128,8 @@ const Home = () => {
           </section> */}
 
           {/* Section-3 */}
-          <section className=' lg:px-[80px]'>
-            <div class="grid md:p-5 space-y-2">
+          <section className=' lg:px-[80px] '>
+            <div class="grid md:p-5 lg:space-y-5">
               <div class=" flex justify-center" data-aos="fade-up" data-aos-delay="300" >
                 <p id='journey' className='lgh  dark:text-white'>Our Journey to Success</p>
               </div>
@@ -146,15 +146,15 @@ const Home = () => {
           </section>
 
           {/* Section-4 */}
-           <Map/>
+          <Map />
 
           {/* Section-5 */}
           <section id='duration' className='bg-blue-500 p-15 text-white md:p-5 lg:p-[80px]'>
-            <div className="grid justify-center">
+            <div className="grid justify-center lg:space-y-5">
               <div className=' row-span-1  lgh   max-sm:py-5'>Duration that Develop your Skills</div>
               <div className='lgp row-span-1  max-sm:px-5'>Unlock your potential with our comprehensive range of skill programs! Choose from 1-year diploma programs, 6-month certified courses, 3-2 month certified courses, and professional boot camps. Upgrade your skills today!</div>
             </div>
-            <div className="grid md:grid-cols-1 lg:grid-cols-4 space-x-1 space-y-1 p-2 ">
+            <div className="grid md:grid-cols-1 lg:grid-cols-4 space-x-1 lg:mt-4 space-y-1 p-2 ">
               {
                 durationdata.map((data) => {
                   return (
