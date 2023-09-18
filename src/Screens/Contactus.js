@@ -79,7 +79,7 @@ const Contactus = () => {
                             return (
                                 <>
                                     <div class="card xl:w-[408px]  lg:w-[308px] md:w-[350px]  max-sm:w-full bg-base-100 shadow-2xl">
-                                        <figure><img className='py-6' src={item.image} alt="Shoes" /></figure>
+                                        <figure><img className='p-6' src={item.image} alt="Shoes" /></figure>
                                         <div class="card-body">
                                             <h2 class="card-title text-[24px]  font-semibold">{item.title}</h2>
                                             <p className='text-[16px]'>{item.description}</p>
