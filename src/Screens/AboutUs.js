@@ -8,6 +8,7 @@ import { aboutdata } from '../Components/Data';
 import ladymobile from '../Assets/image/ladymobile.png'
 import TypingAnimation from './Contact';
 import wahab from '../Assets/image/Wahab-Yunuspng.png'
+import Team from '../Components/Team';
 
 
 
@@ -90,9 +91,9 @@ const AboutUs = () => {
 
 
         {/* section-5 */}
-        <section className=' bg-white dark:bg-slate-800 ring-1 ring-slate-900/5 shadow-xl lg:h-[600px] lg:p-5'>
+        <section className=' bg-white dark:bg-slate-800 ring-1 ring-slate-900/5  lg:h-[600px] lg:p-5 lg:mt-10'>
           <div className="howwework font-bold text-center md:text-2xl lg:text-4xl max-sm:text-2xl" id='abc'>How we work at PNY Trainings</div>
-          <div className="howwework text-center max-sm:p-2 lg:p-3">Our shared values keep us connected and guide us as one team.</div>
+          <div className="howwework text-center max-sm:p-2 lg:p-3 lg:mb-10">Our shared values keep us connected and guide us as one team.</div>
 
 
           <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:p-3'>
@@ -115,6 +116,10 @@ const AboutUs = () => {
               })
             }
           </div>
+        </section>
+
+        <section>
+          <Team/>
         </section>
 
       </main>

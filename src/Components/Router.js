@@ -4,7 +4,6 @@ import Home from '../Screens/Home'
 import Blog from '../Screens/Blog'
 import Navbar from '../Components/Navbar'
 import AboutUs from '../Screens/AboutUs'
-import Contact from '../Screens/Contact'
 import Blogdetails from '../Screens/Blogdetails'
 import Footer from './Footer'
 import Design from '../Screens/Design'
@@ -21,6 +20,8 @@ const Router = () => {
                 <Route path='/contact' element={<Design/>} />
                 <Route path='/blogdetails/:id' element={<Blogdetails/>} />
                 <Route path='/contactus' element={<Contactus/>} />
+                
+
 
             </Routes>
 

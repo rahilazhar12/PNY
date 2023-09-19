@@ -1,5 +1,4 @@
 import React from 'react'
-import PNYlogo from '../Assets/images/pny.png'
 import arfatower from '../Assets/image/arfa tower.png'
 import iqbaltown from '../Assets/image/iqbal town.png'
 import johartown from '../Assets/image/Jahor town.png'

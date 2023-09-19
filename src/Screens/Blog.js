@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import PNYlogo from '../Assets/images/pny.png'
 import cardData from '../Components/Data'
 import { Card } from 'flowbite-react'
 import { Button } from 'flowbite-react'
