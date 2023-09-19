@@ -3,7 +3,7 @@ import Searchbar from '../Components/Searchbar'
 import { DarkThemeToggle, Flowbite } from 'flowbite-react';
 import grouppicture from '../Assets/images/responsive.png'
 import five from '../Assets/image/five.png'
-import lady from '../Assets/image/lady with laptop.png'
+import lady from '../Assets/image/ladynew.png'
 import { aboutdata } from '../Components/Data';
 import ladymobile from '../Assets/image/ladymobile.png'
 import TypingAnimation from './Contact';
@@ -48,20 +48,16 @@ const AboutUs = () => {
         </section>
 
         {/* section-3 */}
-        <section className='bg-[#F9FAFB] dark:bg-slate-800 ring-1 ring-slate-900/5 shadow-xl'>
-          <div className="grid lg:grid-cols-12 md:grid-cols-12 max-sm:h-auto md:p-8">
-            <div className='col-span-6'>
-              <div className="lady p-4 flex">
-                <img className='lg:w-[500px] lg:h-[560px] max-sm:hidden ' src={lady} alt="" />
-              </div>
-              <div className="lady lg:p-4">
-                <img className='lg:w-[500px] lg:h-[560px] max-sm:hidden md:hidden lg:hidden' src={ladymobile} alt="" />
-              </div>
+        <section className=' lg:mb-10 lg:mt-10'>
+          <div className='grid lg:grid-cols-4'>
+            <div className=' col-span-2  xl:ml-52 xl:mt-20 lg:ml-2 lg:justify-start lg:mt-20 md:justify-center xl:justify-start flex md:mt-10'>
+             
+              <img src={ladymobile} alt="" />
             </div>
-            <div className='lg:col-span-4 max-sm:col-span-4 md:col-span-6 lg:p-10 md:py-6'>
-              <div className="ourworth max-sm:text-center max-sm:text-xl font-bold md:text-sm lg:text-sm lg:text-[#F10900]">Our Worth Our Achievements!</div>
-              <div className="ourworth lg:text-4xl md:text-2xl font-bold  max-sm:hidden">We’re only just getting started on our journey</div>
-              <div className='lg:mt-5 md:mt-5  max-sm:p-3'>
+            <div className='col-span-2 md:space-y-5'>
+              <div className='text-[#F10900] font-semibold md:text-center lg:text-start xl:text-start max-sm:text-center'>Our Worth Our Achievements!</div>
+              <div className='lg:text-[42px] xl:w-[590px] font-bold xl:text-start lg:text-start md:text-center max-sm:text-center'>We’re only just getting started on our journey</div>
+              <div className=' md:flex md:justify-center xl:justify-start lg:justify-start'>
                 <img src={five} alt="" />
               </div>
             </div>
@@ -72,7 +68,7 @@ const AboutUs = () => {
         {/* Section-4 */}
          <section className=' xl:h-auto lg:h-auto md:h-auto max-sm:h-auto p-5'>
           <div className='flex justify-center'>
-            <p className=' lg:text-[42px] text-center w-[1084px] lg:font-bold'>Wahab Yunus, as the CEO of PNY Trainings, is unlocking the potential in youth to be victorious.</p>
+            <p className=' lg:text-[42px] md:text-[42px] md:font-bold text-center w-[1084px] lg:font-bold'>Wahab Yunus, as the CEO of PNY Trainings, is unlocking the potential in youth to be victorious.</p>
           </div>
 
           <div className="grid xl:grid-cols-2 lg:grid-cols-2 text-white rounded md:grid-cols-1 md:h-auto max-sm:grid-cols-1 mt-20 bg-[#152438] max-sm:h-auto lg:h-[420px] xl:w-[1266px] mx-auto">
@@ -91,7 +87,7 @@ const AboutUs = () => {
 
 
         {/* section-5 */}
-        <section className=' bg-white dark:bg-slate-800 ring-1 ring-slate-900/5  lg:h-[600px] lg:p-5 lg:mt-10'>
+        <section className=' bg-white dark:bg-slate-800 ring-1 ring-slate-900/5   lg:p-5 lg:mt-10'>
           <div className="howwework font-bold text-center md:text-2xl lg:text-4xl max-sm:text-2xl" id='abc'>How we work at PNY Trainings</div>
           <div className="howwework text-center max-sm:p-2 lg:p-3 lg:mb-10">Our shared values keep us connected and guide us as one team.</div>
 
@@ -118,7 +114,7 @@ const AboutUs = () => {
           </div>
         </section>
 
-        <section>
+        <section className='mb-0'>
           <Team/>
         </section>
 

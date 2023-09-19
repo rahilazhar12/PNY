@@ -5,11 +5,11 @@ const Team = () => {
         <>
 
           {/* Container for demo purpose */}
-<div className="container my-24 mx-auto md:px-6">
+<div className="container mt-10 mx-auto md:px-6">
   {/* Section: Design Block */}
-  <section className="mb-32 text-center">
+  <section className=" text-center">
     <h2 className="mb-12 text-3xl font-bold">
-      Meet the <u className="text-primary dark:text-primary-400">team</u>
+      Meet the Team
     </h2>
     <div className="lg:gap-xl-12 grid gap-x-6 md:grid-cols-3 xl:grid-cols-4">
       <div className="mb-12">
@@ -56,30 +56,9 @@ const Team = () => {
         <p className="mb-2 font-bold">Zeynep Dudley</p>
         <p className="text-neutral-500 dark:text-neutral-300">Web developer</p>
       </div>
-      <div className="mb-12">
-        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/12.jpg" className="mx-auto mb-4 rounded-full shadow-lg dark:shadow-black/20" alt style={{maxWidth: 100}} />
-        <p className="mb-2 font-bold">Avaya Hills</p>
-        <p className="text-neutral-500 dark:text-neutral-300">Copywritter</p>
-      </div>
-      <div className="mb-12">
-        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/13.jpg" className="mx-auto mb-4 rounded-full shadow-lg dark:shadow-black/20" alt style={{maxWidth: 100}} />
-        <p className="mb-2 font-bold">Thierry Fischer</p>
-        <p className="text-neutral-500 dark:text-neutral-300">
-          Senior consultant
-        </p>
-      </div>
-      <div className="mb-12">
-        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/14.jpg" className="mx-auto mb-4 rounded-full shadow-lg dark:shadow-black/20" alt style={{maxWidth: 100}} />
-        <p className="mb-2 font-bold">Aisling Sheldon</p>
-        <p className="text-neutral-500 dark:text-neutral-300">
-          Senior developer
-        </p>
-      </div>
-      <div className="mb-12">
-        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/15.jpg" className="mx-auto mb-4 rounded-full shadow-lg dark:shadow-black/20" alt style={{maxWidth: 100}} />
-        <p className="mb-2 font-bold">Ayat Black</p>
-        <p className="text-neutral-500 dark:text-neutral-300">Web designer</p>
-      </div>
+     
+    
+      
     </div>
   </section>
   {/* Section: Design Block */}
