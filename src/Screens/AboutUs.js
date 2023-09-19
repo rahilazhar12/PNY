@@ -48,9 +48,9 @@ const AboutUs = () => {
         </section>
 
         {/* section-3 */}
-        <section className=' lg:mb-10 lg:mt-10'>
+        <section className=' lg:mb-10 lg:mt-10 bg-[#F9FAFB] p-10'>
           <div className='grid lg:grid-cols-4'>
-            <div className=' col-span-2  xl:ml-52 xl:mt-20 lg:ml-2 lg:justify-start lg:mt-20 md:justify-center xl:justify-start flex md:mt-10'>
+            <div className=' col-span-2  xl:ml-36 xl:mt-20 lg:ml-2 lg:justify-start lg:mt-20 md:justify-center xl:justify-start flex md:mt-10'>
              
               <img src={ladymobile} alt="" />
             </div>
