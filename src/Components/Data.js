@@ -133,14 +133,14 @@ export const aboutdata = [
     imgAlt: "Alt text 1",
     imgSrc: logo19,
     title: "Do the impossible",
-    description: "Understand what matters to our employees. Give them what they need to do their best work.",
+    description: "Be energized by difficult problems. Revel in unknowns. Ask Why?, but always question, Why not?",
   },
   {
     id:6,
     imgAlt: "Alt text 1",
     imgSrc:logo19,
-    title: "Care about our team",
-    description: "Be energized by difficult problems. Revel in unknowns. Ask Why?, but always question, Why not?",
+    title: "Sweat the small stuff",
+    description: "We believe the best results come from the best attention to detail. Sweat the small stuff.",
   },
 ]
 

@@ -8,6 +8,11 @@ import Blogdetails from '../Screens/Blogdetails'
 import Footer from './Footer'
 import Design from '../Screens/Design'
 import Contactus from '../Screens/Contactus'
+import Trainingschedule from '../Screentwo/Trainings'
+import Feestruchure from '../Screentwo/FeeStructure'
+import Categories from  '../Screentwo/Categories'
+import Coursedetails from  '../Screentwo/Coursedetail'
+import Allcourses from  '../Screentwo/AllCourses'
 
 const Router = () => {
     return (
@@ -20,6 +25,11 @@ const Router = () => {
                 <Route path='/contact' element={<Design/>} />
                 <Route path='/blogdetails/:id' element={<Blogdetails/>} />
                 <Route path='/contactus' element={<Contactus/>} />
+                <Route path='/trainingschedule' element={<Trainingschedule/>} />
+                <Route path='/Feestruchure' element={<Feestruchure/>} />
+                <Route path='/categories' element={<Categories/>} />
+                <Route path='/coursedetails' element={<Coursedetails/>} />
+                <Route path='/allcourses' element={<Allcourses/>} />
                 
 
 

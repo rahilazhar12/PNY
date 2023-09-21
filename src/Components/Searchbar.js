@@ -19,8 +19,9 @@ const Searchbar = () => {
                             <div class="dropdown dropdown-hover">
                                 <label tabindex="0" class="btn max-sm:w-64 lg:w-[140px] md:w-[160px] xl:w-[220px]  h-[38px]  bg-[#308AFF] hover:text-black text-white hover:bg-[#308AFF] btn-sm"> <BiCategory /> Categories</label>
                                 <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
-                                    <li><a>Item 1</a></li>
-                                    <li><a>Item 2</a></li>
+                                    <li><Link to="/categories">Categories</Link></li>
+                                    <li><Link to='/coursedetails'>Coursedetails</Link></li>
+                                    <li><Link to='/allcourses'>All Courses</Link></li>
                                 </ul>
                             </div>
                         </div>
