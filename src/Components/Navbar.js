@@ -31,8 +31,8 @@ const Navbar = () => {
             <li>Amazon Services</li>
             <li>Kids Courses</li>
             <li>Female Courses</li>
-            <li>Training Schedule</li>
-            <li>Fee Strcture</li>
+            <li><Link to="/trainingschedule">Training Schedule</Link></li>
+            <li> <Link to="/Feestruchure">Fee Strcture</Link></li>
             <li>Admission</li>
             <li className='bg-[#FFBA4A] blinking-text rounded-md flex justify-center items-center'>Fast Track Pro Bootcamps in 2023</li>
             <li><button className='navbarbuttons bg-[#308AFF] rounded-md w-[70px] h-[px]'>Login</button></li>
