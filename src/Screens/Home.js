@@ -13,7 +13,7 @@ import Bottomnavbar from '../Components/Bottomnavbar'
 import Searchbar from '../Components/Searchbar'
 import { homedata } from '../Components/Data'
 import { motion } from 'framer-motion'
-import  { fadeIn } from '../Components/variants'
+import { fadeIn } from '../Components/variants'
 import { durationdata } from '../Components/Data'
 import image1 from '../Assets/image/4 logos.png'
 import Map from '../Components/Map'
@@ -270,7 +270,7 @@ const Home = () => {
           </section>
 
           {/* Section-7 */}
-          <Testimonial/>
+          <Testimonial />
           {/* <section className='md:p-5 lg:p-[80px]'>
             <div className="grid justify-center max-sm:grid-cols-6 ">
               <div className=" col-span-12 lgh lg:p-3  dark:text-white">Leaders Who Vision Your Future</div>
@@ -308,7 +308,7 @@ const Home = () => {
           <section className='bg-[#F9FAFB] h-auto'>
             <div className="grid justify-center lg:p-10">
               <div className=" lgh dark:text-white">Our Collaboration and Partners</div>
-              <div className=" lgp max-sm:p-3 md:px-10 md:py-2 dark:text-white">Our collaboration with esteemed partners has strengthened our mission to empower youth through skills, making a lasting impact on their lives.</div>
+              <div className=" lgp max-sm:p-3 md:px-10 md:py-2 dark:text-white">Discover the strength of our network as we join hands with key partners to innovate and create impactful digital learning experiences for today's youth.</div>
 
               <div className="carousal md:px-5 max-sm:px-4">
                 <Carousalhome />
@@ -321,7 +321,8 @@ const Home = () => {
           <section className='lg:p-10'>
             <div className="grid justify-center">
               <div className=" lgh lg:p-2  dark:text-white">Our Affiliations</div>
-              <div className="lgp max-sm:p-3 md:px-10 md:py-2 dark:text-white">Our collaboration with esteemed partners has strengthened our mission to empower youth through skills, making a lasting impact on their lives.</div>
+              <div className="lgp max-sm:p-3 md:px-10 md:py-2 dark:text-white">We proudly collaborate with leading industry pioneers and organizations to bring high-quality digital skills that empower today's youth for tomorrow's opportunities.
+              </div>
 
               <div className="imageaffiliation flex justify-center max-sm:p-2 md:py-5">
                 <img src={frame} alt="" />

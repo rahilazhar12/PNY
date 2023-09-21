@@ -236,35 +236,35 @@ export const contactus = [
     image:arfa,
     title: "Arfa Tower",
     description: "1st Floor 256 / A, Block R2 Near Shaukat Khanam Hospital, next to Standard Chartered, Lahore",
-    phone:"0309-7772260"
+    phone:" 03041111774 | 0320 1443744",
   },
   {
     id: 2,
     image:iqbaltown,
     title: "Allama Iqbal Town Branch",
     description: "743 B Kashmir Block Allama Iqbal Town Lahore",
-    phone:"0309-7772260"
+    phone:"0309-7774937"
   },
   {
     id: 3,
     image:johartown,
     title: "Johar Town Branch",
     description: "1st Floor 256 / A, Block R2 Near Shaukat Khanam Hospital, next to Standard Chartered, Lahore",
-    phone:"0309-7772260"
+    phone:"03097772259"
   },
   {
     id: 4,
     image:multan,
     title: "Multan Branch",
     description: "237-B, Model Town, Main Boulevard, Multan",
-    phone:"0309-7772260"
+    phone:"0309-7772260 | 0309-7774685"
   },
   {
     id: 5,
     image:rawalpindi,
     title: "Rawalpindi Branch",
     description: "Office # 604, Alpha Techno Square NASTP, Old Airport Nur khan Airbase, Chaklala Cantt, Rawalpindi.",
-    phone:"0309-7772260"
+    phone:"0300-8405591"
   },
 ]
 
