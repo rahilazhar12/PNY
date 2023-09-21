@@ -1,7 +1,68 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Searchbar from '../Components/Searchbar';
 import Footer from '../Components/Footer';
+
+const modulesData = [
+  {
+      title: 'Module 1',
+      keyFeatures: [
+          'The key features of the digital marketing training in Lahore are as follows:',
+          'Advanced proficiency skills can help students recover their abilities.',
+          'This digital marketing course helps classify digital habits.',
+          'The key features of the digital marketing training in Lahore are as follows.',
+          'Advanced proficiency skills can help students recover their abilities.',
+          'This digital marketing course helps classify digital habits..',
+          ' The key features of the digital marketing training in Lahore are as follows',
+          ' Advanced proficiency skills can help students recover their abilities.',
+          ' This digital marketing course helps classify digital habits.',
+          // Add more key features as needed
+      ],
+  },
+  {
+      title: 'Module 2',
+      keyFeatures: [
+          'Key Feature A',
+          'Key Feature B',
+          'Key Feature C',
+          // Add more key features as needed
+      ],
+  },
+  {
+      title: 'Module 3',
+      keyFeatures: [
+          'Key Feature X',
+          'Key Feature Y',
+          'Key Feature Z',
+          // Add more key features as needed
+      ],
+  },
+  {
+      title: 'Module 4',
+      keyFeatures: [
+          'Key Feature a',
+          'Key Feature b',
+          'Key Feature c',
+          // Add more key features as needed
+      ],
+  },
+  {
+      title: 'Module 5',
+      keyFeatures: [
+          'Key Feature a',
+          'Key Feature b',
+          'Key Feature c',
+          // Add more key features as needed
+      ],
+  },
+];
 const Coursedetail = () => {
+  const [activeModule, setActiveModule] = useState(0);
+
+  const handleModuleClick = (moduleIndex) => {
+      setActiveModule(moduleIndex);
+  };
+
+  const module = modulesData[activeModule];
   return (
     <>
     <div>
@@ -13,7 +74,10 @@ const Coursedetail = () => {
     <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
      <div className='section-wrapper'>
      <p>Digital Marketing</p>
-     <h1 className="title-font text-2xl md:text-1xl lg:text-lg xl:text-5xl mb-4 font-semibold text-white my-2">Certified Digital Media Marketing (CDMM) Expert Course (06 Months)
+     <h1 class="title-font text-2xl md:text-1xl lg:text-lg xl:text-5xl mb-4 font-semibold text-white my-2 leading-7">
+     Certified Digital Media Marketing (CDMM) Expert Course (06 Months)
+   
+   
      <br className="hidden lg:inline-block" />
    </h1>
    <p className="mb-8 leading-relaxed ">Learn the latest techniques of SEO, SMM, SMO, PPC, CPA, E-commerce, Mobile Marketing, ORM, CRO, and increase paid and organic online appearance on different platforms.</p>
@@ -41,7 +105,7 @@ const Coursedetail = () => {
      </div>
      <div className="flex justify-center">
      <a href='#'><img src='/images/🦆 icon _clock_.svg'/></a>
-     <p className='mx-2 my-2'>Course Date:</p>
+     <p className='mx-2 my-1'>Course Date:</p>
     </div>
      <button type="button" class="text-white hover:text-white border border-blue-700  hover:bg-[#308AFF] font-medium rounded-lg text-sm px-4 py-3 text-center mr-2 mb-2  dark:hover:text-white">Download Course Broucher</button>
      <button className="inline-flex text-white bg-[#308AFF] border-0 border-blue-700 py-3 px-4 focus:outline-none hover:bg-[#308AFF] rounded text-sm">Free Orientation Class</button>
@@ -54,12 +118,36 @@ const Coursedetail = () => {
   </div>
 </section>
 <div>
-  <div className="flex flex-col text-center w-full mb-20 mt-5">
+  <div className="flex flex-col text-center w-full mb-5 mt-5">
     <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4 text-gray-900">Course Module</h1>
     <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-lg text-gray-900 dark:text-white">Our course modules offer a well-rounded curriculum, combining theoretical foundations with hands-on training, ensuring students acquire industry-relevant skills and knowledge for future endeavors.</p>
   </div>
 </div>
-
+<section className='p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14'>
+<div className="grid grid-cols-1 md:grid-cols-4 border h-[auto] md:h-[568px] rounded-lg w-full md:w-[1120px] mx-auto shadow-lg">
+    <div className='border md:w-[172px] w-full'>
+        {modulesData.map((module, index) => (
+            <div
+                key={index}
+                className={`h-[auto] md:h-[113px] flex border border-black/25 shadow-lg justify-center items-center ${activeModule === index ? 'bg-blue-500' : ''
+                    }`}
+                onClick={() => handleModuleClick(index)}
+            >
+                {module.title} <span className='ml-3'><i className="fa-solid fa-arrow-right"></i></span>
+            </div>
+        ))}
+    </div>
+    <div className='col-span-3 md:col-span-2'>
+        <div className='p-5 text-sm md:text-base lg:text-lg xl:text-xl text-[#308AFF]'>{module.title}</div>
+        <div className='text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-black mb-5 max-sm:mb-0 max-sm:text-center'>Key Features of this course</div>
+        <ul className='list-disc space-y-2 md:space-y-4 lg:space-y-5 xl:space-y-6 max-sm:list-non max-sm:p-8'>
+            {module.keyFeatures.map((feature, index) => (
+                <li key={index}>{feature}</li>
+            ))}
+        </ul>
+    </div>
+</div>
+</section>
 <section class="text-gray-600 body-font">
 <div class="container px-5 py-15 mx-auto">
   <div class="text-center mb-20">
@@ -73,7 +161,7 @@ const Coursedetail = () => {
     <img src="/images/Featured icon.png"></img>
      
     </div>
-    <h2 class="text-sm text-black font-semibold mt-2 text-justify text-center">Learning Management System Access</h2>
+    <h2 class="text-sm text-black font-semibold mt-2">Learning Management System Access</h2>
   </div>
   <div class="p-2 md:w-1/6 sm:w-1/2">
     <div class=" px-4 py-6">
@@ -115,7 +203,7 @@ const Coursedetail = () => {
 </section>
 <section className="text-gray-600 body-font">
   <div className="container  mx-auto">
-    <h2 className="text-2xl font-bold text-black my-3 mx-2">Course Instructors</h2>
+    <h2 className="text-2xl font-bold text-black my-5 mt-8 mx-2">Course Instructors</h2>
     <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
       <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
         <div className="rounded-lg h-54 overflow-hidden">
@@ -145,7 +233,7 @@ const Coursedetail = () => {
 <section className="text-gray-600 body-font">
   <div className="container px-4 py-17 mx-auto">
  
-    <h2 className="text-2xl font-bold text-black my-4 mx-2">Our Success</h2>
+    <h2 className="text-2xl font-bold text-black my-5 mx-2">Our Success</h2>
     <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
       <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
         <div className="rounded-lg h-54 overflow-hidden">

@@ -13,7 +13,7 @@ const Categories = () => {
    <section className="text-gray-600 body-font bg-[#152438]">
   <div className="container  py-20 mx-auto">
     <div className="flex flex-col text-center w-full">
-      <h1 className=" text-white sm:text-3xl text-3xl  mb-4 text-gray-900 font-bold">Marketing Trainings and Tutorials</h1>
+      <h1 className=" text-white sm:text-3xl text-4xl  mb-4 text-gray-900 font-bold">Marketing Trainings and Tutorials</h1>
       <p className="lg:w-2/3 mx-auto leading-relaxed text-sm text-white">Learn how to do SEO, SMO, PPC, CPL, Web analytics, and social media marketing through our highly advanced and strategic-based course curriculums, which lead to a bright future.</p>
     </div>
   </div>
@@ -21,7 +21,7 @@ const Categories = () => {
     </div>
     <section className="text-gray-600 body-fon">
   <div className="container px-5 py-20 mx-auto">
-  <h1 className=" text-black sm:text-3xl text-2xl font-medium font-bold text-gray-900">Top Courses in Marketing</h1>
+  <h1 className=" text-black sm:text-3xl text-3xl font-bold text-gray-900 mb-3">Top Courses in Marketing</h1>
   <div className="flex flex-wrap -m-4">
   {/* Card 1 */}
   <div className="w-full md:w-1/2 lg:w-1/4 p-4  flex-grow">
@@ -38,7 +38,7 @@ const Categories = () => {
       </div>
   </div>
       <div className="w-full">
-      <h2 className="title-font font-medium text-sm text-gray-900">Certified Digital Media Marketing (CDMM) Expert
+      <h2 className="title-font font-medium text-sm text-gray-900 mb-3">Certified Digital Media Marketing (CDMM) Expert
       Course (06 Months)</h2>
       <h3 className="text-red-500  mt-1">Ayesha Amjad</h3>
     </div>
@@ -104,7 +104,7 @@ const Categories = () => {
       </div>
   </div>
       <div className="w-full">
-      <h2 className="title-font font-medium text-sm text-gray-900">Certified Digital Media
+      <h2 className="title-font font-medium text-sm text-gray-900 mb-3">Certified Digital Media
       Marketing (CDMM) Expert
       Course (06 Months)
       </h2>

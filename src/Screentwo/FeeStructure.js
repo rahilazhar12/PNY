@@ -34,8 +34,8 @@ const FeeStructure = () => {
           <div class="lg:w-3/3 flex flex-col sm:flex-row sm:items-center items-start w-full mx-auto">
             <h1 class="flex-grow sm:pr-16 text-2xl font-bold text-black">Fee Structure</h1>
             <div>
-                <button class="flex-shrink-0 text-blue-900 border-blue-500 border-solid border-2 py-2 px-2 focus:outline-none hover:bg-[#308AFF] rounded mt-10 sm:mt-0 mx-3">Enrol Now (Limited seats left)</button>
-                <button class="flex-shrink-0 text-white bg-blue-500 border-0 py-2 px-2 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0">Training Schedule</button>
+                <button class="flex-shrink-0  rounded-md text-blue-900 border-blue-500 border-solid border-2 py-2 px-2 focus:outline-none hover:bg-[#308AFF] rounded mt-10 sm:mt-0 mx-3">Enrol Now (Limited seats left)</button>
+                <button class="flex-shrink-0 rounded-md text-white bg-blue-500 border-0 py-2 px-2 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0">Training Schedule</button>
             </div>
           </div>
         </div>
@@ -75,10 +75,10 @@ const FeeStructure = () => {
           <div className="container mx-auto flex flex-col md:flex-row">
             <nav className="flex flex-wrap items-center text-base md:ml-auto me-auto w-full">
               <button type="button" class="text-white bg-[#308AFF] from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2">All</button>
-              <button type="button" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-[#308AFF] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">2 months</button>
-              <button type="button" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-[#308AFF] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">3 months</button>
-              <button type="button" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-[#308AFF] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">1.5 months</button>
-              <button type="button" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-[#308AFF] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">6 months</button>
+              <button type="button" class="text-gray-700 hover:text-white border border-blue-700 hover:bg-[#308AFF] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">2 months</button>
+              <button type="button" class="text-gray-700 hover:text-white border border-blue-700 hover:bg-[#308AFF] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">3 months</button>
+              <button type="button" class="text-gray-700 hover:text-white border border-blue-700 hover:bg-[#308AFF] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">1.5 months</button>
+              <button type="button" class="text-gray-700 hover:text-white border border-blue-700 hover:bg-[#308AFF] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">6 months</button>
 
               <button type="button" class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-2 py-2 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2 mb-2 w-30">
                 <svg class="w-4 h-4 text-gray-800 dark:text-white mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">

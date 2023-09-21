@@ -3,6 +3,7 @@ import course from '../Categories/data/courses'
 import instructor from '../Categories/data/Instructor';
 import Searchbar from '../Components/Searchbar';
 import Footer from '../Components/Footer';
+import { frame } from 'framer-motion';
 
 const AllCourses = () => {
     const [item, setItem]= useState(course);
@@ -275,15 +276,34 @@ const AllCourses = () => {
         <h3 className="text-lg tracking-widest title-font text-black font-bold">{x.Name}</h3>
         <h2 className="title-font text-xs font-medium text-sm">{x.instructor}</h2>
       </div>
+      
     </div>
+    
     
     )
    }
     )}
     </div>
+
   </div>
 </section>
+<section className='lg:p-10'>
+            <div className="grid justify-center">
+              <div className=" lgh lg:p-2  dark:text-white">Our Affiliations</div>
+              <div className="lgp max-sm:p-3 md:px-10 md:py-2 dark:text-white">Our collaboration with esteemed partners has strengthened our mission to empower youth through skills, making a lasting impact on their lives.</div>
 
+              <div className="imageaffiliation flex justify-center max-sm:p-2 md:py-5">
+                <img src={frame} alt="" />
+              </div>
+
+              <div className="flex justify-center p-5 gap-5 max-sm:hidden dark:text-white">
+                <div className=' border-b-2 border-black'>Navtech certifications</div>
+                <div className=' border-b-2 border-black'>Google scholarship programm</div>
+                <div className=' border-b-2 border-black'>Free learning courses</div>
+                <div className=' border-b-2 border-black'>Internship program</div>
+              </div>
+            </div>
+          </section>
     
     
     
