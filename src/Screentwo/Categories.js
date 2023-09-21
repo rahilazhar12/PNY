@@ -144,9 +144,7 @@ const Categories = () => {
 
 
     </div>
-    <footer>
-      <Footer/>
-    </footer>
+   
     </>
   )
 }

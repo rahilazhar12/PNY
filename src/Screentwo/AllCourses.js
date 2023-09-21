@@ -309,9 +309,7 @@ const AllCourses = () => {
     
     
     </div>
-    <footer>
-      <Footer/>
-    </footer>
+    
     </>
   )
 }

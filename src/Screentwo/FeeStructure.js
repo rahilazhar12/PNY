@@ -209,9 +209,7 @@ const FeeStructure = () => {
 
 
       </div>
-      <footer>
-        <Footer />
-      </footer>
+      
     </>
   )
 }

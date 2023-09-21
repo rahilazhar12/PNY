@@ -406,9 +406,7 @@ People are searching for the right people to promote their brands. Just in case 
 
 </div>
     </div>
-    <footer>
-      <Footer/>
-    </footer>
+   
     </>
 
   )
