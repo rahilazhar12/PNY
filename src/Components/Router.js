@@ -6,13 +6,13 @@ import Navbar from '../Components/Navbar'
 import AboutUs from '../Screens/AboutUs'
 import Blogdetails from '../Screens/Blogdetails'
 import Footer from './Footer'
-import Design from '../Screens/Design'
 import Contactus from '../Screens/Contactus'
 import Trainingschedule from '../Screentwo/Trainings'
 import Feestruchure from '../Screentwo/FeeStructure'
 import Categories from  '../Screentwo/Categories'
 import Coursedetails from  '../Screentwo/Coursedetail'
 import Allcourses from  '../Screentwo/AllCourses'
+import Design from '../Screens/Design'
 
 const Router = () => {
     return (
@@ -30,6 +30,8 @@ const Router = () => {
                 <Route path='/categories' element={<Categories/>} />
                 <Route path='/coursedetails' element={<Coursedetails/>} />
                 <Route path='/allcourses' element={<Allcourses/>} />
+                <Route path='/Carrer' element={<Design/>} />
+
                 
 
 
