@@ -74,12 +74,10 @@ const Coursedetail = () => {
     <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
      <div className='section-wrapper'>
      <p>Digital Marketing</p>
-     <h1 class="title-font text-2xl md:text-1xl lg:text-lg xl:text-5xl mb-4 font-semibold text-white my-2 leading-7">
+     <h1 class="text-2xl md:text-1xl lg:text-lg xl:text-5xl mb-4 font-semibold text-white my-2 leading-loose">
      Certified Digital Media Marketing (CDMM) Expert Course (06 Months)
-   
-   
-     <br className="hidden lg:inline-block" />
    </h1>
+   
    <p className="mb-8 leading-relaxed ">Learn the latest techniques of SEO, SMM, SMO, PPC, CPA, E-commerce, Mobile Marketing, ORM, CRO, and increase paid and organic online appearance on different platforms.</p>
    
      <div className='social-wrapper flex justify-between'>
@@ -101,12 +99,20 @@ const Coursedetail = () => {
       <a href='#'><img src='/images/🦆 icon _clock_.svg'/></a>
       <p className='mx-2'>Courses Fee: Rs 60,000</p>
      </div>
-    
-     </div>
-     <div className="flex justify-center">
-     <a href='#'><img src='/images/🦆 icon _clock_.svg'/></a>
+    <div className="flex justify-center">
+     <a href='#'><img src='/images/🦆 icon _clock_.svg' /></a>
      <p className='mx-2 my-1'>Course Date:</p>
     </div>
+     </div>
+     
+
+ 
+
+     
+
+
+
+
      <button type="button" class="text-white hover:text-white border border-blue-700  hover:bg-[#308AFF] font-medium rounded-lg text-sm px-4 py-3 text-center mr-2 mb-2  dark:hover:text-white">Download Course Broucher</button>
      <button className="inline-flex text-white bg-[#308AFF] border-0 border-blue-700 py-3 px-4 focus:outline-none hover:bg-[#308AFF] rounded text-sm">Free Orientation Class</button>
         <button className="ml-4 inline-flex text-white bg-red-700 border-0 py-3 px-4  hover:bg-red-700 rounded text-sm my-2">Pay Now</button>
@@ -129,7 +135,7 @@ const Coursedetail = () => {
         {modulesData.map((module, index) => (
             <div
                 key={index}
-                className={`h-[auto] md:h-[113px] flex border border-black/25 shadow-lg justify-center items-center ${activeModule === index ? 'bg-blue-500' : ''
+                className={`h-[auto] md:h-[113px] flex border border-black/25 shadow-lg justify-center items-center ${activeModule === index ? 'bg-blue-500 text-white' : ''
                     }`}
                 onClick={() => handleModuleClick(index)}
             >
@@ -155,49 +161,57 @@ const Coursedetail = () => {
     <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">We discover your personal and professional growth capitalize on opportunities through which you will get profound impact on various employment and career advancement.</p>
   </div>
 
-  <div class="flex flex-wrap -m-4 justify-center sm:mx-auto">
-  <div class="p-2 md:w-1/6 sm:w-1/2 ">
-    <div class="px-4 py-6">
-    <img src="/images/Featured icon.png"></img>
-     
-    </div>
-    <h2 class="text-sm text-black font-semibold mt-2">Learning Management System Access</h2>
+  <div className="flex flex-wrap sm:mx-auto">
+  <div className="flex flex-col flex-1 w-32 md:w-1/6 sm:w-1/2">
+      <div className="mx-auto px-4 py-6">
+        <img src="/images/Featured icon.png" />
+      </div>
+      <div className="text-center">
+        <h2 className="text-sm text-black font-semibold">Learning Management System Access</h2>
+      </div>
   </div>
-  <div class="p-2 md:w-1/6 sm:w-1/2">
-    <div class=" px-4 py-6">
-    <img src="/images/Featured icon.png"></img>
-      
+  <div className="flex flex-col flex-1 w-32 md:w-1/6 sm:w-1/2">
+    <div className="mx-auto px-4 py-6">
+      <img src="/images/Featured icon.png" />
     </div>
-    <h2 class=" title-font font-medium text-sm text-black font-semibold">Instructor Support</h2>
+    <div className="text-center">
+        <h2 className="text-sm text-black font-semibold">Instructor Support</h2>
+      </div>
   </div>
-  <div class="p-2 md:w-1/6 sm:w-1/2">
-  <div class="px-4 py-6 ">
-  <img src="/images/Featured icon.png" alt="Featured Icon"/>
+  <div className="flex flex-col flex-1 w-32 md:w-1/6 sm:w-1/2">
+    <div className="mx-auto px-4 py-6 ">
+      <img src="/images/Featured icon.png" alt="Featured Icon" />
+    </div>
+    <div className="text-center">
+        <h2 className="text-sm text-black font-semibold">Internship Opportunity</h2>
+      </div>
+  </div>
+  <div className="flex flex-col flex-1 w-32 md:w-1/6 sm:w-1/2">
+    <div className="mx-auto px-4 py-6 rounded-lg">
+      <img src="/images/Featured icon.png" />
+    </div>
+    <div className="text-center">
+        <h2 className="text-sm text-black font-semibold">Job Cell</h2>
+      </div>
+  </div>
+  <div className="flex flex-col flex-1 w-32 md:w-1/6 sm:w-1/2">
+    <div className="mx-auto px-4 py-6 rounded-lg">
+      <img src="/images/Featured icon.png" />
+    </div>
+    <div className="text-center">
+        <h2 className="text-sm text-black font-semibold">PNY Community Member</h2>
+      </div>
+  </div>
+  <div className="flex flex-col flex-1 w-32 md:w-1/6 sm:w-1/2">
+    <div className="mx-auto px-4 py-6">
+      <img src="/images/Featured icon.png" />
+    </div>
+    <div className="text-center">
+        <h2 className="text-sm text-black font-semibold">Free Seminar Access</h2>
+      </div>
+  </div>
 </div>
-<h2 class="title-font font-medium text-sm text-black font-semibold">Internship Opportunity</h2>
-  </div>
-  <div class="p-2 md:w-1/6 sm:w-1/2">
-    <div class=" px-4 py-6 rounded-lg">
-    <img src="/images/Featured icon.png"/>
-     
-    </div>
-    <h2 class=" title-font font-medium text-sm text-black font-semibold">Job Cell</h2>
-  </div>
-  <div class=" p-2 md:w-1/6 sm:w-1/2">
-    <div class=" px-4 py-6 rounded-lg">
-    <img src="/images/Featured icon.png"/>
-      
-    </div>
-    <h2 class=" title-font font-medium text-sm text-black font-semibold">PNY Community Member</h2>
-  </div>
-  <div class="p-2 md:w-1/6 sm:w-1/2">
-    <div class="px-4 py-6">
-    <img src="/images/Featured icon.png"></img>
-     
-    </div>
-    <h2 class=" title-font font-medium text-sm text-black font-semibold">Free Seminar Access</h2>
-  </div>
-</div>
+
 
 </div>
 </section>
@@ -268,7 +282,7 @@ const Coursedetail = () => {
   <img alt="content" className=" object-center my-4 w-full" src="./images/imgbg1.jpeg" />
  
   </div>
-<h2 class="text-2xl font-bold text-black mb-2">Purpose of Digital Marketing Course</h2>
+<h2 class="text-2xl font-bold text-black mb-2 my-8">Purpose of Digital Marketing Course</h2>
 <div className='list lg:flex-grow md:w-1/1 lg:pr-20 md:pr-16 flex flex-col md:items-start'>
 
 <p>The key features of the digital marketing training in Lahore are as follows:</p>
@@ -279,7 +293,7 @@ const Coursedetail = () => {
 <li>You will learn from highly accomplished instructors</li>
 
 </div>
-<h2 class="text-2xl font-bold text-black my-4 mb-2">The Demand For Digital Marketing Courses in Pakistan</h2>
+<h2 class="text-2xl font-bold text-black my-4 mb-2 my-5">The Demand For Digital Marketing Courses in Pakistan</h2>
 <p class="text-sm md:text-base">For example, if you go back in time to when people used radios to get information and promote their businesses, then with the passage of time and advancements in technology, we have seen the rise of TV for marketing that enabled businesses to target mass audiences. Now since the advent of the internet, most people have started using the internet, so companies start promoting their business through the internet.
 A lot of consumers learn about companies through social media news feeds. More than 9 million businesses use social media platforms like Facebook, Twitter, Instagram, LinkedIn, etc. to connect with consumers. This is now called digital marketing.
 In this way, radio advertising led to TV advertising, which then turned into digital marketing with the advancement of the internet. Every person needs to expand his or her online business so that it can reach out to more and more people. There is huge competition in digital media marketing. That’s the only reason the demand for digital marketing experts is high now.
@@ -302,10 +316,10 @@ People are searching for the right people to promote their brands. Just in case 
     </div>
   </div>
 </section>
-<section className="text-gray-600 body-fon">
+<section className="text-gray-600 body-font ">
 <div className="container px-5 py-15 mx-auto">
 
-<div className="flex flex-wrap -m-4">
+<div className="flex flex-wrap -m-4"> 
 {/* Card 1 */}
 <div className="w-full md:w-1/2 lg:w-1/4 p-4 flex-grow">
   <div className="bg-white p-4 rounded-lg shadow-md">
@@ -406,7 +420,9 @@ People are searching for the right people to promote their brands. Just in case 
 
 </div>
     </div>
-   
+    <footer>
+      <Footer/>
+    </footer>
     </>
 
   )

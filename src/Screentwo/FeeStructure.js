@@ -53,6 +53,9 @@ const FeeStructure = () => {
                 <li className="mr-2" role="presentation">
                   <button className="inline-block p-2 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Rawalpindi</button>
                 </li>
+                <li className="mr-2" role="presentation">
+                <button className="inline-block p-2 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Multan</button>
+              </li>
               </ul>
             </div>
             <div id="myTabContent">
@@ -209,7 +212,9 @@ const FeeStructure = () => {
 
 
       </div>
-      
+      <footer>
+        <Footer />
+      </footer>
     </>
   )
 }
