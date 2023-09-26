@@ -3,6 +3,7 @@ import {AiOutlineHome} from 'react-icons/ai'
 import {GiJourney , GiDuration} from 'react-icons/gi'
 import {SiTrainerroad} from 'react-icons/si'
 import { Link } from 'react-scroll'
+import ReactWhatsapp from 'react-whatsapp';
 
 const Bottomnavbar = () => {
   return (
@@ -17,6 +18,7 @@ const Bottomnavbar = () => {
       <GiDuration/></Link>
       <Link to='trainer' activeClass='active' smooth={true} spy={true} offset={-450} className='w-[60px] h-[60px] flex items-center justify-center cursor-pointer'>
       <SiTrainerroad/></Link>
+       <ReactWhatsapp  className='fa-brands fa-whatsapp  text-2xl' number="+923336436693" message="Hello World!!!" />
       <Link to='home' activeClass='active' smooth={true} spy={true} offset={-450} className='w-[60px] h-[60px] flex items-center justify-center cursor-pointer'>
       <AiOutlineHome/></Link>
       </div>

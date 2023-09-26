@@ -151,7 +151,7 @@ export const homedata = [
     id:1,
     imgAlt: "Alt text 1",
     imgSrc:  affiliated,
-    title:  "Affiliated with Govt. (PSDA & PBTE)",
+    title:  "Affiliated with Govt. (PSDA Navttc & PBTE)",
   
   },
   {
@@ -209,7 +209,7 @@ export const homedata = [
 export const durationdata = [
   {
     id:1,
-    title: "1 Year Professional Diplomas Programs",
+    title: "1 Year Professional Diploma Programs",
     description: "Immerse yourself in our 1-year Professional Diploma programs, unlocking unlimited potential for career growth and success",
   },
   {

@@ -17,7 +17,7 @@ const Navbar = () => {
             <li> <Link to="/Feestruchure">Fee Strcture</Link></li>
             <li>Admission</li>
             <li><button className='navbarbuttons bg-[#308AFF] rounded-md px-[10px] py-[6px]'>Login</button></li>
-            <li><button className='navbarbuttons bg-[#F10900] rounded-md px-[10px] py-[6px]'>Paynow</button></li>
+            <li><button className='navbarbuttons bg-[#F10900] rounded-md px-[10px] py-[6px]'>Enroll Now</button></li>
 
           </ul>
         </div>
@@ -36,7 +36,7 @@ const Navbar = () => {
             <li><Link>Admission</Link></li>
             <li className='bg-[#FFBA4A] blinking-text rounded-md flex justify-center items-center'>Fast Track Pro Bootcamps in 2023</li>
             <li><button className='navbarbuttons bg-[#308AFF] rounded-md w-[70px] h-[px]'>Login</button></li>
-            <li><button className='navbarbuttons bg-[#F10900] rounded-md w-[90px] h-[px]'>Pay Now</button></li>
+            <li><button className='navbarbuttons bg-[#F10900] rounded-md w-[90px] h-[px]'>Enroll Now</button></li>
           </ul>
         </div>
       </nav>

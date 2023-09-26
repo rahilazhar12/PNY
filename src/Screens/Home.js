@@ -4,7 +4,7 @@ import Carousal from '../Components/Carousal'
 import newgroup from '../Assets/images/newgroup.png'
 import icon from '../Assets/images/Featured icon.svg'
 import { Flowbite } from 'flowbite-react'
-import contentimage from '../Assets/image/Contents.png'
+import contentimage from '../Assets/image/Contentsnew.png'
 import { Carousalhome, Carousalhome1 } from '../Components/Carousal'
 import frame from '../Assets/image/Frame 624.png'
 import frame2 from '../Assets/image/Frame 61.png'
@@ -33,6 +33,7 @@ const Home = () => {
 
           <section>
             <Bottomnavbar />
+           
           </section>
 
 
@@ -242,27 +243,28 @@ const Home = () => {
 
 
           {/* Section -6*/}
-          <section className='bg-[#F9FAFB] md:p-5 lg:p-[80px]'>
+          <section className='bg-[#F9FAFB] md:p-5 '>
             <div className="grid grid-cols-12  max-sm:grid-cols-6">
-              <div className='col-span-6 max-sm:p-5 lg:p-20 max-sm:order-1'>
+              <div className='col-span-6 max-sm:p-5 lg:px-10 py-10 max-sm:order-1'>
                 <div className="whychooseus text-4xl font-bold  max-sm:text-center  max-sm:text-2xl">Why Choose US?</div>
                 <div className="list">
                   <ul className='p-3'>
-                    <li className='text-lg'><i class="fa-sharp fa-regular fa-circle-check"></i> Money making skills</li>
-                    <li className='text-lg'> <i class="fa-sharp fa-regular fa-circle-check"></i> Hands on Experience during Training</li>
-                    <li className='text-lg'> <i class="fa-sharp fa-regular fa-circle-check"></i> Internship & job Opportunities</li>
-                    <li className='text-lg'> <i class="fa-sharp fa-regular fa-circle-check"></i> On-campus + Online Classes with recorded lecture</li>
-                    <li className='text-lg'> <i class="fa-sharp fa-regular fa-circle-check"></i> Highly Experienced Instructors</li>
-                    <li className='text-lg'> <i class="fa-sharp fa-regular fa-circle-check"></i> Professional Learning Environment</li>
+                    <li className='text-lg border border-yellow-300  p-2'><i class="fa-sharp fa-regular fa-circle-check"></i> Money Making Skills</li>
+                    <li className='text-lg border border-red-300  p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Hands on Experience during Training</li>
+                    <li className='text-lg border border-green-300  p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Internship & Job Opportunities</li>
+                    <li className='text-lg border border-sky-300  p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> On-campus & Online Classes with Recorded Lectures</li>
+                    <li className='text-lg border border-amber-300  p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Highly Experienced Instructors</li>
+                    <li className='text-lg border border-sky-300  p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Professional Learning Environment</li>
+                    <li className='text-lg border border-orange-300  p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Learning Management System</li>
                   </ul>
                 </div>
-                <div className="buttons max-sm:flex">
+                <div className="buttons max-sm:flex lg:mt-5">
                   <button className='mx-5 bg-[#D0D5DD] p-3 rounded-lg'>Learn More</button>
                   <button className='bg-[#308AFF] text-white rounded-lg p-3'>Enroll Now</button>
                 </div>
               </div>
               <div className='col-span-6'>
-                <div className=' justify-center flex lg:p-6' >
+                <div className=' justify-center flex lg:p-6 lg:mt-10' >
                   <img className="image w-[596px] max-sm:h-52" src={contentimage} alt="" />
                 </div>
               </div>
