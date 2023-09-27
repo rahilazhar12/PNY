@@ -92,10 +92,10 @@ const Trainings = () => {
       </header>
 
 
-      <div class=" container relative overflow-x-auto shadow-md sm:rounded-lg px-5">
-        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <div class=" container relative overflow-x-auto px-5  ml-5 mt-5">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 border border-lg rounded-lg">
           <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
+            <tr className='bg-gray-200 rounded'>
               <th scope="col" class="px-6 py-3">
                 Upcoming Courses / Seminars
               </th>

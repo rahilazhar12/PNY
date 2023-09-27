@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import PNYlogo from '../Assets/images/pny.png'
+import PNYlogo from '../Assets/image/logohr.png'
 import { DarkThemeToggle, Flowbite } from 'flowbite-react';
 import { motion } from 'framer-motion';
 import { BiCategory } from 'react-icons/bi'
-import pnylogonew from '../Assets/image/PNY Trainings logo.png'
 
 const Searchbar = () => {
     return (
@@ -12,7 +11,7 @@ const Searchbar = () => {
             <section className='p-4 shadow-md'>
                 <div className="grid lg:grid-cols-12 md:grid-cols-8 max-sm:space-y-1">
                     <div className=' max-sm:flex max-sm:justify-center  lg:col-span-1 '>
-                        <img className='' src={PNYlogo} alt="" /> </div>
+                        <img className=' lg:w-[75px] h-[55px]' src={PNYlogo} alt="" /> </div>
 
                     <div className=' lg:col-span-2 md:col-span-2'>
                         <div className=' max-sm:flex max-sm:justify-center'>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Searchbar from '../Components/Searchbar';
 import Footer from '../Components/Footer';
+import instructor from '../Categories/data/Instructor';
+import feature from '../Categories/data/Feature';
 
 const modulesData = [
   {
@@ -104,15 +106,6 @@ const Coursedetail = () => {
      <p className='mx-2 my-1'>Course Date:</p>
     </div>
      </div>
-     
-
- 
-
-     
-
-
-
-
      <button type="button" class="text-white hover:text-white border border-blue-700  hover:bg-[#308AFF] font-medium rounded-lg text-sm px-4 py-3 text-center mr-2 mb-2  dark:hover:text-white">Download Course Broucher</button>
      <button className="inline-flex text-white bg-[#308AFF] border-0 border-blue-700 py-3 px-4 focus:outline-none hover:bg-[#308AFF] rounded text-sm">Free Orientation Class</button>
         <button className="ml-4 inline-flex text-white bg-red-700 border-0 py-3 px-4  hover:bg-red-700 rounded text-sm my-2">Pay Now</button>
@@ -154,67 +147,45 @@ const Coursedetail = () => {
     </div>
 </div>
 </section>
-<section class="text-gray-600 body-font">
-<div class="container px-5 py-15 mx-auto">
-  <div class="text-center mb-20">
-    <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4 font-semibold">Develop your Academic network through Diverse Environment</h1>
-    <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">We discover your personal and professional growth capitalize on opportunities through which you will get profound impact on various employment and career advancement.</p>
-  </div>
 
-  <div className="flex flex-wrap sm:mx-auto">
-  <div className="flex flex-col flex-1 w-32 md:w-1/6 sm:w-1/2">
-      <div className="mx-auto px-4 py-6">
-        <img src="/images/Featured icon.png" />
-      </div>
-      <div className="text-center">
-        <h2 className="text-sm text-black font-semibold">Learning Management System Access</h2>
-      </div>
-  </div>
-  <div className="flex flex-col flex-1 w-32 md:w-1/6 sm:w-1/2">
-    <div className="mx-auto px-4 py-6">
-      <img src="/images/Featured icon.png" />
+<section className="text-gray-600 body-font">
+  <div className="container px-5 py-10 mx-auto">
+    <div className="flex flex-col text-center w-full mb-12">
+      <h1 className="sm:text-3xl text-5xl  font-bold mb-4 text-gray-900">Develop your Academic network through Diverse Environment</h1>
+      <p className="lg:w-2/3 mx-auto leading-relaxed text-base">We discover your personal and professional growth capitalize on opportunities through which you will get profound impact on various employment and career advancement.</p>
     </div>
-    <div className="text-center">
-        <h2 className="text-sm text-black font-semibold">Instructor Support</h2>
-      </div>
   </div>
-  <div className="flex flex-col flex-1 w-32 md:w-1/6 sm:w-1/2">
-    <div className="mx-auto px-4 py-6 ">
-      <img src="/images/Featured icon.png" alt="Featured Icon" />
-    </div>
-    <div className="text-center">
-        <h2 className="text-sm text-black font-semibold">Internship Opportunity</h2>
-      </div>
-  </div>
-  <div className="flex flex-col flex-1 w-32 md:w-1/6 sm:w-1/2">
-    <div className="mx-auto px-4 py-6 rounded-lg">
-      <img src="/images/Featured icon.png" />
-    </div>
-    <div className="text-center">
-        <h2 className="text-sm text-black font-semibold">Job Cell</h2>
-      </div>
-  </div>
-  <div className="flex flex-col flex-1 w-32 md:w-1/6 sm:w-1/2">
-    <div className="mx-auto px-4 py-6 rounded-lg">
-      <img src="/images/Featured icon.png" />
-    </div>
-    <div className="text-center">
-        <h2 className="text-sm text-black font-semibold">PNY Community Member</h2>
-      </div>
-  </div>
-  <div className="flex flex-col flex-1 w-32 md:w-1/6 sm:w-1/2">
-    <div className="mx-auto px-4 py-6">
-      <img src="/images/Featured icon.png" />
-    </div>
-    <div className="text-center">
-        <h2 className="text-sm text-black font-semibold">Free Seminar Access</h2>
-      </div>
-  </div>
-</div>
-
-
-</div>
 </section>
+
+
+
+
+
+
+
+<section className="text-gray-600 body-font text-center">
+
+  <div className="container px-5 py-2 mx-auto ml-15">
+    <div className="flex flex-wrap -m-4">
+   {feature.map((x)=>{
+    return(
+      <div className="lg:w-1/6 md:w-1/2 p-4 w-full ">
+      <a className="block relative h-30 rounded overflow-hidden">
+        <img alt="ecommerce" className="mx-auto object-cover object-center w-20 block" src={x.image} />
+      </a>
+      <div className="">
+        <h3 className="text-lg tracking-widest title-font text-[#152438]">{x.title}</h3>
+      </div>
+    </div>
+    
+    )
+   }
+    )}
+    </div>
+  </div>
+</section>
+
+
 <section className="text-gray-600 body-font">
   <div className="container  mx-auto">
     <h2 className="text-2xl font-bold text-black my-5 mt-8 mx-2">Course Instructors</h2>
@@ -305,6 +276,7 @@ People are searching for the right people to promote their brands. Just in case 
 
 
 
+
 </div>
 <div className='container'>
 
@@ -319,98 +291,98 @@ People are searching for the right people to promote their brands. Just in case 
 <section className="text-gray-600 body-font ">
 <div className="container px-5 py-15 mx-auto">
 
-<div className="flex flex-wrap -m-4"> 
-{/* Card 1 */}
-<div className="w-full md:w-1/2 lg:w-1/4 p-4 flex-grow">
-  <div className="bg-white p-4 rounded-lg shadow-md">
-    <img src="/images/1 (4).png" alt="Image 1" className="w-full rounded h-36 object-cover mb-4" />
-    <div class="flex justify-between w-50 mb-4">
-    <div class="flex">
-      <i class="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
-      <p>Design</p>
-    </div>
-    <div class="flex">
-      <i class="fas fa-clock text-gray-400 mt-1 mx-1"></i>
-      <p>6 Months</p>
-    </div>
-</div>
-    <div className="w-full">
-    <h2 className="title-font font-medium text-lg text-gray-900">Certified Digital Media Marketing (CDMM) Expert
-    Course (06 Months)</h2>
-    <h3 className="text-red-500 font-bold mb-0.5 mt-1">Ayesha Amjad</h3>
-  </div>
-  </div>
-</div>
-{/* Card 2 */}
-<div className="w-full md:w-1/2 lg:w-1/4 p-4 flex-grow">
-  <div className="bg-white p-4 rounded-lg shadow-md">
-    <img src="/images/2 (2).png" alt="Image 2" className="w-full rounded h-36 object-cover mb-4" />
-    <div class="flex justify-between w-50 mb-4">
-    <div class="flex">
-    <i class="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
-      <p>Design</p>
-    </div>
-    <div class="flex">
-      <i class="fas fa-clock text-gray-300 mt-1 mx-1"></i>
-      <p >6 Months</p>
-    </div>
-</div>
-    <div className="w-full">
-      <h2 className="title-font font-medium text-lg mb-3 text-gray-900">Become a Certified Web Designer & Developer
-      </h2>
-
-      <h3 className="text-red-500 font-bold mb-4 mt-4">Asim Manzoor</h3>
-     
-      
-    </div>
-  </div>
-</div>
-{/* Card 3 */}
-<div className="w-full md:w-1/2 lg:w-1/4 p-4 flex-grow">
-  <div className="bg-white p-4 rounded-lg shadow-md">
-    <img src="/images/3 (2).png" alt="Image 3" className="w-full rounded h-36 object-cover mb-4" />
-   <div class="flex justify-between w-50 mb-4">
-        <div class="flex">
+<div className="flex flex-wrap -m-4">
+  {/* Card 1 */}
+  <div className="w-full md:w-1/2 lg:w-1/4 p-4  flex-grow">
+    <div className=" p-4 w-64 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+      <img src="/images/1 (4).png" alt="Image 1" className="h-40 object-cover rounded-xl h-40 object-cover rounded-xl mb-2" />
+      <div class="flex justify-between w-50 mb-4">
+      <div class="flex">
         <i class="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
-          <p>Design</p>
-        </div>
-        <div class="flex">
-          <i class="fas fa-clock text-gray-300 mt-1 mx-1"></i>
-          <p >6 Months</p>
-        </div>
+        <p>Design</p>
+      </div>
+      <div class="flex">
+        <i class="fas fa-clock text-gray-400 mt-1 mx-1"></i>
+        <p>6 Months</p>
+      </div>
   </div>
-        <div className="w-full">
-          <h2 className="title-font font-medium text-lg text-gray-900">Become a Certified Full Stack Web Developer</h2>
-          <h3 className="text-red-500 font-bold mb-3 mt-5">Faisal Javeed</h3>
-          
-        </div>
-  </div>
-</div>
-{/* Card 4 */}
-<div className="w-full md:w-1/2 lg:w-1/4 p-4 flex-grow">
-  <div className="bg-white p-4 rounded-lg shadow-md">
-    <img src="/images/1 (3).png" alt="Image 4" className="w-full rounded h-36 object-cover mb-4" />
-    <div class="flex justify-between w-50 mb-4">
-    <div class="flex">
-      <i class="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
-      <p>Design</p>
+      <div className="w-full">
+      <h2 className="title-font font-medium text-sm text-gray-900 mb-3">Certified Digital Media Marketing (CDMM) Expert
+      Course (06 Months)</h2>
+      <h3 className="text-red-500 mb-1.5 mt-1">Ayesha Amjad</h3>
     </div>
-    <div class="flex">
-      <i class="fas fa-clock text-gray-300 mt-1 mx-1"></i>
-      <p >6 Months</p>
     </div>
-</div>
-    <div className="w-full">
-    <h2 className="title-font font-medium text-lg text-gray-900">Certified Digital Media
-    Marketing (CDMM) Expert
-    Course (06 Months)
-    </h2>
-    <h3 className="text-red-500 font-bold mb-1 mt-0.5">Aqsa Razzaq</h3>
   </div>
+  {/* Card 2 */}
+  <div className="w-full md:w-1/2 lg:w-1/4 p-4 flex-grow">
+    <div className="p-4 w-64 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+      <img src="/images/2 (2).png" alt="Image 2" className="w-full rounded h-46 object-cover mb-4" />
+      <div class="flex justify-between w-50 mb-4">
+      <div class="flex">
+      <i className="fa-solid fa-desktop mr-1 mt-1 text-blue-500"></i>
+        <p className="text-blue-500">Development</p>
+      </div>
+      <div class="flex">
+        <i class="fas fa-clock text-gray-300 mt-1 mx-1"></i>
+        <p >6 Months</p>
+      </div>
   </div>
+      <div className="w-full">
+        <h2 className="title-font font-medium text-sm mb-4 text-gray-900">Become a Certified Web Designer & Developer
+        </h2>
   
-</div>
-</div>
+        <h3 className="text-red-500  mb-2 mt-7">Asim Manzoor</h3>
+       
+        
+      </div>
+    </div>
+  </div>
+  {/* Card 3 */}
+  <div className="w-full md:w-1/2 lg:w-1/4 p-4 flex-grow">
+    <div className="p-4 w-64 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+      <img src="/images/3 (2).png" alt="Image 3" className="w-full rounded h-46 object-cover mb-4" />
+     <div class="flex justify-between w-50 mb-4">
+          <div class="flex">
+          <i class="fa-solid fa-rectangle-ad mx-1 mt-1 text-blue-500"></i>
+            <p className="text-blue-500">Marketing</p>
+          </div>
+          <div class="flex">
+            <i class="fas fa-clock text-gray-300 mt-1 mx-1"></i>
+            <p >6 Months</p>
+          </div>
+    </div>
+          <div className="w-full">
+            <h2 className="title-font font-medium text-sm text-gray-900">Become a Certified Full Stack Web Developer</h2>
+            <h3 className="text-red-500 mb-2 mt-7">Faisal Javeed</h3>
+            
+          </div>
+    </div>
+  </div>
+  {/* Card 4 */}
+  <div className="w-full md:w-1/2 lg:w-1/4 p-4 flex-grow ">
+    <div className="p-4 w-64 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl ">
+      <img src="/images/1 (3).png" alt="Image 4" className="w-full rounded h-46 object-cover mb-4" />
+      <div class="flex justify-between w-50 mb-4">
+      <div class="flex">
+        <i class="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
+        <p text-blue-500>Design</p>
+      </div>
+      <div class="flex">
+        <i class="fas fa-clock text-gray-300 mt-1 mx-1"></i>
+        <p >6 Months</p>
+      </div>
+  </div>
+      <div className="w-full">
+      <h2 className="title-font font-medium text-sm text-gray-900 mb-3">Certified Digital Media
+      Marketing (CDMM) Expert
+      Course (06 Months)
+      </h2>
+      <h3 className="text-red-500  mb-1 mt-0.5">Aqsa Razzaq</h3>
+    </div>
+    </div>
+    
+  </div>
+  </div>
 </div>
 </section>
 
@@ -420,9 +392,7 @@ People are searching for the right people to promote their brands. Just in case 
 
 </div>
     </div>
-    <footer>
-      <Footer/>
-    </footer>
+   
     </>
 
   )

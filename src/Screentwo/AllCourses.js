@@ -24,7 +24,7 @@ const AllCourses = () => {
     <section className="text-gray-400  body-font bg-[#152438]">
     <div className="container px-5 py-16 mx-auto">
     <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-bold  text-center text-white">Explore Skilled Courses</h1>
-    <div className="flex justify-center items-center mx-5 flex-wrap my-4">
+    <div className="flex justify-center items-center mx-5 flex-wrap mx-auto my-4 lg:w-1/1 sm:w-full h-full">
   <div className="col-span-6 md:col-span-3">
     <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-3 py-2 text-center mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-2" >Featured</button>
   </div>
@@ -77,11 +77,11 @@ const AllCourses = () => {
 {/* Card 1 */}
 <div className="w-full md:w-1/2 lg:w-1/4 p-4 flex-grow">
   <div className="bg-white p-4 rounded-lg shadow-md">
-    <img src="/images/1 (4).png" alt="Image 1" className="w-full rounded h-36 object-cover mb-4" />
+    <img src="/images/1 (4).png" alt="Image 1" className="w-full rounded h-40 object-cover mb-4" />
     <div class="flex justify-between w-50 mb-4">
     <div class="flex">
       <i class="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
-      <p>Design</p>
+      <p className="text-blue-500">Design</p>
     </div>
     <div class="flex">
       <i class="fas fa-clock text-gray-400 mt-1 mx-1"></i>
@@ -98,11 +98,11 @@ const AllCourses = () => {
 {/* Card 2 */}
 <div className="w-full md:w-1/2 lg:w-1/4 p-4 flex-grow">
   <div className="bg-white p-4 rounded-lg shadow-md">
-    <img src="/images/2 (2).png" alt="Image 2" className="w-full rounded h-36 object-cover mb-4" />
+    <img src="/images/2 (2).png" alt="Image 2" className="w-full rounded h-40 object-cover mb-4" />
     <div class="flex justify-between w-50 mb-4">
     <div class="flex">
-    <i class="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
-      <p>Design</p>
+    <i className="fa-solid fa-desktop mr-1 mt-1 text-blue-500"></i>
+      <p className="text-blue-500">Development</p>
     </div>
     <div class="flex">
       <i class="fas fa-clock text-gray-300 mt-1 mx-1"></i>
@@ -122,11 +122,11 @@ const AllCourses = () => {
 {/* Card 3 */}
 <div className="w-full md:w-1/2 lg:w-1/4 p-4 flex-grow">
   <div className="bg-white p-4 rounded-lg shadow-md">
-    <img src="/images/3 (2).png" alt="Image 3" className="w-full rounded h-36 object-cover mb-4" />
+    <img src="/images/3 (2).png" alt="Image 3" className="w-full rounded h-40 object-cover mb-4" />
    <div class="flex justify-between w-50 mb-4">
         <div class="flex">
-        <i class="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
-          <p>Design</p>
+        <i class="fa-solid fa-rectangle-ad mt-1 mx-1"></i>
+          <p className="text-blue-500">Marketing</p>
         </div>
         <div class="flex">
           <i class="fas fa-clock text-gray-300 mt-1 mx-1"></i>
@@ -143,11 +143,11 @@ const AllCourses = () => {
 {/* Card 4 */}
 <div className="w-full md:w-1/2 lg:w-1/4 p-4 flex-grow">
   <div className="bg-white p-4 rounded-lg shadow-md">
-    <img src="/images/1 (3).png" alt="Image 4" className="w-full rounded h-36 object-cover mb-4" />
+    <img src="/images/1 (3).png" alt="Image 4" className="w-full rounded h-40 object-cover mb-4" />
     <div class="flex justify-between w-50 mb-4">
     <div class="flex">
       <i class="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
-      <p>Design</p>
+      <p clasName="text-blue-500">Design</p>
     </div>
     <div class="flex">
       <i class="fas fa-clock text-gray-300 mt-1 mx-1"></i>
@@ -169,11 +169,11 @@ const AllCourses = () => {
 {/* Card 1 */}
 <div className="w-full md:w-1/2 lg:w-1/4 p-4 flex-grow">
   <div className="bg-white p-4 rounded-lg shadow-md">
-    <img src="/images/1 (4).png" alt="Image 1" className="w-full rounded h-36 object-cover mb-4" />
+    <img src="/images/1 (4).png" alt="Image 1" className="w-full rounded h-40 object-cover mb-4" />
     <div class="flex justify-between w-50 mb-4">
     <div class="flex">
       <i class="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
-      <p>Design</p>
+      <p className="text-blue-500">Design</p>
     </div>
     <div class="flex">
       <i class="fas fa-clock text-gray-400 mt-1 mx-1"></i>
@@ -190,11 +190,11 @@ const AllCourses = () => {
 {/* Card 2 */}
 <div className="w-full md:w-1/2 lg:w-1/4 p-4 flex-grow">
   <div className="bg-white p-4 rounded-lg shadow-md">
-    <img src="/images/2 (2).png" alt="Image 2" className="w-full rounded h-36 object-cover mb-4" />
+    <img src="/images/2 (2).png" alt="Image 2" className="w-full rounded h-40 object-cover mb-4" />
     <div class="flex justify-between w-50 mb-4">
     <div class="flex">
-    <i class="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
-      <p>Design</p>
+    <i className="fa-solid fa-desktop mr-1 mt-1 text-blue-500"></i>
+    <p className="text-blue-500">Development</p>
     </div>
     <div class="flex">
       <i class="fas fa-clock text-gray-300 mt-1 mx-1"></i>
@@ -214,11 +214,11 @@ const AllCourses = () => {
 {/* Card 3 */}
 <div className="w-full md:w-1/2 lg:w-1/4 p-4 flex-grow">
   <div className="bg-white p-4 rounded-lg shadow-md">
-    <img src="/images/3 (2).png" alt="Image 3" className="w-full rounded h-36 object-cover mb-4" />
+    <img src="/images/3 (2).png" alt="Image 3" className="w-full rounded h-40 object-cover mb-4" />
    <div class="flex justify-between w-50 mb-4">
         <div class="flex">
-        <i class="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
-          <p>Design</p>
+        <i class="fa-solid fa-rectangle-ad mt-1 mx-1"></i>
+          <p className="text-blue-500">Marketing</p>
         </div>
         <div class="flex">
           <i class="fas fa-clock text-gray-300 mt-1 mx-1"></i>
@@ -235,11 +235,11 @@ const AllCourses = () => {
 {/* Card 4 */}
 <div className="w-full md:w-1/2 lg:w-1/4 p-4 flex-grow">
   <div className="bg-white p-4 rounded-lg shadow-md">
-    <img src="/images/1 (3).png" alt="Image 4" className="w-full rounded h-36 object-cover mb-4" />
+    <img src="/images/1 (3).png" alt="Image 4" className="w-full rounded h-40 object-cover mb-4" />
     <div class="flex justify-between w-50 mb-4">
     <div class="flex">
       <i class="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
-      <p>Design</p>
+      <p className="text-blue-500">Design</p>
     </div>
     <div class="flex">
       <i class="fas fa-clock text-gray-300 mt-1 mx-1"></i>
@@ -263,30 +263,27 @@ const AllCourses = () => {
   </section>
 
   <section className="text-gray-600 body-font shadow-md bg-gray-100 text-center pt-16">
-<h1 className=" text-black sm:text-3xl text-2xl text-center font-medium title-font text-gray-900 mb-5 font-semibold">Most Popular Instructors in Marketing</h1>
-  <div className="container px-5 py-2 mx-auto ml-10">
-    <div className="flex flex-wrap -m-4">
-   {instructor.map((x)=>{
-    return(
-      <div className="lg:w-1/4 md:w-1/2 p-4 w-full ">
-      <a className="block relative h-40 rounded overflow-hidden">
-        <img alt="ecommerce" className="mx-auto object-cover object-center w-32 block" src={x.image} />
-      </a>
-      <div className="">
-        <h3 className="text-lg tracking-widest title-font text-black font-bold">{x.Name}</h3>
-        <h2 className="title-font text-xs font-medium text-sm">{x.instructor}</h2>
+  <h1 className=" text-black sm:text-3xl text-2xl text-center font-medium title-font text-gray-900 mb-5 font-bold">Most Popular Instructors in Marketing</h1>
+    <div className="container px-5 py-2 mx-auto ml-15">
+      <div className="flex flex-wrap -m-4">
+     {instructor.map((x)=>{
+      return(
+        <div className="lg:w-1/4 md:w-1/2 p-4 w-full ">
+        <a className="block relative h-40 rounded overflow-hidden">
+          <img alt="ecommerce" className="mx-auto object-cover object-center w-32 block" src={x.image} />
+        </a>
+        <div className="">
+          <h3 className="text-lg tracking-widest title-font text-black font-bold">{x.Name}</h3>
+          <h2 className="title-font text-xs font-medium text-sm">{x.instructor}</h2>
+        </div>
       </div>
       
+      )
+     }
+      )}
+      </div>
     </div>
-    
-    
-    )
-   }
-    )}
-    </div>
-
-  </div>
-</section>
+  </section>
 <section className='lg:p-10'>
             <div className="grid justify-center">
               <div className=" lgh lg:p-2  dark:text-white">Our Affiliations</div>
@@ -309,9 +306,7 @@ const AllCourses = () => {
     
     
     </div>
-    <footer>
-      <Footer/>
-    </footer>
+  
     </>
   )
 }

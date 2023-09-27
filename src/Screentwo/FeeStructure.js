@@ -98,8 +98,9 @@ const FeeStructure = () => {
             </div>
           </div>
         </header>
+
         <div className="container mt-3 mx-auto relative overflow-x-auto shadow-md sm:rounded-lg">
-          <table className="w-75 mx-auto text-sm text-left text-gray-500 dark:text-gray-400">
+          <table className="  w-full mx-auto text-sm text-left text-gray-500 dark:text-gray-400 border border-lg">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr className="bg-slate-200">
                 <th scope="col" className="p-3">
@@ -212,9 +213,7 @@ const FeeStructure = () => {
 
 
       </div>
-      <footer>
-        <Footer />
-      </footer>
+      
     </>
   )
 }

@@ -7,7 +7,7 @@ const Navbar = () => {
       <nav>
         <div className='max-sm:hidden md:hidden xl:block lg:block px-3 text-white  bg-[#152438] h-[50px]'>
           <ul className='flex  lg:justify-center  xl:justify-center space-x-4'>
-            <li><span className='mr-1'><i class="fa-solid fa-phone"></i></span>03041111774</li>
+            <li><span className='mr-1'>UAN -</span>03041111774</li>
             <li><span className='mr-1'><i class="fa-solid fa-envelope"></i></span>info@pnytrainings.com</li>
             <li className='bg-[#FFBA4A] blinking-text rounded-md flex justify-center items-center lg:w-[350px] h-[21px] xl:w-[200px] text-black '>Fast Track Pro Bootcamps in 2023</li>
             <li>Amazon Services</li>

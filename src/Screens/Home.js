@@ -4,7 +4,7 @@ import Carousal from '../Components/Carousal'
 import newgroup from '../Assets/images/newgroup.png'
 import icon from '../Assets/images/Featured icon.svg'
 import { Flowbite } from 'flowbite-react'
-import contentimage from '../Assets/image/Contentsnew.png'
+import contentimage from '../Assets/image/Why choose Us.png'
 import { Carousalhome, Carousalhome1 } from '../Components/Carousal'
 import frame from '../Assets/image/Frame 624.png'
 import frame2 from '../Assets/image/Frame 61.png'
@@ -264,7 +264,7 @@ const Home = () => {
                 </div>
               </div>
               <div className='col-span-6'>
-                <div className=' justify-center flex lg:p-6 lg:mt-10' >
+                <div className=' justify-center flex lg:p-6 lg:mt-20' >
                   <img className="image w-[596px] max-sm:h-52" src={contentimage} alt="" />
                 </div>
               </div>

@@ -13,7 +13,7 @@ const Footer = () => {
             <footer class="footer p-10 bg-base-200 text-base-content">
                 <aside className='lg:w-[361px]'>
                     <img src={pnylogonew} alt="" width={159} />
-                    <p> <span className='font-bold'>Our head office is located at:</span> <br />
+                    <p> <span className='font-bold'>Head Office</span> <br />
                         Office # 1, Level # 14, Arfa Software Technology Park,
                         Ferozepur Road Lahore, Pakistan
                         Phone: 03041111774
@@ -57,14 +57,10 @@ const Footer = () => {
             <div className=' border-b-2 border-blue-600'></div>
 
             {/* Our Branches--------------------------------------------------------------------------------------------- */}
-            
+               <div className=' text-center bg-base-300 text-xl font-semibold p-2'>Our Branches</div>
             <footer class="footer p-10 grid lg:grid-cols-12 md:grid-cols-12 bg-base-200 text-base-content">
           
-                <nav className=' lg:mt-16 col-span-2 md:flex md:flex-col'>
-                    
-                  <p className='lg:text-2xl font-bold text-center'>Our Branches</p>
-
-                </nav>
+               
                 <nav className='col-span-2'>
                     
                     <img src={arfatower} alt="" />
@@ -88,6 +84,11 @@ const Footer = () => {
                     <img src={multan} alt="" />
                     <header class="text-black font-bold">Multan</header>
                     <a class="link link-hover lg:w-[150px]">237-B, Model Town, Main Boulevard, Multan</a>
+                </nav>
+                <nav className='col-span-2'>
+                    <img src={multan} alt="" />
+                    <header class="text-black font-bold">Rawalpindi</header>
+                    <a class="link link-hover lg:w-[150px]">Office # 604, Alpha Techno Square NASTP, Old Airport Nur khan Airbase, Chaklala Cantt, Rawalpindi.</a>
                 </nav>
                 <nav>
                     <img src={allbrances} alt="" />
