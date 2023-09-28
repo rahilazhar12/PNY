@@ -13,6 +13,8 @@ import Categories from  '../Screentwo/Categories'
 import Coursedetails from  '../Screentwo/Coursedetail'
 import Allcourses from  '../Screentwo/AllCourses'
 import Design from '../Screens/Design'
+import Gallery from '../Screens/Gallery'
+import Gallerydetailed from '../Screens/Gallerydetailed'
 
 const Router = () => {
     return (
@@ -31,6 +33,8 @@ const Router = () => {
                 <Route path='/coursedetails' element={<Coursedetails/>} />
                 <Route path='/allcourses' element={<Allcourses/>} />
                 <Route path='/Carrer' element={<Design/>} />
+                <Route path='/gallery' element={<Gallery/>} />
+                <Route path='/imagesshow/:id' element={<Gallerydetailed/>} />
 
                 
 

@@ -11,11 +11,19 @@ import arfa from '../Assets/image/arfa.png'
 import multan from '../Assets/image/mt.png'
 import johartown from '../Assets/image/jt.png'
 import rawalpindi from '../Assets/image/rp.png'
-import iqbaltown from '../Assets/image/ait.png' 
+import iqbaltown from '../Assets/image/ait.png'
+import g1 from '../Assets/Gallery/1.png'
+import g2 from '../Assets/Gallery/2.png'
+import g3 from '../Assets/Gallery/3.png'
+import g4 from '../Assets/Gallery/4.png'
+import g5 from '../Assets/Gallery/5.png'
+import g6 from '../Assets/Gallery/6.png'
+import g7 from '../Assets/Gallery/7.png'
+import g8 from '../Assets/Gallery/8.png'
 
 const cardData = [
   {
-    id:1,
+    id: 1,
     imgAlt: "Alt text 1",
     imgSrc: "https://www.simplilearn.com/ice9/free_resources_article_thumb/What_is_digital_marketing.jpg",
     title: "Design",
@@ -24,7 +32,7 @@ const cardData = [
     buttonText: "View Course"
   },
   {
-    id:2,
+    id: 2,
     imgAlt: "Alt text 2",
     imgSrc: "https://live.staticflickr.com/429/19120501824_7dec99f31e_b.jpg",
     title: "Technology",
@@ -33,7 +41,7 @@ const cardData = [
     buttonText: "View Course"
   },
   {
-    id:3,
+    id: 3,
     imgAlt: "Alt text 2",
     imgSrc: "https://remunance.com/wp-content/uploads/2023/01/Expansion-of-business..jpeg",
     title: "Business",
@@ -42,7 +50,7 @@ const cardData = [
     buttonText: "View Course"
   },
   {
-    id:4,
+    id: 4,
     imgAlt: "Alt text 2",
     imgSrc: "https://i.pcmag.com/imagery/roundups/02HDufdqeRUDu3tl0NnY2qZ-2..v1649351854.jpg",
     title: "Software",
@@ -51,7 +59,7 @@ const cardData = [
     buttonText: "View Course"
   },
   {
-    id:5,
+    id: 5,
     imgAlt: "Alt text 2",
     imgSrc: "https://www.lecole.edu.pk/wp-content/uploads/2021/01/Education-Pic.jpg",
     title: "Education",
@@ -60,7 +68,7 @@ const cardData = [
     buttonText: "View Course"
   },
   {
-    id:6,
+    id: 6,
     imgAlt: "Alt text 2",
     imgSrc: "https://www.adorama.com/alc/wp-content/uploads/2021/04/photography-camera-learning-feature.jpg",
     title: "Photography",
@@ -69,7 +77,7 @@ const cardData = [
     buttonText: "View Course"
   },
   {
-    id:7,
+    id: 7,
     imgAlt: "Alt text 2",
     imgSrc: "https://twproject.com/blog/wp-content/uploads/project-management-software-in-mother-tongue.png",
     title: "IT Softwares",
@@ -78,7 +86,7 @@ const cardData = [
     buttonText: "View Course"
   },
   {
-    id:8,
+    id: 8,
     imgAlt: "Alt text 2",
     imgSrc: "https://sitechecker.pro/wp-content/uploads/2018/02/Knowledge-base-part-3_what-is-seo.jpg",
     title: "SEO",
@@ -87,7 +95,7 @@ const cardData = [
     buttonText: "View Course"
   },
   {
-    id:9,
+    id: 9,
     imgAlt: "Alt text 2",
     imgSrc: "https://www.searchenginejournal.com/wp-content/uploads/2021/08/the-ultimate-guide-to-digital-marketing-61726311bf393-sej.png",
     title: "Marketing",
@@ -101,44 +109,44 @@ const cardData = [
 
 export const aboutdata = [
   {
-    id:1,
+    id: 1,
     imgAlt: "Alt text 1",
-    imgSrc:  logo19,
+    imgSrc: logo19,
     title: "Care about our team",
     description: "Understand what matters to our employees. Give them what they need to do their best work.",
   },
   {
-    id:2,
+    id: 2,
     imgAlt: "Alt text 1",
     imgSrc: logo19,
     title: "Be excellent to each other",
     description: "We rely on our peers to help us progress. Be upfront, honest, and considerate.",
   },
   {
-    id:3,
+    id: 3,
     imgAlt: "Alt text 1",
     imgSrc: logo19,
     title: "Pride in what we do",
     description: "Value quality and integrity in everything we do. At all times. No exceptions.",
   },
   {
-    id:4,
+    id: 4,
     imgAlt: "Alt text 1",
-    imgSrc:logo19,
+    imgSrc: logo19,
     title: "Care for our students",
     description: "Understand what are students’ unstated needs. Make them wildly successful.",
   },
   {
-    id:5,
+    id: 5,
     imgAlt: "Alt text 1",
     imgSrc: logo19,
     title: "Do the impossible",
     description: "Be energized by difficult problems. Revel in unknowns. Ask Why?, but always question, Why not?",
   },
   {
-    id:6,
+    id: 6,
     imgAlt: "Alt text 1",
-    imgSrc:logo19,
+    imgSrc: logo19,
     title: "Sweat the small stuff",
     description: "We believe the best results come from the best attention to detail. Sweat the small stuff.",
   },
@@ -148,82 +156,82 @@ export const aboutdata = [
 // Homesectiondata-----------------------------------------------------------------------------------------------------
 export const homedata = [
   {
-    id:1,
+    id: 1,
     imgAlt: "Alt text 1",
-    imgSrc:  affiliated,
-    title:  "Affiliated with Govt. (PSDA Navttc & PBTE)",
-  
+    imgSrc: affiliated,
+    title: "Affiliated with Govt. (PSDA Navttc & PBTE)",
+
   },
   {
-    id:2,
+    id: 2,
     imgAlt: "Alt text 1",
     imgSrc: multiplebranches,
     title: "Multiple Branches in Pakistan",
-    
+
   },
   {
-    id:3,
+    id: 3,
     imgAlt: "Alt text 1",
     imgSrc: international,
     title: "International Collaborations",
-    
+
   },
   {
-    id:4,
+    id: 4,
     imgAlt: "Alt text 1",
     imgSrc: usa,
     title: "Awarded by USA Education 2.0",
-    
+
   },
   {
-    id:5,
+    id: 5,
     imgAlt: "Alt text 1",
     imgSrc: alumini,
     title: "75000+ Alumni",
-    
+
   },
   {
-    id:6,
+    id: 6,
     imgAlt: "Alt text 1",
     imgSrc: professional,
     title: "100+ Professional Programs",
-    
+
   },
   {
-    id:7,
+    id: 7,
     imgAlt: "Alt text 1",
     imgSrc: instruction,
     title: "150+ Instructors",
-    
+
   },
   {
-    id:8,
+    id: 8,
     imgAlt: "Alt text 1",
     imgSrc: mou,
     title: "80+ Mou’s Sign",
-    
+
   },
 ]
 
 
 export const durationdata = [
   {
-    id:1,
+    id: 1,
     title: "1 Year Professional Diploma Programs",
     description: "Immerse yourself in our 1-year Professional Diploma programs, unlocking unlimited potential for career growth and success",
   },
   {
-    id:2,
+    id: 2,
     title: "6 Months Certified Courses",
     description: "Accelerate your career with our comprehensive 6-month certified Courses. Gain specialized expertise and excel in your career.",
   },
   {
-    id:3,
+    id: 3,
     title: "3-2 Months Certified Courses",
     description: "Elevate your expertise from 3 to 2 months with our Professional Certification Courses. Unlock new career opportunities!",
   },
   {
-    id:4,
+    id: 4,
     title: "Professional Boot Camp",
     description: "Join our Professional Bootcamp and gain valuable insights to advance your career. Don't miss out!",
   },
@@ -233,38 +241,122 @@ export const durationdata = [
 export const contactus = [
   {
     id: 1,
-    image:arfa,
+    image: arfa,
     title: "Arfa Tower",
     description: "1st Floor 256 / A, Block R2 Near Shaukat Khanam Hospital, next to Standard Chartered, Lahore",
-    phone:" 03041111774 | 0320 1443744",
+    phone: " 03041111774 | 0320 1443744",
   },
   {
     id: 2,
-    image:iqbaltown,
+    image: iqbaltown,
     title: "Allama Iqbal Town Branch",
     description: "743 B Kashmir Block Allama Iqbal Town Lahore",
-    phone:"0309-7774937"
+    phone: "0309-7774937"
   },
   {
     id: 3,
-    image:johartown,
+    image: johartown,
     title: "Johar Town Branch",
     description: "1st Floor 256 / A, Block R2 Near Shaukat Khanam Hospital, next to Standard Chartered, Lahore",
-    phone:"03097772259"
+    phone: "03097772259"
   },
   {
     id: 4,
-    image:multan,
+    image: multan,
     title: "Multan Branch",
     description: "237-B, Model Town, Main Boulevard, Multan",
-    phone:"0309-7772260 | 0309-7774685"
+    phone: "0309-7772260 | 0309-7774685"
   },
   {
     id: 5,
-    image:rawalpindi,
+    image: rawalpindi,
     title: "Rawalpindi Branch",
     description: "Office # 604, Alpha Techno Square NASTP, Old Airport Nur khan Airbase, Chaklala Cantt, Rawalpindi.",
-    phone:"0300-8405591"
+    phone: "0300-8405591"
+  },
+]
+
+export const GalleryData = [
+  {
+    "id": 1,
+    "image": g1,
+    "images": [
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
+    ],
+    "description": "Certificate and Gift Distribution Ceremony"
+  },
+
+  {
+    id: 2,
+    image: g2,
+    "images": [
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
+    ],
+    description: "3 Hours Session on Freelancing by Hisham Sarwar"
+  },
+  {
+    id: 3,
+    image: g3,
+    "images": [
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
+    ],
+    description: "Mystic Advertisement & PNY Trainings has collaborated !"
+  },
+  {
+    id: 4,
+    image: g4,
+    "images": [
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
+    ],
+    description: "Ethical Hacking & Cyber Security Course 2019 (Basic to Pro)"
+  },
+  {
+    id: 5,
+    image: g5,
+    "images": [
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
+    ],
+    description: "PNY Trainings has conducted Workshop in Universities"
+  },
+  {
+    id: 6,
+    image: g6,
+    "images": [
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
+    ],
+    description: "PNY Trainings has participated in Career Fair'19"
+  },
+  {
+    id: 7,
+    image: g7,
+    "images": [
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
+    ],
+    description: "Android Game Development (Unity 3D) Course"
+  },
+  {
+    id: 8,
+    image: g8,
+    "images": [
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
+    ],
+    description: "3D Character Maya Animation Course!"
   },
 ]
 

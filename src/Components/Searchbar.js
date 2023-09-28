@@ -22,6 +22,7 @@ const Searchbar = () => {
                                     <li><Link to='/coursedetails'>Coursedetails</Link></li>
                                     <li><Link to='/allcourses'>All Courses</Link></li>
                                     <li><Link to='/Carrer'>Career</Link></li>
+                                    <li><Link to='/Gallery'>Gallery</Link></li>
                                 </ul>
                             </div>
                         </div>
