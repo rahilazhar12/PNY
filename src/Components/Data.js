@@ -281,9 +281,9 @@ export const GalleryData = [
     "id": 1,
     "image": g1,
     "images": [
-      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
-      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
-      "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
+      "https://digitalkonnecter.com/images/events/pny/pny-full-3.JPG",
+      "https://digitalkonnecter.com/images/events/pny/pny-full-4.JPG",
+      "https://digitalkonnecter.com/images/events/pny/pny-full-5.JPG"
     ],
     "description": "Certificate and Gift Distribution Ceremony"
   },
@@ -296,7 +296,7 @@ export const GalleryData = [
       "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
       "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
     ],
-    description: "3 Hours Session on Freelancing by Hisham Sarwar"
+    description: "Ethical Hacking & Cyber Security Course 2019 (Basic to Pro)"
   },
   {
     id: 3,
@@ -306,7 +306,7 @@ export const GalleryData = [
       "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
       "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
     ],
-    description: "Mystic Advertisement & PNY Trainings has collaborated !"
+    description: "3 Hours Session on Freelancing by Hisham Sarwar"
   },
   {
     id: 4,
@@ -316,7 +316,7 @@ export const GalleryData = [
       "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
       "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
     ],
-    description: "Ethical Hacking & Cyber Security Course 2019 (Basic to Pro)"
+    description: "PNY Trainings has conducted Workshop in Universities"
   },
   {
     id: 5,
@@ -326,7 +326,7 @@ export const GalleryData = [
       "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
       "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
     ],
-    description: "PNY Trainings has conducted Workshop in Universities"
+    description: "3D Character Maya Animation Course!"
   },
   {
     id: 6,
@@ -336,7 +336,7 @@ export const GalleryData = [
       "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
       "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
     ],
-    description: "PNY Trainings has participated in Career Fair'19"
+    description: "Mystic Advertisement & PNY Trainings has collaborated !"
   },
   {
     id: 7,
@@ -346,7 +346,7 @@ export const GalleryData = [
       "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
       "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
     ],
-    description: "Android Game Development (Unity 3D) Course"
+    description: "PNY Trainings has participated in Career Fair'19"
   },
   {
     id: 8,
@@ -356,7 +356,7 @@ export const GalleryData = [
       "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
       "https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
     ],
-    description: "3D Character Maya Animation Course!"
+    description: "MOU With Different Organization"
   },
 ]
 
