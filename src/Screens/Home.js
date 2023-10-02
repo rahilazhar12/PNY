@@ -330,12 +330,12 @@ const Home = () => {
                 <img src={frame} alt="" />
               </div>
 
-              <div className="flex justify-center p-5 gap-5 max-sm:hidden dark:text-white">
+              {/* <div className="flex justify-center p-5 gap-5 max-sm:hidden dark:text-white">
                 <div className=' border-b-2 border-black'>Navtech certifications</div>
                 <div className=' border-b-2 border-black'>Google scholarship programm</div>
                 <div className=' border-b-2 border-black'>Free learning courses</div>
                 <div className=' border-b-2 border-black'>Internship program</div>
-              </div>
+              </div> */}
             </div>
           </section>
 
