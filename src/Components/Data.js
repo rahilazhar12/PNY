@@ -20,6 +20,12 @@ import g5 from '../Assets/Gallery/5.png'
 import g6 from '../Assets/Gallery/6.png'
 import g7 from '../Assets/Gallery/7.png'
 import g8 from '../Assets/Gallery/8.png'
+import f1 from '../Assets/Faqs Icons/1.png'
+import f2 from '../Assets/Faqs Icons/2.png'
+import f3 from '../Assets/Faqs Icons/3.png'
+import f4 from '../Assets/Faqs Icons/4.png'
+import f5 from '../Assets/Faqs Icons/5.png'
+import f6 from '../Assets/Faqs Icons/6.png'
 
 const cardData = [
   {
@@ -358,6 +364,166 @@ export const GalleryData = [
     ],
     description: "MOU With Different Organization"
   },
+]
+
+
+
+export const faqs = [
+  {
+    id: 1,
+    image: f1,
+    description: "Courses & Diploma",
+    details: [
+      {
+        text: "Students from different cities can apply for Admission 1",
+        subDetails: ["Sub detail 1 for Admission 1", "Sub detail 2 for Admission 1"]
+      },
+      {
+        text: "Another text for Admission 1",
+        subDetails: ["Sub detail 3 for Admission 1", "Sub detail 4 for Admission 1"]
+      },
+      {
+        text: "Another text for Admission 1",
+        subDetails: ["Sub detail 3 for Admission 1", "Sub detail 4 for Admission 1"]
+      },
+      {
+        text: "Another text for Admission 1",
+        subDetails: ["Sub detail 3 for Admission 1", "Sub detail 4 for Admission 1"]
+      },
+    ]
+  },
+
+
+
+  {
+    id: 2,
+    image: f2,
+    description: "Workshop & Bootcamp",
+    details: [
+      {
+        text: "Students from different cities can apply for Admission 2",
+        subDetails: ["Sub detail 1 for Admission 1", "Sub detail 2 for Admission 1"]
+      },
+      {
+        text: "Another text for Admission 1",
+        subDetails: ["Sub detail 3 for Admission 1", "Sub detail 4 for Admission 1"]
+      },
+      {
+        text: "Another text for Admission 1",
+        subDetails: ["Sub detail 3 for Admission 1", "Sub detail 4 for Admission 1"]
+      },
+      {
+        text: "Another text for Admission 1",
+        subDetails: ["Sub detail 3 for Admission 1", "Sub detail 4 for Admission 1"]
+      },
+    ]
+  },
+
+
+  {
+    id: 3,
+    image: f3,
+    description: "Admission",
+    details: [
+      {
+        text: "Students from different cities can apply for Admission 3",
+        subDetails: ["Sub detail 1 for Admission 1", "Sub detail 2 for Admission 1"]
+      },
+      {
+        text: "Another text for Admission 1",
+        subDetails: ["Sub detail 3 for Admission 1", "Sub detail 4 for Admission 1"]
+      },
+      {
+        text: "Another text for Admission 1",
+        subDetails: ["Sub detail 3 for Admission 1", "Sub detail 4 for Admission 1"]
+      },
+      {
+        text: "Another text for Admission 1",
+        subDetails: ["Sub detail 3 for Admission 1", "Sub detail 4 for Admission 1"]
+      },
+    ]
+  },
+
+
+  {
+    id: 4,
+    image: f4,
+    description: "Training Schedule",
+    details: [
+      {
+        text: "Students from different cities can apply for Admission 4",
+        subDetails: ["Sub detail 1 for Admission 1", "Sub detail 2 for Admission 1"]
+      },
+      {
+        text: "Another text for Admission 1",
+        subDetails: ["Sub detail 3 for Admission 1", "Sub detail 4 for Admission 1"]
+      },
+      {
+        text: "Another text for Admission 1",
+        subDetails: ["Sub detail 3 for Admission 1", "Sub detail 4 for Admission 1"]
+      },
+      {
+        text: "Another text for Admission 1",
+        subDetails: ["Sub detail 3 for Admission 1", "Sub detail 4 for Admission 1"]
+      },
+    ]
+  },
+
+
+  {
+    id: 5,
+    image: f5,
+    description: "Physical + Online Classes",
+    details: [
+      {
+        text: "Students from different cities can apply for Admission 5",
+        subDetails: ["Sub detail 1 for Admission 1", "Sub detail 2 for Admission 1"]
+      },
+      {
+        text: "Another text for Admission 1",
+        subDetails: ["Sub detail 3 for Admission 1", "Sub detail 4 for Admission 1"]
+      },
+      {
+        text: "Another text for Admission 1",
+        subDetails: ["Sub detail 3 for Admission 1", "Sub detail 4 for Admission 1"]
+      },
+      {
+        text: "Another text for Admission 1",
+        subDetails: ["Sub detail 3 for Admission 1", "Sub detail 4 for Admission 1"]
+      },
+    ]
+  },
+
+
+  {
+    id: 6,
+    image: f6,
+    description: "Certification",
+    details: [
+      {
+        text: "Students from different cities can apply for Admission 6",
+        subDetails: ["Sub detail 1 for Admission 1", "Sub detail 2 for Admission 1"]
+      },
+      {
+        text: "Another text for Admission 1",
+        subDetails: ["Sub detail 3 for Admission 1", "Sub detail 4 for Admission 1"]
+      },
+      {
+        text: "Another text for Admission 1",
+        subDetails: ["Sub detail 3 for Admission 1", "Sub detail 4 for Admission 1"]
+      },
+      {
+        text: "Another text for Admission 1",
+        subDetails: ["Sub detail 3 for Admission 1", "Sub detail 4 for Admission 1"]
+      },
+    ]
+  },
+
+  
+
+
+
+  
 ]
 
 

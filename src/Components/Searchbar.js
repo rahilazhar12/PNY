@@ -23,6 +23,7 @@ const Searchbar = () => {
                                     <li><Link to='/allcourses'>All Courses</Link></li>
                                     <li><Link to='/Carrer'>Career</Link></li>
                                     <li><Link to='/Gallery'>Gallery</Link></li>
+                                    <li><Link to='/faqs'>Faq's</Link></li>
                                 </ul>
                             </div>
                         </div>
