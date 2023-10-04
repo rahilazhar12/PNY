@@ -46,7 +46,7 @@ const FeeStructure = () => {
         <div className='container'>
           <div data-tabs-toggle={parentTabContentSelector}>
             <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
-              <ul className="flex ml-20 flex-wrap text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+              <ul className="flex  flex-wrap text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
                 <li role="presentation">
                   <button className="inline-block p-2 ml-3 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Lahore</button>
                 </li>

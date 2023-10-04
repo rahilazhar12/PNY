@@ -13,7 +13,7 @@ const Categories = () => {
    <section className="text-gray-600 body-font bg-[#152438]">
   <div className="container  py-20 mx-auto">
     <div className="flex flex-col text-center w-full">
-      <h1 className=" text-white sm:text-3xl text-4xl  mb-4 text-gray-900 font-bold">Marketing Trainings and Tutorials</h1>
+      <h1 className=" text-white sm:text-3xl text-4xl  mb-4 text-gray-900 font-bold">Marketing Courses Category</h1>
       <p className="lg:w-2/3 mx-auto leading-relaxed text-sm text-white">Learn how to do SEO, SMO, PPC, CPL, Web analytics, and social media marketing through our highly advanced and strategic-based course curriculums, which lead to a bright future.</p>
     </div>
   </div>
@@ -22,8 +22,8 @@ const Categories = () => {
     
     <section className="text-gray-600 body-fon">
   <div className="container px-5 py-20 mx-auto">
-  <h1 className=" text-black sm:text-3xl text-3xl font-bold text-gray-900 mb-3">Top Courses in Marketing</h1>
-  <div className="flex flex-wrap -m-4">
+  <h1 className=" text-black  lg:text-3xl sm:text-xl text-3xl font-bold text-gray-900 mb-3 ml-5">Top Courses in Marketing</h1>
+  <div className="ml-2 flex flex-wrap -m-4 items-center justify-center">
   {/* Card 1 */}
   <div className="w-full md:w-1/2 lg:w-1/4 p-4  flex-grow">
     <div className=" p-4 w-64 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
@@ -41,7 +41,7 @@ const Categories = () => {
       <div className="w-full">
       <h2 className="title-font font-medium text-sm text-gray-900 mb-3">Certified Digital Media Marketing (CDMM) Expert
       Course (06 Months)</h2>
-      <h3 className="text-red-500  mt-1">Ayesha Amjad</h3>
+      <h3 className="text-red-500  mt-1 mb-1">Ayesha Amjad</h3>
     </div>
     </div>
   </div>
@@ -121,7 +121,7 @@ const Categories = () => {
 
 
 <section className="text-gray-600 body-font shadow-md bg-gray-100 text-center pt-16">
-<h1 className=" text-black sm:text-3xl text-2xl text-center font-medium title-font text-gray-900 mb-5 font-bold">Most Popular Instructors in Marketing</h1>
+<h1 className=" text-black sm:text-3xl text-2xl text-center title-font text-gray-900 mb-5 font-bold">Most Popular Instructors in Marketing</h1>
   <div className="container px-5 py-2 mx-auto ml-15">
     <div className="flex flex-wrap -m-4">
    {instructor.map((x)=>{
