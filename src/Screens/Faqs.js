@@ -34,7 +34,7 @@ const Faqs = () => {
             <section>
                 <div className='grid grid-cols-4 max-sm:grid-cols-1 '>
                     <div className=' col-span-1'>
-                        <div className=' bg-blue-500 h-full xl:w-[250px]  ml-[59px] max-sm:ml-0 flex justify-center items-center'>
+                        <div className=' bg-blue-500 h-full xl:w-[250px] max-sm:hidden  ml-[59px] max-sm:ml-0 flex justify-center items-center'>
                             <img className=' w-[236px] h-[122px]' src={faq} alt="" />
                         </div>
                     </div>
@@ -48,7 +48,7 @@ const Faqs = () => {
                                         className="block w-full rounded-lg hover:bg-blue-500 text-[#308AFF] hover:text-white bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] active:bg-blue-500"
                                     >
                                         <div className='flex justify-center'>
-                                            <img src={faq.image} alt="" />
+                                            <img className=' max-sm:w-[57px] max-sm:h-[52px]' src={faq.image} alt="" />
                                         </div>
                                         <div className='p-6'>
                                             <p className="text-base text-center font-semibold dark:text-neutral-200">
