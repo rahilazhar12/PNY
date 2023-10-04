@@ -9,9 +9,9 @@ const Testimonial = () => {
                 {/* Section: Design Block */}
                 <section className=" text-center ">
                     <h2 className="lgh mb-3">
-                        Leaders Who Vision Your Future
+                    Leaders of Youth
                     </h2>
-                    <p className='lg:w-[990px] text-center mx-auto mb-10'>PNY Trainings’ CEO and Director are inspiring leaders for the youth and have embarked on a transformative journey towards shared goals and prophecy for a promising future.</p>
+                    <p className='lg:w-[990px] text-center mx-auto mb-10'>PNY Trainings' CEO and Director are visionary leaders, inspiring youth on a transformative journey toward a promising future, making a path to success and prosperity.</p>
                     <div className="grid  gap-x-6 md:grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 xl:space-x-52  lg:space-x-11 lg:ml-[190px]  xl:ml-[150px] ">
                         <div className="mb-6 lg:mb-0 xl:w-[500px] lg:w-[300px]">
                             <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">

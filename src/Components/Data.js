@@ -224,7 +224,7 @@ export const durationdata = [
   {
     id: 1,
     title: "1 Year Professional Diploma Programs",
-    description: "Immerse yourself in our 1-year Professional Diploma programs, unlocking unlimited potential for career growth and success",
+    description: "A 1-year diploma is ideal for students who build their careers in software, graphics, web, and marketing for potential growth",
   },
   {
     id: 2,
@@ -251,34 +251,39 @@ export const contactus = [
     title: "Arfa Tower",
     description: "1st Floor 256 / A, Block R2 Near Shaukat Khanam Hospital, next to Standard Chartered, Lahore",
     phone: " 03041111774 | 0320 1443744",
+    link:"https://www.youtube.com/watch?v=_HulKf9eRew"
   },
   {
     id: 2,
     image: iqbaltown,
     title: "Allama Iqbal Town Branch",
     description: "743 B Kashmir Block Allama Iqbal Town Lahore",
-    phone: "0309-7774937"
+    phone: "0309-7774937",
+    link:"https://www.youtube.com/watch?v=ZK1s6QMCRi8"
   },
   {
     id: 3,
     image: johartown,
     title: "Johar Town Branch",
     description: "1st Floor 256 / A, Block R2 Near Shaukat Khanam Hospital, next to Standard Chartered, Lahore",
-    phone: "03097772259"
+    phone: "03097772259",
+    link:"https://www.youtube.com/watch?v=Y8kNFl5RVvU"
   },
   {
     id: 4,
     image: multan,
     title: "Multan Branch",
     description: "237-B, Model Town, Main Boulevard, Multan",
-    phone: "0309-7772260 | 0309-7774685"
+    phone: "0309-7772260 | 0309-7774685",
+    link:"https://www.facebook.com/pny.multan/videos/226519397106219"
   },
   {
     id: 5,
     image: rawalpindi,
     title: "Rawalpindi Branch",
     description: "Office # 604, Alpha Techno Square NASTP, Old Airport Nur khan Airbase, Chaklala Cantt, Rawalpindi.",
-    phone: "0300-8405591"
+    phone: "0300-8405591",
+    link:"https://www.youtube.com/watch?v=QVo6WNbZ3-o"
   },
 ]
 

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const TypingAnimation = () => {
   const [displayedText, setDisplayedText] = useState('');
   const [cursorVisible, setCursorVisible] = useState(true);
-  const textToType = 'We and our team work for your Future';
+  const textToType = 'We drive leaders in the technical world.';
   const wordArray = textToType.split(' ');
 
   useEffect(() => {

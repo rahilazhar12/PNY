@@ -22,7 +22,7 @@ const Categories = () => {
     
     <section className="text-gray-600 body-fon">
   <div className="container px-5 py-20 mx-auto">
-  <h1 className=" text-black  lg:text-3xl sm:text-xl text-3xl font-bold text-gray-900 mb-3 ml-5">Top Courses in Marketing</h1>
+  <h1 className=" text-black  lg:text-3xl sm:text-xl text-3xl font-bold text-gray-900 mb-3 ml-5">Add Courses in Marketing</h1>
   <div className="ml-2 flex flex-wrap -m-4 items-center justify-center">
   {/* Card 1 */}
   <div className="w-full md:w-1/2 lg:w-1/4 p-4  flex-grow">

@@ -30,7 +30,7 @@ const AboutUs = () => {
         {/* Section-1 */}
         <section className='bg-[#152438] max-sm:h-auto md:p-20 lg:h-[300px]  text-white max-sm:py-10'>
           <div className="grid ">
-            <div className='lg:text-5xl max-sm:text-center bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500  font-bold max-sm:text-3xl md:text-center md:text-3xl'>About company</div>
+            <div className='lg:text-5xl max-sm:text-center bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500  font-bold max-sm:text-3xl md:text-center md:text-3xl'>About Us</div>
             <div className='text-center'><TypingAnimation /></div>
           </div>
 
@@ -56,7 +56,7 @@ const AboutUs = () => {
             </div>
             <div className='col-span-2 md:space-y-5'>
               <div className='text-[#F10900] font-semibold md:text-center lg:text-start xl:text-start max-sm:text-center'>Our Worth Our Achievements!</div>
-              <div className='lg:text-[42px] xl:w-[590px] font-bold xl:text-start lg:text-start md:text-center max-sm:text-center'>We’re only just getting started on our journey</div>
+              <div className='lg:text-[42px] xl:w-[700px] font-bold xl:text-start lg:text-start md:text-center max-sm:text-center'>Our Multiple branches advanced courses, impactful MOU’s and Thousands of Alumni</div>
               <div className=' md:flex md:justify-center xl:justify-start lg:justify-start'>
                 <img src={five} alt="" />
               </div>
@@ -88,8 +88,8 @@ const AboutUs = () => {
 
         {/* section-5 */}
         <section className=' bg-white dark:bg-slate-800 ring-1 ring-slate-900/5   lg:p-5 lg:mt-10'>
-          <div className="howwework font-bold text-center md:text-2xl lg:text-4xl max-sm:text-2xl" id='abc'>How we work at PNY Trainings</div>
-          <div className="howwework text-center max-sm:p-2 lg:p-3 lg:mb-10">Our shared values keep us connected and guide us as one team.</div>
+          <div className="howwework font-bold text-center md:text-2xl lg:text-4xl max-sm:text-2xl" id='abc'>We Connect, We Grow Together</div>
+          <div className="howwework text-center max-sm:p-2 lg:p-3 lg:mb-10">We consider your part to empower, develop, and embrace the everyday chore.</div>
 
 
           <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:p-3 max-sm:p-3'>

@@ -4,6 +4,7 @@ import { Card } from 'flowbite-react'
 import arfatower from '../Assets/image/Image.png'
 import arfa from '../Assets/image/arfa.png'
 import { contactus } from '../Components/Data'
+import { Link } from 'react-router-dom'
 
 const Contactus = () => {
 
@@ -28,8 +29,8 @@ const Contactus = () => {
                     </div>
                     <div>
                         <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-                            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Let’s level up your skills, together</h2>
-                            <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">You can reach us anytime via <span className='text-[#308AFF]'>hr@pnytrainings.com</span></p>
+                            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Contact Us with Your Queries</h2>
+                            {/* <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">You can reach us anytime via <span className='text-[#308AFF]'>hr@pnytrainings.com</span></p> */}
                             <form action="#" className="space-y-8">
                                 <div>
                                     <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Name</label>
@@ -85,9 +86,11 @@ const Contactus = () => {
                                             <p className='text-[16px]'>{item.description}</p>
                                             <div className='flex justify-between mt-3'>
                                                 <div className='text-[16px]'><span className='text-[#308AFF] mr-3'>Phone</span>{item.phone}</div>
-                                                <div className='text-[#308AFF]'>View Map</div>
+                                                <Link to={item.link} target="_blank" rel="noopener noreferrer">
+                                                    Visit Us
+                                                </Link>
                                             </div>
-                                        
+
                                         </div>
                                     </div>
                                 </>

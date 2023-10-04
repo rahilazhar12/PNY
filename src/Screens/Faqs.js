@@ -47,6 +47,7 @@ const Faqs = () => {
                                         onClick={() => titleHandler(faq)}
                                         className="block w-full rounded-lg hover:bg-blue-500 text-[#308AFF] hover:text-white bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] active:bg-blue-500"
                                     >
+                                          
                                         <div className='flex justify-center mt-10'>
                                             <img className=' max-sm:w-[57px] max-sm:h-[52px]' src={faq.image} alt="" />
                                         </div>
