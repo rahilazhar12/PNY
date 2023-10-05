@@ -17,7 +17,7 @@ const Contactus = () => {
 
 
 
-            <section className='lg:h-[254px] bg-[#152438;] text-white flex flex-col justify-center items-center'>
+            <section className='lg:h-[254px] bg-[#152438;] text-white flex flex-col justify-center items-center max-sm:p-5'>
                 <div className='text-[48px] max-sm:text-[24px] font-semibold'>Contact Us</div>
                 <div className='text-[20px] font-normal max-sm:text-[16px] max-sm:text-center'>Learn more about the company and the team behind it.</div>
             </section>

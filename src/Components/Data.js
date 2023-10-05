@@ -26,6 +26,12 @@ import f3 from '../Assets/Faqs Icons/3.png'
 import f4 from '../Assets/Faqs Icons/4.png'
 import f5 from '../Assets/Faqs Icons/5.png'
 import f6 from '../Assets/Faqs Icons/6.png'
+import a1 from '../Assets/About us icons/1.png'
+import a2 from '../Assets/About us icons/2.png'
+import a3 from '../Assets/About us icons/3.png'
+import a4 from '../Assets/About us icons/4.png'
+import a5 from '../Assets/About us icons/5.png'
+import a6 from '../Assets/About us icons/6.png'
 
 const cardData = [
   {
@@ -117,44 +123,44 @@ export const aboutdata = [
   {
     id: 1,
     imgAlt: "Alt text 1",
-    imgSrc: logo19,
-    title: "Care about our team",
-    description: "Understand what matters to our employees. Give them what they need to do their best work.",
+    imgSrc: a1,
+    title: "Expert Instructors",
+    description: "Our experienced trainers bring real-world expertise to every class, ensuring you receive top-quality IT education.",
   },
   {
     id: 2,
     imgAlt: "Alt text 1",
-    imgSrc: logo19,
-    title: "Be excellent to each other",
-    description: "We rely on our peers to help us progress. Be upfront, honest, and considerate.",
+    imgSrc: a2,
+    title: "Customized Learning",
+    description: "Advance courses to meet your needs, whether you're a beginner or an experienced professional in the IT field.",
   },
   {
     id: 3,
     imgAlt: "Alt text 1",
-    imgSrc: logo19,
-    title: "Pride in what we do",
-    description: "Value quality and integrity in everything we do. At all times. No exceptions.",
+    imgSrc: a3,
+    title: "Interactive Learning",
+    description: "Engage in dynamic, interactive classes that foster collaboration and deep understanding of IT concepts and skills.",
   },
   {
     id: 4,
     imgAlt: "Alt text 1",
-    imgSrc: logo19,
-    title: "Care for our students",
-    description: "Understand what are students’ unstated needs. Make them wildly successful.",
+    imgSrc: a4,
+    title: "Flexible Learning",
+    description: "Choose from in-person or online classes, allowing you to learn at your own pace and convenience.",
   },
   {
     id: 5,
     imgAlt: "Alt text 1",
-    imgSrc: logo19,
-    title: "Do the impossible",
-    description: "Be energized by difficult problems. Revel in unknowns. Ask Why?, but always question, Why not?",
+    imgSrc: a5,
+    title: "Career Support",
+    description: "We provide guidance on career pathways and job placement assistance to help you achieve your professional goals.",
   },
   {
     id: 6,
     imgAlt: "Alt text 1",
-    imgSrc: logo19,
-    title: "Sweat the small stuff",
-    description: "We believe the best results come from the best attention to detail. Sweat the small stuff.",
+    imgSrc: a6,
+    title: "Industry-Relevant Content",
+    description: "Our up-to-date curriculum reflects the latest trends and technologies in the IT industry.",
   },
 ]
 

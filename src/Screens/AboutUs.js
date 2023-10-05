@@ -71,7 +71,7 @@ const AboutUs = () => {
             <p className=' lg:text-[42px] max-sm:text-[18px]  md:text-[30px] md:font-bold text-center w-[1084px] font-bold'>Wahab Yunus, as the CEO of PNY Trainings, is unlocking the potential in youth to be victorious.</p>
           </div>
 
-          <div className="grid xl:grid-cols-2 lg:grid-cols-2 text-white rounded md:grid-cols-1 md:h-auto max-sm:grid-cols-1 mt-20  bg-[#152438] max-sm:h-auto lg:h-[420px] xl:w-[1266px] mx-auto max-sm:mt-10 md:mt-10">
+          <div className="grid xl:grid-cols-2 lg:grid-cols-2 text-white rounded md:grid-cols-1 md:h-auto max-sm:grid-cols-1 xl:mt-20  bg-[#152438] max-sm:h-auto lg:h-[420px] xl:w-[1266px] mx-auto max-sm:mt-10 md:mt-10">
             <div className='p-10'>
               <div className='lg:text-[36px] font-semibold'>CEO Message</div>
               <div className='lg:w-[530px]  xl:w-[624px] mt-[24px]'>Diversity and inclusion of thought, skill, knowledge, and culture make PNY Trainings more competitive, more resilient, and better. Diversity strengthens us by promoting unique viewpoints and challenging each of us, every day, to think beyond our traditional frames of reference. We are committed to building a talented and diverse workforce, and to creating an environment in which every STUDENT has the opportunity to excel based on his or her performance. We believe the best way to learn is by putting your skills to use. I warmly welcome you to visit by contacting us, and discover firsthand what makes PNY Trainings special.</div>

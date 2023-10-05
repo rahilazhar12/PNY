@@ -5,14 +5,14 @@ import suleman from '../Assets/image/sulman.png'
 const Testimonial = () => {
     return (
         <>
-            <div className="container my-16  md:px-6 m-auto">
+            <div className="container my-16 max-sm:my-0  md:px-6 m-auto">
                 {/* Section: Design Block */}
                 <section className=" text-center ">
                     <h2 className="lgh mb-3">
                     Leaders of Youth
                     </h2>
                     <p className='lg:w-[990px] text-center mx-auto mb-10'>PNY Trainings' CEO and Director are visionary leaders, inspiring youth on a transformative journey toward a promising future, making a path to success and prosperity.</p>
-                    <div className="grid  gap-x-6 md:grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 xl:space-x-52  lg:space-x-11 lg:ml-[190px]  xl:ml-[150px] ">
+                    <div className="grid  gap-x-6 md:grid-cols-1 xl:grid-cols-3 lg:grid-cols-3  lg:gap-52 lg:ml-[160px]   xl:ml-[220px] ">
                         <div className="mb-6 lg:mb-0 xl:w-[500px] lg:w-[300px]">
                             <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                                 <div className="relative overflow-hidden bg-cover bg-no-repeat">
@@ -25,7 +25,7 @@ const Testimonial = () => {
                                         </path>
                                     </svg>
                                 </div>
-                                <div className="p-6">
+                                <div className="p-6 ">
                                     <h5 className="mb-4 text-lg font-bold">Wahab Yunus</h5>
                                     <p className="mb-4 text-[#308AFF] dark:text-neutral-300">Founder & CEO</p>
                                     <ul className="mx-auto flex list-inside justify-center">
@@ -52,7 +52,7 @@ const Testimonial = () => {
 
 
 
-                        <div className="mb-6 lg:mb-0 xl:w-[500px] lg:w-[300px]">
+                        <div className="mb-6 lg:mb-0 xl:w-[500px] lg:w-[300px] xl:ml-10">
                             <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                                 <div className="relative overflow-hidden bg-cover bg-no-repeat">
                                     <img src={suleman} className="w-full rounded-t-lg" />

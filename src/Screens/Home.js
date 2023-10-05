@@ -33,7 +33,7 @@ const Home = () => {
 
           <section>
             <Bottomnavbar />
-           
+
           </section>
 
 
@@ -90,8 +90,8 @@ const Home = () => {
               </div>
             </div>
           </motion.section>
-           {/* Section-13 */}
-           <section className='bg-blue-100' style={{ backgroundImage: `url(${vector})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          {/* Section-13 */}
+          <section className='bg-blue-100' style={{ backgroundImage: `url(${vector})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <div className="grid justify-center lg:p-28 md:p-20  max-sm: ">
 
               <div className='lg:text-5xl lg:w-[778px]  max-sm:p-5 font-bold text-center dark:text-white'>
@@ -137,7 +137,7 @@ const Home = () => {
           </section> */}
 
           {/* Section-3 */}
-          <section className=' lg:px-[80px] '>
+          <section className=' lg:px-[80px] max-sm:mt-8 '>
             <div class="grid md:p-5 lg:space-y-5">
               <div class=" flex justify-center" data-aos="fade-up" data-aos-delay="300" >
                 <p id='journey' className='lgh  dark:text-white'>Our Journey to success</p>
@@ -145,10 +145,10 @@ const Home = () => {
 
               <div class="PNYTrainingsPakistan  justify-center flex" data-aos="fade-up" data-aos-delay="300">
                 <p className=' lgp max-sm:text-base  md:text-base md:px-3 dark:text-white'>
-                The journey shows the entrepreneurial growth of each individual student, with current goals to achieve victory. Through our success, we raise you up to be unstoppable in the world of opportunities.
+                  The journey shows the entrepreneurial growth of each individual student, with current goals to achieve victory. Through our success, we raise you up to be unstoppable in the world of opportunities.
                 </p>
               </div>
-              <div class="flex justify-center">
+              <div class="flex justify-center max-sm:mt-5 max-sm:mb-5">
                 <img src={newgroup} class="img-fluid" alt="" />
               </div>
             </div>
@@ -161,7 +161,7 @@ const Home = () => {
           <section id='duration' className='bg-blue-500 p-15 text-white md:p-5 lg:p-[80px]'>
             <div className="grid justify-center lg:space-y-5">
               <div className=' row-span-1  lgh   max-sm:py-5'>Professional Development Timeframe</div>
-              <div className='lgp row-span-1  max-sm:px-5'>Unlock your potential with our comprehensive range of skill programs! Choose from 1-year diploma programs, 6-month certified courses, 3-2 month certified courses, and professional boot camps. Upgrade your skills today!</div>
+              <div className='lgp row-span-1  max-sm:px-5 max-sm:mb-5'>Unlock your potential with our comprehensive range of skill programs! Choose from 1-year diploma programs, 6-month certified courses, 3-2 month certified courses, and professional boot camps. Upgrade your skills today!</div>
             </div>
             <div className="grid md:grid-cols-1 lg:grid-cols-4 space-x-1 lg:mt-4 space-y-1 p-2 ">
               {
@@ -263,13 +263,13 @@ const Home = () => {
                 <div className="whychooseus text-4xl font-bold  max-sm:text-center  max-sm:text-2xl">Why Choose US?</div>
                 <div className="list">
                   <ul className='p-3'>
-                    <li className='text-lg border border-yellow-300  p-2'><i class="fa-sharp fa-regular fa-circle-check"></i> Money Making Skills</li>
-                    <li className='text-lg border border-red-300  p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Hands on Experience during Training</li>
-                    <li className='text-lg border border-green-300  p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Internship & Job Opportunities</li>
-                    <li className='text-lg border border-sky-300  p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> On-campus & Online Classes with Recorded Lectures</li>
-                    <li className='text-lg border border-amber-300  p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Highly Experienced Instructors</li>
-                    <li className='text-lg border border-sky-300  p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Professional Learning Environment</li>
-                    <li className='text-lg border border-orange-300  p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Learning Management System</li>
+                    <li className='text-lg   p-2'><i class="fa-sharp fa-regular fa-circle-check"></i> Money Making Skills</li>
+                    <li className='text-lg p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Hands on Experience during Training</li>
+                    <li className='text-lg   p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Internship & Job Opportunities</li>
+                    <li className='text-lg p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> On-campus & Online Classes with Recorded Lectures</li>
+                    <li className='text-lg   p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Highly Experienced Instructors</li>
+                    <li className='text-lg p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Professional Learning Environment</li>
+                    <li className='text-lg   p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Learning Management System</li>
                   </ul>
                 </div>
                 <div className="buttons max-sm:flex lg:mt-5">
@@ -320,13 +320,13 @@ const Home = () => {
             </div>
           </section> */}
 
-       
+
 
 
           {/* Section-9 */}
           <section className='lg:p-10'>
             <div className="grid justify-center">
-              <div className=" lgh lg:p-2  dark:text-white">Our Affiliations</div>
+              <div className=" lgh lg:p-2 max-sm:mt-5  dark:text-white">Our Affiliations</div>
               <div className="lgp max-sm:p-3 md:px-10 md:py-2 dark:text-white">We proudly affiliate with Government organizations to bring high-quality digital skills that empower today's youth for tomorrow's opportunities.
               </div>
 
@@ -343,10 +343,10 @@ const Home = () => {
             </div>
           </section>
 
-             {/* Section-8 */}
-             <section className='bg-[#F9FAFB] h-auto'>
+          {/* Section-8 */}
+          <section className='bg-[#F9FAFB] h-auto'>
             <div className="grid justify-center lg:p-10">
-              <div className=" lgh dark:text-white">Our Collaborations</div>
+              <div className=" lgh dark:text-white max-sm:mt-10">Our Collaborations</div>
               <div className=" lgp max-sm:p-3 md:px-10 md:py-2 dark:text-white">Discover the strength of our network as we join hands with key partners to innovate and create impactful digital learning experiences for today's youth.</div>
 
               <div className="carousal md:px-5 max-sm:px-4">
@@ -378,7 +378,7 @@ const Home = () => {
           {/* Section-12 */}
           <section>
             <div className="grid justify-center lg:mt-10">
-              <div className="lgh dark:text-white">We Empower Professionals; see through Media Partner Networks</div>
+              <div className="lgh dark:text-white max-sm:mt-5">We Empower Professionals; see through Media Partner Networks</div>
               <div className="lgp max-sm:p-3 md:px-10 md:py-2 dark:text-white">PNY Trainings encourage the opinions of youth by developing them professionally, trusting their abilities as leaders, and getting them excited to explore the world around them.</div>
 
               <div className="carousal p-5 ">
@@ -386,7 +386,7 @@ const Home = () => {
               </div>
             </div>
           </section>
-         
+
         </main>
       </Flowbite>
     </>

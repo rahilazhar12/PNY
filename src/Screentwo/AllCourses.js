@@ -290,7 +290,7 @@ const AllCourses = () => {
               <div className="lgp max-sm:p-3 md:px-10 md:py-2 dark:text-white">Our collaboration with esteemed partners has strengthened our mission to empower youth through skills, making a lasting impact on their lives.</div>
 
               <div className="imageaffiliation flex justify-center max-sm:p-2 md:py-5">
-                <img src={frame} alt="" />
+                <img src="/images/Frame 624.png " alt="" />
               </div>
 
               <div className="flex justify-center p-5 gap-5 max-sm:hidden dark:text-white">

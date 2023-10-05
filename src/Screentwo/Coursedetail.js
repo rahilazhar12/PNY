@@ -3,6 +3,7 @@ import Searchbar from '../Components/Searchbar';
 import Footer from '../Components/Footer';
 import instructor from '../Categories/data/Instructor';
 import feature from '../Categories/data/Feature';
+import  Modal  from './Modal';
 
 const modulesData = [
   {
@@ -58,6 +59,7 @@ const modulesData = [
   },
 ];
 const Coursedetail = () => {
+  const [modalOpen, setModalOpen] = useState(false);
   const [activeModule, setActiveModule] = useState(0);
 
   const handleModuleClick = (moduleIndex) => {
@@ -84,26 +86,36 @@ const Coursedetail = () => {
    
      <div className='social-wrapper flex justify-between'>
      <div className="flex">
-      <a href='#'><img src='/images/🦆 icon _task square_.svg'/></a>
+      <a href='#'><img src="/images/🦆 icon _task square_.png " alt=''/></a>
       <p className='mx-2'>Courses Fee: Rs 60,000</p>
      </div>
      <div className="flex">
-      <a href='#'><img src='/images/🦆 icon _bar chart_.svg'/></a>
+      <a href='#'><img src="/images/🦆 icon _bar chart_.png "/></a>
       <p className='mx-2'>Skill Level:Advance</p>
      </div>
      </div>
      <div className='social-wrapper flex justify-between my-4'>
      <div className="flex">
-      <a href='#'><img src='/images/🦆 icon _laptop_.svg'/></a>
-      <p className='mx-2'>Courses Fee: Rs 60,000</p>
+      <a href='#'><img src="/images/🦆 icon _laptop_.png "/></a>
+      <p className='mx-2'>Online/On Campus</p>
      </div>
      <div className="flex">
-      <a href='#'><img src='/images/🦆 icon _clock_.svg'/></a>
-      <p className='mx-2'>Courses Fee: Rs 60,000</p>
+      <a href='#'><img src="/images/🦆 icon _clock_.png"/></a>
+      <p className='mx-2'>Duration: 6 Months </p>
      </div>
     <div className="flex justify-center">
-     <a href='#'><img src='/images/🦆 icon _clock_.svg' /></a>
-     <p className='mx-2 my-1'>Course Date:</p>
+     <a href='#'><img src="/images/🦆 icon _clock_.png" /></a>
+    
+     <button
+     className="openModalBtn"
+     onClick={() => {
+       setModalOpen(true);
+     }}
+   >
+   <p className='mx-2 my-1'>Course Date:</p>
+   </button>
+
+   {modalOpen && <Modal setOpenModal={setModalOpen} />}
     </div>
      </div>
      <button type="button" class="text-white hover:text-white border border-blue-700  hover:bg-[#308AFF] font-medium rounded-lg text-sm px-4 py-3 text-center mr-2 mb-2  dark:hover:text-white">Download Course Broucher</button>
