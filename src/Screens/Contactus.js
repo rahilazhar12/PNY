@@ -86,10 +86,11 @@ const Contactus = () => {
                                             <p className='text-[16px]'>{item.description}</p>
                                             <div className='flex justify-between mt-3'>
                                                 <div className='text-[16px]'><span className='text-[#308AFF] mr-3'>Phone</span>{item.phone}</div>
-                                                <Link to={item.link} target="_blank" rel="noopener noreferrer">
+                                                <Link to={item.link} className=' hover:border-b border-blue-500 font-semibold text-blue-500' target="_blank" rel="noopener noreferrer">
                                                     Visit Us
                                                 </Link>
                                             </div>
+                                            <div><span className='text-[#308AFF] mr-4'>{item.phone1? 'Phone' : null}</span>{item.phone1}</div>
 
                                         </div>
                                     </div>

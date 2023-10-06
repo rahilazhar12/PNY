@@ -92,13 +92,13 @@ const Home = () => {
           </motion.section>
           {/* Section-13 */}
           <section className='bg-blue-100' style={{ backgroundImage: `url(${vector})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-            <div className="grid justify-center lg:p-28 md:p-20  max-sm: ">
+            <div className="grid justify-center lg:p-28 md:p-20 max-sm:p-5 ">
 
-              <div className='lg:text-5xl lg:w-[778px]  max-sm:p-5 font-bold text-center dark:text-white'>
+              <div className='lg:text-5xl lg:w-[778px]  max-sm:p- font-bold text-center dark:text-white'>
                 Admissions are open for the fresh
                 batch. Let’s grow together!
               </div>
-              <div className='text-center lg:p-5 max-sm:p-4'>
+              <div className='text-center lg:p-5 max-sm:mt-2'>
                 <button className='bg-[#49B2DF] lg:w-48 lg:h-14 text-white rounded max-sm:w-36 max-sm:h-10 dark:text-white'>Join us now!</button>
               </div>
             </div>
@@ -106,7 +106,7 @@ const Home = () => {
           </section>
 
           {/* Section-3 */}
-          <section className='bg-[#F9FAFB]  lg:p-[80px] space-y-5 '>
+          <section className='bg-[#F9FAFB]  lg:p-[80px] space-y-5  max-sm:mt-4'>
             <div className='lgh max-sm:px-3'>Professional Development with Opportunities</div>
             <div className='flex justify-center'>
               <p className='lgp  max-sm:px-3'>PNY Trainings Pakistan is the leading IT training institute provide training programs with multiple branches and numerous collaborations with national and international companies through highly qualified instructors that make you ready for a better future.</p>
@@ -261,17 +261,17 @@ const Home = () => {
             <div className="grid grid-cols-12  max-sm:grid-cols-6">
               <div className='col-span-6 max-sm:p-5 lg:px-10 py-10 max-sm:order-1'>
                 <div className="whychooseus text-4xl font-bold  max-sm:text-center  max-sm:text-2xl">Why Choose US?</div>
-                <div className="list">
-                  <ul className='p-3'>
-                    <li className='text-lg   p-2'><i class="fa-sharp fa-regular fa-circle-check"></i> Money Making Skills</li>
-                    <li className='text-lg p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Hands on Experience during Training</li>
-                    <li className='text-lg   p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Internship & Job Opportunities</li>
-                    <li className='text-lg p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> On-campus & Online Classes with Recorded Lectures</li>
-                    <li className='text-lg   p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Highly Experienced Instructors</li>
-                    <li className='text-lg p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Professional Learning Environment</li>
-                    <li className='text-lg   p-2'> <i class="fa-sharp fa-regular fa-circle-check"></i> Learning Management System</li>
+              
+                  <ul className='p-5 space-y-5 text-lg   max-sm:text-sm'>
+                    <li><i class="fa-sharp fa-regular fa-circle-check"></i> Money Making Skills</li>
+                    <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Hands on Experience during Training</li>
+                    <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Internship & Job Opportunities</li>
+                    <li> <i class="fa-sharp fa-regular fa-circle-check"></i> On-campus & Online Classes with Recorded Lectures</li>
+                    <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Highly Experienced Instructors</li>
+                    <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Professional Learning Environment</li>
+                    <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Learning Management System</li>
                   </ul>
-                </div>
+                
                 <div className="buttons max-sm:flex lg:mt-5">
                   <button className='mx-5 bg-[#D0D5DD] p-3 rounded-lg'>Learn More</button>
                   <button className='bg-[#308AFF] text-white rounded-lg p-3'>Enroll Now</button>

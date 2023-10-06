@@ -256,7 +256,8 @@ export const contactus = [
     image: arfa,
     title: "Arfa Tower",
     description: "1st Floor 256 / A, Block R2 Near Shaukat Khanam Hospital, next to Standard Chartered, Lahore",
-    phone: " 03041111774 | 0320 1443744",
+    phone: " 0304-1111774",
+    phone1:"0320-1443744",
     link:"https://www.youtube.com/watch?v=_HulKf9eRew"
   },
   {
@@ -272,7 +273,7 @@ export const contactus = [
     image: johartown,
     title: "Johar Town Branch",
     description: "1st Floor 256 / A, Block R2 Near Shaukat Khanam Hospital, next to Standard Chartered, Lahore",
-    phone: "03097772259",
+    phone: "0309-7772259",
     link:"https://www.youtube.com/watch?v=Y8kNFl5RVvU"
   },
   {
@@ -280,7 +281,8 @@ export const contactus = [
     image: multan,
     title: "Multan Branch",
     description: "237-B, Model Town, Main Boulevard, Multan",
-    phone: "0309-7772260 | 0309-7774685",
+    phone: "0309-7772260",
+    phone1:"0309-7774685",
     link:"https://www.facebook.com/pny.multan/videos/226519397106219"
   },
   {
