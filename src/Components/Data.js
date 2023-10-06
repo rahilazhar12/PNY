@@ -32,7 +32,8 @@ import a3 from '../Assets/About us icons/3.png'
 import a4 from '../Assets/About us icons/4.png'
 import a5 from '../Assets/About us icons/5.png'
 import a6 from '../Assets/About us icons/6.png'
-
+import wahab from '../Assets/image/wahab.png'
+import suleman from '../Assets/image/sulman.png'
 const cardData = [
   {
     id: 1,
@@ -531,12 +532,28 @@ export const faqs = [
       },
     ]
   },
-
-  
-
+]
 
 
-  
+export const ownersdata  = [
+  {
+    id:1,
+    image:wahab,
+    name:"Wahab Yunus",
+    designation:"Founder & CEO",
+    linkdin:<i class="fa-brands fa-linkedin"></i>,
+    twitter:<i class="fa-brands fa-twitter"></i>
+
+  },
+  {
+    id:2,
+    image: suleman,
+    name:"Suleman Ikram",
+    designation:"Co-Founder & Director",
+    linkdin:<i class="fa-brands fa-linkedin"></i>,
+    twitter:<i class="fa-brands fa-twitter"></i>
+
+  },
 ]
 
 
