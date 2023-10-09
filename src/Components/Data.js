@@ -551,7 +551,7 @@ export const ownersdata  = [
     name:"Suleman Ikram",
     designation:"Co-Founder & Director",
     linkdin:<i class="fa-brands fa-linkedin"></i>,
-    twitter:<i class="fa-brands fa-twitter"></i>
+    twitter:<i class="fa-brands fa-twitter"><a href="www.facebook.com"></a></i>
 
   },
 ]

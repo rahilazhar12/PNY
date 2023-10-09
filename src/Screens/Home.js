@@ -137,7 +137,7 @@ const Home = () => {
           </section> */}
 
           {/* Section-3 */}
-          <section className=' lg:px-[80px] max-sm:mt-8 '>
+          <section className=' max-sm:mt-8 '>
             <div class="grid md:p-5 lg:space-y-5">
               <div class=" flex justify-center" data-aos="fade-up" data-aos-delay="300" >
                 <p id='journey' className='lgh  dark:text-white'>Our Journey to success</p>
