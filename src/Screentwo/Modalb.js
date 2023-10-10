@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function Modal({ setOpenModal }) {
+function Modalb({ setOpenModal }) {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
       <div className="modalContainer bg-white p-4 rounded shadow-lg">
@@ -23,53 +23,17 @@ function Modal({ setOpenModal }) {
           <h3 className="text-blue-500 border-b border-blue-500 font-bold mt-3">Arfa Karim Tower</h3>
       
           <section className="md:flex md:justify-between">
-            <div className="p-4 text-center shadow-lg">
-              <div className="flex flex-col md:flex-row justify-between">
-                <p className="text-gray-500">Started Date</p>
-                <p className="text-gray-500 md:mr-10">Days and Timing</p>
-                <p className="text-gray-500">Duration</p>
-              </div>
-      
-              <div className="md:ml-10">
-                <p className="text-black">Monday 10 AM - 12 PM</p>
-                <p className="text-black">Tuesday 10 AM - 12 PM</p>
-                <p className="text-black md:ml-5">Wednesday 10 AM - 12 PM</p>
-              </div>
-            </div>
+          
           </section>
           <h3 className="text-blue-500 border-b border-blue-500 font-bold mt-3">Johar Town</h3>
       
           <section className="md:flex md:justify-between">
-            <div className="p-4 text-center shadow-lg">
-              <div className="flex flex-col md:flex-row justify-between">
-                <p className="text-gray-500">Started Date</p>
-                <p className="text-gray-500 md:mr-10">Days and Timing</p>
-                <p className="text-gray-500">Duration</p>
-              </div>
-      
-              <div className="md:ml-10">
-                <p className="text-black">Monday 10 AM - 12 PM</p>
-                <p className="text-black">Tuesday 10 AM - 12 PM</p>
-                <p className="text-black md:ml-5">Wednesday 10 AM - 12 PM</p>
-              </div>
-            </div>
+         
           </section>
           <h3 className="text-blue-500 border-b border-blue-500 font-bold mt-3">Allama Iqbal Town</h3>
       
           <section className="md:flex md:justify-between">
-            <div className="p-4 text-center shadow-lg">
-              <div className="flex flex-col md:flex-row justify-between">
-                <p className="text-gray-500">Started Date</p>
-                <p className="text-gray-500 md:mr-10">Days and Timing</p>
-                <p className="text-gray-500">Duration</p>
-              </div>
-      
-              <div className="md:ml-10">
-                <p className="text-black">Monday 10 AM - 12 PM</p>
-                <p className="text-black">Tuesday 10 AM - 12 PM</p>
-                <p className="text-black md:ml-5">Wednesday 10 AM - 12 PM</p>
-              </div>
-            </div>
+        
           </section>
         </div>
       </div>
@@ -94,4 +58,4 @@ function Modal({ setOpenModal }) {
   );
 }
 
-export default Modal;
+export default Modalb;

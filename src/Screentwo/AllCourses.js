@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import course from '../Categories/data/courses'
 import instructor from '../Categories/data/Instructor';
 import Searchbar from '../Components/Searchbar';
@@ -6,6 +6,24 @@ import Footer from '../Components/Footer';
 import { frame } from 'framer-motion';
 
 const AllCourses = () => {
+const [pro, setPro] = useState([])
+
+
+  const detadata = async () => {
+  
+    let res = await fetch('https://www.pnytrainings.com/api/get-courses');
+    res = await res.json();
+    setPro(res)
+ 
+  }
+
+
+
+  useEffect(()=>{
+    detadata();
+  })
+
+
     const [item, setItem]= useState(course);
     console.log(item)
     
@@ -73,7 +91,14 @@ const AllCourses = () => {
 <section className="text-gray-600 body-fon">
 <div className="container px-5 py-10 mx-auto">
 
+
 <div className="flex flex-wrap -m-4">
+{pro.map((x)=>{
+  // console.log(x.name)
+  (x.obj.map((item)=>{
+    console.log(item.name)
+  }))
+})}
 {/* Card 1 */}
 <div className="w-full md:w-1/2 lg:w-1/4 p-4 flex-grow">
   <div className="bg-white p-4 rounded-lg shadow-md">
@@ -162,7 +187,6 @@ const AllCourses = () => {
     <h3 className="text-red-500 font-bold mb-1 mt-0.5">Aqsa Razzaq</h3>
   </div>
   </div>
-  
 </div>
 </div>
 <div className="flex flex-wrap -m-4">

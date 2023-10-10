@@ -3,7 +3,7 @@ import React from 'react'
 import Carousal from '../Components/Carousal'
 import newgroup from '../Assets/images/newgroup.png'
 import icon from '../Assets/images/Featured icon.svg'
-import { Flowbite } from 'flowbite-react'
+import { DarkThemeToggle, Flowbite } from 'flowbite-react';
 import contentimage from '../Assets/image/Why choose Us.png'
 import { Carousalhome, Carousalhome1 } from '../Components/Carousal'
 import frame from '../Assets/image/Frame 624.png'
@@ -26,6 +26,7 @@ const Home = () => {
   return (
     <>
       <Flowbite>
+      <DarkThemeToggle />
         <main id='home' className='bg-white dark:bg-slate-800   ring-1 ring-slate-900/5 shadow-xl'>
           <Searchbar />
 
@@ -33,6 +34,7 @@ const Home = () => {
 
           <section>
             <Bottomnavbar />
+           
 
           </section>
 

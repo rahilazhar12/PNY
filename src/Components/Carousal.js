@@ -42,7 +42,7 @@ const Carousal = () => {
 export const Carousalhome = () => {
   return (
     <div>
-       <Carousel className='max-sm:h-36  lg:h-80   md:h-56 '>
+       <Carousel className='max-sm:h-36  lg:h-80   md:h-56  '>
       <img
         alt="..."
         src={c1}
@@ -78,7 +78,7 @@ export const Carousalhome = () => {
 export const Carousalhome1 = () => {
   return (
     <div>
-       <Carousel className='max-sm:h-20  lg:h-36  md:h-20 '>
+       <Carousel className='max-sm:h-20  lg:h-32  md:h-20  '>
       <img
         alt="..."
         src={g1}
