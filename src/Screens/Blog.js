@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect } from 'react'
 import cardData from '../Components/Data'
 import { Card } from 'flowbite-react'
 import { Button } from 'flowbite-react'
@@ -7,6 +7,20 @@ import Searchbar from '../Components/Searchbar'
 import { DarkThemeToggle, Flowbite } from 'flowbite-react';
 
 const Blog = () => {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        // Fetch data from the provided URL
+        fetch('https://www.pnytrainings.com/api/get_feature_posts')
+            .then((response) => response.json())
+            .then((data) => {
+                setData(data);
+                console.log(data , 'data')
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
 
     const [filter, setFilter] = useState('All')
 
@@ -15,7 +29,7 @@ const Blog = () => {
         setFilter(filtercriteria)
     }
 
-    const filterData = cardData.filter((item) => {
+    const filterData = data.filter((item) => {
         return filter === "All" || item.title.includes(filter)
     })
     return (
@@ -53,10 +67,11 @@ const Blog = () => {
                 {/* Section-3 */}
                 <section className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:p-20 max-sm:p-2">
                     {filterData.map((item, index) => (
+                        
                         <Card
                             key={index}
                         >
-                            <img className='rounded-2xl max-sm:h-52 lg:w-[462px] lg:h-[240px]' src={item.imgSrc} alt="" />
+                            <img className='rounded-2xl max-sm:h-52 lg:w-[462px] lg:h-[240px]' src={item.post_image_thumb} alt="" />
 
                             <h5 className="text-2xl text-[#F10900] font-bold tracking-tight  dark:text-white" data-aos="fade-up-right">
                                 {item.title}
@@ -65,9 +80,9 @@ const Blog = () => {
                                 {item.description1}
                             </h5>
                             <p className="font-normal text-gray-700 dark:text-gray-400" data-aos="fade-up-right">
-                                {item.description}
+                                {item.description_short}
                             </p>
-                            <Link to={`/blogdetails/${item.id}`}>
+                            <Link to={`/blog/marketing/${item.url_slug}`}>
                                 <Button>
 
                                     Read more

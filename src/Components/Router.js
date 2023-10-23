@@ -16,6 +16,7 @@ import Design from '../Screens/Design'
 import Gallery from '../Screens/Gallery'
 import Gallerydetailed from '../Screens/Gallerydetailed'
 import Faqs from '../Screens/Faqs'
+import Testapi from './Testapi'
 
 const Router = () => {
     return (
@@ -26,17 +27,18 @@ const Router = () => {
                 <Route path='/blog' element={<Blog />} />
                 <Route path='/about' element={<AboutUs />} />
                 <Route path='/contact' element={<Design/>} />
-                <Route path='/blogdetails/:id' element={<Blogdetails/>} />
+                <Route path='/blog/marketing/:slug' element={<Blogdetails/>} />
                 <Route path='/contactus' element={<Contactus/>} />
                 <Route path='/trainingschedule' element={<Trainingschedule/>} />
                 <Route path='/Feestruchure' element={<Feestruchure/>} />
                 <Route path='/categories' element={<Categories/>} />
-                <Route path='/coursedetails' element={<Coursedetails/>} />
+                <Route path='/:slug' element={<Coursedetails />} />
                 <Route path='/allcourses' element={<Allcourses/>} />
                 <Route path='/Carrer' element={<Design/>} />
                 <Route path='/gallery' element={<Gallery/>} />
                 <Route path='/imagesshow/:id' element={<Gallerydetailed/>} />
                 <Route path='/faqs' element={<Faqs/>} />
+                <Route path='/api' element={<Testapi/>} />
 
                 
 

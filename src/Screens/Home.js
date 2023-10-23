@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <>
       <Flowbite>
-      <DarkThemeToggle />
+
         <main id='home' className='bg-white dark:bg-slate-800   ring-1 ring-slate-900/5 shadow-xl'>
           <Searchbar />
 
@@ -34,7 +34,7 @@ const Home = () => {
 
           <section>
             <Bottomnavbar />
-           
+
 
           </section>
 
@@ -263,17 +263,17 @@ const Home = () => {
             <div className="grid grid-cols-12  max-sm:grid-cols-6">
               <div className='col-span-6 max-sm:p-5 lg:px-10 py-10 max-sm:order-1'>
                 <div className="whychooseus text-4xl font-bold  max-sm:text-center  max-sm:text-2xl">Why Choose US?</div>
-              
-                  <ul className='p-5 space-y-5 text-lg   max-sm:text-sm'>
-                    <li><i class="fa-sharp fa-regular fa-circle-check"></i> Money Making Skills</li>
-                    <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Hands on Experience during Training</li>
-                    <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Internship & Job Opportunities</li>
-                    <li> <i class="fa-sharp fa-regular fa-circle-check"></i> On-campus & Online Classes with Recorded Lectures</li>
-                    <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Highly Experienced Instructors</li>
-                    <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Professional Learning Environment</li>
-                    <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Learning Management System</li>
-                  </ul>
-                
+
+                <ul className='p-5 space-y-5 text-lg   max-sm:text-sm'>
+                  <li><i class="fa-sharp fa-regular fa-circle-check"></i> Money Making Skills</li>
+                  <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Hands on Experience during Training</li>
+                  <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Internship & Job Opportunities</li>
+                  <li> <i class="fa-sharp fa-regular fa-circle-check"></i> On-campus & Online Classes with Recorded Lectures</li>
+                  <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Highly Experienced Instructors</li>
+                  <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Professional Learning Environment</li>
+                  <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Learning Management System</li>
+                </ul>
+
                 <div className="buttons max-sm:flex lg:mt-5">
                   <button className='mx-5 bg-[#D0D5DD] p-3 rounded-lg'>Learn More</button>
                   <button className='bg-[#308AFF] text-white rounded-lg p-3'>Enroll Now</button>

@@ -1,11 +1,26 @@
-import React from 'react'
+import React , {useState , useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import PNYlogo from '../Assets/image/logohr.png'
 import { DarkThemeToggle, Flowbite } from 'flowbite-react';
 import { motion } from 'framer-motion';
 import { BiCategory } from 'react-icons/bi'
+import Categoriesdata from './Categoriesdata';
 
 const Searchbar = () => {
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        // Fetch data from the provided URL
+        fetch('https://www.pnytrainings.com/api/header_menu')
+          .then((response) => response.json())
+          .then((data) => {
+            setData(data);
+          })
+          .catch((error) => {
+            console.error('Error fetching data:', error);
+          });
+      }, []);
     return (
         <Flowbite>
             <section className='p-4 shadow-md'>
@@ -15,17 +30,7 @@ const Searchbar = () => {
 
                     <div className=' lg:col-span-2 md:col-span-2'>
                         <div className=' max-sm:flex max-sm:justify-center'>
-                            <div class="dropdown dropdown-hover">
-                                <label tabindex="0" class="btn max-sm:w-64 lg:w-[140px] md:w-[160px] xl:w-[220px]  h-[38px]  bg-[#308AFF] hover:text-black text-white hover:bg-[#308AFF] btn-sm"> <BiCategory /> Categories</label>
-                                <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
-                                    <li><Link to="/categories">Categories</Link></li>
-                                    <li><Link to='/coursedetails'>Coursedetails</Link></li>
-                                    <li><Link to='/allcourses'>All Courses</Link></li>
-                                    <li><Link to='/Carrer'>Career</Link></li>
-                                    <li><Link to='/Gallery'>Gallery</Link></li>
-                                    <li><Link to='/faqs'>Faq's</Link></li>
-                                </ul>
-                            </div>
+                          <Categoriesdata/>
                         </div>
                     </div>
 

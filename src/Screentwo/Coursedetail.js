@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import Searchbar from '../Components/Searchbar';
 import Footer from '../Components/Footer';
 import instructor from '../Categories/data/Instructor';
 import feature from '../Categories/data/Feature';
 import  Modal  from './Modal';
 import Modalb from './Modalb';
+import { useParams } from 'react-router-dom';
 
 const modulesData = [
   {
@@ -59,14 +60,42 @@ const modulesData = [
       ],
   },
 ];
+
+
+
+
+
 const Coursedetail = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalOpenb, setModalOpenb] = useState(false);
   const [activeModule, setActiveModule] = useState(0);
+  const [data, setData] = useState(null);
+  const { slug } = useParams();
 
   const handleModuleClick = (moduleIndex) => {
       setActiveModule(moduleIndex);
   };
+
+
+  useEffect(() => {
+    fetch("https://www.pnytrainings.com/api/category/development")
+      .then((response) => response.json())
+      .then((data) => {
+        if (data && data.category && data.category_courses) {
+          setData({
+            category: data.category,
+            course: data.category_courses.find(course => course.url_slug === slug)
+          });
+          console.log("Fetched Data:", data.category);
+        } else {
+          console.log("Data or data.category is undefined. Here's the full response:", data);
+        }
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, [slug]);
+  // ...
+
+  
 
   const module = modulesData[activeModule];
   return (
@@ -79,10 +108,13 @@ const Coursedetail = () => {
   <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
     <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
      <div className='section-wrapper'>
-     <p>Digital Marketing</p>
-     <h1 class="text-2xl md:text-1xl lg:text-lg xl:text-5xl mb-4 font-semibold text-white my-2 leading-loose">
-     Certified Digital Media Marketing (CDMM) Expert Course (06 Months)
-   </h1>
+
+
+
+     <h1 className="mb-4 font-semibold text-white my-2 leading-loose text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+  {data ? data.course.name : "Loading..."}
+</h1>
+
    
    <p className="mb-8 leading-relaxed ">Learn the latest techniques of SEO, SMM, SMO, PPC, CPA, E-commerce, Mobile Marketing, ORM, CRO, and increase paid and organic online appearance on different platforms.</p>
    
@@ -181,7 +213,7 @@ const Coursedetail = () => {
       </div>
     </div>
     <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/5">
-      <img className="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600" />
+      <img className="object-cover object-center rounded" alt="hero" src={data? data.image : null} />
     </div>
   </div>
 </section>
