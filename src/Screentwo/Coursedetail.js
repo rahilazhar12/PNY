@@ -70,7 +70,7 @@ const Coursedetail = () => {
   const [modalOpenb, setModalOpenb] = useState(false);
   const [activeModule, setActiveModule] = useState(0);
   const [data, setData] = useState(null);
-  const { slug } = useParams();
+  const { slug_URL } = useParams();
 
   const handleModuleClick = (moduleIndex) => {
       setActiveModule(moduleIndex);
@@ -84,7 +84,7 @@ const Coursedetail = () => {
         if (data && data.category && data.category_courses) {
           setData({
             category: data.category,
-            course: data.category_courses.find(course => course.url_slug === slug)
+            course: data.category_courses.find(course => course.url_slug === slug_URL)
           });
           console.log("Fetched Data:", data.category);
         } else {
@@ -92,7 +92,7 @@ const Coursedetail = () => {
         }
       })
       .catch((error) => console.error("Error fetching data:", error));
-  }, [slug]);
+  }, [slug_URL]);
   // ...
 
   
