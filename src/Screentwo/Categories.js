@@ -107,7 +107,7 @@ const Categories = () => {
 
         <section className="text-gray-600 body-font">
           <div className="container px-5 py-20 mx-auto">
-            <h1 className="text-3xl font-bold text-gray-900 mb-3 ml-5">Add Courses in {newdata.name}</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-3 ml-5">{newdata.name} Courses</h1>
             <div className="flex flex-wrap -m-4 items-center justify-center">
               {newdata1.length > 0 && (newdata1.map((item, index) => (
                 <div key={index} className="p-4 lg:w-1/4 md:w-1/2 w-full">
@@ -149,7 +149,7 @@ const Categories = () => {
                     </a>
                     <div className="">
                       <h3 className="text-lg tracking-widest title-font text-black font-bold">{x.name}</h3>
-                      <h2 className="title-font text-xs font-medium text-sm text-justify">{x.other_info}</h2>
+                      <h2 className="title-font text-xs font-medium text-sm text-justify">{}</h2>
                     </div>
                   </div>
 
