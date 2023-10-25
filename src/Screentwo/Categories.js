@@ -131,6 +131,7 @@ const Categories = () => {
                     </div>
                     <div className="w-full">
                       <h2 className="title-font font-medium text-sm text-gray-900 mb-3">{item.name}</h2>
+                      <h2 className='text-black'>Course Fee : {item.monthly_tution_fee}</h2>
                       <h3 className="text-red-500 mt-1 mb-1">{item.teacher}</h3>
                     </div>
                   </div>
@@ -155,7 +156,8 @@ const Categories = () => {
                     </a>
                     <div className="">
                       <h3 className="text-lg tracking-widest title-font text-black font-bold">{x.name}</h3>
-                      <h2 className="title-font text-xs font-medium text-sm text-justify">{}</h2>
+                      {/* For teacher Description */}
+                      {/* <h2 className="title-font text-xs font-medium text-sm text-justify">{}</h2> */}
                     </div>
                   </div>
 
