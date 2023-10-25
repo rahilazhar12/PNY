@@ -16,7 +16,13 @@ const Categories = () => {
     "https://www.pnytrainings.com/api/category/language",
     "https://www.pnytrainings.com/api/category/amazon-courses",
     "https://www.pnytrainings.com/api/category/business",
-    "https://www.pnytrainings.com/api/category/marketing"
+    "https://www.pnytrainings.com/api/category/marketing",
+    "https://www.pnytrainings.com/api/category/it-and-software",
+    "https://www.pnytrainings.com/api/category/boot-camps",
+    "https://www.pnytrainings.com/api/category/pny-genius-for-kids",
+    "https://www.pnytrainings.com/api/category/pny-pink-for-female",
+    "https://www.pnytrainings.com/api/category/ecommerce-and-online-business",
+    "https://www.pnytrainings.com/api/category/networking"
     // Add more API endpoints here
   ];
 
