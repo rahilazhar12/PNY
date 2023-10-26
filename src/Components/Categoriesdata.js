@@ -28,6 +28,7 @@ const Categoriesdata = () => {
                         </span>
                     </button>
                     <ul class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32">
+                        <li className='ml-3'><Link to='/google-scholarship-certification-in-lahore-pakistan'>Google Certification</Link></li>
                         {data.map((item) => {
                             return (
                                 <>
@@ -40,6 +41,7 @@ const Categoriesdata = () => {
                                                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                                                 </svg>
                                             </span>
+                                            
                                         </Link>
                                         <ul class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left w-[400px] cursor-pointer">
                                             <div style={{ maxHeight: '200px', overflowY: 'auto' }}>

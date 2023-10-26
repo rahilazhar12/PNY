@@ -18,6 +18,7 @@ import Gallerydetailed from '../Screens/Gallerydetailed'
 import Faqs from '../Screens/Faqs'
 import Testapi from './Testapi'
 import Fastbootcamp from '../Screens/Fastbootcamp'
+import Googlecertification from '../Screens/Googlecertification'
 
 
 const Router = () => {
@@ -41,6 +42,7 @@ const Router = () => {
                 <Route path='/imagesshow/:id' element={<Gallerydetailed />} />
                 <Route path='/faqs' element={<Faqs />} />
                 <Route path='/fast-track-pro-bootcamps' element={<Fastbootcamp />} />
+                <Route path='/google-scholarship-certification-in-lahore-pakistan' element={<Googlecertification />} />
 
 
 
