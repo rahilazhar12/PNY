@@ -9,7 +9,7 @@ const Navbar = () => {
           <ul className='flex  lg:justify-center  xl:justify-center space-x-4'>
             <li><span className='mr-1'>UAN -</span>03041111774</li>
             <li><span className='mr-1'><i class="fa-solid fa-envelope"></i></span>info@pnytrainings.com</li>
-            <li className='bg-[#FFBA4A] blinking-text rounded-md flex justify-center items-center lg:w-[350px] h-[21px] xl:w-[200px] text-black '>Fast Track Pro Bootcamps in 2023</li>
+            <li className='bg-[#FFBA4A] blinking-text rounded-md cursor-pointer flex justify-center items-center lg:w-[350px] h-[21px] xl:w-[200px] text-black '><Link to="/fast-track-pro-bootcamps">Fast Track Pro Bootcamps in 2023</Link></li>
             <li>Amazon Services</li>
             <li>Kids Courses</li>
             <li>Female Courses</li>
@@ -34,7 +34,7 @@ const Navbar = () => {
             <li><Link to="/trainingschedule">Training Schedule</Link></li>
             <li> <Link to="/Feestruchure">Fee Strcture</Link></li>
             <li><Link>Admission</Link></li>
-            <li className='bg-[#FFBA4A] blinking-text rounded-md flex justify-center items-center'>Fast Track Pro Bootcamps in 2023</li>
+            <li className='bg-[#FFBA4A] blinking-text rounded-md flex cursor-pointer justify-center items-center'><Link to="/fast-track-pro-bootcamps">Fast Track Pro Bootcamps in 2023</Link></li>
             <li><button className='navbarbuttons bg-[#308AFF] rounded-md w-[70px] h-[px]'>Login</button></li>
             <li><button className='navbarbuttons bg-[#F10900] rounded-md w-[90px] h-[px]'>Enroll Now</button></li>
           </ul>
