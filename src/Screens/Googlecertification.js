@@ -55,10 +55,10 @@ const GoogleCertification = () => {
           const props = { className: 'p-5' };
           return <p {...props}>{domToReact(domNode.children)}</p>;
         }
-        if (domNode.name === 'a') {
-          const props = { className: 'bg-[#0c7ec2] text-white hover:bg-red-500 p-3 w-80 cursor-pointer rounded mx-auto' };
-          return <p {...props}>{domToReact(domNode.children)}</p>;
-        }
+        // if (domNode.name === 'a') {
+        //   const props = { className: 'bg-[#0c7ec2] text-white hover:bg-red-500 p-3 w-80 cursor-pointer rounded mx-auto'};
+        //   return <p {...props}>{domToReact(domNode.children)}</p>;
+        // }
       }
     }
   });
