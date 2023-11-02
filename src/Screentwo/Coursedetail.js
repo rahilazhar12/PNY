@@ -105,7 +105,7 @@ const Coursedetail = () => {
         setIsLoading(false);
       }
     };
-    
+
     fetchCourseData();
   }, [courseSlug]);
 
@@ -274,7 +274,15 @@ const Coursedetail = () => {
               </div>
             </div>
             <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/5">
-              <img className="object-cover object-center rounded" alt="hero" src={courseData ? courseData.category_image : null} />
+              <iframe
+                width="500"
+                height="315"
+                src={`https://www.youtube.com/embed/${courseData.video}`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen>
+              </iframe>
+
             </div>
           </div>
         </section>
