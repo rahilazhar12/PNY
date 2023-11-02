@@ -79,160 +79,35 @@ const Coursedetail = () => {
   const [activeModule, setActiveModule] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [courseData, setCourseData] = useState(null);
+  const [error, setError] = useState(null);
 
 
-  const { slug1 } = useParams();
+  const { courseSlug } = useParams();
 
-  console.log(slug1, ' slug1')
+  console.log(courseSlug, ' courseslug')
 
-
-
-
-  const apiEndpoints = [
-    "  https://www.pnytrainings.com/api/course/freelancing-online-training",
-    "https://www.pnytrainings.com/api/course/best-seo-training-institute-in-lahore",
-    "https://www.pnytrainings.com/api/course/youtube-trainings-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/freelancing-tranings-course-in-lahore-at-arfa-tower",
-    "https://www.pnytrainings.com/api/course/facebook-and-instagram-marketing-expert-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/creative-content-writing-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/instagram-marketing-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/digital-media-marketing-course-in-rawalpindi",
-    "https://www.pnytrainings.com/api/course/advanced-search-engine-optimization",
-    "https://www.pnytrainings.com/api/course/seo-course-in-rawalpindi",
-    "https://www.pnytrainings.com/api/course/advance-digital-marketing-with-artificial-intelligence-and-project-management-course-in-lahore",
-    "https://www.pnytrainings.com/api/course/advanced-social-media-marketing-2.0-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/tiktok-marketing-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/digital-marketing-and-artificial-intelligence-course-for-technical-analysis-course",
-
-    // Art and design 
-    "https://www.pnytrainings.com/api/course/graphic-designing-training-course",
-    "https://www.pnytrainings.com/api/course/graphic-design-courses-in-lahore",
-    "https://www.pnytrainings.com/api/course/motion-graphics-with-after-effects--cinema-4d-course-in-lahore",
-    "https://www.pnytrainings.com/api/course/layout-design-prototype-to-web-design---2-months-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/advanced-photoshop-level-2-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/advanced-illustrator-level-2-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/revit-and-twin-motion-for-3d-architectural-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/figma-to-cinema-4d-advanced-ui-ux-design-and-animation-course-in-lahore",
-    "https://www.pnytrainings.com/api/course/canva-training-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/office-management-course-training-in-lahore",
-
-    // Business and Account trainnings
-    "https://www.pnytrainings.com/api/course/office-management-course-training-in-lahore",
-    "https://www.pnytrainings.com/api/course/quickbooks-training",
-    "https://www.pnytrainings.com/api/course/sap-training-courses-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/analyzing-and-visualizing-data-with-microsoft-power-bi",
-    "https://www.pnytrainings.com/api/course/make-money-with-digital-currency-and-forex-trading-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/young-entrepreneurship-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/business-and-project-management-course-in-lahore-pakistan",
-
-    // Multimedia
-    "https://www.pnytrainings.com/api/course/full-stack-interior-and-exterior-designer-course-in-lahore-pakistan",
-    "http://pnytrainings.com/api/course/photography-course",
-    "https://www.pnytrainings.com/api/course/interior-designing-in-lahore",
-    "https://www.pnytrainings.com/api/course/3d-animation-designing-course",
-    "https://www.pnytrainings.com/api/course/adobe-premiere-adobe-effects",
-    "https://www.pnytrainings.com/api/course/learn-video-production-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/autocad-training-course",
-    "https://www.pnytrainings.com/api/course/2d-3d-animation-course-in-lahore",
-    "https://www.pnytrainings.com/api/course/master-in-exterior-designing-training-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/3ds-max-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/architectural-animation-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/architectural-animation-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/3d-modeling-with-rhinoceros-basic-to-advance-course",
-
-    // Amazon
-    "https://www.pnytrainings.com/api/course/sell-on-amazon-training-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/amazon-private-label-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/amazon-drop-shipping-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/amazon-fba-wholesale-course-in-lahore-pakistan",
-    "https://pnytrainings.com/api/course/amazon-virtual-assistant-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/aws-solution-architect-training-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/amazon-virtual-assistant-2.0-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/private-label-and-wholesale-business-on-amazon-course-in-lahore-pakistan",
-
-    // Cybersecurity
-    "https://www.pnytrainings.com/api/course/ceh-ethical-hacking-course-in-lahore",
-    "https://www.pnytrainings.com/api/course/cisco-ccna-training-in-lahore",
-    "https://www.pnytrainings.com/api/course/professional-diploma-in-advanced-cyber-security-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/professional-diploma-in-advance-networking-ccna-and-ccnp-course-in-lahore",
-    "https://www.pnytrainings.com/api/course/cisco-certified-network-professional-ccnp-course-in-lahore",
-
-    // Ecommerce
-    "https://www.pnytrainings.com/api/course/ecommerce-trainings-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/ebay-and-walmart-training-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/shopify-2.0-drop-shipping-and-local-branding-course-in-lahore",
-
-    // it&software
-    "https://www.pnytrainings.com/api/course/become-a-quality-assurance-expert",
-    "https://www.pnytrainings.com/api/course/full-stack-software-quality-assurance-course",
-
-    // Language
-    "https://www.pnytrainings.com/api/course/spoken-english-pny-trainings",
-    "https://www.pnytrainings.com/api/course/ielts-preparation",
-    "https://www.pnytrainings.com/api/course/pearson-test-of-english-course-in-lahore-pakistan",
-
-    // Pny pink
-    "https://www.pnytrainings.com/api/course/beautician-training-course-institute-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/hair-cut-pro-course-training-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/hair-cutting-for-beginners-course-in-lahore",
-    "https://www.pnytrainings.com/api/course/make-up-artist-coures-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/skincare-specialist-course-in-lahore",
-
-    // pnygenius
-    "https://www.pnytrainings.com/api/course/robotics-for-everyone-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/summer-camps-for-kids-in-lahore",
-    "https://www.pnytrainings.com/api/course/summer-camp-activities-for-kids-in-lahore",
-    "https://www.pnytrainings.com/api/course/web-and-graphics-online-course-for-children-in-pakistan",
-
-
-    // Bootcamp
-    "https://www.pnytrainings.com/api/course/boot-camp-advance-ui-ux-figma",
-    "https://www.pnytrainings.com/api/course/digital-painting-course-in-lahore-pakistan",
-    "https://www.pnytrainings.com/api/course/boot-camp-visual-merchandizing",
-
-
-    // Add more API endpoints here
-  ];
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchCourseData = async () => {
       setIsLoading(true);
-      const apiDataArray = [];
-      console.log("Fetching Data for Slug:", slug1); // Debugging Line
-      for (const endpoint of apiEndpoints) {
-        try {
-          const response = await fetch(endpoint);
-          if (response.ok) {
-            const data = await response.json();
-            console.log("API Response:", data); // Debugging Line
-            console.log("API des:", data.course.description); // Debugging Line
-            if (data.course.url_slug === slug1) {
-              apiDataArray.push({ course: data.course });
-              console.log("Match Found:", apiDataArray); // Debugging Line
-            } else {
-              console.log("Slug did not match"); // Debugging Line
-            }
-          } else {
-            console.error(`Failed to fetch data from ${endpoint}`);
-          }
-        } catch (error) {
-          console.error(`Error fetching data from ${endpoint}:`, error);
+      try {
+        const response = await fetch(`https://www.pnytrainings.com/api/course/${courseSlug}`);
+        if (response.ok) {
+          const data = await response.json();
+          setCourseData(data.course);
+        } else {
+          console.error(`Failed to fetch course data for slug: ${courseSlug}`);
+          setError(`Failed to fetch course data. Please try again later.`);
         }
-      }
-      if (apiDataArray.length > 0) {
-        const { course } = apiDataArray[0];
-        setCourseData(course);
+      } catch (error) {
+        console.error(`Error fetching course data for slug: ${courseSlug}:`, error);
+        setError(`Failed to fetch course data. Please try again later.`);
+      } finally {
         setIsLoading(false);
-        console.log("Course Data:", course); // Debugging Line
-      } else {
-        console.log("No Data Found"); // Debugging Line
       }
-
     };
-
-    fetchData();
-  }, [slug1]);
-
-
+    
+    fetchCourseData();
+  }, [courseSlug]);
 
   if (isLoading) {
     return (

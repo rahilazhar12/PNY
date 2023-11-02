@@ -35,7 +35,7 @@ const Router = () => {
                 <Route path='/trainingschedule' element={<Trainingschedule />} />
                 <Route path='/Feestruchure' element={<Feestruchure />} />
                 <Route path='/:slug' element={<Categories />} />
-                <Route path='/coursedetails/:slug1' element={<Coursedetails />} />
+                <Route path='/coursedetails/:courseSlug' element={<Coursedetails />} />
                 <Route path='/allcourses' element={<Allcourses />} />
                 <Route path='/Carrer' element={<Design />} />
                 <Route path='/gallery' element={<Gallery />} />
