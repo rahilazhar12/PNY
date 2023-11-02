@@ -4,7 +4,8 @@ import Footer from '../Components/Footer';
 import { useParams } from 'react-router-dom';
 import instructornew from '../Categories/data/Instructor'
 import { Blocks } from 'react-loader-spinner'
-
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const Categories = () => {
   // Define an array of API endpoints
@@ -87,6 +88,12 @@ const Categories = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Categories</title>
+        <meta name="description123" content="Your page description" />
+        <meta name="keywords" content="keyword1, keyword2, keyword3" />
+        {/* Add more meta tags as needed */}
+      </Helmet>
       <div>
         <section>
           <Searchbar />
@@ -99,7 +106,7 @@ const Categories = () => {
             </div>
           ))}
         </div> */}
-
+       
         <div className='main'>
           <section className="text-gray-600 body-font bg-[#152438]">
             <div className="container  py-20 mx-auto">
@@ -110,15 +117,16 @@ const Categories = () => {
             </div>
           </section>
         </div>
-
+        
         <section className="text-gray-600 body-font">
           <div className="container px-5 py-20 mx-auto">
             <h1 className="text-3xl font-bold text-gray-900 mb-3 ml-5">{newdata.name} Courses</h1>
             <div className="flex flex-wrap -m-4 items-center justify-center">
               {newdata1.length > 0 && (newdata1.map((item, index) => (
+    
                 <div key={index} className="p-4 lg:w-1/4 md:w-1/2 w-full">
                   <div className="p-4 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
-                    <img src={item.course_image} alt="Image 1" className="h-40 w-full object-cover rounded-xl mb-2" />
+                   <Link to={`/coursedetails/${item.url_slug}`}> <img  src={item.course_image} alt="Image 1" className="h-40  cursor-pointer w-full object-cover rounded-xl mb-2" /></Link>
                     <div className="flex justify-between w-50 mb-4">
                       <div className="flex">
                         <i className="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
