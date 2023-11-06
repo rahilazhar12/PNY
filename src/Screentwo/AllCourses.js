@@ -21,7 +21,8 @@ const [pro, setPro] = useState([])
 
   useEffect(()=>{
     detadata();
-  })
+    window.scrollTo(0, 0);
+  }, [])
 
 
     const [item, setItem]= useState(course);

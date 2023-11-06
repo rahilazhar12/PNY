@@ -38,6 +38,7 @@ const Categories = () => {
     };
 
     fetchData();
+    window.scrollTo(0, 0);
   }, [slug]);
 
   if (isLoading) {
@@ -91,7 +92,7 @@ const Categories = () => {
         
         <section className="text-gray-600 body-font">
           <div className="container px-5 py-20 mx-auto">
-            <h1 className="text-3xl font-bold text-gray-900 mb-3 ml-5">{instructors.name} Courses</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-3 ml-5"> Feature Courses of {category.name}</h1>
             <div className="flex flex-wrap -m-4 items-center justify-center">
               {courses.length > 0 && (courses.map((item, index) => (
     
@@ -124,7 +125,7 @@ const Categories = () => {
 
 
         <section className="text-gray-600 body-font shadow-md bg-gray-100 text-center pt-16">
-          <h1 className=" text-black sm:text-3xl text-2xl text-center title-font text-gray-900 mb-5 font-bold">Most Popular Instructors in {instructors.name}</h1>
+          <h1 className=" text-black sm:text-3xl text-2xl text-center title-font text-gray-900 mb-5 font-bold">Most Popular Instructors in {category.name}</h1>
           <div className="container px-5 py-2 mx-auto ml-15">
             <div className="flex flex-wrap -m-4">
               {instructors.length > 0 && (instructors.map((x) => {

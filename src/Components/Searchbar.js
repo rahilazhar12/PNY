@@ -25,8 +25,8 @@ const Searchbar = () => {
         <Flowbite>
             <section className='p-4 shadow-md'>
                 <div className="grid lg:grid-cols-12 md:grid-cols-8 max-sm:space-y-1">
-                    <div className=' max-sm:flex max-sm:justify-center  lg:col-span-1 '>
-                        <img className=' lg:w-[75px] h-[55px]' src={PNYlogo} alt="" /> </div>
+                  <Link to='/'> <div className=' max-sm:flex max-sm:justify-center  lg:col-span-1 '>
+                       <img className=' cursor-pointer lg:w-[75px] h-[55px]' src={PNYlogo} alt="" /> </div></Link> 
 
                     <div className=' lg:col-span-2 md:col-span-2'>
                         <div className=' max-sm:flex max-sm:justify-center'>
@@ -36,7 +36,7 @@ const Searchbar = () => {
 
                     {/* Searchbar */}
                     <div className=' max-sm:flex max-sm:justify-center lg:col-span-5 xl:col-span-4 md:col-span-5'>
-                        <input className='border max-sm:p-3 lg:w-full md:w-full h-9 rounded' placeholder='Search for the software or skills you want to learn' type="text" />
+                        <input className='border max-sm:p-3 lg:w-80  md:w-80 md:ml-20 xl:ml-0 xl:w-full  lg:ml-20 h-9 rounded' placeholder='Search for the software or skills you want to learn' type="text" />
                     </div>
 
                     <div className=' lg:col-span-4 xl:col-span-5 md:col-span-12'>

@@ -107,6 +107,7 @@ const Coursedetail = () => {
     };
 
     fetchCourseData();
+    window.scrollTo(0, 0);
   }, [courseSlug]);
 
   if (isLoading) {

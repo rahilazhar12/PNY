@@ -18,7 +18,7 @@ import { durationdata } from '../Components/Data'
 import image1 from '../Assets/image/4 logos.png'
 import Map from '../Components/Map'
 import Testimonial from '../Components/Testimonial'
-
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 
@@ -51,7 +51,7 @@ const Home = () => {
 
 
                 <div className="admissionbutton max-sm:flex justify-center" >
-                  <button className=' p-[8px] bg-[#308AFF] rounded-lg w-[132px] text-white text-base font-Inter font-bold mt-3'>Admission !</button>
+                <Link to='https://lms.pnytraining.com/' target='_blank'>  <button className=' p-[8px] bg-[#308AFF] rounded-lg w-[132px] text-white text-base font-Inter font-bold mt-3'>Admission !</button></Link>
                 </div>
 
                 <div className='flex space-x-10 mt-3 max-sm:hidden'>
@@ -101,7 +101,7 @@ const Home = () => {
                 batch. Let’s grow together!
               </div>
               <div className='text-center lg:p-5 max-sm:mt-2'>
-                <button className='bg-[#49B2DF] lg:w-48 lg:h-14 text-white rounded max-sm:w-36 max-sm:h-10 dark:text-white'>Join us now!</button>
+              <Link to='https://lms.pnytraining.com/' target='_blank'>  <button className='bg-[#49B2DF] lg:w-48 lg:h-14 text-white rounded max-sm:w-36 max-sm:h-10 dark:text-white'>Join us now!</button> </Link>
               </div>
             </div>
 
@@ -252,7 +252,7 @@ const Home = () => {
               </div>
             </div>
             <div className="viewmore flex justify-center p-5">
-              <button className='font-semibold text-base w-28 h-12 text-blue-600 bg-[#E5F1FF] rounded-lg'>View More</button>
+             <Link to='allcourses'> <button className='font-semibold text-base w-28 h-12 text-blue-600 bg-[#E5F1FF] rounded-lg'>View More</button></Link>
             </div>
           </section>
 
@@ -274,10 +274,10 @@ const Home = () => {
                   <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Learning Management System</li>
                 </ul>
 
-                <div className="buttons max-sm:flex lg:mt-5">
+                {/* <div className="buttons max-sm:flex lg:mt-5">
                   <button className='mx-5 bg-[#D0D5DD] p-3 rounded-lg'>Learn More</button>
                   <button className='bg-[#308AFF] text-white rounded-lg p-3'>Enroll Now</button>
-                </div>
+                </div> */}
               </div>
               <div className='col-span-6'>
                 <div className=' justify-center flex lg:p-6 lg:mt-20' >
