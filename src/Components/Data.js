@@ -559,4 +559,6 @@ export const ownersdata  = [
 
 
 
+
+
 export default cardData
