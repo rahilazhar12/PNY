@@ -1,66 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import Searchbar from '../Components/Searchbar';
-import Footer from '../Components/Footer';
+import React, { useEffect, useState } from 'react'
+import Searchbar from '../Components/Searchbar'
+import Footer from '../Components/Footer'
+import axios from 'axios'
+
 
 const FeeStructure = () => {
-  const [courses, setCourses] = useState({});
-  const [selectedCity, setSelectedCity] = useState(null);
-  const [selectedDuration, setSelectedDuration] = useState('all'); // 'all' to show all courses initially
+  const [courses, setCourses] = useState({})
+  const [selectedCity, setSelectedCity] = useState('Lahore');
+  const [selectedDuration, setSelectedDuration] = useState('1');
+  const [isloading, setIsloading] = useState(false)
 
   useEffect(() => {
-    const fetchCourses = async () => {
+    const fetchcourse = async () => {
+      setIsloading(true)
       try {
-        const response = await axios.get('https://lms.pnytraining.com/api/feeStructure?duration=1&type=year');
-        setCourses(response.data.Courses);
+        const response = await axios.get(`https://lms.pnytraining.com/api/feeStructure?duration=${selectedDuration}&type=${selectedDuration === '1-year' ? "year" : "month"}`)
+        setCourses(response.data.Courses[selectedCity])
+
       } catch (error) {
-        console.error('Error fetching data: ', error);
+        console.log(error)
+      } finally {
+        setIsloading(false);
       }
-    };
 
-    fetchCourses();
-  }, []);
-
-  const handleCityClick = (city) => {
-    setSelectedCity(city);
-    setSelectedDuration('all'); // Show all courses when a city is clicked
-  };
-
-  const handleDurationClick = (duration) => {
-    setSelectedDuration(duration); // Set selected duration for filtering
-  };
-
-  const renderTable = (cityCourses) => {
-    let filteredCourses = cityCourses;
-
-    if (selectedDuration !== 'all') { // Apply duration filter if not 'all'
-      filteredCourses = cityCourses.filter((course) => course.Program_Duration === selectedDuration.toString());
     }
+    fetchcourse()
+  }, [selectedCity, selectedDuration])
 
-    // Generate the table rows based on filteredCourses
-    return (
-      <table className="w-full mx-auto text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-          <tr className="bg-slate-200">
-            <th scope="col" className="p-3">Serial No</th>
-            <th scope="col" className="px-6 py-3">Course Name</th>
-            <th scope="col" className="px-6 py-3">Course Fee</th>
-            <th scope="col" className="px-6 py-3">Registration Fee</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredCourses.map((course, index) => (
-            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" key={course.Program_Id}>
-              <td className="p-4">{index + 1}</td>
-              <td className="px-6 py-4 font-medium text-gray-900 dark:text-white">{course.Program_Name}</td>
-              <td className="px-6 py-4">{`PKR. ${course.Program_Fee}`}</td>
-              <td className="px-6 py-4">{`PKR. ${course.registration_fee}`}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    );
-  };
+  console.log(courses)
   const parentTabContentSelector = "data-tabs-target"
   return (
     <>
@@ -69,12 +36,6 @@ const FeeStructure = () => {
         <section>
           <Searchbar />
         </section>
-
-       
-       
-  
-
-
 
         <header className="text-gray-600 body-font shadow-lg">
           <div className="container mx-auto flex flex-wrap py-2 flex-col md:flex-row items-center">
@@ -108,40 +69,22 @@ const FeeStructure = () => {
 
         <div className='container'>
           <div data-tabs-toggle={parentTabContentSelector}>
-            {/* <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
+            <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
               <ul className="flex  flex-wrap text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
                 <li role="presentation">
-                  <button className="inline-block p-2 ml-3 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Lahore</button>
+                  <button className="inline-block p-2 ml-3 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"
+                    onClick={() => setSelectedCity('Lahore')}>Lahore</button>
                 </li>
                 <li className="mr-2" role="presentation">
-                  <button className="inline-block p-2 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Rawalpindi</button>
+                  <button className="inline-block p-2 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false"
+                    onClick={() => setSelectedCity('Rawalpindi')}>Rawalpindi</button>
                 </li>
                 <li className="mr-2" role="presentation">
-                  <button className="inline-block p-2 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Multan</button>
+                  <button className="inline-block p-2 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false"
+                    onClick={() => setSelectedCity('Multan')}>Multan</button>
                 </li>
               </ul>
-            </div> */}
-
- {/* City buttons */}
- <div className='container'>
-      {Object.keys(courses).length > 0 && (
-        <div className="flex flex-wrap">
-          {Object.keys(courses).map((city) => (
-            <button
-              key={city}
-              onClick={() => handleCityClick(city)}
-              className={`rounded-md ${
-                selectedCity === city
-                  ? 'bg-blue-500 text-white'
-                  : 'text-blue-900 '
-              } py-2 px-2 focus:outline-none hover:text-white hover:bg-blue-600 m-2`}
-            >
-              {city}
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
+            </div>
             <div id="myTabContent">
               <div className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
@@ -161,14 +104,32 @@ const FeeStructure = () => {
         <header className="text-gray-600 body-font">
           <div className="container mx-auto flex flex-col md:flex-row">
             <nav className="flex flex-wrap items-center text-base md:ml-auto me-auto w-full">
-              <button type="button" class="text-white bg-[#308AFF] from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2" onClick={()=>handleDurationClick('all')}>All</button>
+              <button type="button" class="text-white bg-[#308AFF] from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2">All</button>
               <button type="button" class="text-gray-700 hover:text-white border border-blue-700 hover:bg-[#308AFF] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
-              onClick={()=>handleDurationClick(12)}>12 months</button>
+                onClick={() => setSelectedDuration('1')}>1 months</button>
+
               <button type="button" class="text-gray-700 hover:text-white border border-blue-700 hover:bg-[#308AFF] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
-              onClick={()=>handleDurationClick(6)}>6 months</button>
+                onClick={() => setSelectedDuration('1.5')}>1.5 months</button>
+
+
               <button type="button" class="text-gray-700 hover:text-white border border-blue-700 hover:bg-[#308AFF] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
-                onClick={()=>handleDurationClick(3)}>3 months</button>
-              
+                onClick={() => setSelectedDuration('2')}>2 months</button>
+
+
+              <button type="button" class="text-gray-700 hover:text-white border border-blue-700 hover:bg-[#308AFF] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
+                onClick={() => setSelectedDuration('3')}>3 months</button>
+
+              <button type="button" class="text-gray-700 hover:text-white border border-blue-700 hover:bg-[#308AFF] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
+                onClick={() => setSelectedDuration('4')}>4 months</button>
+
+
+
+
+
+              <button type="button" class="text-gray-700 hover:text-white border border-blue-700 hover:bg-[#308AFF] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
+                onClick={() => setSelectedDuration('6')}>6 months</button>
+              <button type="button" class="text-gray-700 hover:text-white border border-blue-700 hover:bg-[#308AFF] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
+                onClick={() => setSelectedDuration('1-year')}>12 months</button>
 
               <button type="button" class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-2 py-2 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2 mb-2 w-30">
                 <svg class="w-4 h-4 text-gray-800 dark:text-white mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -176,38 +137,178 @@ const FeeStructure = () => {
                 </svg>Search for the courses
               </button>
             </nav>
-            <div className="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-              <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-2 md:mt-0">
-                <svg class="w-4 h-4 text-gray-800 dark:text-white mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h14M1 6h14M1 11h7" />
-                </svg>Filter
-              </button>
-            </div>
+
           </div>
         </header>
 
-         
-    {/* <div className="container my-4">
-      <button onClick={() => handleDurationClick('all')} className="duration-filter-button">All</button>
-      <button onClick={() => handleDurationClick(12)} className="duration-filter-button">12 months</button>
-      <button onClick={() => handleDurationClick(6)} className="duration-filter-button">6 months</button>
-      <button onClick={() => handleDurationClick(3)} className="duration-filter-button">3 months</button>
-    
-    </div> */}
+        {/* <div className="container mt-3 mx-auto relative overflow-x-auto shadow-md sm:rounded-lg">
+          <table className="  w-full mx-auto text-sm text-left text-gray-500 dark:text-gray-400 border border-lg">
+            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+              <tr className="bg-slate-200">
+                <th scope="col" className="p-3">
+                  Serial No
+                </th>
 
-    <div className="container mt-3 mx-auto relative overflow-x-auto shadow-md sm:rounded-lg">
-      {selectedCity ? (
-        <div>
-          <h2 className=" text-center text-2xl font-bold leading-6 text-gray-900">{selectedCity} - {selectedDuration === 'all' ? 'All Courses' : `${selectedDuration} months`}</h2>
-          {renderTable(courses[selectedCity])}
+                <th scope="col" className="px-6 py-3">
+                  Course Name
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Course Fee
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Registration Fee
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <td className="w-4 p-4">
+                  01
+                </td>
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  Diploma in Advance Web Technology (DAWT)
+                </th>
+                <td className="px-6 py-4">
+                  PKR. 10,000 (Discounted fee)
+                  PKR. 15,000
+                </td>
+                <td className="px-6 py-4">
+                  PKR. 10,000
+                </td>
+
+              </tr>
+              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <td className="w-4 p-4">
+                  02
+                </td>
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  Become a Tailwind CSS, Python and Ruby on Rails Developer
+                </th>
+                <td className="px-6 py-4">
+                  PKR. 70,000
+                </td>
+                <td className="px-6 py-4">
+                  PKR. 5,000
+                </td>
+              </tr>
+              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <td className="w-4 p-4">
+                  03
+                </td>
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  Digital marketing with Artificial Intelligence & Project Management
+                </th>
+                <td className="px-6 py-4">
+                  PKR. 23,000
+                </td>
+                <td className="px-6 py-4">
+                  PKR. 2,000
+                </td>
+
+
+              </tr>
+              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <td className="w-4 p-4">
+                  04
+                </td>
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  Become Expert in Advance UiUx in figma, Digital Painting & Visual Merchandising
+                </th>
+                <td className="px-6 py-4">
+                  PKR. 55,000
+                </td>
+                <td className="px-6 py-4">
+                  PKR. 5,000
+                </td>
+              </tr>
+              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <td className="w-4 p-4">
+                  05
+                </td>
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  Digital Marketing & Artificial Intelligence (for technical analysis)
+                </th>
+                <td className="px-6 py-4">
+                  PKR. 100,000
+                </td>
+                <td className="px-6 py-4">
+                  PKR. 100,000
+                </td>
+              </tr>
+              <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <td className="w-4 p-4">
+                  06
+                </td>
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  Diploma in Advance Web Technology (DAWT)
+                </th>
+                <td className="px-6 py-4">
+                  PKR. 23,000
+                </td>
+                <td className="px-6 py-4">
+                  PKR. 2,000
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div> */}
+
+        <div className=' grid grid-cols-1 max-sm:overflow-x-auto'>
+          <div className='text-center text-2xl font-bold'>
+            {selectedCity}
+            <span className='ml-5'>
+              {selectedDuration === '1-year' ? '12 months' : `${selectedDuration}-Month`}
+            </span>
+          </div>
+
+
+          {isloading ? <p>Loading courses...</p> : courses.length > 0 ? (
+            <table>
+              <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr className="bg-slate-200">
+                  <th scope="col" className="p-3">
+                    Serial No
+                  </th>
+
+                  <th scope="col" className="px-6 py-3">
+                    Course Name
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Course Fee
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Registration Fee
+                  </th>
+                </tr>
+              </thead>
+
+              {courses.map((course, index) => (
+                <>
+                  <tr className="bg-white border-b text-center dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <td className="w-4 p-4" key={course.Program_Id}>
+                      {index + 1}
+                    </td>
+                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      {course.Program_Name}
+                    </th>
+                    <td className="px-6 py-4">
+                      {course.Program_Fee}
+                    </td>
+                    <td className="px-6 py-4">
+                      {course.registration_fee}
+                    </td>
+
+                  </tr>
+                </>
+              ))}
+            </table>
+          ) : <p>No courses available.</p>}
         </div>
-      ) : (
-        <p className=' text-center text-2xl font-bold'>Please select a city to view the courses.</p>
-      )}
-    </div>
 
 
-      </div>
+
+
+      </div >
 
     </>
   )
