@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import parse, { domToReact } from 'html-react-parser';
+
 
 const Blogdetails = () => {
     const { slug } = useParams();
@@ -23,11 +25,34 @@ const Blogdetails = () => {
         return <div>Loading...</div>;  // or any other loading indication
     }
 
+    const parsedDescription = parse(post.description, {
+        replace: domNode => {
+          if (domNode.type === 'tag') {
+            // For example, add a class to all <p> elements
+            if (domNode.name === 'p') {
+              const props = { className: 'p-5' };
+              return <p {...props}>{domToReact(domNode.children)}</p>;
+            }
+            if (domNode.name === 'h3') {
+              const props = { className: 'p-5 text-lg' };
+              return <p {...props}>{domToReact(domNode.children)}</p>;
+            }
+            if (domNode.name === 'ul') {
+              const props = { className: 'p-5' };
+              return <p {...props}>{domToReact(domNode.children)}</p>;
+            }
+            // if (domNode.name === 'a') {
+            //   const props = { className: 'bg-[#0c7ec2] text-white hover:bg-red-500 p-3 w-80 cursor-pointer rounded mx-auto'};
+            //   return <p {...props}>{domToReact(domNode.children)}</p>;
+            // }
+          }
+        }
+      });
+
     return (
         <div>
-            <h1>{post.title}</h1>
-            <p>{post.description}</p>
-            {/*... display other details of the post as you see fit*/}
+         {parsedDescription}
+          
         </div>
     );
 }

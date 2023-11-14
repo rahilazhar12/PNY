@@ -11,10 +11,10 @@ const Blog = () => {
 
     useEffect(() => {
         // Fetch data from the provided URL
-        fetch('https://www.pnytrainings.com/api/get_feature_posts')
+        fetch('https://www.pnytrainings.com/api/featuredposts')
             .then((response) => response.json())
             .then((data) => {
-                setData(data);
+                setData(data.featured_posts);
                 console.log(data , 'data')
             })
             .catch((error) => {
@@ -32,6 +32,8 @@ const Blog = () => {
     const filterData = data.filter((item) => {
         return filter === "All" || item.title.includes(filter)
     })
+
+    console.log(data , 'data________')
     return (
         <Flowbite>
             <main className='bg-white dark:bg-slate-800   ring-1 ring-slate-900/5 shadow-xl'>

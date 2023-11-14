@@ -19,12 +19,16 @@ import Faqs from '../Screens/Faqs'
 import Testapi from './Testapi'
 import Fastbootcamp from '../Screens/Fastbootcamp'
 import Googlecertification from '../Screens/Googlecertification'
+import Flyers from '../Screens/Flyers'
+import Flyermodal from './Flyermodal'
+
 
 
 const Router = () => {
     return (
         <>
             <Navbar />
+
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/blog' element={<Blog />} />
@@ -43,14 +47,9 @@ const Router = () => {
                 <Route path='/faqs' element={<Faqs />} />
                 <Route path='/fast-track-pro-bootcamps' element={<Fastbootcamp />} />
                 <Route path='/google-scholarship-certification-in-lahore-pakistan' element={<Googlecertification />} />
-
-
-
-
-
-
-
-
+                <Route path='/flyers' element={<Flyers/>} />
+                <Route path='/modalflyer' element={<Flyermodal/>} />
+       
             </Routes>
 
             <Footer />
