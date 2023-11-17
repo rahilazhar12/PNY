@@ -28,9 +28,10 @@ const AboutUs = () => {
       }
      }
       fetchdata()
+     
   },[])
 
-  console.log(data.page.page_description , 'DATA____')
+  
 
   return (
     <Flowbite>

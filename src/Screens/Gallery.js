@@ -3,23 +3,44 @@ import { GalleryData } from '../Components/Data'
 import { Link } from 'react-router-dom'
 import Searcbar from '../Components/Searchbar'
 import axios from 'axios'
+import { Blocks } from 'react-loader-spinner'
 
 
 const Gallery = () => {
 
     const [image, setImage] = useState([])
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchdata = async () => {
+            setIsLoading(true)
             try {
                 let response = await axios.get("https://www.pnytrainings.com/api/gallery")
                 setImage(response.data.galleries)
             } catch (error) {
                 console.log(error)
+            }finally {
+                setIsLoading(false)
             }
         }
         fetchdata()
+        window.scrollTo(0 , 0)
     }, [])
+
+    if (isLoading) {
+        return (
+          <div className="flex justify-center items-center min-h-screen">
+            <Blocks
+              visible={true}
+              height="80"
+              width="80"
+              ariaLabel="blocks-loading"
+              wrapperStyle={{}}
+              wrapperClass="blocks-wrapper"
+            />
+          </div>
+        );
+      }
 
     console.log(image, 'image____________')
     return (
