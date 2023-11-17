@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { GalleryData } from '../Components/Data';
+// import { GalleryData } from '../Components/Data';
 import Modal from 'react-modal';
 import Searcbar from '../Components/Searchbar'
+import axios from 'axios';
 const customStyles = {
   content: {
     top: '50%',
@@ -22,13 +23,14 @@ const customStyles = {
 // Modal.setAppElement('#root');
 
 const GalleryDetailed = () => {
-
-  const [data, setData] = useState(null);
+  const { id } = useParams();
+  const [relatedImages, setRelatedImages] = useState([]);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
 
   const openModal = (imageSrc) => {
     setIsOpen(true);
+    console.log(imageSrc , 'imgsrc_____')
     setSelectedImage(imageSrc);
   }
 
@@ -37,12 +39,21 @@ const GalleryDetailed = () => {
     setSelectedImage("");
   }
 
-  const { id } = useParams();
+  
 
   useEffect(() => {
-    const filterdata = GalleryData.find((x) => x.id == id);
-    setData(filterdata);
-  }, [id]);
+    axios.get(`https://www.pnytrainings.com/api/gallery/${id}`)
+      .then(response => {
+        // Check if response.data is an array; if not, extract the array correctly
+        const imagesArray = Array.isArray(response.data) 
+            ? response.data 
+            : response.data.galleries.images; // Adjust this line based on the actual structure
+        setRelatedImages(imagesArray);
+      })
+      .catch(error => console.error(error));
+}, [id]);
+
+console.log(relatedImages , 'rel________')
 
   return (
     <>
@@ -57,16 +68,16 @@ const GalleryDetailed = () => {
       </section>
       <div className='grid grid-cols-3 p-3 gap-2'>
         {
-          data?.images.map((image, index) => (
+          relatedImages.map((image, index) => (
             <div
               class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 p-2 border border-[#308AFF]">
               <a href="#!">
                 <img
                   className='cursor-pointer border-2  shadow-lg'
                   key={index}
-                  src={image}
+                  src={image.image}
                   alt=""
-                  onClick={() => openModal(image)} // onClick handler to open modal with the image src
+                  onClick={() => openModal(image.image)} // onClick handler to open modal with the image src
                 />
               </a>
             </div>
@@ -94,3 +105,4 @@ const GalleryDetailed = () => {
 }
 
 export default GalleryDetailed;
+

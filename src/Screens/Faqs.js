@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState  , useEffect} from 'react';
 import { faqs } from '../Components/Data';
 import faq from '../Assets/Faqs Icons/logofaq.png'
 import Searchbar from '../Components/Searchbar'
@@ -17,6 +17,10 @@ const Faqs = () => {
             [detailIndex]: !prev[detailIndex],
         }));
     }
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
     return (
         <main>

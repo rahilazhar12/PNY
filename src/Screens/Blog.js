@@ -34,6 +34,11 @@ const Blog = () => {
     })
 
     console.log(data , 'data________')
+
+    // const getFirstTwentyWords = (text) => {
+    //     return text.split(' ').slice(0, 20).join(' ');
+    // };
+
     return (
         <Flowbite>
             <main className='bg-white dark:bg-slate-800   ring-1 ring-slate-900/5 shadow-xl'>
@@ -69,6 +74,8 @@ const Blog = () => {
                 {/* Section-3 */}
                 <section className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:p-20 max-sm:p-2">
                     {filterData.map((item, index) => (
+
+                         
                         
                         <Card
                             key={index}
@@ -82,7 +89,7 @@ const Blog = () => {
                                 {item.description1}
                             </h5>
                             <p className="font-normal text-gray-700 dark:text-gray-400" data-aos="fade-up-right">
-                                {item.description_short}
+                            {item.description_short}
                             </p>
                             <Link to={`/blog/marketing/${item.url_slug}`}>
                                 <Button>

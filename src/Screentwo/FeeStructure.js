@@ -2,33 +2,65 @@ import React, { useEffect, useState } from 'react'
 import Searchbar from '../Components/Searchbar'
 import Footer from '../Components/Footer'
 import axios from 'axios'
+// Initialization for ES Users
+import {
+  Ripple,
+  initTE,
+} from "tw-elements";
+
+initTE({ Ripple });
 
 
 const FeeStructure = () => {
   const [courses, setCourses] = useState({})
   const [selectedCity, setSelectedCity] = useState('Lahore');
   const [selectedDuration, setSelectedDuration] = useState('1');
-  const [isloading, setIsloading] = useState(false)
+  const [searchTerm, setSearchTerm] = useState('');
+  const [isloading, setIsLoading] = useState(false);
+
 
   useEffect(() => {
-    const fetchcourse = async () => {
-      setIsloading(true)
+    const fetchCourses = async () => {
+      setIsLoading(true);
       try {
-        const response = await axios.get(`https://lms.pnytraining.com/api/feeStructure?duration=${selectedDuration}&type=${selectedDuration === '1-year' ? "year" : "month"}`)
-        setCourses(response.data.Courses[selectedCity])
-
+        let url = '';
+        if (searchTerm) {
+          url = `https://lms.pnytraining.com/api/searchCourseByName?search=${searchTerm}`;
+        } else {
+          url = `https://lms.pnytraining.com/api/feeStructure?duration=${selectedDuration}&type=${selectedDuration === '1-year' ? "year" : "month"}`;
+        }
+        const response = await axios.get(url);
+        if (searchTerm) {
+          // Aggregate courses from all cities
+          const aggregatedCourses = [];
+          for (const city in response.data.Courses) {
+            aggregatedCourses.push(...response.data.Courses[city]);
+          }
+          setCourses(aggregatedCourses);
+        } else {
+          setCourses(response.data.Courses[selectedCity]);
+        }
       } catch (error) {
-        console.log(error)
+        console.error('Error fetching data:', error);
       } finally {
-        setIsloading(false);
+        setIsLoading(false);
       }
+    };
+    
 
-    }
-    fetchcourse()
-  }, [selectedCity, selectedDuration])
+    fetchCourses();
+  }, [selectedCity, selectedDuration, searchTerm]);
 
-  console.log(courses)
+  //   const filteredCourses = Object.values(courses).flat().filter(course =>
+  //     course.Program_Name.toLowerCase().includes(searchTerm.toLowerCase())
+  // );
+
+
+
   const parentTabContentSelector = "data-tabs-target"
+
+  
+
   return (
     <>
       <div>
@@ -103,8 +135,8 @@ const FeeStructure = () => {
 
         <header className="text-gray-600 body-font">
           <div className="container mx-auto flex flex-col md:flex-row">
-            <nav className="flex flex-wrap items-center text-base md:ml-auto me-auto w-full">
-              <button type="button" class="text-white bg-[#308AFF] from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2">All</button>
+            <nav className="flex flex-wrap items-center text-base md:ml-auto me-auto w-full p-3">
+              {/* <button type="button" class="text-white bg-[#308AFF] from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2">All</button> */}
               <button type="button" class="text-gray-700 hover:text-white border border-blue-700 hover:bg-[#308AFF] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
                 onClick={() => setSelectedDuration('1')}>1 months</button>
 
@@ -130,12 +162,21 @@ const FeeStructure = () => {
                 onClick={() => setSelectedDuration('6')}>6 months</button>
               <button type="button" class="text-gray-700 hover:text-white border border-blue-700 hover:bg-[#308AFF] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
                 onClick={() => setSelectedDuration('1-year')}>12 months</button>
+              {/* Searchbar */}
+              <span><div className="mb-3 mt-2 w-[500px]">
+                <div className="relative mb-4 flex w-full flex-wrap items-stretch">
+                  <input type="search" className="relative m-0 -mr-0.5 block w-[1px] min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary" placeholder="Search" aria-label="Search" aria-describedby="button-addon3"
+                   value={searchTerm}
+                   onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                  {/*Search button*/}
+                  <button className="relative z-[2] rounded-r border-2 border-primary px-6 py-2 text-xs font-medium uppercase text-primary transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0" type="button" id="button-addon3" data-te-ripple-init>
+                    Search
+                  </button>
+                </div>
+              </div>
+              </span>
 
-              <button type="button" class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-2 py-2 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2 mb-2 w-30">
-                <svg class="w-4 h-4 text-gray-800 dark:text-white mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                </svg>Search for the courses
-              </button>
             </nav>
 
           </div>

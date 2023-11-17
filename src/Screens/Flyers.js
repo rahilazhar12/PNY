@@ -64,6 +64,7 @@ const Flyers = () => {
                     open={modalOpen}
                     handleClose={() => setModalOpen(false)}
                     flyerData={selectedFlyer.obj} // Pass the flyer data to the modal
+                    selectedFlyer={selectedFlyer}
                 />
             )}
         </div>

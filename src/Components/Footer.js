@@ -5,6 +5,7 @@ import johartown from '../Assets/image/Jahor town.png'
 import multan from '../Assets/image/Multan.png'
 import allbrances from '../Assets/image/Group 48095475.png'
 import pnylogonew from '../Assets/image/PNY Trainings logo.png'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -21,13 +22,13 @@ const Footer = () => {
                 </aside>
                 <nav className='max-sm:text-sm'>
                     <header class=" text-black font-bold">Quick Link</header>
-                    <a class="link link-hover">FAQs</a>
+                    <Link to='/faqs' class="link link-hover">FAQs</Link>
                     <a class="link link-hover">Admission</a>
                     <a class="link link-hover">Event</a>
-                    <a class="link link-hover">Gallery</a>
+                    <Link to='/gallery' class="link link-hover">Gallery</Link>
                     <a class="link link-hover">Instructors</a>
-                    <a class="link link-hover">Terms & Conditions</a>
-                    <a class="link link-hover">Privacy Policy</a>
+                    <Link to='/terms-conditions' class="link link-hover">Terms & Conditions</Link>
+                    <Link to='/privacy-policy' class="link link-hover">Privacy Policy</Link>
                 </nav>
                 <nav>
                     <header class="text-black font-bold">Offered Courses</header>

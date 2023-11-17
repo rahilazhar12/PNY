@@ -21,6 +21,8 @@ import Fastbootcamp from '../Screens/Fastbootcamp'
 import Googlecertification from '../Screens/Googlecertification'
 import Flyers from '../Screens/Flyers'
 import Flyermodal from './Flyermodal'
+import Termsandconditions from '../Screens/Termsandconditions'
+import Privacypolicy from '../Screens/Privacypolicy'
 
 
 
@@ -47,9 +49,11 @@ const Router = () => {
                 <Route path='/faqs' element={<Faqs />} />
                 <Route path='/fast-track-pro-bootcamps' element={<Fastbootcamp />} />
                 <Route path='/google-scholarship-certification-in-lahore-pakistan' element={<Googlecertification />} />
-                <Route path='/flyers' element={<Flyers/>} />
-                <Route path='/modalflyer' element={<Flyermodal/>} />
-       
+                <Route path='/flyers' element={<Flyers />} />
+                <Route path='/modalflyer' element={<Flyermodal />} />
+                <Route path='/terms-conditions' element={<Termsandconditions/>} />
+                <Route path='/privacy-policy' element={<Privacypolicy/>} />
+
             </Routes>
 
             <Footer />

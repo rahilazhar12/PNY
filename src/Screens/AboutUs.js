@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Searchbar from '../Components/Searchbar'
 import { DarkThemeToggle, Flowbite } from 'flowbite-react';
 import grouppicture from '../Assets/images/responsive.png'
@@ -9,13 +9,28 @@ import ladymobile from '../Assets/image/ladymobile.png'
 import TypingAnimation from './Contact';
 import wahab from '../Assets/image/Wahab-Yunuspng.png'
 import Team from '../Components/Team';
+import axios from 'axios';
 
 
 
 
 const AboutUs = () => {
 
+  const [data , setData] = useState("")
 
+  useEffect(()=> {
+     const fetchdata = async() => {
+      try {
+        let response = await axios.get("https://www.pnytrainings.com/api/pages/about-us")
+        setData(response.data)
+      } catch (error) {
+        console.log(error)
+      }
+     }
+      fetchdata()
+  },[])
+
+  console.log(data.page.page_description , 'DATA____')
 
   return (
     <Flowbite>
