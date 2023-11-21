@@ -23,6 +23,8 @@ import Flyers from '../Screens/Flyers'
 import Flyermodal from './Flyermodal'
 import Termsandconditions from '../Screens/Termsandconditions'
 import Privacypolicy from '../Screens/Privacypolicy'
+import Citywisedata from '../Screens/Citywisedata'
+import Specialpage from '../Screens/Specialpage'
 
 
 
@@ -53,6 +55,8 @@ const Router = () => {
                 <Route path='/modalflyer' element={<Flyermodal />} />
                 <Route path='/terms-conditions' element={<Termsandconditions/>} />
                 <Route path='/privacy-policy' element={<Privacypolicy/>} />
+                <Route path='/citywisedata/:name' element={<Citywisedata/>} />
+                <Route path='/specialpage/:url' element={<Specialpage/>} />
 
             </Routes>
 

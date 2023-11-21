@@ -5,12 +5,22 @@ import johartown from '../Assets/image/Jahor town.png'
 import multan from '../Assets/image/Multan.png'
 import allbrances from '../Assets/image/Group 48095475.png'
 import pnylogonew from '../Assets/image/PNY Trainings logo.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 const Footer = () => {
+
+    const navigate = useNavigate()
+
+
+    const redirectToCity = (cityName) => {
+        navigate(`/citywisedata/${cityName.toLowerCase()}`);
+    };
+
+
     return (
         <div>
-            
+
             <footer class="footer p-10 bg-base-200 text-base-content">
                 <aside className='lg:w-[361px]'>
                     <img src={pnylogonew} alt="" width={159} />
@@ -54,16 +64,16 @@ const Footer = () => {
                     <a class="link link-hover">Pearson Test of English</a>
                 </nav>
             </footer>
-           
+
             <div className=' border-b-2 border-blue-600'></div>
 
             {/* Our Branches--------------------------------------------------------------------------------------------- */}
-               <div className=' text-center bg-base-300 text-xl font-semibold p-2'>Our Branches</div>
+            <div className=' text-center bg-base-300 text-xl font-semibold p-2'>Our Branches</div>
             <footer class="footer p-10 grid lg:grid-cols-12 md:grid-cols-12 bg-base-200 text-base-content">
-          
-               
+
+
                 <nav className='col-span-2'>
-                    
+
                     <img src={arfatower} alt="" />
                     <header class="text-black font-bold">Arfa Tower (Head Office)</header>
                     <a class="link link-hover  lg:w-[150px]">Office 1, Level #14, Arfa Software Technology Park, Ferozepur Road Lahore</a>
@@ -97,12 +107,19 @@ const Footer = () => {
                     <a class="link link-hover w-[150px]"> View All Branches</a>
                 </nav>
             </footer>
-            <footer class="footer footer-center p-4  bg-base-300 text-base-content">
+            <footer className="footer footer-center p-4 bg-base-300 text-base-content">
                 <aside>
                     <p className='text-xl font-bold'>Courses We Offers in Cities</p>
-                    <p>Lahore | Rawalpindi  | Karachi  | Multan  | Sialkot  | Faisalabad  | Gujranwala  | Azad Kashmir  | Islamabad</p>
+                    <div>
+                        {["Lahore", "Rawalpindi", "Karachi", "Multan", "Sialkot", "Faisalabad", "Gujranwala", "Azad Kashmir", "Islamabad"].map((city) => (
+                            <button key={city} className="btn btn-link" onClick={() => redirectToCity(city)}>
+                                {city}
+                            </button>
+                        ))}
+                    </div>
                 </aside>
             </footer>
+
 
             <footer class="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
                 <aside>
