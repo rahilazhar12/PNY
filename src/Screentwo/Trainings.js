@@ -1,10 +1,72 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Searchbar from '../Components/Searchbar'
+import axios from 'axios'
 
 
 
 const Trainings = () => {
   const parentTabContentSelector = "data-tabs-target"
+
+  const [batches, setBatches] = useState({});
+  const [selectedCity, setSelectedCity] = useState(null);
+  const [selectedDivision, setSelectedDivision] = useState(null);
+
+
+  
+
+  useEffect(() => {
+    axios.get('https://lms.pnytraining.com/api/trainingSchedules?type=month&duration=2')
+      .then(response => {
+        setBatches(response.data.Batches);
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
+
+  const handleCityClick = (city) => {
+    setSelectedCity(city);
+    setSelectedDivision(null); // Reset division selection when a new city is selected
+  };
+
+  const handleDivisionClick = (division) => {
+    setSelectedDivision(division);
+  };
+
+  const getDivisions = (cityBatches) => {
+    const divisions = new Set();
+    cityBatches.forEach(batch => {
+      if (batch.branch && batch.branch.DivisionName) {
+        divisions.add(batch.branch.DivisionName);
+      }
+    });
+    return Array.from(divisions);
+  };
+
+  const formatSessionTimings = (days) => {
+    // Check if 'days' is an array and has elements
+    if (Array.isArray(days) && days.length > 0) {
+      // Map each day to a formatted string and join them with a comma
+      return days.map(day => `${day.day}: ${day.start_time} - ${day.end_time}`).join(', ');
+    } else {
+      // Return a default message if 'days' is not an array or is empty
+      return 'No schedule available';
+    }
+  };
+
+  const calculateDurationInMonths = (startDate, endDate) => {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    
+    const yearsDifference = end.getFullYear() - start.getFullYear();
+    const monthsDifference = end.getMonth() - start.getMonth();
+    const totalMonths = (yearsDifference * 12) + monthsDifference;
+  
+    return `${totalMonths} month${totalMonths !== 1 ? 's' : ''}`;
+  };
+  
+  
+  
+
+
   return (
     <div>
       <section>
@@ -28,7 +90,7 @@ const Trainings = () => {
           <div className=' col-span-2 flex justify-end gap-5'>
             <div>
               <button className='px-[16px] py-[10px] max-sm:w-full border rounded-xl text-[14px] text-[#308AFF] font-medium border-[#308AFF]'>Enrol Now (Limited seats left)</button>
-              </div>
+            </div>
             <div>
               <button className='px-[16px] py-[10px] max-sm:w-full rounded-xl bg-blue-500 text-white'>Training Schedule</button></div>
           </div>
@@ -40,17 +102,25 @@ const Trainings = () => {
         <div data-tabs-toggle={parentTabContentSelector}>
           <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
             <ul className="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
-              <li role="presentation">
-                <button className="inline-block p-2 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Lahore</button>
-              </li>
-              <li className="mr-2" role="presentation">
-                <button className="inline-block p-2 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Rawalpindi</button>
-              </li>
-              <li className="mr-2" role="presentation">
-              <button className="inline-block p-2 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Multan</button>
-            </li>
+
+
+              {/* <h2>Select a City</h2> */}
+              <div>
+                {Object.keys(batches).map(city => (
+                  <button key={city} onClick={() => handleCityClick(city)}>
+                    <li role="presentation">
+                      <button className="inline-block p-2 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">{city}</button>
+                    </li>
+                  </button>
+                ))}
+              </div>
+
+
+
             </ul>
           </div>
+
+
           <div id="myTabContent">
             <div className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
@@ -70,9 +140,24 @@ const Trainings = () => {
       <header className="text-gray-600 body-font px-10">
         <div className="container mx-auto flex flex-col md:flex-row">
           <nav className="flex flex-wrap items-center text-base md:ml-auto me-auto w-full">
-            <button type="button" class="text-white bg-[#308AFF] from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2">Arfa Tower</button>
-            <button type="button" class="text-dark-700 hover:text-white border border-blue-700 hover:bg-[#308AFF] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Johar Town</button>
-            <button type="button" class="text-dark-700 hover:text-white border border-blue-700 hover:bg-[#308AFF] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Iqbal Town</button>
+            {selectedCity && batches[selectedCity] && (
+              <>
+                {/* <h3>{selectedCity}</h3> */}
+                {/* <h4>Select a Division</h4> */}
+              
+                <div>
+                  {getDivisions(batches[selectedCity]).map(division => (
+                    <button key={division} onClick={() => handleDivisionClick(division)}>
+                      <button type="button" class="text-white bg-[#308AFF] from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2">{division}</button>
+                    </button>
+                  ))}
+
+                </div>
+              </>
+            )}
+
+
+
 
 
             <button type="button" class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-2 py-2 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2 mb-2 w-30">
@@ -93,104 +178,32 @@ const Trainings = () => {
 
 
       <div class=" container relative overflow-x-auto px-5  ml-5 mt-5">
-        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 border border-lg rounded-lg">
-          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr className='bg-gray-200 rounded'>
-              <th scope="col" class="px-6 py-3">
-                Upcoming Courses / Seminars
-              </th>
-              <th scope="col" class="px-6 py-3">
-                Starting Date
-              </th>
-              <th scope="col" class="px-6 py-3">
-                Days & Timings
-              </th>
-              <th scope="col" class="px-6 py-3">
-                Duration
-              </th>
-
+        <table className="min-w-full">
+          <thead>
+            <tr>
+              <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Course Name</th>
+              <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Start Date</th>
+              <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Session Timings</th>
+              <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Duration</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                Certified MEAN & MERN Stack Web Developer
-              </th>
-              <td class="px-6 py-4">
-                6th June, 2023
-              </td>
-              <td class="px-6 py-4">
-                Monday 12 PM - 2 PM
-                Tuesday 12 PM - 2 PM
-                Wednesday 12 PM - 2 PM
-              </td>
-              <td class="px-6 py-4">
-                12 months
-              </td>
-            </tr>
-            <tr class="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                Full Stack JavaScript Developer
-              </th>
-              <td class="px-6 py-4">
-                7th June, 2023
-              </td>
-              <td class="px-6 py-4">
-                Monday 12 PM - 2 PM
-                Tuesday 12 PM - 2 PM
-                Wednesday 12 PM - 2 PM
-              </td>
-              <td class="px-6 py-4">
-                06 months
-              </td>
-
-            </tr>
-            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                Full Stack Software Quality Assurance (Manual, Automation and Performance)
-              </th>
-              <td class="px-6 py-4">
-                12th June, 2023
-              </td>
-              <td class="px-6 py-4">
-                Wednesday 6 PM - 8 PM
-                Thursday 6 PM - 8 PM
-              </td>
-              <td class="px-6 py-4">
-                06 months
-              </td>
-            </tr>
-            <tr class="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                Marketing AI Tools - Enhancing Your Digital Marketing Strategies(bootcamp)
-              </th>
-              <td class="px-6 py-4">
-                16th June, 2023
-              </td>
-              <td class="px-6 py-4">
-                Friday 8 PM - 10 PM
-                Saturday 8 PM - 10 PM
-                Sunday 8 PM - 10 PM
-              </td>
-              <td class="px-6 py-4">
-                1.5 months
-              </td>
-            </tr>
-            <tr>
-              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                1 Year Diploma in Graphic Design, Photography and Web Design (DGPWD)
-              </th>
-              <td class="px-6 py-4">
-                21st June, 2023
-              </td>
-              <td class="px-6 py-4">
-                Saturday 4 PM - 6 PM
-                Sunday 4 PM - 6 PM
-              </td>
-              <td class="px-6 py-4">
-                06 months
-              </td>
-            </tr>
+            {selectedCity && batches[selectedCity].filter(batch => batch && (!selectedDivision || (batch.branch && batch.branch.DivisionName === selectedDivision))).map(batch => (
+              <tr key={batch.id} className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  {batch.courseName}
+                </td>
+                <td className="px-6 py-4">
+                  {batch.start_date}
+                </td>
+                <td className="px-6 py-4">
+                {formatSessionTimings(batch.days)}
+                </td>
+                <td className="px-6 py-4">
+                {calculateDurationInMonths(batch.start_date, batch.end_date)}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
