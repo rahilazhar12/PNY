@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import parse, { domToReact } from 'html-react-parser';
+import { Blocks } from 'react-loader-spinner'
+
 
 const Specialpage = () => {
 
@@ -9,17 +11,22 @@ const Specialpage = () => {
 
 
     const [data, setData] = useState({})
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchdatacitywise = async () => {
+            setIsLoading(true)
             try {
                 let response = await axios.get(`https://www.pnytrainings.com/api/city/specialpage/${url}`)
                 setData(response.data)
+                setIsLoading(false)
             } catch (error) {
 
             }
         }
         fetchdatacitywise()
+
+        window.scrollTo(0,0)
     }, [url])
 
  
@@ -56,10 +63,25 @@ const Specialpage = () => {
         }
     }) : null
 
+    if (isLoading) {
+        return (
+          <div className="flex justify-center items-center min-h-screen">
+            <Blocks
+              visible={true}
+              height="80"
+              width="80"
+              ariaLabel="blocks-loading"
+              wrapperStyle={{}}
+              wrapperClass="blocks-wrapper"
+            />
+          </div>
+        );
+      }
+
     return (
         <>
         <div>
-            <img className='h-[600px]' src={data.special_page ?.spage_image} alt="" />
+            <img className='h-[600px] w-full' src={data.special_page ?.spage_image} alt="" />
         </div>
          {data.special_page ? parsedDescription : <p>Loading...</p>} {/* Or an error message */}
         </>
