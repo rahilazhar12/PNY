@@ -16,11 +16,11 @@ const Specialpage = () => {
 
     useEffect(() => {
         const fetchdatacitywise = async () => {
-            // setIsLoading(true)
+            setIsLoading(true)
             try {
                 let response = await axios.get(`https://www.pnytrainings.com/api/city/specialpage/${url}`)
                 setData(response.data)
-                // setIsLoading(false)
+                setIsLoading(false)
             } catch (error) {
 
             }
@@ -64,20 +64,20 @@ const Specialpage = () => {
         }
     }) : null
 
-    // if (isLoading) {
-    //     return (
-    //       <div className="flex justify-center items-center min-h-screen">
-    //         <Blocks
-    //           visible={true}
-    //           height="80"
-    //           width="80"
-    //           ariaLabel="blocks-loading"
-    //           wrapperStyle={{}}
-    //           wrapperClass="blocks-wrapper"
-    //         />
-    //       </div>
-    //     );
-    //   }
+    if (isLoading) {
+        return (
+          <div className="flex justify-center items-center min-h-screen">
+            <Blocks
+              visible={true}
+              height="80"
+              width="80"
+              ariaLabel="blocks-loading"
+              wrapperStyle={{}}
+              wrapperClass="blocks-wrapper"
+            />
+          </div>
+        );
+      }
 
     return (
         <>
