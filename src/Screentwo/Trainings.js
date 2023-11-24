@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Searchbar from '../Components/Searchbar'
 import axios from 'axios'
+import { Blocks } from 'react-loader-spinner'
 
 
 
@@ -8,19 +9,29 @@ const Trainings = () => {
   const parentTabContentSelector = "data-tabs-target"
 
   const [batches, setBatches] = useState({});
-  const [selectedCity, setSelectedCity] = useState(null);
+  const [selectedCity, setSelectedCity] = useState('Lahore');
   const [selectedDivision, setSelectedDivision] = useState(null);
+  const [searchQuery, setSearchQuery] = useState(''); // Add this line
+  const [isLoading, setIsLoading] = useState(true);
 
 
-  
+
 
   useEffect(() => {
+    setIsLoading(true);  // Set loading state to true when the effect starts
+  
     axios.get('https://lms.pnytraining.com/api/trainingSchedules?type=month&duration=2')
       .then(response => {
         setBatches(response.data.Batches);
       })
-      .catch(error => console.error('Error fetching data:', error));
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      })
+      .finally(() => {
+        setIsLoading(false);  // Set loading state to false when the request is complete, regardless of success or failure
+      });
   }, []);
+  
 
   const handleCityClick = (city) => {
     setSelectedCity(city);
@@ -55,16 +66,60 @@ const Trainings = () => {
   const calculateDurationInMonths = (startDate, endDate) => {
     const start = new Date(startDate);
     const end = new Date(endDate);
-    
+
     const yearsDifference = end.getFullYear() - start.getFullYear();
     const monthsDifference = end.getMonth() - start.getMonth();
     const totalMonths = (yearsDifference * 12) + monthsDifference;
-  
+
     return `${totalMonths} month${totalMonths !== 1 ? 's' : ''}`;
   };
-  
-  
-  
+
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value.toLowerCase());
+  };
+
+
+  const filterCourses = () => {
+    const trimmedQuery = searchQuery.trim().toLowerCase(); // Ensure case-insensitive and trim white spaces
+
+    if (!trimmedQuery) return batches; // If search query is empty, return all batches
+
+    const filteredBatches = {};
+    Object.keys(batches).forEach(city => {
+      // Filter batches for each city
+      filteredBatches[city] = batches[city].filter(batch => {
+        const courseNameLower = batch.courseName.toLowerCase();
+        return courseNameLower.includes(trimmedQuery);
+      });
+    });
+
+    return filteredBatches;
+  };
+
+
+
+  const displayedBatches = filterCourses();
+
+  console.log(displayedBatches, "display ____")
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <Blocks
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="blocks-loading"
+          wrapperStyle={{}}
+          wrapperClass="blocks-wrapper"
+        />
+      </div>
+    );
+  }
+
+
+
 
 
   return (
@@ -106,7 +161,7 @@ const Trainings = () => {
 
               {/* <h2>Select a City</h2> */}
               <div>
-                {Object.keys(batches).map(city => (
+                {Object.keys(displayedBatches).map(city => (
                   <button key={city} onClick={() => handleCityClick(city)}>
                     <li role="presentation">
                       <button className="inline-block p-2 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">{city}</button>
@@ -128,9 +183,9 @@ const Trainings = () => {
 
 
             </div>
-            <div className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+            {/* <div className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
               <p className="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong className="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
-            </div>
+            </div> */}
 
 
           </div>
@@ -144,7 +199,7 @@ const Trainings = () => {
               <>
                 {/* <h3>{selectedCity}</h3> */}
                 {/* <h4>Select a Division</h4> */}
-              
+
                 <div>
                   {getDivisions(batches[selectedCity]).map(division => (
                     <button key={division} onClick={() => handleDivisionClick(division)}>
@@ -160,19 +215,29 @@ const Trainings = () => {
 
 
 
-            <button type="button" class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-2 py-2 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2 mb-2 w-30">
-              <svg class="w-4 h-4 text-gray-800 dark:text-white mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-              </svg>Search for the courses/seminars
-            </button>
+            <span>
+              <div className="mb-3 mt-2 w-[500px]">
+                <div className="relative mb-4 flex w-full flex-wrap items-stretch">
+                  <input
+                    type="search"
+                    className="relative m-0 -mr-0.5 block w-full flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
+                    placeholder="Search"
+                    aria-label="Search"
+                    aria-describedby="button-addon3"
+                    onChange={handleSearchChange} // Add this line
+                  />
+                </div>
+              </div>
+            </span>
+
           </nav>
-          <div className="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+          {/* <div className="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
             <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-2 md:mt-0">
               <svg class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
               </svg>Starting Date
             </button>
-          </div>
+          </div> */}
         </div>
       </header>
 
@@ -188,7 +253,7 @@ const Trainings = () => {
             </tr>
           </thead>
           <tbody>
-            {selectedCity && batches[selectedCity].filter(batch => batch && (!selectedDivision || (batch.branch && batch.branch.DivisionName === selectedDivision))).map(batch => (
+            {selectedCity && displayedBatches[selectedCity] && displayedBatches[selectedCity].filter(batch => (!selectedDivision || (batch.branch && batch.branch.DivisionName === selectedDivision))).map(batch => (
               <tr key={batch.id} className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                 <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                   {batch.courseName}
@@ -197,10 +262,10 @@ const Trainings = () => {
                   {batch.start_date}
                 </td>
                 <td className="px-6 py-4">
-                {formatSessionTimings(batch.days)}
+                  {formatSessionTimings(batch.days)}
                 </td>
                 <td className="px-6 py-4">
-                {calculateDurationInMonths(batch.start_date, batch.end_date)}
+                  {calculateDurationInMonths(batch.start_date, batch.end_date)}
                 </td>
               </tr>
             ))}

@@ -124,9 +124,9 @@ const FeeStructure = () => {
 
 
               </div>
-              <div className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+              {/* <div className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
                 <p className="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong className="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
-              </div>
+              </div> */}
 
 
             </div>
@@ -169,10 +169,7 @@ const FeeStructure = () => {
                    value={searchTerm}
                    onChange={(e) => setSearchTerm(e.target.value)}
                   />
-                  {/*Search button*/}
-                  <button className="relative z-[2] rounded-r border-2 border-primary px-6 py-2 text-xs font-medium uppercase text-primary transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0" type="button" id="button-addon3" data-te-ripple-init>
-                    Search
-                  </button>
+                 
                 </div>
               </div>
               </span>
@@ -293,14 +290,17 @@ const FeeStructure = () => {
             </tbody>
           </table>
         </div> */}
+         
 
+         
         <div className=' grid grid-cols-1 max-sm:overflow-x-auto'>
+          {searchTerm ? null :
           <div className='text-center text-2xl font-bold'>
             {selectedCity}
             <span className='ml-5'>
               {selectedDuration === '1-year' ? '12 months' : `${selectedDuration}-Month`}
             </span>
-          </div>
+          </div> }
 
 
           {isloading ? <p>Loading courses...</p> : courses.length > 0 ? (

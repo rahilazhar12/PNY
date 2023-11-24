@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Blocks } from 'react-loader-spinner'
+import Searchbar from '../Components/Searchbar'
+
 
 const Citywisedata = () => {
 
@@ -47,12 +49,22 @@ const Citywisedata = () => {
 
     return (
         <>
+            <section>
+                <Searchbar />
+            </section>
+
+
+            <section className='lg:h-[254px] bg-[#152438;] text-white flex flex-col justify-center items-center max-sm:p-5'>
+                <div className='text-[48px] max-sm:text-[24px] font-semibold'>{name}</div>
+                <div className='text-[20px] font-normal max-sm:text-[16px] max-sm:text-center'>Learn more about the company and the team behind it.</div>
+            </section>
+
             <div className='grid grid-cols-4 gap-3 p-3'>
                 {data.special_pages && data.special_pages.length > 0 ? (
                     data.special_pages.map((item) => {
 
                         return (
-                            <>  
+                            <>
                                 <div className={`block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 ${item.name === "Short Courses in Lahore" ? 'h-52' : 'h-auto'}`}>
                                     <a href="#!">
                                         {item.name !== "Short Courses in Lahore" && (

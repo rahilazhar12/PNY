@@ -14,7 +14,7 @@ const Footer = () => {
 
 
     const redirectToCity = (cityName) => {
-        navigate(`/citywisedata/${cityName.toLowerCase()}`);
+        navigate(`/citywisedata/${cityName}`);
     };
 
 
