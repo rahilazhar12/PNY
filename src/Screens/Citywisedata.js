@@ -56,7 +56,9 @@ const Citywisedata = () => {
 
             <section className='lg:h-[254px] bg-[#152438;] text-white flex flex-col justify-center items-center max-sm:p-5'>
                 <div className='text-[48px] max-sm:text-[24px] font-semibold'>{name}</div>
-                <div className='text-[20px] font-normal max-sm:text-[16px] max-sm:text-center'>Learn more about the company and the team behind it.</div>
+                <div className='text-[20px] font-normal max-sm:text-[16px] max-sm:text-center'>
+                    Best Courses we offer in city.
+                </div>
             </section>
 
             <div className='grid grid-cols-4 gap-3 p-3'>

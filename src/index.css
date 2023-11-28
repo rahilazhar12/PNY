@@ -18,7 +18,7 @@
 
   @layer base {
     .rahil {
-      @apply text-4xls
+      @apply text-4xl
       
     }
   }
@@ -105,6 +105,9 @@
 
 
   .col-span-3::-webkit-scrollbar {
+    display: none;
+  }
+  .col-span-2::-webkit-scrollbar {
     display: none;
   }
   

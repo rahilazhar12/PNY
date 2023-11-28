@@ -6,16 +6,14 @@ import parse, { domToReact } from 'html-react-parser';
 const Blogdetails = () => {
     const { slug } = useParams();
     const [post, setPost] = useState(null);
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         // This fetch assumes you're fetching data from the same API 
         // as in the Blog component. Modify as needed.
-        fetch('https://www.pnytrainings.com/api/get_feature_posts')
+        fetch('https://www.pnytrainings.com/api/featuredposts')
             .then((response) => response.json())
-            .then((data) => {
-                const matchedPost = data.find(item => item.url_slug === slug);
-                setPost(matchedPost);
-            })
+            .then((data) => setData(data) )
             .catch((error) => {
                 console.error('Error fetching data:', error);
             });
@@ -24,6 +22,8 @@ const Blogdetails = () => {
     if (!post) {
         return <div>Loading...</div>;  // or any other loading indication
     }
+
+       console.log(data.map((item)=>item.url_slug), 'data_________')
 
     const parsedDescription = parse(post.description, {
         replace: domNode => {

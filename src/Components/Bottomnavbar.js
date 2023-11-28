@@ -18,7 +18,7 @@ const Bottomnavbar = () => {
       <GiDuration/></Link>
       <Link to='trainer' activeClass='active' smooth={true} spy={true} offset={-450} className='w-[60px] h-[60px] flex items-center justify-center cursor-pointer'>
       <SiTrainerroad/></Link>
-       <ReactWhatsapp  className='fa-brands fa-whatsapp  text-2xl' number="+923336436693" message="Hello World!!!" />
+       <ReactWhatsapp  className='fa-brands fa-whatsapp  text-2xl' number="+923101111774" message="" />
       <Link to='home' activeClass='active' smooth={true} spy={true} offset={-450} className='w-[60px] h-[60px] flex items-center justify-center cursor-pointer'>
       <AiOutlineHome/></Link>
       </div>

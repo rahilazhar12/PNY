@@ -17,9 +17,9 @@ const Categoriesdata = () => {
     }, []);
     return (
         <>
-            <section className='p-1'>
+            <section className=''>
                 <div class="group inline-block">
-                    <button class="outline-none focus:outline-none  border px-3 py-1 bg-blue-400 text-white h-[36px]  rounded-lg flex items-center w-[220px]">
+                    <button class="outline-none focus:outline-none  border px-3 py-1 bg-blue-400 text-white h-[36px]  rounded-lg flex items-center w-52">
                         <span class="pr-1 font-semibold flex-1">Categories</span>
                         <span>
                             <svg class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -27,7 +27,7 @@ const Categoriesdata = () => {
                             </svg>
                         </span>
                     </button>
-                    <ul class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32">
+                    <ul class="bg-white border z-50 rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32">
                         <li className='ml-3'><Link to='/google-scholarship-certification-in-lahore-pakistan'>Google Certification</Link></li>
                         {data.map((item) => {
                             return (
@@ -45,14 +45,14 @@ const Categoriesdata = () => {
                                         </Link>
                                         <ul class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left w-[400px] cursor-pointer">
                                             <div style={{ maxHeight: '200px', overflowY: 'auto' }}>
-                                                <ul>
-                                                    {/* Sub-category Links */}
+                                                {/* <ul>
+                                                    Sub-category Links
                                                     {item.obj.map((sub) => (
                                                         <li class="px-3 py-1 hover:bg-gray-100">
                                                             <Link to={`/${sub.url_slug}`}>{sub.name}</Link>
                                                         </li>
                                                     ))}
-                                                </ul>
+                                                </ul> */}
                                             </div>
                                         </ul>
                                     </li>

@@ -49,10 +49,10 @@ const Home = () => {
                   Empower Yourself with Practical Skills that Open Doors
                   to Lucrative Opportunities</div>
 
-
+{/* 
                 <div className="admissionbutton max-sm:flex justify-center" >
                 <Link to='https://lms.pnytraining.com/' target='_blank'>  <button className=' p-[8px] bg-[#308AFF] rounded-lg w-[132px] text-white text-base font-Inter font-bold mt-3'>Admission !</button></Link>
-                </div>
+                </div> */}
 
                 <div className='flex space-x-10 mt-3 max-sm:hidden'>
                   <img src={image1} />
@@ -174,9 +174,9 @@ const Home = () => {
                         <div class="stat">
                           <div class="text-center text-xl font-bold">{data.title}</div>
                           <div class="text-center ">{data.description}</div>
-                          <div className='flex justify-center'>
+                          {/* <div className='flex justify-center'>
                             <a href="" className='text-white blinking-text'>Read More</a>
-                          </div>
+                          </div> */}
 
                         </div>
                       </div>
@@ -199,7 +199,7 @@ const Home = () => {
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold font-Inter">Development</div>
                   <div className="paragraph">By learning these advanced courses, you will understand the fundamentals of object-oriented programming and how to write...</div>
-                  <div><a href="" className=' text-blue-500 font-semibold'>View Course</a></div>
+                  <div><Link to="http://localhost:3000/development" target='_blank' className=' text-blue-500 font-semibold'>View Course</Link></div>
                 </div>
               </div>
 
@@ -208,7 +208,7 @@ const Home = () => {
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">Marketing</div>
                   <div className="paragraph">Learn how to do SEO, SMO, PPC, CPL, Web analytics, and social media marketing through our highly advanced and strategic...</div>
-                  <div><a href="" className=' text-blue-500 font-semibold'>View Course</a></div>
+                  <div><Link to="http://localhost:3000/marketing" target='_blank' className=' text-blue-500 font-semibold'>View Course</Link></div>
                 </div>
               </div>
 
@@ -217,7 +217,7 @@ const Home = () => {
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">Art & Design</div>
                   <div className="paragraph">Our comprehensive design training classes teach you about design techniques as well as how to use various software to cr...</div>
-                  <div><a href="" className=' text-blue-500 font-semibold'>View Course</a></div>
+                  <div><Link to="http://localhost:3000/designing"  target='_blank' className=' text-blue-500 font-semibold'>View Course</Link></div>
                 </div>
               </div>
             </div>
@@ -229,7 +229,7 @@ const Home = () => {
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">IT & Software</div>
                   <div className="paragraph">Learn how to handle realistic computer problems and run operating systems fruitfully in information technology and network management. </div>
-                  <div><a href="" className=' text-blue-500 font-semibold'>View Course</a></div>
+                  <div><Link to="http://localhost:3000/it-and-software" className=' text-blue-500 font-semibold'>View Course</Link></div>
                 </div>
               </div>
 
@@ -238,7 +238,7 @@ const Home = () => {
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">Business & Accounts</div>
                   <div className="paragraph">Learn the business library as a professional, which teaches you how to organize software and technology that leads acros...</div>
-                  <div><a href="" className=' text-blue-500 font-semibold'>View Course</a></div>
+                  <div><Link to="http://localhost:3000/business" target='_blank' className=' text-blue-500 font-semibold'>View Course</Link></div>
                 </div>
               </div>
 
@@ -247,7 +247,7 @@ const Home = () => {
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">Multimedia</div>
                   <div className="paragraph">Learn the advanced methods of taking pictures and build a portfolio that showcases your professional photography skills....</div>
-                  <div><a href="" className=' text-blue-500 font-semibold'>View Course</a></div>
+                  <div><Link to="http://localhost:3000/multimedia" className=' text-blue-500 font-semibold'>View Course</Link></div>
                 </div>
               </div>
             </div>

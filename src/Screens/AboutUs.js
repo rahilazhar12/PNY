@@ -130,9 +130,9 @@ const AboutUs = () => {
           </div>
         </section>
 
-        <section className='mb-0'>
+        {/* <section className='mb-0'>
           <Team/>
-        </section>
+        </section> */}
 
       </main>
     </Flowbite>

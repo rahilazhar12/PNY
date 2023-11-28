@@ -39,17 +39,17 @@ const Fastbootcamp = () => {
       }
 
     return (
-        <main>
-            <div className='container'>
+        <main className=''>
+            <div className=''>
                 <section>
                     <Searchbar/>
                 </section>
 
                 <section>
-                    <div className='grid grid-cols-1'>
-                        <div>
+                    <div className=''>
+                       
                             <img className='w-full' src={data.page_banner} alt="Boot Camp" />
-                        </div>
+                       
                     </div>
                 </section>
 
