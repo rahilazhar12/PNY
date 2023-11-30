@@ -126,29 +126,40 @@ const Footer = () => {
                 </aside>
             </footer>
 
-            <section className=' grid lg:grid-cols-7 p-3 '>
+            <section className=' grid lg:grid-cols-7 p-3 mb-10 '>
                 <div className=' lg:col-span-6 max-sm:text-center'>Copyright © 2023 - All right reserved by PNY Trainings</div>
                 <div className=' mr-20 cursor-pointer flex space-x-4'>
-                    <div> <Link to="https://twitter.com/PnyTrainings" className=' cursor-pointer' target='_blank'>
+
+
+                    <div className=' cursor-pointer'> <Link to="https://twitter.com/PnyTrainings" className=' cursor-pointer' target='_blank'>
                         <FaTwitter className='text-xl hover:text-blue-500' />
                     </Link></div>
+
+
                     <div> <Link to="https://www.facebook.com/PNY.Trainings" className=' cursor-pointer' target='_blank'>
                         <FaFacebook className='text-xl hover:text-blue-500' />
                     </Link></div>
+
+
                     <div> <Link to="https://pk.linkedin.com/company/pny-trainings" className=' cursor-pointer' target='_blank'>
                         <FaLinkedin className='text-xl hover:text-blue-700' />
                     </Link>
                     </div>
+
+
                     <div> <Link to="https://www.youtube.com/channel/UCdkE8Zm_dNclx3B7s-t6pBQ" className=' cursor-pointer' target='_blank'>
                         <FaYoutube className='text-xl hover:text-red-600' />
                     </Link>
                     </div>
+
+
                     <div> <Link to="https://www.instagram.com/pny.trainings/" className=' cursor-pointer' target='_blank'>
                         <FaInstagram className='text-xl hover:text-pink-600' />
                     </Link>
                     </div>
-                </div>
 
+
+                </div>
             </section>
 
 

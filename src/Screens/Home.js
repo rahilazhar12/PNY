@@ -42,7 +42,7 @@ const Home = () => {
     <>
       <Flowbite>
 
-        <main id='home' className='bg-white dark:bg-slate-800   ring-1 ring-slate-900/5 shadow-xl'>
+        <main id='home' className='bg-white dark:bg-slate-800   ring-1 ring-slate-900/5 shadow-xl h-auto'>
           <Searchbar />
 
 
@@ -214,7 +214,7 @@ const Home = () => {
                   return (
                     <>
                       <div className='col-span-4'>
-                        <div className="mainbox lg:h-80 xl:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
+                        <div className="mainbox lg:h-80 xl:h-80 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
                           <div className="img"> <img src={icon} alt="" /> </div>
                           <div className="development lg:text-2xl font-semibold font-Inter">{item.name}</div>
 
