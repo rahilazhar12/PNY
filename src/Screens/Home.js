@@ -26,17 +26,17 @@ const Home = () => {
 
   useEffect(() => {
     // Fetch data from the provided URL
-    fetch('https://www.pnytrainings.com/api/menu')
+    fetch('https://www.pnytrainings.com/api/get-courses')
       .then((response) => response.json())
       .then((data) => {
-        setData(data.categories_menu);
+        setData(data);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
   }, []);
 
-  console.log(data.url_slug, "datahome_____")
+  console.log(data, 'homedata_______')
 
   return (
     <>
@@ -216,17 +216,21 @@ const Home = () => {
                       <div className='col-span-4'>
                         <div className="mainbox lg:h-80 xl:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
                           <div className="img"> <img src={icon} alt="" /> </div>
-                          <div className="developement lg:text-2xl font-semibold font-Inter">{item.name}</div>
+                          <div className="development lg:text-2xl font-semibold font-Inter">{item.name}</div>
 
-                          <div className="paragraph">By learning these advanced courses, you will understand the fundamentals of object-oriented programming and how to write...</div>
-                          
-                          <div><Link to={`/${item.url_slug}`} target='_blank' className=' text-blue-500 font-semibold'>View Course</Link></div>
+                          {/* Display the short description from the first object in the item.obj array */}
+                          <div className="paragraph">
+                            {item.obj.length > 0 && item.obj[0].description_short}
+                          </div>
+
+                          <div><Link to={`/${item.url_slug}`} target='_blank' className='text-blue-500 font-semibold'>View Course</Link></div>
                         </div>
                       </div>
                     </>
                   )
                 })
               }
+
 
 
               {/* <div className='col-span-4 '>
