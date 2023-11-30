@@ -36,25 +36,25 @@ const Categoriesdata = () => {
                                         {/* Main Category Link */}
                                         <Link to={`/${item.url_slug}`} class="w-full text-left flex items-center outline-none focus:outline-none">
                                             <span class="pr-1 flex-1">{item.name}</span>
-                                            <span class="mr-auto">
+                                            {/* <span class="mr-auto">
                                                 <svg class="fill-current h-4 w-4 transition duration-150 ease-in-out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                                                 </svg>
-                                            </span>
+                                            </span> */}
                                             
                                         </Link>
-                                        <ul class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left w-[400px] cursor-pointer">
+                                        {/* <ul class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left w-[400px] cursor-pointer">
                                             <div style={{ maxHeight: '200px', overflowY: 'auto' }}>
-                                                {/* <ul>
+                                                <ul>
                                                     Sub-category Links
                                                     {item.obj.map((sub) => (
                                                         <li class="px-3 py-1 hover:bg-gray-100">
                                                             <Link to={`/${sub.url_slug}`}>{sub.name}</Link>
                                                         </li>
                                                     ))}
-                                                </ul> */}
+                                                </ul>
                                             </div>
-                                        </ul>
+                                        </ul> */}
                                     </li>
                                 </>
                             )

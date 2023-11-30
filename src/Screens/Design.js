@@ -32,11 +32,11 @@ const Design = () => {
                     <div className="border border-[#EAECF0] rounded-2xl p-[32px] max-sm:p-3 space-y-2 ">
                         <div className='text-[20px] font-semibold '>Product Designer</div>
                         <div className='text-[#667085]'>We’re looking for a mid-level product designer to join our team.</div>
-                        <div className="flex gap-3">
+                        {/* <div className="flex gap-3">
                             <div className='font-semibold text-[#667085]'><span className='mr-2'><i className="fa-regular fa-clock"></i></span>Full-time</div>
                             <div className='text-[#98A2B3]'>Rs</div>
                             <div className='font-semibold text-[#667085]'>80k - 100k</div>
-                        </div>
+                        </div> */}
 
                         <div className='flex justify-end font-semibold gap-3 text-[#308AFF]' >
                             <div><a href="">Apply Now</a></div>
@@ -65,11 +65,11 @@ const Design = () => {
                     <div className="border  border-[#EAECF0]  rounded-2xl p-[32px] max-sm:p-3 space-y-2 ">
                         <div className='text-[20px] font-semibold ]'>Product Designer</div>
                         <div className='text-[#667085]'>We’re looking for a mid-level product designer to join our team.</div>
-                        <div className="flex gap-3">
+                        {/* <div className="flex gap-3">
                             <div className='font-semibold text-[#667085]'><span className='mr-2'><i class="fa-regular fa-clock"></i></span>Full-time</div>
                             <div className='text-[#98A2B3]'>Rs</div>
                             <div className='font-semibold text-[#667085]'>80k - 100k</div>
-                        </div>
+                        </div> */}
 
                         <div className='flex justify-end font-semibold gap-3 text-[#308AFF]' >
                             <div><a href="">Apply Now</a></div>
@@ -85,11 +85,11 @@ const Design = () => {
                     <div className="border border-[#EAECF0]  rounded-2xl p-[32px] max-sm:p-3 space-y-2 ">
                         <div className='text-[20px] font-semibold ]'>Engineering Manager</div>
                         <div className='text-[#667085]'>We’re looking for a mid-level product designer to join our team.</div>
-                        <div className="flex gap-3">
+                        {/* <div className="flex gap-3">
                             <div className='font-semibold text-[#667085]'><span className='mr-2'><i class="fa-regular fa-clock"></i></span>Full-time</div>
                             <div className='text-[#98A2B3]'>Rs</div>
                             <div className='font-semibold text-[#667085]'>80k - 100k</div>
-                        </div>
+                        </div> */}
 
                         <div className='flex justify-end font-semibold gap-3 text-[#308AFF]' >
                             <div><a href="">Apply Now</a></div>
@@ -101,11 +101,11 @@ const Design = () => {
                     <div className="border border-[#EAECF0]  rounded-2xl p-[32px] max-sm:p-3 space-y-2">
                         <div className='text-[20px] font-semibold ]'>Frontend Developer</div>
                         <div className='text-[#667085]'>We’re looking for a mid-level product designer to join our team.</div>
-                        <div className="flex gap-3">
+                        {/* <div className="flex gap-3">
                             <div className='font-semibold text-[#667085]'><span className='mr-2'><i class="fa-regular fa-clock"></i></span>Full-time</div>
                             <div className='text-[#98A2B3]'>Rs</div>
                             <div className='font-semibold text-[#667085]'>80k - 100k</div>
-                        </div>
+                        </div> */}
 
                         <div className='flex justify-end font-semibold gap-3 text-[#308AFF]' >
                             <div><a href="">Apply Now</a></div>
@@ -117,11 +117,11 @@ const Design = () => {
                     <div className="border border-[#EAECF0]  rounded-2xl p-[32px] max-sm:p-3 space-y-2">
                         <div className='text-[20px] font-semibold ]'>Backend Developer</div>
                         <div className='text-[#667085]'>We’re looking for a mid-level product designer to join our team.</div>
-                        <div className="flex gap-3">
+                        {/* <div className="flex gap-3">
                             <div className='font-semibold text-[#667085]'><span className='mr-2'><i class="fa-regular fa-clock"></i></span>Full-time</div>
                             <div className='text-[#98A2B3]'>Rs</div>
                             <div className='font-semibold text-[#667085]'>80k - 100k</div>
-                        </div>
+                        </div> */}
 
                         <div className='flex justify-end font-semibold gap-3 text-[#308AFF]' >
                             <div><a href="">Apply Now</a></div>
@@ -138,11 +138,11 @@ const Design = () => {
                     <div className="border border-[#EAECF0]  rounded-2xl p-[32px] max-sm:p-3 space-y-2 ">
                         <div className='text-[20px] font-semibold ]'>Customer Success Manager</div>
                         <div className='text-[#667085]'>We’re looking for a mid-level product designer to join our team.</div>
-                        <div className="flex gap-3">
+                        {/* <div className="flex gap-3">
                             <div className='font-semibold text-[#667085]'><span className='mr-2'><i class="fa-regular fa-clock"></i></span>Full-time</div>
                             <div className='text-[#98A2B3]'>Rs</div>
                             <div className='font-semibold text-[#667085]'>80k - 100k</div>
-                        </div>
+                        </div> */}
 
                         <div className='flex justify-end font-semibold gap-3 text-[#308AFF]' >
                             <div><a href="">Apply Now</a></div>

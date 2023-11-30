@@ -19,7 +19,7 @@ const Contactus = () => {
 
             <section className='lg:h-[254px] bg-[#152438;] text-white flex flex-col justify-center items-center max-sm:p-5'>
                 <div className='text-[48px] max-sm:text-[24px] font-semibold'>Contact Us</div>
-                <div className='text-[20px] font-normal max-sm:text-[16px] max-sm:text-center'>Learn more about the company and the team behind it.</div>
+                {/* <div className='text-[20px] font-normal max-sm:text-[16px] max-sm:text-center'>Learn more about the company and the team behind it.</div> */}
             </section>
 
             <section className='bg-[#f0f2f5]'>
@@ -50,7 +50,7 @@ const Contactus = () => {
                                 </div>
                                 <div></div>
                             </form>
-                            <div className='mb-5 text-[#525A64]'>Select courses (optional)</div>
+                            {/* <div className='mb-5 text-[#525A64]'>Select courses (optional)</div>
                             <div className="grid grid-cols-2">
                                 <div className='mb-3'> <input type="checkbox" class="checkbox checkbox-sm " /> One Year Diploma</div>
                                 <div className='mb-3'><input type="checkbox" class="checkbox checkbox-sm" /> Marketing</div>
@@ -58,7 +58,7 @@ const Contactus = () => {
                                 <div className='mb-3'><input type="checkbox" class="checkbox checkbox-sm" /> Art & Design</div>
                                 <div className='mb-3'><input type="checkbox" class="checkbox checkbox-sm" /> Amazon Courses</div>
                                 <div className='mb-3'><input type="checkbox" class="checkbox checkbox-sm" /> Other</div>
-                            </div>
+                            </div> */}
                             <div className='flex justify-center mt-5'><button className='bg-blue-500 w-full py-[12px] px-[20px] rounded-lg text-white'>Submit</button></div>
                         </div>
 

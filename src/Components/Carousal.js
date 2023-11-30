@@ -31,11 +31,11 @@ const Carousal = () => {
  
   return (
     <div>
-    <Carousel className='max-sm:h-56 p-1 md:h-64 lg:h-96 '>
+    <Carousel className='max-sm:h-56 w-full md:h-64 lg:h-96 '>
       {data.map(slider => (
         <div key={slider.id}>
           <img
-            className="d-block w-100 h-[350px]"
+            className="d-block lg:w-full  max-sm:h-auto h-[350px]"
             src={slider.image}
             alt={slider.title}
           />
@@ -48,7 +48,7 @@ const Carousal = () => {
 export const Carousalhome = () => {
   return (
     <div>
-       <Carousel className='max-sm:h-36  lg:h-80   md:h-56  '>
+       <Carousel className='max-sm:h-36  lg:h-80   md:h-56 '>
       <img
         alt="..."
         src={c1}

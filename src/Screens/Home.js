@@ -19,10 +19,12 @@ import image1 from '../Assets/image/4 logos.png'
 import Map from '../Components/Map'
 import Testimonial from '../Components/Testimonial'
 import { Link } from 'react-router-dom';
+import parse, { domToReact } from 'html-react-parser';
 
 const Home = () => {
 
   const [data, setData] = useState([]);
+  const [home, setHome] = useState([]);
 
   useEffect(() => {
     // Fetch data from the provided URL
@@ -36,7 +38,43 @@ const Home = () => {
       });
   }, []);
 
-  console.log(data, 'homedata_______')
+  useEffect(() => {
+    // Fetch data from the provided URL
+    fetch('https://www.pnytrainings.com/api/pages/home_page_content')
+      .then((response) => response.json())
+      .then((data) => {
+        setHome(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
+  const parsedDescription = home.page ? parse(home.page.page_description || '', {
+    replace: domNode => {
+      if (domNode.type === 'tag') {
+        // For example, add a class to all <p> elements
+        if (domNode.name === 'p') {
+          const props = { className: 'p-5' };
+          return <p {...props}>{domToReact(domNode.children)}</p>;
+        }
+        if (domNode.name === 'h3') {
+          const props = { className: 'p-5 text-lg' };
+          return <p {...props}>{domToReact(domNode.children)}</p>;
+        }
+        if (domNode.name === 'ul') {
+          const props = { className: 'p-5' };
+          return <p {...props}>{domToReact(domNode.children)}</p>;
+        }
+        // if (domNode.name === 'a') {
+        //   const props = { className: 'bg-[#0c7ec2] text-white hover:bg-red-500 p-3 w-80 cursor-pointer rounded mx-auto'};
+        //   return <p {...props}>{domToReact(domNode.children)}</p>;
+        // }
+      }
+    }
+  }): null
+
+
 
   return (
     <>
@@ -57,7 +95,7 @@ const Home = () => {
           {/* Section-2 */}
           <motion.section variants={fadeIn("up", 0.1)} initial='hidden' whileInView={"show"} viewport={{ once: false, amount: 0 }}>
             <div className="grid grid-cols-12 lg:grid-cols-12 max-sm:grid-cols-6">
-              <div className="column1 max-sm:order-1 p-10 lg:col-span-7 md:col-span-7  max-sm:col-span-6">
+              <div className="column1 max-sm:order-1 p-10 lg:col-span-6 md:col-span-7  max-sm:col-span-6">
                 <div className='text-3xl font-Inter fon-medium max-sm:text-center font-bold dark:text-white'><span className='text-[#F10900]'>PNY</span> Trainings</div>
                 <div className='font-Inter lg:text-6xl lg:w-[535px] lg:font-bold max-sm:text-center max-sm:font-bold max-sm:text-3xl dark:text-white'>Pakistan <span className='text-[#F10900]'>No.1</span>  IT Training Institute</div>
                 <div className='font-Inter lg:w-[520px] lg:text-xl lg:mt-6 max-sm:text-center dark:text-white'>Certified Courses with Money Making Skills!
@@ -97,7 +135,7 @@ const Home = () => {
 
 
               {/* Col-2 */}
-              <div className="column2 lg:order-1 lg:col-span-5 md:col-span-5  max-sm:col-span-6">
+              <div className="column2 lg:order-1 lg:col-span-6 md:col-span-5  max-sm:col-span-6">
 
                 <div>
                   <Carousal />
@@ -398,12 +436,13 @@ const Home = () => {
                   <img src={frame2} alt="" />
                 </div>
               </div>
-              <div>PNY Trainings is the best IT institution in Lahore Pakistan that conducts different training programs aimed at helping young career seekers understand the basic information technology functioning of the sector and the job role they aspire to take on. Their insight and vision have assisted us to enhance the knowledge and skills of youngsters to take on modern-day corporate challenges. Getting a good start in a career is a cherished dream for every career candidate. However, this is easier said than done especially in today's challenging career range. To achieve this dream basic college education is rarely enough, especially in Pakistan. Today's highly competitive and demanding employment market is looking for only talented and skilled manpower with enough command of the information technology industry essentials. To make a mark you must have the necessary knowledge, skills, and capability to provide to the specific industry you aspire to enter into an increase. This is equally true across domains of Technology, Business, Development, and Designing, IT Software Development, Digital Marketing Courses, and many more.</div>
-              <div>One of the ways that you can gain an advantage over your contemporaries is to undergo courses offered by reputable training institutes in Lahore. There are so many seats available in Arfa tower short courses and all you have to do is to enroll yourself in your desired course. PNY Trainings offers different courses in Lahore, Islamabad, Rawalpindi, Karachi, and other major cities of Pakistan.</div>
-              <div>PNYTrainings is one of the promising and Best IT institutes in Lahore that comes up with amazing courses, training, and almost all short courses in Lahore. We are the introducers to numerous IT trends, courses, and certifications in Lahore. The motive of the PNY Arfa Tower short courses is to provide the best courses with guaranteed results for everyone.</div>
-              <div>with our weekend classes in Lahore, we are the only training institute that gives the opportunity to learn new skills in E-commerce to all professionals and students. The flexible timings let them be part of new industry trends and improve their skills to get better-paid jobs in our PNY Arfa Karim tower courses, For every single course we pay attention to the student ease and feasibility when it comes to classes schedule, timings, course duration, content, and teaching method.</div>
-              <div>PNYTrainings are one of the best online training institutes in Lahore Pakistan that are offering you the opportunity to learn new skills online. By accessing the online repository, you will be able to get the course and training from our qualified trainers and mentors. We have an organized system of teaching, coordination, follow-up, and course completion to let you have the ultimate outcomes.</div>
-              <div>When you are looking for an IT institute in Lahore that offers you, all the next-level skill-based training then we are here. From our courses to their content and even the training session, everything is designed precisely. We pay attention to market need, demand, and future scope of the skills while offering a course. Every single course is an addition to your skillset that will repay you in the coming future.</div>
+              {parsedDescription}
+              {/* <div>PNY Trainings is the best IT institution in Lahore Pakistan that conducts different training programs aimed at helping young career seekers understand the basic information technology functioning of the sector and the job role they aspire to take on. Their insight and vision have assisted us to enhance the knowledge and skills of youngsters to take on modern-day corporate challenges. Getting a good start in a career is a cherished dream for every career candidate. However, this is easier said than done especially in today's challenging career range. To achieve this dream basic college education is rarely enough, especially in Pakistan. Today's highly competitive and demanding employment market is looking for only talented and skilled manpower with enough command of the information technology industry essentials. To make a mark you must have the necessary knowledge, skills, and capability to provide to the specific industry you aspire to enter into an increase. This is equally true across domains of Technology, Business, Development, and Designing, IT Software Development, Digital Marketing Courses, and many more.</div> */}
+              {/* <div>One of the ways that you can gain an advantage over your contemporaries is to undergo courses offered by reputable training institutes in Lahore. There are so many seats available in Arfa tower short courses and all you have to do is to enroll yourself in your desired course. PNY Trainings offers different courses in Lahore, Islamabad, Rawalpindi, Karachi, and other major cities of Pakistan.</div> */}
+              {/* <div>PNYTrainings is one of the promising and Best IT institutes in Lahore that comes up with amazing courses, training, and almost all short courses in Lahore. We are the introducers to numerous IT trends, courses, and certifications in Lahore. The motive of the PNY Arfa Tower short courses is to provide the best courses with guaranteed results for everyone.</div> */}
+              {/* <div>with our weekend classes in Lahore, we are the only training institute that gives the opportunity to learn new skills in E-commerce to all professionals and students. The flexible timings let them be part of new industry trends and improve their skills to get better-paid jobs in our PNY Arfa Karim tower courses, For every single course we pay attention to the student ease and feasibility when it comes to classes schedule, timings, course duration, content, and teaching method.</div> */}
+              {/* <div>PNYTrainings are one of the best online training institutes in Lahore Pakistan that are offering you the opportunity to learn new skills online. By accessing the online repository, you will be able to get the course and training from our qualified trainers and mentors. We have an organized system of teaching, coordination, follow-up, and course completion to let you have the ultimate outcomes.</div> */}
+              {/* <div>When you are looking for an IT institute in Lahore that offers you, all the next-level skill-based training then we are here. From our courses to their content and even the training session, everything is designed precisely. We pay attention to market need, demand, and future scope of the skills while offering a course. Every single course is an addition to your skillset that will repay you in the coming future.</div> */}
             </div>
           </section>
 

@@ -107,23 +107,23 @@ const Coursedetail = () => {
     };
 
     fetchCourseData();
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }, [courseSlug]);
 
-  if (isLoading) {
-    return (
-      <div className="flex justify-center items-center min-h-screen">
-        <Blocks
-          visible={true}
-          height="80"
-          width="80"
-          ariaLabel="blocks-loading"
-          wrapperStyle={{}}
-          wrapperClass="blocks-wrapper"
-        />
-      </div>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <div className="flex justify-center items-center min-h-screen">
+  //       <Blocks
+  //         visible={true}
+  //         height="80"
+  //         width="80"
+  //         ariaLabel="blocks-loading"
+  //         wrapperStyle={{}}
+  //         wrapperClass="blocks-wrapper"
+  //       />
+  //     </div>
+  //   );
+  // }
 
   const parsedDescription = parse(courseData.description, {
     replace: domNode => {
@@ -274,17 +274,18 @@ const Coursedetail = () => {
                 <button className="ml-4 inline-flex text-white bg-red-700 border-0 py-3 px-4  hover:bg-red-700 rounded text-sm my-2">Pay Now</button>
               </div>
             </div>
-            <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/5">
+            {/* Iframe youtube */}
+            <div className="">
               <iframe
-                width="500"
-                height="315"
+                className=' lg:w-[500px] lg:h-[400px]'
                 src={`https://www.youtube.com/embed/${courseData.video}`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen>
               </iframe>
-
             </div>
+
+            
           </div>
         </section>
         <div>
@@ -399,20 +400,29 @@ const Coursedetail = () => {
         </section>
         {/* section 2nd card */}
 
-        <section>
-          <div className='grid grid-cols-4  mx-auto '>
-            <div className='col-span-3 overflow-y-auto max-h-[600px]'>{parsedDescription}</div>
-            <div>
-              <div className='px-5'>
-                <div className=' bg-[#234E87]  rounded-t-xl w-[330px]  h-[76px] flex justify-center items-center font-semibold text-3xl text-white'>Course we offer</div>
-                <div className=' gap-1 grid'>
-                  <div className='bg-[#EEFFFB] w-[330px]  h-[80px] flex justify-center items-center  p-2'>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
-                  <div className='bg-[#EEFFFB] w-[330px]  h-[80px] flex justify-center items-center  p-2'>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
-                  <div className='bg-[#EEFFFB] w-[330px]  h-[80px] flex justify-center items-center  p-2'>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
-                  <div className='bg-[#EEFFFB] w-[330px]  h-[80px] flex justify-center items-center  p-2'>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
-                  <div className='bg-[#EEFFFB] w-[330px]  h-[80px] flex justify-center items-center  p-2'>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
-                  <div className='bg-[#EEFFFB] w-[330px]  h-[80px] flex justify-center items-center  p-2'>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
-                  <div className='bg-[#EEFFFB] w-[330px]  h-[80px] flex justify-center items-center  p-2'>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
+        <section className=' lg:p-3'>
+          <div className='grid lg:grid-cols-6  xl:grid-cols-8 mx-auto '>
+            {/* 1 */}
+            <div className='lg:col-span-4 xl:col-span-6 overflow-y-auto sch max-h-[600px]'>{parsedDescription}</div>
+
+
+           {/* 2 */}
+            <div className=' xl:col-span-2'>
+              <div className='max-sm:p-2'>
+
+                <div className=' bg-[#234E87] lg:w-80 lg:p-3  rounded-t-xl   flex justify-center items-center font-semibold text-3xl text-white'>
+                  Course we offer 
+                </div>
+
+                
+                <div className=' flex flex-col space-y-1 leading-10 lg:w-80 lg:p-1 '>
+                  <div className='bg-[#EEFFFB] '>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
+                  <div className='bg-[#EEFFFB] '>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
+                  <div className='bg-[#EEFFFB] '>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
+                  <div className='bg-[#EEFFFB] '>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
+                  <div className='bg-[#EEFFFB] '>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
+                  <div className='bg-[#EEFFFB] '>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
+                  <div className='bg-[#EEFFFB] '>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
                 </div>
               </div>
             </div>
@@ -430,7 +440,7 @@ const Coursedetail = () => {
             <div class="container py-8 mx-auto">
               <div class="lg:w-1/1 flex flex-col sm:flex-row sm:items-center items-center mx-auto">
                 <h1 class="flex-grow sm:pr-16 text-2xl font-bold text-black ">More Courses</h1>
-                <button class="flex-shrink-0 text-white border-0 py-2 px-2 focus:outline-none hover:bg-[#308AFF] rounded text-sm bg-[#308AFF] mt-4 sm:mt-0 sm:w-auto self-center">View All Courses</button>
+                {/* <button class="flex-shrink-0 text-white border-0 py-2 px-2 focus:outline-none hover:bg-[#308AFF] rounded text-sm bg-[#308AFF] mt-4 sm:mt-0 sm:w-auto self-center">View All Courses</button> */}
               </div>
             </div>
           </section>

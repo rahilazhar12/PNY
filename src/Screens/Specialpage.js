@@ -87,7 +87,7 @@ const Specialpage = () => {
 
 
             <section className='lg:h-[254px] bg-[#152438;] text-white flex flex-col justify-center items-center max-sm:p-5'>
-                <div className='text-[48px] max-sm:text-[24px] font-semibold'>{data.special_page.name}</div>
+                <div className='text-[48px] max-sm:text-[24px] max-sm:text-center font-semibold'>{data.special_page.name}</div>
                 {/* <div className='text-[20px] font-normal max-sm:text-[16px] max-sm:text-center'>
               </div> */}
             </section>
@@ -103,19 +103,21 @@ const Specialpage = () => {
                     </div>
 
                     <div>
-                        <section className=' sticky top-10'>
-                            <div className='p-5 '>
-                                <div className=' bg-[#234E87] ml-10  rounded-t-xl lg:w-[390px]  h-[76px] flex justify-center items-center font-semibold text-3xl text-white'>Course we offer in Cities</div>
-                                <div className=' gap-1 grid '>
-                                    <div className='bg-[#EEFFFB] lg:w-[390px] ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Lahore</div>
-                                    <div className='bg-[#EEFFFB] lg:w-[390px] ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Rawalpindi</div>
-                                    <div className='bg-[#EEFFFB] lg:w-[390px] ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Karachi</div>
-                                    <div className='bg-[#EEFFFB] lg:w-[390px] ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Multan</div>
-                                    <div className='bg-[#EEFFFB] lg:w-[390px] ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Sialkot</div>
-                                    <div className='bg-[#EEFFFB] lg:w-[390px] ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Faislabad</div>
-                                    <div className='bg-[#EEFFFB] lg:w-[390px] ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Gujranwala</div>
-                                    <div className='bg-[#EEFFFB] lg:w-[390px] ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Azad Kashmir</div>
-                                    <div className='bg-[#EEFFFB] lg:w-[390px] ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Islamabad</div>
+                        <section className=' sticky top-10 max-sm:p-3'>
+                            <div className=''>
+                                <div className=' bg-[#234E87] lg:ml-10   rounded-t-xl lg:w-[390px]  h-[76px] flex justify-center items-center font-semibold text-3xl text-white'>Course we offer in Cities</div>
+                                <div className=' gap-1 grid'>
+
+                                    <div className='bg-[#EEFFFB] lg:w-[390px] lg:ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Lahore</div>
+
+                                    <div className='bg-[#EEFFFB] lg:w-[390px] lg:ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Rawalpindi</div>
+                                    <div className='bg-[#EEFFFB] lg:w-[390px] lg:ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Karachi</div>
+                                    <div className='bg-[#EEFFFB] lg:w-[390px] lg:ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Multan</div>
+                                    <div className='bg-[#EEFFFB] lg:w-[390px] lg:ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Sialkot</div>
+                                    <div className='bg-[#EEFFFB] lg:w-[390px] lg:ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Faislabad</div>
+                                    <div className='bg-[#EEFFFB] lg:w-[390px] lg:ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Gujranwala</div>
+                                    <div className='bg-[#EEFFFB] lg:w-[390px] lg:ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Azad Kashmir</div>
+                                    <div className='bg-[#EEFFFB] lg:w-[390px] lg:ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Islamabad</div>
 
                                 </div>
                             </div>
