@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 // import mainimage from '../Assets/images/responsive.png'
 import Carousal from '../Components/Carousal'
 import newgroup from '../Assets/images/newgroup.png'
@@ -22,6 +22,21 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
 
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from the provided URL
+    fetch('https://www.pnytrainings.com/api/menu')
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data.categories_menu);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
+  console.log(data.url_slug, "datahome_____")
 
   return (
     <>
@@ -49,7 +64,7 @@ const Home = () => {
                   Empower Yourself with Practical Skills that Open Doors
                   to Lucrative Opportunities</div>
 
-{/* 
+                {/* 
                 <div className="admissionbutton max-sm:flex justify-center" >
                 <Link to='https://lms.pnytraining.com/' target='_blank'>  <button className=' p-[8px] bg-[#308AFF] rounded-lg w-[132px] text-white text-base font-Inter font-bold mt-3'>Admission !</button></Link>
                 </div> */}
@@ -101,7 +116,7 @@ const Home = () => {
                 batch. Let’s grow together!
               </div>
               <div className='text-center lg:p-5 max-sm:mt-2'>
-              <Link to='https://lms.pnytraining.com/' target='_blank'>  <button className='bg-[#49B2DF] lg:w-48 lg:h-14 text-white rounded max-sm:w-36 max-sm:h-10 dark:text-white'>Join us now!</button> </Link>
+                <Link to='https://lms.pnytraining.com/' target='_blank'>  <button className='bg-[#49B2DF] lg:w-48 lg:h-14 text-white rounded max-sm:w-36 max-sm:h-10 dark:text-white'>Join us now!</button> </Link>
               </div>
             </div>
 
@@ -194,36 +209,47 @@ const Home = () => {
             </div>
 
             <div className="grid lg:grid-cols-12 lg:px-20  max-sm:px-3.5 py-3 max-sm:py-2 max-sm:grid-cols-4 lg:gap-4 max-sm:space-y-2 md:grid-cols-12  md:p-3 gap-1">
-              <div className='col-span-4'>
-                <div className="mainbox lg:h-80 xl:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
-                  <div className="img"> <img src={icon} alt="" /> </div>
-                  <div className="developement lg:text-2xl font-semibold font-Inter">Development</div>
-                  <div className="paragraph">By learning these advanced courses, you will understand the fundamentals of object-oriented programming and how to write...</div>
-                  <div><Link to="http://localhost:3000/development" target='_blank' className=' text-blue-500 font-semibold'>View Course</Link></div>
-                </div>
-              </div>
+              {
+                data.slice(0, 6).map((item) => {
+                  return (
+                    <>
+                      <div className='col-span-4'>
+                        <div className="mainbox lg:h-80 xl:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
+                          <div className="img"> <img src={icon} alt="" /> </div>
+                          <div className="developement lg:text-2xl font-semibold font-Inter">{item.name}</div>
 
-              <div className='col-span-4 '>
+                          <div className="paragraph">By learning these advanced courses, you will understand the fundamentals of object-oriented programming and how to write...</div>
+                          
+                          <div><Link to={`/${item.url_slug}`} target='_blank' className=' text-blue-500 font-semibold'>View Course</Link></div>
+                        </div>
+                      </div>
+                    </>
+                  )
+                })
+              }
+
+
+              {/* <div className='col-span-4 '>
                 <div className="mainbox lg:h-80 xl:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">Marketing</div>
                   <div className="paragraph">Learn how to do SEO, SMO, PPC, CPL, Web analytics, and social media marketing through our highly advanced and strategic...</div>
                   <div><Link to="http://localhost:3000/marketing" target='_blank' className=' text-blue-500 font-semibold'>View Course</Link></div>
                 </div>
-              </div>
+              </div> */}
 
-              <div className='col-span-4 '>
+              {/* <div className='col-span-4 '>
                 <div className="mainbox lg:h-80 xl:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
                   <div className="developement lg:text-2xl font-semibold">Art & Design</div>
                   <div className="paragraph">Our comprehensive design training classes teach you about design techniques as well as how to use various software to cr...</div>
-                  <div><Link to="http://localhost:3000/designing"  target='_blank' className=' text-blue-500 font-semibold'>View Course</Link></div>
+                  <div><Link to="http://localhost:3000/designing" target='_blank' className=' text-blue-500 font-semibold'>View Course</Link></div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* .................. */}
-            <div className="grid grid-cols-12 lg:px-20  max-sm:px-3.5  max-sm:grid-cols-4 lg:gap-4 max-sm:space-y-2 md:p-3 gap-1">
+            {/* <div className="grid grid-cols-12 lg:px-20  max-sm:px-3.5  max-sm:grid-cols-4 lg:gap-4 max-sm:space-y-2 md:p-3 gap-1">
               <div className='col-span-4 '>
                 <div className="mainbox lg:h-80 xl:h-64 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
                   <div className="img"> <img src={icon} alt="" /> </div>
@@ -250,9 +276,9 @@ const Home = () => {
                   <div><Link to="http://localhost:3000/multimedia" className=' text-blue-500 font-semibold'>View Course</Link></div>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="viewmore flex justify-center p-5">
-             <Link to='allcourses'> <button className='font-semibold text-base w-28 h-12 text-blue-600 bg-[#E5F1FF] rounded-lg'>View More</button></Link>
+              <Link to='allcourses'> <button className='font-semibold text-base w-28 h-12 text-blue-600 bg-[#E5F1FF] rounded-lg'>View More</button></Link>
             </div>
           </section>
 

@@ -58,8 +58,8 @@ const Router = () => {
                 <Route path='/privacy-policy' element={<Privacypolicy/>} />
                 <Route path='/citywisedata/:name' element={<Citywisedata/>} />
                 <Route path='/specialpage/:url' element={<Specialpage/>} />
-                <Route path='/allcourses' element={<Allcourses/>} />
-                <Route path='/c' element={<Carousal/>} />
+                {/* <Route path='/allcourses' element={<Allcourses/>} /> */}
+                {/* <Route path='/c' element={<Carousal/>} /> */}
 
             </Routes>
 
