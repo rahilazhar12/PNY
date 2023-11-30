@@ -54,10 +54,10 @@ const Home = () => {
                 <Link to='https://lms.pnytraining.com/' target='_blank'>  <button className=' p-[8px] bg-[#308AFF] rounded-lg w-[132px] text-white text-base font-Inter font-bold mt-3'>Admission !</button></Link>
                 </div> */}
 
-                <div className='flex space-x-10 mt-3 max-sm:hidden'>
+                {/* <div className='flex space-x-10 mt-3 max-sm:hidden'>
                   <img src={image1} />
 
-                </div>
+                </div> */}
 
                 {/* <div className="icons lg:hidden max-sm:hidden"> <TypeAnimation
                   sequence={[

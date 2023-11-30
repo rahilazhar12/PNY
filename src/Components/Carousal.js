@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Carousel } from 'flowbite-react';
 import c1 from '../Assets/Collaboration/1.png'
 import c2 from '../Assets/Collaboration/2.png'
@@ -12,31 +12,37 @@ import g1 from '../Assets/image/g1.png'
 import g2 from '../Assets/image/g2.png'
 
 const Carousal = () => {
+
+  const [data , setData] = useState([])
+
+  useEffect(()=>{
+ const fetchcarousalimage =async() => {
+  try {
+    let response = await fetch('https://www.pnytrainings.com/api/slider')
+    const data = await response.json()
+    setData(data.sliders)
+    
+  } catch (error) {
+    console.log(error)
+  }
+ }
+ fetchcarousalimage()
+  },[])
+ 
   return (
     <div>
-       <Carousel className='max-sm:h-56 p-1 md:h-64 lg:h-96 lg:mt-10 '>
-      <img
-        alt="..."
-        src="https://i.ytimg.com/vi/IbreMtdL1iQ/maxresdefault.jpg"
-      />
-      <img
-        alt="..."
-        src="https://i.ytimg.com/vi/8nTg5nk3s4o/maxresdefault.jpg"
-      />
-      <img
-        alt="..."
-        src="https://i.ytimg.com/vi/8nTg5nk3s4o/maxresdefault.jpg"
-      />
-      <img
-        alt="..."
-        src="https://tmcltd.com/wp-content/uploads/2019/04/PNY-Training-SAP-TallyBiafo-TallyMarks.webp"
-      />
-      <img
-        alt="..."
-        src="https://i.ytimg.com/vi/BvI04245sjg/maxresdefault.jpg"
-      />
+    <Carousel className='max-sm:h-56 p-1 md:h-64 lg:h-96 '>
+      {data.map(slider => (
+        <div key={slider.id}>
+          <img
+            className="d-block w-100 h-[350px]"
+            src={slider.image}
+            alt={slider.title}
+          />
+        </div>
+      ))}
     </Carousel>
-    </div>
+  </div>
   )
 }
 export const Carousalhome = () => {

@@ -6,10 +6,10 @@ const Categoriesdata = () => {
 
     useEffect(() => {
         // Fetch data from the provided URL
-        fetch('https://www.pnytrainings.com/api/header_menu')
+        fetch('https://www.pnytrainings.com/api/menu')
             .then((response) => response.json())
             .then((data) => {
-                setData(data);
+                setData(data.categories_menu);
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);

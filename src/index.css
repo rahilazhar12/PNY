@@ -110,6 +110,10 @@
   .col-span-2::-webkit-scrollbar {
     display: none;
   }
+
+  .cursor{
+    cursor: pointer;
+  }
   
   
 

@@ -25,6 +25,7 @@ import Termsandconditions from '../Screens/Termsandconditions'
 import Privacypolicy from '../Screens/Privacypolicy'
 import Citywisedata from '../Screens/Citywisedata'
 import Specialpage from '../Screens/Specialpage'
+import Carousal from './Carousal'
 
 
 
@@ -57,6 +58,8 @@ const Router = () => {
                 <Route path='/privacy-policy' element={<Privacypolicy/>} />
                 <Route path='/citywisedata/:name' element={<Citywisedata/>} />
                 <Route path='/specialpage/:url' element={<Specialpage/>} />
+                <Route path='/allcourses' element={<Allcourses/>} />
+                <Route path='/c' element={<Carousal/>} />
 
             </Routes>
 

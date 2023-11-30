@@ -11,11 +11,10 @@ const Blog = () => {
 
     useEffect(() => {
         // Fetch data from the provided URL
-        fetch('https://www.pnytrainings.com/api/featuredposts')
+        fetch('https://www.pnytrainings.com/api/featuredposts/')
             .then((response) => response.json())
             .then((data) => {
                 setData(data.featured_posts);
-                console.log(data , 'data')
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
@@ -33,7 +32,6 @@ const Blog = () => {
         return filter === "All" || item.title.includes(filter)
     })
 
-    console.log(data , 'data________')
 
     // const getFirstTwentyWords = (text) => {
     //     return text.split(' ').slice(0, 20).join(' ');

@@ -12,7 +12,7 @@ import parse, { domToReact } from 'html-react-parser';
 
 
 
-var modulesData = [
+let modulesData = [
   {
     title: 'Module 1',
     keyFeatures: [
