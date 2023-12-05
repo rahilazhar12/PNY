@@ -94,7 +94,7 @@ const AllCourses = () => {
                               <div className="w-full p-4">
                                 <div className="bg-white p-4 rounded-lg shadow-md">
                                   <Link to={`/coursedetails/${detail.url_slug}`}>
-                                  <img src="/images/1 (4).png" alt="Image 1" className="w-full rounded h-40 object-cover mb-4" />
+                                  <img src={detail.course_image} alt="Image 1" className="w-full rounded h-40 object-cover mb-4" />
                                   </Link>
                                   <div className="flex justify-between w-50 mb-4">
                                     <div className="flex">
