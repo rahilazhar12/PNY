@@ -79,6 +79,7 @@ const Coursedetail = () => {
   const [activeModule, setActiveModule] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [courseData, setCourseData] = useState(null);
+  const [instructor, setInstructor] = useState(null);
   const [error, setError] = useState(null);
 
 
@@ -94,6 +95,7 @@ const Coursedetail = () => {
         if (response.ok) {
           const data = await response.json();
           setCourseData(data.course);
+          setInstructor(data.course_instructor);
         } else {
           console.error(`Failed to fetch course data for slug: ${courseSlug}`);
           setError(`Failed to fetch course data. Please try again later.`);
@@ -156,6 +158,8 @@ const Coursedetail = () => {
 
 
   const module = modulesData[activeModule];
+
+
   return (
     <>
       <div>
@@ -372,29 +376,29 @@ const Coursedetail = () => {
 
         <section className="text-gray-600 body-font p-5">
           <div className="container  mx-auto">
-            {/* <h2 className="text-2xl font-bold text-black my-5 mt-8 mx-2">Course Instructors</h2> */}
+            <h2 className="text-2xl font-bold text-black my-5 mt-8 mx-2">Course Instructors</h2>
             <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
               <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
                 <div className="rounded-lg h-54 overflow-hidden">
-                  <img alt="content" className="object-cover object-center h-full w-full" src="/images/ceo.png" />
+                  <img alt="content" className="object-cover object-center h-full w-full" src={instructor.photo ? instructor.photo : "https://www.learnworlds.com/app/uploads/2022/09/course-instructor-with-laptop-preparing-training-coaching-teaching-sessions.webp"} />
                 </div>
-                <h2 className="text-xl  font-bold text-gray-900 mt-2">Wahab Yunus</h2>
-                <p className="text-base leading-relaxed mt-1 text-[#308AFF]">Founder & CEO</p>
+                <h2 className="text-xl  font-bold text-gray-900 mt-2">{instructor.name}</h2>
+                <p className="text-base leading-relaxed mt-1 text-[#308AFF]">{instructor.other_info}</p>
               </div>
-              <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
+              {/* <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
                 <div className="rounded-lg h-54 overflow-hidden">
                   <img alt="content" className="object-cover object-center h-full w-full" src="/images/director.png" />
                 </div>
                 <h2 className="text-xl font-bold text-gray-900 mt-2">Suleman Ikram</h2>
                 <p className="text-base leading-relaxed mt-1 text-[#308AFF]">Co-Founder & Driector</p>
-              </div>
-              <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
+              </div> */}
+              {/* <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
                 <div className="rounded-lg h-54 overflow-hidden">
                   <img alt="content" className="object-cover object-center h-full w-full" src="/images/Image.png" />
                 </div>
                 <h2 className="text-xl font-bold text-gray-900 mt-2">Lana Steiner</h2>
                 <p className="text-base leading-relaxed mt-1 text-[#308AFF]">Product Manager</p>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
