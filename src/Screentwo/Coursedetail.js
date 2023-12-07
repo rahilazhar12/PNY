@@ -7,8 +7,9 @@ import Modal from './Modal';
 import Modalb from './Modalb';
 import { useParams } from 'react-router-dom';
 import { Blocks } from 'react-loader-spinner'
-
+import { Link } from 'react-router-dom';
 import parse, { domToReact } from 'html-react-parser';
+
 
 
 
@@ -81,6 +82,7 @@ const Coursedetail = () => {
   const [courseData, setCourseData] = useState(null);
   const [instructor, setInstructor] = useState(null);
   const [error, setError] = useState(null);
+  const [moduledata, setModuledata] = useState([])
 
 
   const { courseSlug } = useParams();
@@ -166,136 +168,60 @@ const Coursedetail = () => {
         <section>
           <Searchbar />
         </section>
-        <section className="text-white body-font bg-[#152438]">
-          <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-            <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-              <div className='section-wrapper'>
 
-
-
-                <h1 className="mb-4 font-semibold text-white my-2 leading-loose text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
-                  {courseData ? courseData.name : null}
-                </h1>
-
-
-                <p className="mb-8 leading-relaxed ">{courseData ? courseData.description_short : null}</p>
-
-                <div className='social-wrapper flex justify-between'>
-                  <div className="flex">
-                    <a href='#'><img src="/images/🦆 icon _task square_.png " alt='' /></a>
-                    <p className='mx-2'>Courses Fee: Rs {courseData.monthly_tution_fee}</p>
+        <div className="bg-gray-800 text-white p-6 min-h-auto">
+          <div className="container mx-auto">
+            <div className="flex flex-wrap justify-between items-center">
+              {/* Text section */}
+              <div className="w-full md:w-1/2">
+                <h2 className="text-3xl font-bold mb-4"> {courseData ? courseData.name : null}</h2>
+                <p className="mb-4">{courseData ? courseData.description_short : null}</p>
+                <div className="flex flex-col md:flex-row md:items-center mb-4">
+                  <div className="mb-2 md:mb-0 md:mr-4">
+                    <span className="font-bold">Course Fee:</span> Rs {courseData.monthly_tution_fee}
                   </div>
-                  <div className="flex">
-                    <a href='#'><img src="/images/🦆 icon _bar chart_.png " /></a>
-                    <p className='mx-2'>Skill Level:{courseData.skill_level}</p>
+                  <div className="mb-2 md:mb-0 md:mr-4">
+                    <span className="font-bold">Skill Level:</span> {courseData.skill_level}
+                  </div>
+                  <div className="mb-2 md:mb-0">
+                    <span className="font-bold">Duration:</span> {courseData.duration} Months
                   </div>
                 </div>
-                <div className='social-wrapper flex justify-between my-4'>
-                  <div className="flex">
-                    <a href='#'><img src="/images/🦆 icon _laptop_.png " /></a>
-                    <p className='mx-2'>Online/On Campus</p>
-                  </div>
-                  <div className="flex">
-                    <a href='#'><img src="/images/🦆 icon _clock_.png" /></a>
-                    <p className='mx-2'>Duration: {courseData.duration} Months </p>
-                  </div>
-
+                <div className="mb-4">
+                  <span className="font-bold">Schedule Dates</span>
+                  <span className="mx-2">|</span>
+                  <span>Lahore</span>
+                  <span className="mx-2">|</span>
+                  <span>Rawalpindi</span>
+                  <span className="mx-2">|</span>
+                  <span>Multan</span>
                 </div>
-
-                <div className='social-wrapper flex justify-between my-4'>
-                  <div className='flex'><a href='#'> <i class="fa-solid fa-calendar-days text-2xl mx-1"></i></a>
-                    <p className='mx-2 my-1'>Schedule Dates</p></div>
-                  <div className="flex justify-center">
-
-
-                    <button
-                      className="openModalBtn"
-                      onClick={() => {
-                        setModalOpen(true);
-                      }}
-                    >
-                      <p className='mx-2 my-1 hover:text-blue-500 hover:underline'>Lahore</p>
-                    </button>
-
-                    {modalOpen && <Modal setOpenModal={setModalOpen} />}
-                  </div>
-
-                  <div className="flex justify-center">
-
-
-                    <button
-                      className="openModalBtn"
-                      onClick={() => {
-                        setModalOpen(true);
-                      }}
-                    >
-                      <p className='mx-2 my-1 hover:text-blue-500 hover:underline'>Rawalpindi</p>
-                    </button>
-
-                    {modalOpen && <Modal setOpenModal={setModalOpen} />}
-                  </div>
-
-                  <div className="flex justify-center">
-
-
-                    <button
-                      className="openModalBtn"
-                      onClick={() => {
-                        setModalOpen(true);
-                      }}
-                    >
-                      <p className='mx-2 my-1 hover:text-blue-500 hover:underline'>Multan</p>
-
-                    </button>
-
-                    {modalOpen && <Modal setOpenModal={setModalOpen} />}
-                  </div>
+                <div className="flex flex-wrap gap-4 max-sm:justify-center">
+                  <button className="bg-[#152438] border border-white  text-white font-bold py-2 px-4 rounded">Download Course Brochure</button>
+                  <button className="bg-[#308AFF] text-white font-bold py-2 px-4 rounded">Free Orientation Class</button>
+                  <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Pay Now</button>
                 </div>
-
-
-
-
-
-
-
-
-
-                <a href={courseData.brochure} target="_blank" class="text-white hover:text-white border border-blue-700 hover:bg-[#308AFF] font-medium rounded-lg text-sm px-4 py-3 text-center mr-2 mb-2 dark:hover:text-white">
-                  Download Course Brochure
-                </a>
-
-
-
-                <button
-                  className="openModalBtn inline-flex text-white bg-[#308AFF] border-0 border-blue-700 py-3 px-4 focus:outline-none hover:bg-[#308AFF] rounded text-sm"
-                  onClick={() => {
-                    setModalOpen(true);
-                  }}
-                >
-                  Free Orientation Class
-                </button>
-                {modalOpenb && <Modalb setOpenModalb={setModalOpenb} />}
-                <button className="ml-4 inline-flex text-white bg-red-700 border-0 py-3 px-4  hover:bg-red-700 rounded text-sm my-2">Pay Now</button>
               </div>
-            </div>
-            {/* Iframe youtube */}
-            <div className="">
-              <iframe
-                className=' lg:w-[500px] lg:h-[400px]'
-                src={`https://www.youtube.com/embed/${courseData.video}`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen>
-              </iframe>
-            </div>
 
-            
+              {/* Video section */}
+              <div className="w-full md:w-1/2 flex  justify-center items-center bg-gray-700 p-4 max-sm:mt-2">
+                {/* Responsive iframe container */}
+                <div className="w-full aspect-w-16 aspect-h-9">
+                  {/* Iframe YouTube */}
+                  <iframe className="w-full h-[300px] max-sm:h-[100px]" src={`https://www.youtube.com/embed/${courseData.video}`} title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
+                  </iframe>
+                </div>
+              </div>
+
+            </div>
           </div>
-        </section>
+        </div>
+
+
         <div>
           <div className="flex flex-col text-center lg:text-left lg:w-2/3 mx-auto mb-5 mt-5 justify-center">
-            <h1 className="text-4xl  font-extrabold text-gray-900 dark:text-white mb-4 text-gray-900">Course Module</h1>
-            <p className="leading-relaxed text-base text-lg text-gray-900 dark:text-white">Our course modules offer a well-rounded curriculum, combining theoretical foundations with hands-on training, ensuring students acquire industry-relevant skills and knowledge for future endeavors.</p>
+            <h1 className="text-4xl  font-extrabold text-gray-900 dark:text-white mb-4 text-center">Course Module</h1>
+            <p className="leading-relaxed  text-gray-900 dark:text-white text-center">Our course modules offer a well-rounded curriculum, combining theoretical foundations with hands-on training, ensuring students acquire industry-relevant skills and knowledge for future endeavors.</p>
           </div>
 
         </div>
@@ -374,63 +300,80 @@ const Coursedetail = () => {
         </section>
 
 
-        <section className="text-gray-600 body-font p-5">
-          <div className="container  mx-auto">
-            <h2 className="text-2xl font-bold text-black my-5 mt-8 mx-2">Course Instructors</h2>
-            <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-              <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
-                <div className="rounded-lg h-54 overflow-hidden">
-                  <img alt="content" className="object-cover object-center h-full w-full" src={instructor.photo ? instructor.photo : "https://www.learnworlds.com/app/uploads/2022/09/course-instructor-with-laptop-preparing-training-coaching-teaching-sessions.webp"} />
+        <section>
+          <div className="bg-white p-6">
+            <div className="border-b border-gray-200 mb-4">
+              <h3 className="text-lg font-semibold">OVERVIEW</h3>
+            </div>
+            <div className="flex gap-6">
+              {/* Author Image & Name */}
+              <div className="flex flex-col items-center">
+                <div className="w-24 h-24 bg-blue-500 rounded-full flex items-center justify-center">
+                  {/* Centered Image */}
+                  <img
+                    className="rounded-full object-cover h-full w-full"
+                    src={instructor.photo ? instructor.photo : "https://static.vecteezy.com/system/resources/previews/020/765/399/non_2x/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg"}
+                    alt=""
+                  />
                 </div>
-                <h2 className="text-xl  font-bold text-gray-900 mt-2">{instructor.name}</h2>
-                <p className="text-base leading-relaxed mt-1 text-[#308AFF]">{instructor.other_info}</p>
+                <p className="mt-2 text-sm font-semibold">Instructor</p>
               </div>
-              {/* <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
-                <div className="rounded-lg h-54 overflow-hidden">
-                  <img alt="content" className="object-cover object-center h-full w-full" src="/images/director.png" />
-                </div>
-                <h2 className="text-xl font-bold text-gray-900 mt-2">Suleman Ikram</h2>
-                <p className="text-base leading-relaxed mt-1 text-[#308AFF]">Co-Founder & Driector</p>
-              </div> */}
-              {/* <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
-                <div className="rounded-lg h-54 overflow-hidden">
-                  <img alt="content" className="object-cover object-center h-full w-full" src="/images/Image.png" />
-                </div>
-                <h2 className="text-xl font-bold text-gray-900 mt-2">Lana Steiner</h2>
-                <p className="text-base leading-relaxed mt-1 text-[#308AFF]">Product Manager</p>
-              </div> */}
+
+              {/* Description */}
+              <div className="flex-grow">
+                <h4 className="text-xl font-semibold mb-2">{instructor.name}</h4>
+                <p className="text-gray-700 text-justify">
+                  {instructor.other_info}
+                </p>
+              </div>
             </div>
           </div>
+
+
+
+
         </section>
-        {/* section 2nd card */}
-
-        <section className=' lg:p-3'>
-          <div className='grid lg:grid-cols-6  xl:grid-cols-8 mx-auto '>
-            {/* 1 */}
-            <div className='lg:col-span-4 xl:col-span-6 overflow-y-auto sch max-h-[600px]'>{parsedDescription}</div>
 
 
-           {/* 2 */}
-            <div className=' xl:col-span-2'>
-              <div className='max-sm:p-2'>
-
-                <div className=' bg-[#234E87] lg:w-80 lg:p-3  rounded-t-xl   flex justify-center items-center font-semibold text-3xl text-white'>
-                  Course we offer 
+        <section className='h-[500px] mt-10'>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 ">
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Content Section */}
+              <div className="md:col-span-2 bg-white p-6 shadow rounded max-h-[500px] relative">
+                <div class="sticky bottom-0 flex justify-center">
+                  <div class="animate-bounce">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16" id="IconChangeColor"> <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" id="mainIconPathAttribute" stroke-width="0" stroke="#ff0000" filter="url(#shadow)"></path> <filter id="shadow"><feDropShadow id="shadowValue" stdDeviation=".5" dx="0" dy="0" flood-color="black"></feDropShadow></filter><filter id="shadow"><feDropShadow id="shadowValue" stdDeviation=".5" dx="0" dy="0" flood-color="black"></feDropShadow></filter></svg>
+                  </div>
                 </div>
+                <div className="scroll-content overflow-y-auto max-h-[500px]">
+                  <p className="text-gray-700 mb-4">{parsedDescription}</p>
+                </div>
+              </div>
 
-                
-                <div className=' flex flex-col space-y-1 leading-10 lg:w-80 lg:p-1 '>
-                  <div className='bg-[#EEFFFB] '>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
-                  <div className='bg-[#EEFFFB] '>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
-                  <div className='bg-[#EEFFFB] '>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
-                  <div className='bg-[#EEFFFB] '>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
-                  <div className='bg-[#EEFFFB] '>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
-                  <div className='bg-[#EEFFFB] '>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
-                  <div className='bg-[#EEFFFB] '>The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</div>
+
+              {/* Sidebar Section */}
+              <div className="bg-purple-600 text-white p-6 shadow rounded">
+                <div className="mb-2 p-4 bg-purple-700 rounded">
+                  <h3 className="text-lg font-bold">COURSES WE OFFER IN CITIES</h3>
+                  {/* Place Image Here */}
+                </div>
+                <div className="mb-2 p-4 bg-purple-700 rounded">
+                  <h3 className="text-lg font-bold mb-2">The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</h3>
+                  {/* Place Image Here */}
+                </div>
+                <div className="mb-2 p-4 bg-purple-700 rounded">
+                  <h3 className="text-lg font-bold mb-2">The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</h3>
+                  {/* Place Image Here */}
+                </div>
+                <div className="mb-2 p-4 bg-purple-700 rounded">
+                  <h3 className="text-lg font-bold mb-2">The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</h3>
+                  {/* Place Image Here */}
                 </div>
               </div>
             </div>
           </div>
+
+
         </section>
 
 
