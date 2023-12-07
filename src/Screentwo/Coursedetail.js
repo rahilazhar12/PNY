@@ -307,8 +307,8 @@ const Coursedetail = () => {
             </div>
             <div className="flex gap-6">
               {/* Author Image & Name */}
-              <div className="flex flex-col items-center">
-                <div className="w-24 h-24 bg-blue-500 rounded-full flex items-center justify-center">
+              <div className="flex flex-col items-center max-sm:hidden">
+                <div className="w-24 h-24 bg-blue-500 rounded-full flex  items-center justify-center">
                   {/* Centered Image */}
                   <img
                     className="rounded-full object-cover h-full w-full"
@@ -320,9 +320,14 @@ const Coursedetail = () => {
               </div>
 
               {/* Description */}
+             
               <div className="flex-grow">
-                <h4 className="text-xl font-semibold mb-2">{instructor.name}</h4>
-                <p className="text-gray-700 text-justify">
+              <div className='flex  flex-col justify-center items-center 2xl:hidden lg:hidden md:hidden'>
+              <img src="https://static.vecteezy.com/system/resources/previews/020/765/399/non_2x/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt="" />
+
+              </div>
+                <h4 className="text-xl font-semibold mb-2 max-sm:text-center">{instructor.name}</h4>
+                <p className="text-gray-700 text-justify max-sm:text-center">
                   {instructor.other_info}
                 </p>
               </div>
@@ -335,14 +340,14 @@ const Coursedetail = () => {
         </section>
 
 
-        <section className='h-[500px] mt-10'>
+        <section className='h-[500px] max-sm:h-auto mt-10'>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 ">
             <div className="grid md:grid-cols-3 gap-6">
               {/* Content Section */}
               <div className="md:col-span-2 bg-white p-6 shadow rounded max-h-[500px] relative">
                 <div class="sticky bottom-0 flex justify-center">
                   <div class="animate-bounce">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16" id="IconChangeColor"> <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" id="mainIconPathAttribute" stroke-width="0" stroke="#ff0000" filter="url(#shadow)"></path> <filter id="shadow"><feDropShadow id="shadowValue" stdDeviation=".5" dx="0" dy="0" flood-color="black"></feDropShadow></filter><filter id="shadow"><feDropShadow id="shadowValue" stdDeviation=".5" dx="0" dy="0" flood-color="black"></feDropShadow></filter></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16" id="IconChangeColor"> <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" id="mainIconPathAttribute" stroke-width="0" stroke="#ff0000" filter="url(#shadow)"></path> <filter id="shadow"><feDropShadow id="shadowValue" stdDeviation=".5" dx="0" dy="0" flood-color="black"></feDropShadow></filter><filter id="shadow"><feDropShadow id="shadowValue" stdDeviation=".5" dx="0" dy="0" flood-color="black"></feDropShadow></filter></svg>
                   </div>
                 </div>
                 <div className="scroll-content overflow-y-auto max-h-[500px]">
