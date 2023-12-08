@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import parse, { domToReact } from 'html-react-parser';
+import Searchbar from '../Components/Searchbar'
 
 const Blogdetails = () => {
   const { slug } = useParams();
@@ -15,7 +16,7 @@ const Blogdetails = () => {
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
-      window.scrollTo(0,0)
+    window.scrollTo(0, 0)
   }, [slug]);
 
   if (!data) {
@@ -48,16 +49,36 @@ const Blogdetails = () => {
   return (
     <>
       <main>
-        <section className=' bg-[#152438] grid grid-cols-2 h-[430px] max-sm:grid-cols-1 max-sm:h-auto '>
-          <div>
-            <div className=' lg:text-[18px] lg:px-10 text-white lg:pt-5'>Publish : {data.published_date}</div>
-            <div className='lg:text-[48px] lg:w-[654px] text-white lg:px-10'>{data.title}</div>
-            <div className='lg:text-[18px] lg:w-[654px]  text-white px-10'>{data.description_short}</div>
-          </div>
-          <div>
-            <img className=' lg:w-[664px] h-[390px] lg:p-4 max-sm:p-3 max-sm:text-justify' src={data.post_image_thumb} alt="" />
-          </div>
+        <section>
+          <Searchbar />
         </section>
+
+        <section>
+          <div className="bg-gray-800 text-white p-6 min-h-auto">
+            <div className="container mx-auto">
+              <div className="flex flex-wrap justify-around items-center">
+                {/* Text section */}
+                <div className="w-full md:w-1/2">
+                  <h2 className="text-3xl font-bold mb-4 max-sm:text-center">{data.title} </h2>
+                  <p className="mb-4 max-sm:text-center w-[700px] max-sm:w-auto">{data.description_short}</p>               
+                  <p className="mb-4 max-sm:text-center w-[700px] max-sm:w-auto">Publish data : {data.published_date}</p>         
+                </div>
+
+                {/* image section */}
+                <div className="w-full md:w-1/2 flex  justify-center items-center bg-gray-700 p-2 max-sm:mt-2">
+                  {/* Responsive iframe container */}
+                  <div className="w-full aspect-w-16 ">
+                   <img className='w-full h-[400px] max-sm:h-auto'  src={data.post_image_thumb} alt="" />
+                   
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </section>
+      
         {parsedDescription}
       </main>
     </>

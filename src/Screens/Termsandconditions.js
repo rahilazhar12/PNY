@@ -75,8 +75,8 @@ const Termsandconditions = () => {
 
             <section>
                 <div className=' bg-[#152438] text-white h-[306px] flex flex-col justify-center items-center'>
-                    <div className=' text-[48px] font-semibold'>Terms & Conditions</div>
-                    <div className=' text-[20px] font-normal w-[768px] text-center'><p>This T&amp;C applies to all information submitted to&nbsp;PNY Trainings at any time through any of our services (from digital or offline communications).</p></div>
+                    <div className=' text-[48px] font-semibold  text-center max-sm:text-[32px]'>Terms & Conditions</div>
+                    <div className=' text-[20px] font-normal w-[768px] max-sm:w-auto text-center max-sm:p-3 max-sm:text-[16px]'><p>This T&amp;C applies to all information submitted to&nbsp;PNY Trainings at any time through any of our services (from digital or offline communications).</p></div>
                 </div>
             </section>
 

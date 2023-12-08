@@ -20,6 +20,7 @@ import Map from '../Components/Map'
 import Testimonial from '../Components/Testimonial'
 import { Link } from 'react-router-dom';
 import parse, { domToReact } from 'html-react-parser';
+import { FaGlobeAmericas, FaAward, FaBuilding, FaUniversity, FaUsers, FaBook, FaChalkboardTeacher, FaHandshake } from 'react-icons/fa';
 
 const Home = () => {
 
@@ -72,7 +73,7 @@ const Home = () => {
         // }
       }
     }
-  }): null
+  }) : null
 
 
 
@@ -161,29 +162,44 @@ const Home = () => {
           </section>
 
           {/* Section-3 */}
-          <section className='bg-[#F9FAFB]  lg:p-[80px] space-y-5  max-sm:mt-4'>
-            <div className='lgh max-sm:px-3'>Professional Development with Opportunities</div>
-            <div className='flex justify-center'>
-              <p className='lgp  max-sm:px-3'>PNY Trainings Pakistan is the leading IT training institute provide training programs with multiple branches and numerous collaborations with national and international companies through highly qualified instructors that make you ready for a better future.</p>
-            </div>
-            <div className='grid max-sm:p-3 lg:grid-cols-4 md:grid-cols-3 gap-4  md:p-3'>
-              {
-                homedata.map((data) => {
-                  return (
-                    <>
-                      <motion.div whileHover={{ marginTop: "20px" }} class="stats  shadow-xl hover:bg-blue-500 hover:text-white">
-                        <div class="stat">
-                          <div className="img flex justify-center">
-                            <img className='h-16' src={data.imgSrc} alt="" />
-                          </div>
-                          <div class="text-center text-xl font-bold">{data.title}</div>
-                          <div class="text-center">{data.description}</div>
-                        </div>
-                      </motion.div>
-                    </>
-                  )
-                })
-              }
+          <section>
+            <div className="bg-white text-center p-8">
+              <h2 className="text-2xl font-semibold mb-4 lgh">We Develop Your Inspiring Career with Standard</h2>
+              <p className="mb-8 w-[990px] max-sm:w-auto mx-auto">PNY Trainings Pakistan is the leading IT training institute, offering 100+ courses through online and physical classes. We provide internship opportunities and have a dedicated job cell to help you jumpstart your career.</p>
+              <div className="grid grid-cols-4 gap-4 max-sm:grid-cols-2">
+                <div className="flex flex-col items-center">
+                  <FaGlobeAmericas className="text-4xl mb-2 text-blue-500" />
+                  <span className=' font-semibold'>International Collaborations</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <FaAward className="text-4xl mb-2 text-blue-500" />
+                  <span className=' font-semibold'>Awarded by USA Education 2.0</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <FaBuilding className="text-4xl mb-2 text-blue-500" />
+                  <span className=' font-semibold'>Multiple Branches in Pakistan</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <FaUniversity className="text-4xl mb-2 text-blue-500" />
+                  <span className=' font-semibold'>Affiliated with Govt. (PSDA & PBTE)</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <FaUsers className="text-4xl mb-2 text-blue-500" />
+                  <span className=' font-semibold'>75000+ Alumni</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <FaBook className="text-4xl mb-2 text-blue-500" />
+                  <span className=' font-semibold'>100+ Professional Programs</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <FaChalkboardTeacher className="text-4xl mb-2 text-blue-500" />
+                  <span className=' font-semibold'>150+ Instructors</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <FaHandshake className="text-4xl mb-2 text-blue-500" />
+                  <span className=' font-semibold'>80+ MoU's Sign</span>
+                </div>
+              </div>
             </div>
           </section>
 
@@ -194,11 +210,11 @@ const Home = () => {
           {/* Section-3 */}
           <section className=' max-sm:mt-8 '>
             <div class="grid md:p-5 lg:space-y-5">
-              <div class=" flex justify-center" data-aos="fade-up" data-aos-delay="300" >
+              <div class=" flex justify-center"  >
                 <p id='journey' className='lgh  dark:text-white'>Our Journey to success</p>
               </div>
 
-              <div class="PNYTrainingsPakistan  justify-center flex" data-aos="fade-up" data-aos-delay="300">
+              <div class="PNYTrainingsPakistan  justify-center flex">
                 <p className=' lgp max-sm:text-base  md:text-base md:px-3 dark:text-white'>
                   The journey shows the entrepreneurial growth of each individual student, with current goals to achieve victory. Through our success, we raise you up to be unstoppable in the world of opportunities.
                 </p>

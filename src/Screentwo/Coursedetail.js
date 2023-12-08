@@ -199,14 +199,15 @@ const Coursedetail = () => {
                   <span>Multan</span>
                 </div>
                 <div className="flex flex-wrap gap-4 max-sm:justify-center">
-                  <button className="bg-[#152438] border border-white  text-white font-bold py-2 px-4 rounded">Download Course Brochure</button>
+                  <Link to={courseData.brochure} target="_blank">
+                    <button className="bg-[#152438] border border-white  text-white font-bold py-2 px-4 rounded">Download Course Brochure</button></Link>
                   <button className="bg-[#308AFF] text-white font-bold py-2 px-4 rounded">Free Orientation Class</button>
                   <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Pay Now</button>
                 </div>
               </div>
 
               {/* Video section */}
-              <div className="w-full md:w-1/2 flex  justify-center items-center bg-gray-700 p-4 max-sm:mt-2">
+              <div className="w-full md:w-1/2 flex  justify-center items-center bg-gray-700 p-2 max-sm:mt-2">
                 {/* Responsive iframe container */}
                 <div className="w-full aspect-w-16 aspect-h-9">
                   {/* Iframe YouTube */}
