@@ -266,7 +266,7 @@ const Coursedetail = () => {
           <div className="bg-blue-50 py-10">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl font-bold text-center text-black mb-6">Develop your Academic network through Diverse Environment</h2>
-              <p className="text-center text-black w-[990px] mx-auto mb-10">We discover your personal and professional growth capitalize on opportunities through which you will get profound impact on various employment and career advancement.</p>
+              <p className="text-center text-black w-[990px] max-sm:w-auto mx-auto mb-10">We discover your personal and professional growth capitalize on opportunities through which you will get profound impact on various employment and career advancement.</p>
               <IconContext.Provider value={{ size: "2em", className: "text-blue-600" }}>
                 <div className="grid grid-cols-6 gap-4 text-center max-sm:grid-cols-1">
                   <div className="flex flex-col items-center">
