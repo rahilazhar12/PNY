@@ -9,6 +9,8 @@ import { useParams } from 'react-router-dom';
 import { Blocks } from 'react-loader-spinner'
 import { Link } from 'react-router-dom';
 import parse, { domToReact } from 'html-react-parser';
+import { FaBookOpen, FaChalkboardTeacher, FaBriefcase, FaUserGraduate, FaUsers, FaVideo } from 'react-icons/fa';
+import { IconContext } from "react-icons";
 
 
 
@@ -260,43 +262,42 @@ const Coursedetail = () => {
           </div>
         </section>
 
-
-        <section className="text-gray-600 body-font">
-          <div className="container px-5 py-10 mx-auto">
-            <div className="flex flex-col text-center w-full mb-12">
-              <h1 className="sm:text-3xl text-5xl font-bold mb-4 text-gray-900 text-xl lg:text-3xl">Develop your Academic network through Diverse Environment</h1>
-
-              <p className="lg:w-2/3 mx-auto leading-relaxed text-base">We discover your personal and professional growth capitalize on opportunities through which you will get profound impact on various employment and career advancement.</p>
-            </div>
-          </div>
-        </section>
-
-
-
-
-
-
-
-        <section className="text-gray-600 body-font text-center">
-
-          <div className="container px-5 py-2 mx-auto ml-15">
-            <div className="flex flex-wrap -m-4">
-              {feature.map((x) => {
-                return (
-                  <div className="lg:w-1/6 md:w-1/2 p-4 w-full ">
-                    <a className="block relative h-30 rounded overflow-hidden">
-                      <img alt="ecommerce" className="mx-auto object-cover object-center w-20 block" src={x.image} />
-                    </a>
-                    <div className="">
-                      <h3 className="text-lg tracking-widest title-font text-[#152438]">{x.title}</h3>
-                    </div>
+        <section >
+          <div className="bg-blue-50 py-10">
+            <div className="container mx-auto px-4">
+              <h2 className="text-2xl font-bold text-center text-black mb-6">Develop your Academic network through Diverse Environment</h2>
+              <p className="text-center text-black w-[990px] mx-auto mb-10">We discover your personal and professional growth capitalize on opportunities through which you will get profound impact on various employment and career advancement.</p>
+              <IconContext.Provider value={{ size: "2em", className: "text-blue-600" }}>
+                <div className="grid grid-cols-6 gap-4 text-center max-sm:grid-cols-1">
+                  <div className="flex flex-col items-center">
+                    <FaBookOpen />
+                    <p className="text-sm text-black font-semibold mt-2">Learning Management System Access</p>
                   </div>
-
-                )
-              }
-              )}
+                  <div className="flex flex-col items-center">
+                    <FaChalkboardTeacher />
+                    <p className="text-sm text-black font-semibold mt-2">Instructor Support</p>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <FaBriefcase />
+                    <p className="text-sm text-black font-semibold mt-2">Internship Opportunity</p>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <FaUserGraduate />
+                    <p className="text-sm text-black font-semibold mt-2">Job Cell</p>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <FaUsers />
+                    <p className="text-sm text-black font-semibold mt-2">PNY Community Member</p>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <FaVideo />
+                    <p className="text-sm text-black font-semibold mt-2">Free Seminar Access</p>
+                  </div>
+                </div>
+              </IconContext.Provider>
             </div>
           </div>
+
         </section>
 
 
@@ -308,7 +309,7 @@ const Coursedetail = () => {
             <div className="flex gap-6">
               {/* Author Image & Name */}
               <div className="flex flex-col items-center max-sm:hidden">
-                <div className="w-24 h-24 bg-blue-500 rounded-full flex  items-center justify-center">
+                <div className=" w-32 h-32 bg-blue-500 rounded-full flex  items-center justify-center">
                   {/* Centered Image */}
                   <img
                     className="rounded-full object-cover h-full w-full"
@@ -320,12 +321,12 @@ const Coursedetail = () => {
               </div>
 
               {/* Description */}
-             
-              <div className="flex-grow">
-              <div className='flex  flex-col justify-center items-center 2xl:hidden lg:hidden md:hidden'>
-              <img src="https://static.vecteezy.com/system/resources/previews/020/765/399/non_2x/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt="" />
 
-              </div>
+              <div className="flex-grow">
+                <div className='flex  flex-col justify-center items-center 2xl:hidden lg:hidden md:hidden'>
+                  <img src="https://static.vecteezy.com/system/resources/previews/020/765/399/non_2x/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt="" />
+
+                </div>
                 <h4 className="text-xl font-semibold mb-2 max-sm:text-center">{instructor.name}</h4>
                 <p className="text-gray-700 text-justify max-sm:text-center">
                   {instructor.other_info}
@@ -340,39 +341,33 @@ const Coursedetail = () => {
         </section>
 
 
-        <section className='h-[500px] max-sm:h-auto mt-10'>
+        <section className='h-auto  mt-10'>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 ">
             <div className="grid md:grid-cols-3 gap-6">
               {/* Content Section */}
-              <div className="md:col-span-2 bg-white p-6 shadow rounded max-h-[500px] relative">
+              <div className="md:col-span-2 bg-white p-6 shadow rounded max-h-[800px] relative">
                 <div class="sticky bottom-0 flex justify-center">
                   <div class="animate-bounce">
                     <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16" id="IconChangeColor"> <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" id="mainIconPathAttribute" stroke-width="0" stroke="#ff0000" filter="url(#shadow)"></path> <filter id="shadow"><feDropShadow id="shadowValue" stdDeviation=".5" dx="0" dy="0" flood-color="black"></feDropShadow></filter><filter id="shadow"><feDropShadow id="shadowValue" stdDeviation=".5" dx="0" dy="0" flood-color="black"></feDropShadow></filter></svg>
                   </div>
                 </div>
-                <div className="scroll-content overflow-y-auto max-h-[500px]">
+                <div className="scroll-content overflow-y-auto max-h-[800px]">
                   <p className="text-gray-700 mb-4">{parsedDescription}</p>
                 </div>
               </div>
 
 
               {/* Sidebar Section */}
-              <div className="bg-purple-600 text-white p-6 shadow rounded">
-                <div className="mb-2 p-4 bg-purple-700 rounded">
-                  <h3 className="text-lg font-bold">COURSES WE OFFER IN CITIES</h3>
-                  {/* Place Image Here */}
+              <div className="max-w-sm mx-auto">
+                <div className="bg-blue-800 text-white text-xl font-semibold p-4">
+                  COURSES WE OFFER
                 </div>
-                <div className="mb-2 p-4 bg-purple-700 rounded">
-                  <h3 className="text-lg font-bold mb-2">The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</h3>
-                  {/* Place Image Here */}
-                </div>
-                <div className="mb-2 p-4 bg-purple-700 rounded">
-                  <h3 className="text-lg font-bold mb-2">The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</h3>
-                  {/* Place Image Here */}
-                </div>
-                <div className="mb-2 p-4 bg-purple-700 rounded">
-                  <h3 className="text-lg font-bold mb-2">The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D</h3>
-                  {/* Place Image Here */}
+                <div className="divide-y divide-gray-200">
+                  {['The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D', 'The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D', 'The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D', 'The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D', 'The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D', 'The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D', 'The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D', 'The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D', 'The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D'].map((city) => (
+                    <div className="p-4 bg-[#EEFFFB] hover:bg-blue-200 cursor-pointer">
+                      {city}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
