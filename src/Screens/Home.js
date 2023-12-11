@@ -22,6 +22,7 @@ import { Link } from 'react-router-dom';
 import parse, { domToReact } from 'html-react-parser';
 import { FaGlobeAmericas, FaAward, FaBuilding, FaUniversity, FaUsers, FaBook, FaChalkboardTeacher, FaHandshake } from 'react-icons/fa';
 
+
 const Home = () => {
 
   const [data, setData] = useState([]);
@@ -86,11 +87,10 @@ const Home = () => {
 
 
 
-          <section>
+          {/* <section>
             <Bottomnavbar />
+          </section> */}
 
-
-          </section>
 
 
           {/* Section-2 */}

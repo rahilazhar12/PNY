@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect , useRef } from 'react';
 import Searchbar from '../Components/Searchbar';
 import Footer from '../Components/Footer';
 import instructor from '../Categories/data/Instructor';
 import feature from '../Categories/data/Feature';
-import Modal from './Modal';
+// import Modal from './Modal';
 import Modalb from './Modalb';
 import { useParams } from 'react-router-dom';
 import { Blocks } from 'react-loader-spinner'
@@ -11,9 +11,23 @@ import { Link } from 'react-router-dom';
 import parse, { domToReact } from 'html-react-parser';
 import { FaBookOpen, FaChalkboardTeacher, FaBriefcase, FaUserGraduate, FaUsers, FaVideo } from 'react-icons/fa';
 import { IconContext } from "react-icons";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 
 
-
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 
 let modulesData = [
   {
@@ -77,7 +91,7 @@ const Coursedetail = () => {
   const handleModuleClick = (moduleIndex) => {
     setActiveModule(moduleIndex);
   };
-  const [modalOpen, setModalOpen] = useState(false);
+  // const [modalOpen, setModalOpen] = useState(false);
   const [modalOpenb, setModalOpenb] = useState(false);
   const [activeModule, setActiveModule] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
@@ -85,6 +99,28 @@ const Coursedetail = () => {
   const [instructor, setInstructor] = useState(null);
   const [error, setError] = useState(null);
   const [moduledata, setModuledata] = useState([])
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const [isModalOpen, setModalOpen] = useState(false);
+  const brochureLinkRef = useRef(null);
+
+  const handleDownloadClick = () => {
+      setModalOpen(true);
+  };
+
+  const handleSubmit = (e) => {
+      e.preventDefault();
+      // Here, you can handle the form data, e.g., send it to a server
+      // ...
+
+      // Close the modal
+      setModalOpen(false);
+
+      // Trigger brochure download
+      brochureLinkRef.current.click();
+  };
 
 
   const { courseSlug } = useParams();
@@ -199,8 +235,42 @@ const Coursedetail = () => {
                   <span>Multan</span>
                 </div>
                 <div className="flex flex-wrap gap-4 max-sm:justify-center">
-                  <Link to={courseData.brochure} target="_blank">
-                    <button className="bg-[#152438] border border-white  text-white font-bold py-2 px-4 rounded">Download Course Brochure</button></Link>
+                <div>
+            <button className="bg-[#152438] border border-white text-white font-bold py-2 px-4 rounded" onClick={handleOpen}>
+                Download Course Brochure
+            </button>
+
+            {isModalOpen && (
+                // <div className="modal">
+                //     <form onSubmit={handleSubmit}>
+                //         <input className='border border-black' type="text" placeholder="Name" required />
+                //         <input className='border border-black' type="email" placeholder="Email" required />
+                //         <input className='border border-black' type="tel" placeholder="Contact" required />
+                //         <button type="submit" className="submit-button">Submit</button>
+                //     </form>
+                // </div>
+
+                <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+              >
+                <Box sx={style}>
+                  <Typography id="modal-modal-title" variant="h6" component="h2">
+                    Text in a modal
+                  </Typography>
+                  <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                    Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                  </Typography>
+                </Box>
+              </Modal>
+            )}
+
+            <a href={courseData.brochure} target="_blank" ref={brochureLinkRef} style={{ display: 'none' }}>
+                Download Brochure Link
+            </a>
+        </div>
                   <button className="bg-[#308AFF] text-white font-bold py-2 px-4 rounded">Free Orientation Class</button>
                   <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Pay Now</button>
                 </div>

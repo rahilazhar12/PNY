@@ -128,7 +128,7 @@ const Footer = () => {
 
             <section className=' grid lg:grid-cols-7 p-3 mb-10 '>
                 <div className=' lg:col-span-6 max-sm:text-center'>Copyright © 2023 - All right reserved by PNY Trainings</div>
-                <div className=' mr-20 cursor-pointer flex space-x-4'>
+                <div className=' mr-20 cursor-pointer flex space-x-4 max-sm:mx-auto'>
 
 
                     <div className=' cursor-pointer'> <Link to="https://twitter.com/PnyTrainings" className=' cursor-pointer' target='_blank'>

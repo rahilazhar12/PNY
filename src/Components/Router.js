@@ -25,7 +25,7 @@ import Termsandconditions from '../Screens/Termsandconditions'
 import Privacypolicy from '../Screens/Privacypolicy'
 import Citywisedata from '../Screens/Citywisedata'
 import Specialpage from '../Screens/Specialpage'
-import Carousal from './Carousal'
+import WhatsAppIcon from './Whatsappicon'
 
 
 
@@ -33,6 +33,7 @@ const Router = () => {
     return (
         <>
             <Navbar />
+            <WhatsAppIcon/>
 
             <Routes>
                 <Route path='/' element={<Home />} />

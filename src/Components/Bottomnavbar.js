@@ -7,7 +7,7 @@ import ReactWhatsapp from 'react-whatsapp';
 
 const Bottomnavbar = () => {
   return (
-    <nav className=' fixed bottom-2 w-full overflow-hidden z-50'>
+    <nav className=' fixed bottom-2 w-full overflow-hidden z-50 max-sm:-mb-3'>
     <div className=' container mx-auto px-6'>
       
       <div className='w-full bg-black/20 h-[52px]  backdrop-blur-2xl rounded-full max-w-[460px] mx-auto 

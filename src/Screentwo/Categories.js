@@ -98,7 +98,9 @@ const Categories = () => {
     
                 <div key={index} className="p-4 lg:w-1/4 md:w-1/2 w-full">
                   <div className="p-4 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
-                   <Link to={`/coursedetails/${item.url_slug}`}> <img  src={item.course_image} alt="Image 1" className="h-40  cursor-pointer w-full object-cover rounded-xl mb-2" /></Link>
+                   <Link to={`/coursedetails/${item.url_slug}`}>
+                     <img  src={item.course_image} alt="Image 1" className="  cursor-pointer w-full object-cover rounded-xl mb-2" />
+                     </Link>
                     <div className="flex justify-between w-50 mb-4">
                       <div className="flex">
                         <i className="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
