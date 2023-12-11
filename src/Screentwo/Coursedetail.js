@@ -1,4 +1,4 @@
-import React, { useState, useEffect , useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Searchbar from '../Components/Searchbar';
 import Footer from '../Components/Footer';
 import instructor from '../Categories/data/Instructor';
@@ -88,9 +88,7 @@ let modulesData = [
 
 
 const Coursedetail = () => {
-  const handleModuleClick = (moduleIndex) => {
-    setActiveModule(moduleIndex);
-  };
+
   // const [modalOpen, setModalOpen] = useState(false);
   const [modalOpenb, setModalOpenb] = useState(false);
   const [activeModule, setActiveModule] = useState(0);
@@ -100,6 +98,8 @@ const Coursedetail = () => {
   const [error, setError] = useState(null);
   const [moduledata, setModuledata] = useState([])
   const [open, setOpen] = React.useState(false);
+  const [selectedModuleId, setSelectedModuleId] = useState(null);
+  const [modules, setModules] = useState([]);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -107,19 +107,19 @@ const Coursedetail = () => {
   const brochureLinkRef = useRef(null);
 
   const handleDownloadClick = () => {
-      setModalOpen(true);
+    setModalOpen(true);
   };
 
   const handleSubmit = (e) => {
-      e.preventDefault();
-      // Here, you can handle the form data, e.g., send it to a server
-      // ...
+    e.preventDefault();
+    // Here, you can handle the form data, e.g., send it to a server
+    // ...
 
-      // Close the modal
-      setModalOpen(false);
+    // Close the modal
+    setModalOpen(false);
 
-      // Trigger brochure download
-      brochureLinkRef.current.click();
+    // Trigger brochure download
+    brochureLinkRef.current.click();
   };
 
 
@@ -151,6 +151,28 @@ const Coursedetail = () => {
     fetchCourseData();
     window.scrollTo(0, 0);
   }, [courseSlug]);
+
+
+
+  useEffect(() => {
+    // Only fetch the data if courseData is not null
+    if (courseData) {
+      const fetchData = async () => {
+        const response = await fetch(`https://www.pnytrainings.com/api/course/modules/${courseData.id}`);
+        const data = await response.json();
+        setModules(data.course_modules);
+      };
+
+      fetchData();
+    }
+  }, [courseData]); // Depend on courseData
+
+  const handleModuleClick = (moduleId) => {
+    setSelectedModuleId(moduleId);
+  };
+
+
+
 
   if (isLoading) {
     return (
@@ -235,42 +257,42 @@ const Coursedetail = () => {
                   <span>Multan</span>
                 </div>
                 <div className="flex flex-wrap gap-4 max-sm:justify-center">
-                <div>
-            <button className="bg-[#152438] border border-white text-white font-bold py-2 px-4 rounded" onClick={handleOpen}>
-                Download Course Brochure
-            </button>
+                  <div>
+                    <button className="bg-[#152438] border border-white text-white font-bold py-2 px-4 rounded" onClick={handleOpen}>
+                      Download Course Brochure
+                    </button>
 
-            {isModalOpen && (
-                // <div className="modal">
-                //     <form onSubmit={handleSubmit}>
-                //         <input className='border border-black' type="text" placeholder="Name" required />
-                //         <input className='border border-black' type="email" placeholder="Email" required />
-                //         <input className='border border-black' type="tel" placeholder="Contact" required />
-                //         <button type="submit" className="submit-button">Submit</button>
-                //     </form>
-                // </div>
+                    {isModalOpen && (
+                      // <div className="modal">
+                      //     <form onSubmit={handleSubmit}>
+                      //         <input className='border border-black' type="text" placeholder="Name" required />
+                      //         <input className='border border-black' type="email" placeholder="Email" required />
+                      //         <input className='border border-black' type="tel" placeholder="Contact" required />
+                      //         <button type="submit" className="submit-button">Submit</button>
+                      //     </form>
+                      // </div>
 
-                <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-              >
-                <Box sx={style}>
-                  <Typography id="modal-modal-title" variant="h6" component="h2">
-                    Text in a modal
-                  </Typography>
-                  <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                    Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                  </Typography>
-                </Box>
-              </Modal>
-            )}
+                      <Modal
+                        open={open}
+                        onClose={handleClose}
+                        aria-labelledby="modal-modal-title"
+                        aria-describedby="modal-modal-description"
+                      >
+                        <Box sx={style}>
+                          <Typography id="modal-modal-title" variant="h6" component="h2">
+                            Text in a modal
+                          </Typography>
+                          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                          </Typography>
+                        </Box>
+                      </Modal>
+                    )}
 
-            <a href={courseData.brochure} target="_blank" ref={brochureLinkRef} style={{ display: 'none' }}>
-                Download Brochure Link
-            </a>
-        </div>
+                    <a href={courseData.brochure} target="_blank" ref={brochureLinkRef} style={{ display: 'none' }}>
+                      Download Brochure Link
+                    </a>
+                  </div>
                   <button className="bg-[#308AFF] text-white font-bold py-2 px-4 rounded">Free Orientation Class</button>
                   <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Pay Now</button>
                 </div>
@@ -303,12 +325,12 @@ const Coursedetail = () => {
 
             {/* Module List */}
             <div className='border md:w-[172px] w-full'>
-              {modulesData.map((module, index) => (
+              {modules.map((module, index) => (
                 <div
-                  key={index}
-                  className={`h-[auto] md:h-[113px] flex border border-black/25 shadow-lg justify-center items-center ${activeModule === index ? 'bg-blue-500 text-white' : ''
+                  key={module.id}
+                  className={`h-[auto] md:h-[113px] flex border border-black/25 shadow-lg justify-center items-center ${selectedModuleId === module.id ? 'bg-blue-500 text-white' : 'bg-white'
                     }`}
-                  onClick={() => handleModuleClick(index)}
+                  onClick={() => handleModuleClick(module.id)}
                 >
                   {module.title} <span className='ml-3'><i className="fa-solid fa-arrow-right"></i></span>
                 </div>
@@ -317,19 +339,28 @@ const Coursedetail = () => {
 
             {/* Module Details */}
             <div className='col-span-3 md:col-span-2'>
-              <div className='p-5 text-sm md:text-base lg:text-lg xl:text-xl text-[#308AFF]'>
-                {module.title}
-              </div>
+             
               <div className='text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-black mb-5 max-sm:mb-0 max-sm:text-center'>
                 Key Features of this course
               </div>
-              <ul className='list-disc space-y-2 md:space-y-4 lg:space-y-5 xl:space-y-6 max-sm:list-non max-sm:p-8'>
-                {module.keyFeatures.map((feature, index) => (
-                  <li key={index}>{feature}</li>
-                ))}
-              </ul>
+              <div className='space-y-2 md:space-y-4 lg:space-y-5 xl:space-y-6 max-sm:list-none max-sm:p-8'>
+                {modules
+                  .filter((module) => module.id === selectedModuleId)
+                  .map((module) => (
+                    parse(module.key_features , {
+                      replace : domNode => {
+                        if (domNode.type === 'tag') {
+                          if (domNode.name === 'ul') {
+                            const props = { className: 'list-disc p-4 flex flex-col space-y-3' };
+                            return <p {...props}>{domToReact(domNode.children)}</p>;
+                        }
+                        
+                        }
+                      }
+                    })
+                  ))}
+              </div>
             </div>
-
           </div>
         </section>
 

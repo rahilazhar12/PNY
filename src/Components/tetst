@@ -1,0 +1,61 @@
+import React, { useState, useEffect } from 'react';
+
+const App = () => {
+  const [modules, setModules] = useState([]);
+  const [selectedModuleId, setSelectedModuleId] = useState(null);
+
+  useEffect(() => {
+    // Fetch the data from the API
+    const fetchData = async () => {
+      const response = await fetch('https://www.pnytrainings.com/api/course/modules/14');
+      const data = await response.json();
+      setModules(data.course_modules);
+    };
+
+    fetchData();
+  }, []);
+
+  const handleModuleClick = (moduleId) => {
+    setSelectedModuleId(moduleId);
+  };
+
+  const renderKeyFeatures = (keyFeaturesHtml) => {
+    // This function safely sets inner HTML content
+    return { __html: keyFeaturesHtml };
+  };
+
+  return (
+    <div className="container mx-auto">
+      <div className="flex">
+        <div className="w-1/4">
+          {/* List of modules */}
+          {modules.map((module) => (
+            <button
+              key={module.id}
+              className={`block p-4 text-left w-full ${
+                selectedModuleId === module.id ? 'bg-blue-500 text-white' : 'bg-gray-100'
+              } hover:bg-blue-400`}
+              onClick={() => handleModuleClick(module.id)}
+            >
+              {module.title}
+            </button>
+          ))}
+        </div>
+        <div className="w-3/4 p-4">
+          {/* Key Features of the selected module */}
+          {modules
+            .filter((module) => module.id === selectedModuleId)
+            .map((module) => (
+              <div
+                key={module.id}
+                className="key-features"
+                dangerouslySetInnerHTML={renderKeyFeatures(module.key_features)}
+              />
+            ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default App;
