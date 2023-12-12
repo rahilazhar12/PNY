@@ -21,14 +21,60 @@ import Testimonial from '../Components/Testimonial'
 import { Link } from 'react-router-dom';
 import parse, { domToReact } from 'html-react-parser';
 import { FaGlobeAmericas, FaAward, FaBuilding, FaUniversity, FaUsers, FaBook, FaChalkboardTeacher, FaHandshake } from 'react-icons/fa';
+// import Modal from 'react-modal'; // Import react-modal
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import TextField from '@mui/material/TextField';
 
-
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 500,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 const Home = () => {
+
 
   const [data, setData] = useState([]);
   const [home, setHome] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+
+  const id_address = "127.0.0.1";
+  const subscription_date = "2023-12-12 15:19:09";
+
+  const handleClose = () => setOpen(false);
 
   useEffect(() => {
+    // Check if the user has already seen the modal
+    const hasSeenModal = localStorage.getItem('hasSeenModal');
+
+    if (!hasSeenModal) {
+      setOpen(true);
+      localStorage.setItem('hasSeenModal', 'true');
+    } else {
+      setOpen(false);
+    }
+
+    // Clear the flag after 5 minutes
+    // setTimeout(() => {
+    //   localStorage.removeItem('hasSeenModal');
+    // }, 5 * 60 * 1000); // 5 minutes in milliseconds
+
+    // Add an event listener to clear local storage on page refresh
+    window.addEventListener('beforeunload', () => {
+      localStorage.removeItem('hasSeenModal');
+    });
+
     // Fetch data from the provided URL
     fetch('https://www.pnytrainings.com/api/get-courses')
       .then((response) => response.json())
@@ -38,7 +84,39 @@ const Home = () => {
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
+
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('beforeunload', () => {
+        localStorage.removeItem('hasSeenModal');
+      });
+    };
   }, []);
+
+
+  const Newsletterhandler = async (e) => {
+    e.preventDefault()
+
+    try {
+      let response = await fetch('https://www.pnytrainings.com/api/newsletter', {
+        method: 'POST',
+        body: JSON.stringify({ name, phone, email, id_address, subscription_date }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
+      let data = await response.json();
+      console.log(data.message)
+      alert('Submitted successfully!');
+    } catch (error) {
+      console.error('There was a problem with the fetch operation:', error);
+      alert('Failed to submit. Please try again.');
+    }
+  }
+
+
+
 
   useEffect(() => {
     // Fetch data from the provided URL
@@ -91,6 +169,51 @@ const Home = () => {
             <Bottomnavbar />
           </section> */}
 
+
+          <section>
+            {/* <Button onClick={handleOpen}>Open modal</Button> */}
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+              className=' max-sm:hidden'
+            >
+              <Box sx={style}>
+                <Typography id="modal-modal-title" variant="h6" component="h2">
+                  <div className='p-2 text-center bg-gray-800 text-white'>
+                    Subscribe PNY Trainings Official Newsletters
+                  </div>
+                </Typography>
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                  <div className=' flex'>
+
+                    <div>
+                      <div className=' font-semibold'>Refer a Friends & you will both receive 10% off on all course at PNY Trainings.</div>
+                      <form onSubmit={Newsletterhandler}>
+                        <div className=' flex flex-col p-3 space-y-3'>
+                          <input type="text" placeholder='Name' className='border border-gray-600 p-1 '
+                            onChange={(e) => setName(e.target.value)} value={name} />
+                          <input type="text" placeholder='Contact' className='border border-gray-600  p-1 '
+                            onChange={(e) => setPhone(e.target.value)} value={phone} />
+                          <input type="text" placeholder='Email' className='border border-gray-600  p-1 '
+                            onChange={(e) => setEmail(e.target.value)} value={email} />
+                          <button type='submit' className=' bg-blue-500 rounded py-1 px-3 text-white mt-5'>Subscribe</button>
+                        </div>
+                      </form>
+
+                    </div>
+
+
+                    <div className=' flex flex-col justify-center items-center'>
+                      <img src="https://clipart-library.com/data_images/405054.png" alt="" />
+                    </div>
+                  </div>
+                </Typography>
+              </Box>
+            </Modal>
+
+          </section>
 
 
           {/* Section-2 */}
@@ -475,7 +598,7 @@ const Home = () => {
           </section>
 
         </main>
-      </Flowbite>
+      </Flowbite >
     </>
   )
 }
