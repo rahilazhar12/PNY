@@ -21,12 +21,7 @@ import Testimonial from '../Components/Testimonial'
 import { Link } from 'react-router-dom';
 import parse, { domToReact } from 'html-react-parser';
 import { FaGlobeAmericas, FaAward, FaBuilding, FaUniversity, FaUsers, FaBook, FaChalkboardTeacher, FaHandshake } from 'react-icons/fa';
-// import Modal from 'react-modal'; // Import react-modal
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
-import TextField from '@mui/material/TextField';
+import off from '../Assets/image/10off.jpg'
 
 const style = {
   position: 'absolute',
@@ -37,7 +32,7 @@ const style = {
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
-  p: 4,
+
 };
 const Home = () => {
 
@@ -48,6 +43,7 @@ const Home = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const id_address = "127.0.0.1";
   const subscription_date = "2023-12-12 15:19:09";
@@ -94,26 +90,40 @@ const Home = () => {
   }, []);
 
 
-  const Newsletterhandler = async (e) => {
-    e.preventDefault()
-
+  const Newsletterhandler = async () => {
     try {
-      let response = await fetch('https://www.pnytrainings.com/api/newsletter', {
+      // const data = {
+      //   name: "Arsalan Yaqoob",
+      //   phone: "00923000000000",
+      //   email: "presbyterian.arsalankh@gmail.com",
+      //   id_address: "127.0.0.1"
+      // };
+
+      const response = await fetch('https://www.pnytrainings.com/api/newsletter', {
         method: 'POST',
-        body: JSON.stringify({ name, phone, email, id_address, subscription_date }),
         headers: {
           'Content-Type': 'application/json'
-        }
+        },
+        body: JSON.stringify({ name, phone, email, id_address, subscription_date }),
       });
 
-      let data = await response.json();
-      console.log(data.message)
-      alert('Submitted successfully!');
+      if (response.ok) {
+        const responseData = await response.json();
+        console.log(responseData);
+        alert('Submitted successfully!');
+      } else {
+        console.error('Failed to submit. Status code:', response.status);
+        alert('Failed to submit. Please try again.');
+      }
     } catch (error) {
       console.error('There was a problem with the fetch operation:', error);
       alert('Failed to submit. Please try again.');
     }
-  }
+  };
+
+  // You can call the function like this
+  // Newsletterhandler();
+
 
 
 
@@ -155,6 +165,51 @@ const Home = () => {
   }) : null
 
 
+  const Modal = ({ isOpen, onClose }) => {
+    if (!isOpen) return null;
+
+    return (
+      <div className="fixed inset-0 z-50 bg-gray-600 bg-opacity-50 overflow-y-auto  w-full" id="my-modal">
+        <div className="relative top-32 mx-auto  border w-[500px] h-[342px] shadow-lg  bg-white">
+          <div className="text-center">
+            <div className=' bg-blue-500  bg-gradient-to-t from-[#0b356b] to-[#2b7feb] p-3 text-white'>Subscribe PNY Trainings Official Newsletters</div>
+
+            <div className='flex'>
+              <div className=' w-1/2 py-3'>
+                <div>
+                  <div className=' font-semibold px-3'>Refer a Friends & you will both receive 10% off on all course at PNY Trainings.</div>
+                  <form onSubmit={''}>
+                    <div className=' flex flex-col p-3 space-y-3'>
+                      <input type="text" placeholder='Name' className='p-1 bg-[#f5f5f5] shadow-md rounded border-none  outline-none'
+                      />
+                      <input type="text" placeholder='Contact' className='p-1 bg-[#f5f5f5] shadow-md rounded border-none  outline-none'
+                      />
+                      <input type="text" placeholder='Email' className='p-1 bg-[#f5f5f5] shadow-md rounded border-none  outline-none'
+                      />
+                      <button type='submit' className=' bg-[#308aff] rounded py-1 px-3 text-white mt-5'>Subscribe</button>
+                    </div>
+                  </form>
+
+                </div>
+
+              </div>
+              <div className=' w-1/2 p-3'>
+                <img src={off} alt="" />
+              </div>
+            </div>
+
+            <div className="items-center px-4 py-3">
+              <button onClick={handleClose} className="px-4 py-2 bg-white text-blue-500 rounded-md focus:outline-none">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+
 
   return (
     <>
@@ -170,50 +225,15 @@ const Home = () => {
           </section> */}
 
 
-          <section>
-            {/* <Button onClick={handleOpen}>Open modal</Button> */}
-            <Modal
-              open={open}
-              onClose={handleClose}
-              aria-labelledby="modal-modal-title"
-              aria-describedby="modal-modal-description"
-              className=' max-sm:hidden'
-            >
-              <Box sx={style}>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                  <div className='p-2 text-center bg-gray-800 text-white'>
-                    Subscribe PNY Trainings Official Newsletters
-                  </div>
-                </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  <div className=' flex'>
+          <div className="App">
+            {/* Trigger button */}
+            {/* <button onClick={() => setIsModalOpen(true)} className="px-4 py-2 bg-blue-500 text-white rounded-md">
+              Open Modal
+            </button> */}
 
-                    <div>
-                      <div className=' font-semibold'>Refer a Friends & you will both receive 10% off on all course at PNY Trainings.</div>
-                      <form onSubmit={Newsletterhandler}>
-                        <div className=' flex flex-col p-3 space-y-3'>
-                          <input type="text" placeholder='Name' className='border border-gray-600 p-1 '
-                            onChange={(e) => setName(e.target.value)} value={name} />
-                          <input type="text" placeholder='Contact' className='border border-gray-600  p-1 '
-                            onChange={(e) => setPhone(e.target.value)} value={phone} />
-                          <input type="text" placeholder='Email' className='border border-gray-600  p-1 '
-                            onChange={(e) => setEmail(e.target.value)} value={email} />
-                          <button type='submit' className=' bg-blue-500 rounded py-1 px-3 text-white mt-5'>Subscribe</button>
-                        </div>
-                      </form>
-
-                    </div>
-
-
-                    <div className=' flex flex-col justify-center items-center'>
-                      <img src="https://clipart-library.com/data_images/405054.png" alt="" />
-                    </div>
-                  </div>
-                </Typography>
-              </Box>
-            </Modal>
-
-          </section>
+            {/* Modal */}
+            <Modal isOpen={open} onClose={() => setIsModalOpen(false)} />
+          </div>
 
 
           {/* Section-2 */}

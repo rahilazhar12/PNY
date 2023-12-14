@@ -216,7 +216,7 @@ const Trainings = () => {
 
 
             <span>
-              <div className="mb-3 mt-2 w-[500px]">
+              <div className="mb-3 mt-2 w-[500px] max-sm:w-auto">
                 <div className="relative mb-4 flex w-full flex-wrap items-stretch">
                   <input
                     type="search"
@@ -242,7 +242,7 @@ const Trainings = () => {
       </header>
 
 
-      <div class=" container relative overflow-x-auto px-5  ml-5 mt-5">
+      <div class=" container relative overflow-x-auto px-5 max-sm:ml-0 ml-5 mt-5">
         <table className="min-w-full">
           <thead>
             <tr>
