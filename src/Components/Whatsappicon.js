@@ -25,7 +25,7 @@ const WhatsAppIcon = () => {
     return (
         <div
             onClick={navigateToWhatsApp}
-            className="fixed bottom-0 right-0 m-4 cursor-pointer z-50" style={{ backgroundColor }} 
+            className="fixed bottom-0 right-0 m-4 cursor-pointer z-50"
         >
             < IoLogoWhatsapp size={60} color={iconColor} />
         </div>
