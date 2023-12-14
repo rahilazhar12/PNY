@@ -53,24 +53,16 @@ const Home = () => {
   useEffect(() => {
     // Check if the user has already seen the modal
     const hasSeenModal = localStorage.getItem('hasSeenModal');
-
+  
     if (!hasSeenModal) {
+      // If not, show the modal and set the flag in localStorage
       setOpen(true);
       localStorage.setItem('hasSeenModal', 'true');
     } else {
+      // If they have, don't show the modal
       setOpen(false);
     }
-
-    // Clear the flag after 5 minutes
-    // setTimeout(() => {
-    //   localStorage.removeItem('hasSeenModal');
-    // }, 5 * 60 * 1000); // 5 minutes in milliseconds
-
-    // Add an event listener to clear local storage on page refresh
-    window.addEventListener('beforeunload', () => {
-      localStorage.removeItem('hasSeenModal');
-    });
-
+  
     // Fetch data from the provided URL
     fetch('https://www.pnytrainings.com/api/get-courses')
       .then((response) => response.json())
@@ -80,14 +72,21 @@ const Home = () => {
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
-
+  
+    // Function to clear localStorage on page unload
+    const handleBeforeUnload = () => {
+      localStorage.removeItem('hasSeenModal');
+    };
+  
+    // Add an event listener to clear local storage on page refresh
+    window.addEventListener('beforeunload', handleBeforeUnload);
+  
     // Cleanup the event listener when the component unmounts
     return () => {
-      window.removeEventListener('beforeunload', () => {
-        localStorage.removeItem('hasSeenModal');
-      });
+      window.removeEventListener('beforeunload', handleBeforeUnload);
     };
   }, []);
+  
 
 
   const Newsletterhandler = async () => {
