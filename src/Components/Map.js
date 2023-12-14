@@ -22,7 +22,7 @@ const Map = () => {
 
 
 
-                <div className=' max-sm:p-2'>
+                <div className=' max-sm:p-2 '>
                     <img src={map} alt="" />
                 </div>
             </div>

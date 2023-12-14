@@ -169,13 +169,13 @@ const Home = () => {
     if (!isOpen) return null;
 
     return (
-      <div className="fixed inset-0 z-50 bg-gray-600 bg-opacity-50 overflow-y-auto  w-full" id="my-modal">
-        <div className="relative top-32 mx-auto  border w-[500px] h-[342px] shadow-lg  bg-white">
+      <div className="fixed inset-0 z-50 bg-gray-600 bg-opacity-50 overflow-y-auto max-sm:p-3  w-full" id="my-modal">
+        <div className="relative top-32 mx-auto  border max-sm:w-auto max-sm:h-auto w-[500px] h-[342px] shadow-lg  bg-white">
           <div className="text-center">
             <div className=' bg-blue-500  bg-gradient-to-t from-[#0b356b] to-[#2b7feb] p-3 text-white'>Subscribe PNY Trainings Official Newsletters</div>
 
-            <div className='flex'>
-              <div className=' w-1/2 py-3'>
+            <div className='flex max-sm:flex-col'>
+              <div className=' w-1/2 py-3 max-sm:w-auto max-sm:order-1'>
                 <div>
                   <div className=' font-semibold px-3'>Refer a Friends & you will both receive 10% off on all course at PNY Trainings.</div>
                   <form onSubmit={''}>
@@ -193,7 +193,7 @@ const Home = () => {
                 </div>
 
               </div>
-              <div className=' w-1/2 p-3'>
+              <div className=' w-1/2 p-3 justify-center flex max-sm:w-auto'>
                 <img src={off} alt="" />
               </div>
             </div>
