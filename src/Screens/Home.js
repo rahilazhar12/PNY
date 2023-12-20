@@ -45,8 +45,9 @@ const Home = () => {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [id_address, setId_address] = useState('');
 
-  const id_address = "127.0.0.1";
+  // const id_address = "127.0.0.1";
   const subscription_date = "2023-12-12 15:19:09";
 
   const handleClose = () => setOpen(false);
@@ -172,10 +173,18 @@ const Home = () => {
   };
 
 
+  useEffect(() => {
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => setId_address(data.ip))
+      .catch(error => console.error('Error fetching IP address:', error));
+  }, []);
+
+
 
 
   function SubmitData() {
-   
+
 
     var name = document.getElementById('name').value;
     var phone = document.getElementById('phone').value;
@@ -189,7 +198,7 @@ const Home = () => {
     formData.append('name', name);
     formData.append('phone', phone);
     formData.append('email', email);
-    formData.append('id_address', "127.0.0.1");
+    formData.append('id_address', id_address);
     // formData.append('comment', comment);
 
     // Use fetch to send the request
@@ -200,9 +209,10 @@ const Home = () => {
       .then(response => response.json())
       .then(data => {
         console.log('Success:', data);
-        toast.success(data.message , {
+        toast.success(data.message, {
           duration: 5000
         })
+        setOpen(false)
       })
       .catch((error) => {
         console.error('Error:', error);
