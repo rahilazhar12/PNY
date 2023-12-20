@@ -22,6 +22,7 @@ import { Link } from 'react-router-dom';
 import parse, { domToReact } from 'html-react-parser';
 import { FaGlobeAmericas, FaAward, FaBuilding, FaUniversity, FaUsers, FaBook, FaChalkboardTeacher, FaHandshake } from 'react-icons/fa';
 import off from '../Assets/image/10off.jpg'
+import toast, { Toaster } from 'react-hot-toast';
 
 const style = {
   position: 'absolute',
@@ -86,44 +87,6 @@ const Home = () => {
       window.removeEventListener('beforeunload', handleBeforeUnload);
     };
   }, []);
-
-
-
-  const Newsletterhandler = async () => {
-    try {
-      // const data = {
-      //   name: "Arsalan Yaqoob",
-      //   phone: "00923000000000",
-      //   email: "presbyterian.arsalankh@gmail.com",
-      //   id_address: "127.0.0.1"
-      // };
-
-      const response = await fetch('https://www.pnytrainings.com/api/newsletter', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ name, phone, email, id_address, subscription_date }),
-      });
-
-      if (response.ok) {
-        const responseData = await response.json();
-        console.log(responseData);
-        alert('Submitted successfully!');
-      } else {
-        console.error('Failed to submit. Status code:', response.status);
-        alert('Failed to submit. Please try again.');
-      }
-    } catch (error) {
-      console.error('There was a problem with the fetch operation:', error);
-      alert('Failed to submit. Please try again.');
-    }
-  };
-
-  // You can call the function like this
-  // Newsletterhandler();
-
-
 
 
 
@@ -237,6 +200,9 @@ const Home = () => {
       .then(response => response.json())
       .then(data => {
         console.log('Success:', data);
+        toast.success(data.message , {
+          duration: 5000
+        })
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -622,6 +588,7 @@ const Home = () => {
           </section>
 
         </main>
+        <Toaster />
       </Flowbite >
     </>
   )
