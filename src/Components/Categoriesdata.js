@@ -34,7 +34,7 @@ const Categoriesdata = () => {
                                 <>
                                     <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
                                         {/* Main Category Link */}
-                                        <Link to={`/${item.url_slug}`} class="w-full text-left flex items-center outline-none focus:outline-none">
+                                        <Link to={`/courses/${item.url_slug}`} class="w-full text-left flex items-center outline-none focus:outline-none">
                                             <span class="pr-1 flex-1">{item.name}</span>
                                             {/* <span class="mr-auto">
                                                 <svg class="fill-current h-4 w-4 transition duration-150 ease-in-out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">

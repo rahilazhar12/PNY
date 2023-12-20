@@ -9,6 +9,44 @@ import { Link } from 'react-router-dom'
 const Contactus = () => {
 
 
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
+    const [comment, setComment] = useState('');
+
+
+
+
+
+    function SubmitData(e) {
+        e.preventDefault()
+            // Create a new FormData object
+            var formData = new FormData();
+
+            // Append the data to the FormData object
+            formData.append('name', name);
+            formData.append('phone', phone);
+            formData.append('email', email);
+            formData.append('id_address', "127.0.0.1");
+            // formData.append('comment', comment);
+
+            // Use fetch to send the request
+            fetch('https://www.pnytrainings.com/api/newsletter', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+
+
+
+
     return (
         <>
             <section>
@@ -34,19 +72,22 @@ const Contactus = () => {
                             <form action="#" className="space-y-8">
                                 <div>
                                     <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Name</label>
-                                    <input type="email" id="email" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Your name" required />
+                                    <input type="text" id="email" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Your name" required  onChange={(e)=>setName(e.target.value)}  value={name}/>
                                 </div>
                                 <div>
                                     <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
-                                    <input type="text" id="subject" className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="you@company.com" required />
+                                    <input type="text" id="subject" className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="you@company.com" required 
+                                    onChange={(e)=>setEmail(e.target.value)}  value={email}/>
                                 </div>
                                 <div>
                                     <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Phone number</label>
-                                    <input type="text" id="subject" className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="+92 (303) 4243782" required />
+                                    <input type="text" id="subject" className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="+92 (303) 4243782" required 
+                                    onChange={(e)=>setPhone(e.target.value)}  value={phone}/>
                                 </div>
                                 <div className="sm:col-span-2">
                                     <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">How can we help?</label>
-                                    <textarea id="message" rows={6} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Tell us a little about the project..." defaultValue={""} />
+                                    <textarea id="message" rows={6} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Tell us a little about the project..." defaultValue={""} 
+                                     onChange={(e)=>setComment(e.target.value)}  value={comment}/>
                                 </div>
                                 <div></div>
                             </form>
@@ -59,7 +100,7 @@ const Contactus = () => {
                                 <div className='mb-3'><input type="checkbox" class="checkbox checkbox-sm" /> Amazon Courses</div>
                                 <div className='mb-3'><input type="checkbox" class="checkbox checkbox-sm" /> Other</div>
                             </div> */}
-                            <div className='flex justify-center mt-5'><button className='bg-blue-500 w-full py-[12px] px-[20px] rounded-lg text-white'>Submit</button></div>
+                            <div className='flex justify-center mt-5'><button className='bg-blue-500 w-full py-[12px] px-[20px] rounded-lg text-white' onClick={SubmitData}>Submit</button></div>
                         </div>
 
 
@@ -90,7 +131,7 @@ const Contactus = () => {
                                                     Visit Us
                                                 </Link>
                                             </div>
-                                            <div><span className='text-[#308AFF] mr-4'>{item.phone1? 'Phone' : null}</span>{item.phone1}</div>
+                                            <div><span className='text-[#308AFF] mr-4'>{item.phone1 ? 'Phone' : null}</span>{item.phone1}</div>
 
                                         </div>
                                     </div>

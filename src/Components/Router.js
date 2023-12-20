@@ -33,7 +33,7 @@ const Router = () => {
     return (
         <>
             <Navbar />
-            <WhatsAppIcon/>
+            <WhatsAppIcon />
 
             <Routes>
                 <Route path='/' element={<Home />} />
@@ -44,8 +44,14 @@ const Router = () => {
                 <Route path='/contactus' element={<Contactus />} />
                 <Route path='/trainingschedule' element={<Trainingschedule />} />
                 <Route path='/Feestruchure' element={<Feestruchure />} />
-                <Route path='/:slug' element={<Categories />} />
-                <Route path='/coursedetails/:courseSlug' element={<Coursedetails />} />
+                <Route path='/courses/:slug' element={<Categories />} />
+
+
+               
+                    <Route path='/:courseSlug' element={<Coursedetails />} />
+                
+
+
                 <Route path='/allcourses' element={<Allcourses />} />
                 <Route path='/Carrer' element={<Design />} />
                 <Route path='/gallery' element={<Gallery />} />
@@ -55,10 +61,10 @@ const Router = () => {
                 <Route path='/google-scholarship-certification-in-lahore-pakistan' element={<Googlecertification />} />
                 <Route path='/flyers' element={<Flyers />} />
                 <Route path='/modalflyer' element={<Flyermodal />} />
-                <Route path='/terms-conditions' element={<Termsandconditions/>} />
-                <Route path='/privacy-policy' element={<Privacypolicy/>} />
-                <Route path='/citywisedata/:name' element={<Citywisedata/>} />
-                <Route path='/specialpage/:url' element={<Specialpage/>} />
+                <Route path='/terms-conditions' element={<Termsandconditions />} />
+                <Route path='/privacy-policy' element={<Privacypolicy />} />
+                <Route path='/citywisedata/:name' element={<Citywisedata />} />
+                <Route path='/specialpage/:url' element={<Specialpage />} />
                 {/* <Route path='/allcourses' element={<Allcourses/>} /> */}
                 {/* <Route path='/c' element={<Carousal/>} /> */}
 

@@ -13,88 +13,89 @@ import g2 from '../Assets/image/g2.png'
 
 const Carousal = () => {
 
-  const [data , setData] = useState([])
+  const [data, setData] = useState([])
 
-  useEffect(()=>{
- const fetchcarousalimage =async() => {
-  try {
-    let response = await fetch('https://www.pnytrainings.com/api/slider')
-    const data = await response.json()
-    setData(data.sliders)
-    
-  } catch (error) {
-    console.log(error)
-  }
- }
- fetchcarousalimage()
-  },[])
- 
+  useEffect(() => {
+    const fetchcarousalimage = async () => {
+      try {
+        let response = await fetch('https://www.pnytrainings.com/api/slider')
+        const data = await response.json()
+        setData(data.sliders)
+
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchcarousalimage()
+  }, [])
+
   return (
     <div>
-    <Carousel className='max-sm:h-56 w-full md:h-64 lg:h-96 '>
-      {data.map(slider => (
-        <div key={slider.id}>
-          <img
-            className="d-block lg:w-full  max-sm:h-auto h-[350px]"
-            src={slider.image}
-            alt={slider.title}
-          />
-        </div>
-      ))}
-    </Carousel>
-  </div>
+      <Carousel className='h-56 w-full max-sm:h-20 md:h-96'>
+        {data.map(slider => (
+          <div key={slider.id} className="w-full h-full">
+            <img
+              className="w-full h-auto sm:h-64 md:h-96"
+              src={slider.image}
+              alt={slider.title}
+            />
+          </div>
+        ))}
+      </Carousel>
+
+    </div>
   )
 }
 export const Carousalhome = () => {
   return (
     <div>
-       <Carousel className='max-sm:h-36  lg:h-80   md:h-56 '>
-      <img
-        alt="..."
-        src={c1}
-      />
-      <img
-        alt="..."
-        src={c2}
-      />
-      <img
-        alt="..."
-        src={c3}
-      />
-      <img
-        alt="..."
-        src={c4}
-      />
-      <img
-        alt="..."
-        src={c5}
-      />
-      <img
-        alt="..."
-        src={c6}
-      />
-      <img
-        alt="..."
-        src={c7}
-      />
-    </Carousel>
+      <Carousel className='max-sm:h-36  lg:h-80   md:h-56 '>
+        <img
+          alt="..."
+          src={c1}
+        />
+        <img
+          alt="..."
+          src={c2}
+        />
+        <img
+          alt="..."
+          src={c3}
+        />
+        <img
+          alt="..."
+          src={c4}
+        />
+        <img
+          alt="..."
+          src={c5}
+        />
+        <img
+          alt="..."
+          src={c6}
+        />
+        <img
+          alt="..."
+          src={c7}
+        />
+      </Carousel>
     </div>
   )
 }
 export const Carousalhome1 = () => {
   return (
     <div>
-       <Carousel className='max-sm:h-20  lg:h-32  md:h-20  '>
-      <img
-        alt="..."
-        src={g1}
-      />
-      <img
-        alt="..."
-        src={g2}
-      />
-    
-    </Carousel>
+      <Carousel className='max-sm:h-20  lg:h-32  md:h-20  '>
+        <img
+          alt="..."
+          src={g1}
+        />
+        <img
+          alt="..."
+          src={g2}
+        />
+
+      </Carousel>
     </div>
   )
 }

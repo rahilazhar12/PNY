@@ -53,7 +53,7 @@ const Home = () => {
   useEffect(() => {
     // Check if the user has already seen the modal
     const hasSeenModal = localStorage.getItem('hasSeenModal');
-  
+
     if (!hasSeenModal) {
       // If not, show the modal and set the flag in localStorage
       setOpen(true);
@@ -62,7 +62,7 @@ const Home = () => {
       // If they have, don't show the modal
       setOpen(false);
     }
-  
+
     // Fetch data from the provided URL
     fetch('https://www.pnytrainings.com/api/get-courses')
       .then((response) => response.json())
@@ -72,21 +72,21 @@ const Home = () => {
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
-  
+
     // Function to clear localStorage on page unload
     const handleBeforeUnload = () => {
       localStorage.removeItem('hasSeenModal');
     };
-  
+
     // Add an event listener to clear local storage on page refresh
     window.addEventListener('beforeunload', handleBeforeUnload);
-  
+
     // Cleanup the event listener when the component unmounts
     return () => {
       window.removeEventListener('beforeunload', handleBeforeUnload);
     };
   }, []);
-  
+
 
 
   const Newsletterhandler = async () => {
@@ -179,13 +179,13 @@ const Home = () => {
                   <div className=' font-semibold px-3'>Refer a Friends & you will both receive 10% off on all course at PNY Trainings.</div>
                   <form onSubmit={''}>
                     <div className=' flex flex-col p-3 space-y-3'>
-                      <input type="text" placeholder='Name' className='p-1 bg-[#f5f5f5] shadow-md rounded border-none  outline-none'
+                      <input type="text" id='name' placeholder='Name' className='p-1 bg-[#f5f5f5] shadow-md rounded border-none  outline-none'
                       />
-                      <input type="text" placeholder='Contact' className='p-1 bg-[#f5f5f5] shadow-md rounded border-none  outline-none'
+                      <input type="text" id='phone' placeholder='Contact' className='p-1 bg-[#f5f5f5] shadow-md rounded border-none  outline-none'
                       />
-                      <input type="text" placeholder='Email' className='p-1 bg-[#f5f5f5] shadow-md rounded border-none  outline-none'
+                      <input type="text" id='email' placeholder='Email' className='p-1 bg-[#f5f5f5] shadow-md rounded border-none  outline-none'
                       />
-                      <button type='submit' className=' bg-[#308aff] rounded py-1 px-3 text-white mt-5'>Subscribe</button>
+                      <button type='button' className=' bg-[#308aff] rounded py-1 px-3 text-white mt-5' onClick={SubmitData}>Subscribe</button>
                     </div>
                   </form>
 
@@ -207,6 +207,41 @@ const Home = () => {
       </div>
     );
   };
+
+
+
+
+  function SubmitData() {
+   
+
+    var name = document.getElementById('name').value;
+    var phone = document.getElementById('phone').value;
+    var email = document.getElementById('email').value;
+    // var id_address = "127.0.0.1"
+
+    // Create a new FormData object
+    var formData = new FormData();
+
+    // Append the data to the FormData object
+    formData.append('name', name);
+    formData.append('phone', phone);
+    formData.append('email', email);
+    formData.append('id_address', "127.0.0.1");
+    // formData.append('comment', comment);
+
+    // Use fetch to send the request
+    fetch('https://www.pnytrainings.com/api/newsletter', {
+      method: 'POST',
+      body: formData
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  }
 
 
 
@@ -236,58 +271,28 @@ const Home = () => {
 
 
           {/* Section-2 */}
-          <motion.section variants={fadeIn("up", 0.1)} initial='hidden' whileInView={"show"} viewport={{ once: false, amount: 0 }}>
-            <div className="grid grid-cols-12 lg:grid-cols-12 max-sm:grid-cols-6">
-              <div className="column1 max-sm:order-1 p-10 lg:col-span-6 md:col-span-7  max-sm:col-span-6">
-                <div className='text-3xl font-Inter fon-medium max-sm:text-center font-bold dark:text-white'><span className='text-[#F10900]'>PNY</span> Trainings</div>
-                <div className='font-Inter lg:text-6xl lg:w-[535px] lg:font-bold max-sm:text-center max-sm:font-bold max-sm:text-3xl dark:text-white'>Pakistan <span className='text-[#F10900]'>No.1</span>  IT Training Institute</div>
-                <div className='font-Inter lg:w-[520px] lg:text-xl lg:mt-6 max-sm:text-center dark:text-white'>Certified Courses with Money Making Skills!
-                  Empower Yourself with Practical Skills that Open Doors
-                  to Lucrative Opportunities</div>
+          <div className="container mx-auto p-4 flex md:flex-col flex-col lg:flex-row xl:flex-row 2xl:flex-row md:items-center">
 
-                {/* 
-                <div className="admissionbutton max-sm:flex justify-center" >
-                <Link to='https://lms.pnytraining.com/' target='_blank'>  <button className=' p-[8px] bg-[#308AFF] rounded-lg w-[132px] text-white text-base font-Inter font-bold mt-3'>Admission !</button></Link>
-                </div> */}
+            <div className=" flex-1 max-sm:order-1 px-2  max-sm:text-center md:text-center lg:text-center xl:text-start 2xl:text-start max-sm:p-3">
+              <h1 className="text-xl  font-bold md:text-7xl max-sm:text-[36px]"> <span className='text-[#F10900]'>PNY</span> Trainings</h1>
 
-                {/* <div className='flex space-x-10 mt-3 max-sm:hidden'>
-                  <img src={image1} />
+              <p className="mt-2 md:text-[48px] w-[400px] text-[20px] md:w-auto max-sm:w-auto font-semibold">
+                Pakistan <span className='text-[#F10900]'>No.1</span> IT Training Institute
+              </p>
 
-                </div> */}
-
-                {/* <div className="icons lg:hidden max-sm:hidden"> <TypeAnimation
-                  sequence={[
-                   
-                    'We offer courses for Social Media',
-                    1000, 
-                    'We offer courses for Web Developement',
-                    1000,
-                    'We offer courses for Amazon ',
-                    1000,
-                    'We offer courses for Graphic Designing ',
-                    1000
-                  ]}
-                  wrapper="span"
-                  speed={50}
-                  className='text-4xl bg-clip-text text-transparent bg-gradient-to-r from-black to-red-500 font-bold'
-                  style={{ fontSize: '', display: 'inline-block' }}
-                  repeat={Infinity}
-                /></div> */}
-              </div>
-
-
-
-              {/* Col-2 */}
-              <div className="column2 lg:order-1 lg:col-span-6 md:col-span-5  max-sm:col-span-6">
-
-                <div>
-                  <Carousal />
-
-                </div>
-
-              </div>
+              <p className="mt-1 text-sm md:text-base md:w-auto w-[400px] max-sm:w-auto">
+                Certified Courses with Money Making Skills! Empower Yourself with Practical Skills that Open Doors to Lucrative Opportunities
+              </p>
             </div>
-          </motion.section>
+
+
+            <div className="flex-1 w-full">
+              <Carousal />
+            </div>
+          </div>
+
+
+
           {/* Section-13 */}
           <section className='bg-blue-100' style={{ backgroundImage: `url(${vector})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <div className="grid justify-center lg:p-28 md:p-20 max-sm:p-5 ">
@@ -307,7 +312,7 @@ const Home = () => {
           <section>
             <div className="bg-white text-center p-8">
               <h2 className="text-2xl font-semibold mb-4 lgh">We Develop Your Inspiring Career with Standard</h2>
-              <p className="mb-8 w-[990px] max-sm:w-auto mx-auto">PNY Trainings Pakistan is the leading IT training institute, offering 100+ courses through online and physical classes. We provide internship opportunities and have a dedicated job cell to help you jumpstart your career.</p>
+              <p className="mb-8 w-[990px] md:w-auto max-sm:w-auto mx-auto">PNY Trainings Pakistan is the leading IT training institute, offering 100+ courses through online and physical classes. We provide internship opportunities and have a dedicated job cell to help you jumpstart your career.</p>
               <div className="grid grid-cols-4 gap-4 max-sm:grid-cols-2">
                 <div className="flex flex-col items-center">
                   <FaGlobeAmericas className="text-4xl mb-2 text-blue-500" />
@@ -410,7 +415,7 @@ const Home = () => {
                   return (
                     <>
                       <div className='col-span-4'>
-                        <div className="mainbox lg:h-80 xl:h-80 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
+                        <div className="mainbox  lg:h-96 xl:h-80 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
                           <div className="img"> <img src={icon} alt="" /> </div>
                           <div className="development lg:text-2xl font-semibold font-Inter">{item.name}</div>
 

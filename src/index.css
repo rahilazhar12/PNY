@@ -24,7 +24,8 @@
   }
 
   input::placeholder {
-   @apply max-sm:text-[9px] 
+   @apply max-sm:text-[9px] max-sm:text-center md:text-center
+
   }
 
 

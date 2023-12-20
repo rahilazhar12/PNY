@@ -6,6 +6,7 @@ import instructornew from '../Categories/data/Instructor'
 import { Blocks } from 'react-loader-spinner'
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import { useNavigate } from 'react-router-dom';
 
 const Categories = () => {
   const [category, setCategory] = useState(null);
@@ -14,6 +15,9 @@ const Categories = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const { slug } = useParams();
+
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -58,6 +62,9 @@ const Categories = () => {
 
   console.log(category , 'cat')
 
+
+  
+
   return (
     <>
       <Helmet>
@@ -98,7 +105,7 @@ const Categories = () => {
     
                 <div key={index} className="p-4 lg:w-1/4 md:w-1/2 w-full">
                   <div className="p-4 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
-                   <Link to={`/coursedetails/${item.url_slug}`}>
+                   <Link to={`/${item.url_slug}`}>
                      <img  src={item.course_image} alt="Image 1" className="  cursor-pointer w-full object-cover rounded-xl mb-2" />
                      </Link>
                     <div className="flex justify-between w-50 mb-4">
