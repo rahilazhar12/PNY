@@ -63,7 +63,7 @@ const Router = () => {
                 <Route path='/modalflyer' element={<Flyermodal />} />
                 <Route path='/terms-conditions' element={<Termsandconditions />} />
                 <Route path='/privacy-policy' element={<Privacypolicy />} />
-                <Route path='/citywisedata/:name' element={<Citywisedata />} />
+                <Route path='/city/:name' element={<Citywisedata />} />
                 <Route path='/specialpage/:url' element={<Specialpage />} />
                 {/* <Route path='/allcourses' element={<Allcourses/>} /> */}
                 {/* <Route path='/c' element={<Carousal/>} /> */}

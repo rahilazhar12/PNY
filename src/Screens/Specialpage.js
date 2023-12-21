@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import parse, { domToReact } from 'html-react-parser';
 import { Blocks } from 'react-loader-spinner'
 import Searchbar from '../Components/Searchbar'
+import { Helmet } from 'react-helmet';
 
 
 const Specialpage = () => {
@@ -79,8 +80,21 @@ const Specialpage = () => {
         );
     }
 
+
+    console.log(data.special_page.meta_title
+        , 'radata')
+
     return (
         <>
+            <Helmet>
+                <title>{data.special_page.meta_title}</title>
+                <meta name="description" content={data.special_page.meta_description} />
+                {/* <meta name="keywords" content="keyword1, keyword2, keyword3" /> */}
+                {/* Add more meta tags as needed */}
+                <link rel="canonical" href="http://example.com/path-to-your-page" />
+            </Helmet>
+
+
             <section>
                 <Searchbar />
             </section>

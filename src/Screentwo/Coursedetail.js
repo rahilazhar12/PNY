@@ -15,6 +15,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import { Helmet } from 'react-helmet';
 
 
 const style = {
@@ -222,8 +223,18 @@ const Coursedetail = () => {
   const module = modulesData[activeModule];
 
 
+  console.log(courseData.meta_title, 'metaa____')
+
   return (
     <>
+      <Helmet>
+        <title>{courseData.meta_title}</title>
+        <meta name="description" content={courseData.meta_description} />
+        {/* <meta name="keywords" content="keyword1, keyword2, keyword3" /> */}
+        {/* Add more meta tags as needed */}
+        <link rel="canonical" href={`http://localhost:3000/${courseSlug}`} />
+      </Helmet>
+
       <div>
         <section>
           <Searchbar />
@@ -339,7 +350,7 @@ const Coursedetail = () => {
 
             {/* Module Details */}
             <div className='col-span-3 md:col-span-2'>
-             
+
               <div className='text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-black mb-5 max-sm:mb-0 max-sm:text-center'>
                 Key Features of this course
               </div>
@@ -347,14 +358,14 @@ const Coursedetail = () => {
                 {modules
                   .filter((module) => module.id === selectedModuleId)
                   .map((module) => (
-                    parse(module.key_features , {
-                      replace : domNode => {
+                    parse(module.key_features, {
+                      replace: domNode => {
                         if (domNode.type === 'tag') {
                           if (domNode.name === 'ul') {
                             const props = { className: 'list-disc p-4 flex flex-col space-y-3' };
                             return <p {...props}>{domToReact(domNode.children)}</p>;
-                        }
-                        
+                          }
+
                         }
                       }
                     })
