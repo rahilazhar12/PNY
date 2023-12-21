@@ -46,7 +46,7 @@ const FeeStructure = () => {
         setIsLoading(false);
       }
     };
-    
+
 
     fetchCourses();
   }, [selectedCity, selectedDuration, searchTerm]);
@@ -59,7 +59,7 @@ const FeeStructure = () => {
 
   const parentTabContentSelector = "data-tabs-target"
 
-  
+
 
   return (
     <>
@@ -163,13 +163,19 @@ const FeeStructure = () => {
               <button type="button" class="text-gray-700 hover:text-white border border-blue-700 hover:bg-[#308AFF] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
                 onClick={() => setSelectedDuration('1-year')}>12 months</button>
               {/* Searchbar */}
-              <span><div className="mb-3 mt-2 w-[500px]">
-                <div className="relative mb-4 flex w-full flex-wrap items-stretch">
-                  <input type="search" className="relative m-0 -mr-0.5 block w-[1px] min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary" placeholder="Search" aria-label="Search" aria-describedby="button-addon3"
-                   value={searchTerm}
-                   onChange={(e) => setSearchTerm(e.target.value)}
+              <span><div className="mb-3 mt-2 w-[500px] max-sm:w-auto">
+                <div className="relative mb-4 flex  max-sm:w-auto flex-wrap items-stretch">
+                  <input
+                    type="search"
+                    className="block w-full sm:w-auto flex-auto rounded-l border border-solid border-neutral-300 bg-transparent px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
+                    placeholder="Search"
+                    aria-label="Search"
+                    aria-describedby="button-addon3"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
                   />
-                 
+
+
                 </div>
               </div>
               </span>
@@ -290,59 +296,59 @@ const FeeStructure = () => {
             </tbody>
           </table>
         </div> */}
-         
 
-         
+
+
         <div className=' grid grid-cols-1 max-sm:overflow-x-auto'>
           {searchTerm ? null :
-          <div className='text-center text-2xl font-bold'>
-            {selectedCity}
-            <span className='ml-5'>
-              {selectedDuration === '1-year' ? '12 months' : `${selectedDuration}-Month`}
-            </span>
-          </div> }
+            <div className='text-center text-2xl font-bold'>
+              {selectedCity}
+              <span className='ml-5'>
+                {selectedDuration === '1-year' ? '12 months' : `${selectedDuration}-Month`}
+              </span>
+            </div>}
 
 
           {isloading ? <p>Loading courses...</p> : courses.length > 0 ? (
-            <table>
-              <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                <tr className="bg-slate-200">
-                  <th scope="col" className="p-3">
-                    Serial No
-                  </th>
-
-                  <th scope="col" className="px-6 py-3">
-                    Course Name
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Course Fee
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Registration Fee
-                  </th>
-                </tr>
-              </thead>
-
-              {courses.map((course, index) => (
-                <>
-                  <tr className="bg-white border-b text-center dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <td className="w-4 p-4" key={course.Program_Id}>
-                      {index + 1}
-                    </td>
-                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                      {course.Program_Name}
+            <div className="overflow-x-auto">
+              <table className="min-w-full max-sm:w-auto">
+                <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                  <tr className="bg-slate-200">
+                    <th scope="col" className="p-3">
+                      Serial No
                     </th>
-                    <td className="px-6 py-4">
-                      {course.Program_Fee}
-                    </td>
-                    <td className="px-6 py-4">
-                      {course.registration_fee}
-                    </td>
-
+                    <th scope="col" className="px-6 py-3">
+                      Course Name
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Course Fee
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Registration Fee
+                    </th>
                   </tr>
-                </>
-              ))}
-            </table>
+                </thead>
+                <tbody>
+                  {courses.map((course, index) => (
+                    <tr className="bg-white border-b text-center dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" key={course.Program_Id}>
+                      <td className="w-4 p-4">
+                        {index + 1}
+                      </td>
+                      <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        {course.Program_Name}
+                      </th>
+                      <td className="px-6 py-4">
+                        {course.Program_Fee}
+                      </td>
+                      <td className="px-6 py-4">
+                        {course.registration_fee}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
           ) : <p>No courses available.</p>}
         </div>
 
