@@ -30,6 +30,7 @@ const style = {
   p: 4,
 };
 
+
 let modulesData = [
   {
     title: 'Module 1',
@@ -98,30 +99,43 @@ const Coursedetail = () => {
   const [instructor, setInstructor] = useState(null);
   const [error, setError] = useState(null);
   const [moduledata, setModuledata] = useState([])
-  const [open, setOpen] = React.useState(false);
   const [selectedModuleId, setSelectedModuleId] = useState(null);
   const [modules, setModules] = useState([]);
+  const [id_address, setId_address] = useState('');
+
+
+  const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const [isModalOpen, setModalOpen] = useState(false);
+  useEffect(() => {
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => setId_address(data.ip))
+      .catch(error => console.error('Error fetching IP address:', error));
+  }, []);
+
   const brochureLinkRef = useRef(null);
 
-  const handleDownloadClick = () => {
-    setModalOpen(true);
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here, you can handle the form data, e.g., send it to a server
-    // ...
+  // const [isModalOpen, setModalOpen] = useState(false);
+  // const brochureLinkRef = useRef(null);
 
-    // Close the modal
-    setModalOpen(false);
+  // const handleDownloadClick = () => {
+  //   setModalOpen(true);
+  // };
 
-    // Trigger brochure download
-    brochureLinkRef.current.click();
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Here, you can handle the form data, e.g., send it to a server
+  //   // ...
+
+  //   // Close the modal
+  //   setModalOpen(false);
+
+  //   // Trigger brochure download
+  //   brochureLinkRef.current.click();
+  // };
 
 
   const { courseSlug } = useParams();
@@ -223,7 +237,52 @@ const Coursedetail = () => {
   const module = modulesData[activeModule];
 
 
-  console.log(courseData.meta_title, 'metaa____')
+ console.log(courseData.id , 'rahil______')
+
+
+
+
+  function SubmitData(e) {
+    e.preventDefault()
+
+
+    var name = document.getElementById('name').value;
+    var city = document.getElementById('city').value;
+    var phone = document.getElementById('phone').value;
+    var email = document.getElementById('email').value;
+    // var id_address = "127.0.0.1"
+
+    // Create a new FormData object
+    var formData = new FormData();
+
+    // Append the data to the FormData object
+    formData.append('name', name);
+    formData.append('city', city);
+    formData.append('phone', phone);
+    formData.append('email', email);
+    formData.append('id_address', id_address);
+    formData.append('course_id', courseData.id);
+    // formData.append('comment', comment);
+
+    // Use fetch to send the request
+    fetch('https://www.pnytrainings.com/api/brochure', {
+      method: 'POST',
+      body: formData
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+        // toast.success(data.message, {
+        //   duration: 5000
+        // })
+        // setOpen(false)
+        alert(data.message)
+        brochureLinkRef.current.click();
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  }
 
   return (
     <>
@@ -273,36 +332,44 @@ const Coursedetail = () => {
                       Download Course Brochure
                     </button>
 
-                    {isModalOpen && (
-                      // <div className="modal">
-                      //     <form onSubmit={handleSubmit}>
-                      //         <input className='border border-black' type="text" placeholder="Name" required />
-                      //         <input className='border border-black' type="email" placeholder="Email" required />
-                      //         <input className='border border-black' type="tel" placeholder="Contact" required />
-                      //         <button type="submit" className="submit-button">Submit</button>
-                      //     </form>
-                      // </div>
+                   
+                     
 
-                      <Modal
-                        open={open}
-                        onClose={handleClose}
-                        aria-labelledby="modal-modal-title"
-                        aria-describedby="modal-modal-description"
-                      >
-                        <Box sx={style}>
-                          <Typography id="modal-modal-title" variant="h6" component="h2">
-                            Text in a modal
-                          </Typography>
-                          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                          </Typography>
-                        </Box>
-                      </Modal>
-                    )}
+                    
 
-                    <a href={courseData.brochure} target="_blank" ref={brochureLinkRef} style={{ display: 'none' }}>
+                    <a ref={brochureLinkRef} href={courseData.brochure} target="_blank" style={{ display: 'none' }}>
                       Download Brochure Link
                     </a>
+                    <div>
+                      <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
+                        <Box sx={style}>
+                          <div className='outline-none'>
+                            <div className="p-5 bg-white rounded-lg md:max-w-xl md:mx-auto">
+                              <form className="space-y-4" onSubmit={SubmitData}>
+                                <div>
+                                  <label htmlFor="phone" className="text-sm font-medium text-gray-700">Name</label>
+                                  <input type="tel" id="name" name="phone" className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" required />
+                                </div>
+                                <div>
+                                  <label htmlFor="phone" className="text-sm font-medium text-gray-700">Phone</label>
+                                  <input type="tel" id="phone" name="phone" className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" required />
+                                </div>
+                                <div>
+                                  <label htmlFor="email" className="text-sm font-medium text-gray-700">Email</label>
+                                  <input type="email" id="email" name="email" className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" required />
+                                </div>
+                                <div>
+                                  <label htmlFor="city" className="text-sm font-medium text-gray-700">City</label>
+                                  <input type="text" id="city" name="city" className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" required />
+                                </div>
+                                <button type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-sky-600 hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">Submit</button>
+                              </form>
+                            </div>
+                          </div>
+                        </Box>
+                      </Modal>
+
+                    </div>
                   </div>
                   <button className="bg-[#308AFF] text-white font-bold py-2 px-4 rounded">Free Orientation Class</button>
                   <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Pay Now</button>
