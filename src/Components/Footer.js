@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState , useEffect} from 'react'
 import arfatower from '../Assets/image/arfa tower.png'
 import iqbaltown from '../Assets/image/iqbal town.png'
 import johartown from '../Assets/image/Jahor town.png'
@@ -11,16 +11,25 @@ import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import Shortcourses from '../Screens/Shortcourses'
 
 
 const Footer = () => {
-
+    const [courses, setCourses] = useState([]);
     const navigate = useNavigate()
+
 
 
     const redirectToCity = (cityName) => {
         navigate(`/city/${cityName}`);
     };
+
+    useEffect(() => {
+        fetch('https://www.pnytrainings.com/api/footer/courses')
+            .then(response => response.json())
+            .then(data => setCourses(data.courses_links))
+            .catch(error => console.error('Error fetching courses:', error));
+    }, []);
 
 
     return (
@@ -65,6 +74,10 @@ const Footer = () => {
                     <a class="link link-hover">Spoken English Language Course</a>
                     <a class="link link-hover">IELTS prepration course</a>
                     <a class="link link-hover">Pearson Test of English</a>
+                </nav>
+                <nav>
+                    <h1 className="text-xl font-bold leading-4">Short Courses</h1>
+                    <Shortcourses courses={courses} />
                 </nav>
             </footer>
 

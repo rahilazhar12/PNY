@@ -1,21 +1,15 @@
 import React, { useState, useEffect } from 'react'
-// import mainimage from '../Assets/images/responsive.png'
 import Carousal from '../Components/Carousal'
 import newgroup from '../Assets/images/newgroup.png'
 import icon from '../Assets/images/Featured icon.svg'
-import { DarkThemeToggle, Flowbite } from 'flowbite-react';
+import { Flowbite } from 'flowbite-react';
 import contentimage from '../Assets/image/Why choose Us.png'
 import { Carousalhome, Carousalhome1 } from '../Components/Carousal'
 import frame from '../Assets/image/Frame 624.png'
 import frame2 from '../Assets/image/Frame 61.png'
 import vector from '../Assets/images/vecter.png'
-import Bottomnavbar from '../Components/Bottomnavbar'
 import Searchbar from '../Components/Searchbar'
-import { homedata } from '../Components/Data'
-import { motion } from 'framer-motion'
-import { fadeIn } from '../Components/variants'
 import { durationdata } from '../Components/Data'
-import image1 from '../Assets/image/4 logos.png'
 import Map from '../Components/Map'
 import Testimonial from '../Components/Testimonial'
 import { Link } from 'react-router-dom';
@@ -24,34 +18,16 @@ import { FaGlobeAmericas, FaAward, FaBuilding, FaUniversity, FaUsers, FaBook, Fa
 import off from '../Assets/image/10off.jpg'
 import toast, { Toaster } from 'react-hot-toast';
 
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 500,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-
-};
 const Home = () => {
-
-
   const [data, setData] = useState([]);
   const [home, setHome] = useState([]);
   const [open, setOpen] = useState(false);
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [id_address, setId_address] = useState('');
-
-  // const id_address = "127.0.0.1";
-  const subscription_date = "2023-12-12 15:19:09";
+  // const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClose = () => setOpen(false);
 
+  // ----------------------------------------------------------------------------------------------------------------------------------
   useEffect(() => {
     // Check if the user has already seen the modal
     const hasSeenModal = localStorage.getItem('hasSeenModal');
@@ -89,8 +65,10 @@ const Home = () => {
     };
   }, []);
 
+  // ----------------------------------------------------------------------------------------------------------------------
 
 
+  // -------------------------------Fetch Home Page Content-------------------------------------------------------------------
   useEffect(() => {
     // Fetch data from the provided URL
     fetch('https://www.pnytrainings.com/api/pages/home_page_content')
@@ -102,6 +80,9 @@ const Home = () => {
         console.error('Error fetching data:', error);
       });
   }, []);
+
+
+  // ---------------------------------------------------------------------------------------------------------------------
 
   const parsedDescription = home.page ? parse(home.page.page_description || '', {
     replace: domNode => {
@@ -119,13 +100,11 @@ const Home = () => {
           const props = { className: 'p-5' };
           return <p {...props}>{domToReact(domNode.children)}</p>;
         }
-        // if (domNode.name === 'a') {
-        //   const props = { className: 'bg-[#0c7ec2] text-white hover:bg-red-500 p-3 w-80 cursor-pointer rounded mx-auto'};
-        //   return <p {...props}>{domToReact(domNode.children)}</p>;
-        // }
       }
     }
   }) : null
+  // ---------------------------------------------------------------------------------------------------------
+
 
 
   const Modal = ({ isOpen, onClose }) => {
@@ -141,7 +120,7 @@ const Home = () => {
               <div className=' w-1/2 py-3 max-sm:w-auto max-sm:order-1'>
                 <div>
                   <div className=' font-semibold px-3'>Refer a Friends & you will both receive 10% off on all course at PNY Trainings.</div>
-                  <form onSubmit={''}>
+                  <form>
                     <div className=' flex flex-col p-3 space-y-3'>
                       <input type="text" id='name' placeholder='Name' className='p-1 bg-[#f5f5f5] shadow-md rounded border-none  outline-none'
                       />
@@ -184,14 +163,9 @@ const Home = () => {
 
 
   function SubmitData() {
-
-
     var name = document.getElementById('name').value;
     var phone = document.getElementById('phone').value;
     var email = document.getElementById('email').value;
-    // var id_address = "127.0.0.1"
-
-    // Create a new FormData object
     var formData = new FormData();
 
     // Append the data to the FormData object
@@ -224,11 +198,8 @@ const Home = () => {
   return (
     <>
       <Flowbite>
-
         <main id='home' className='bg-white dark:bg-slate-800   ring-1 ring-slate-900/5 shadow-xl h-auto'>
           <Searchbar />
-
-
 
           {/* <section>
             <Bottomnavbar />
@@ -236,13 +207,8 @@ const Home = () => {
 
 
           <div className="App">
-            {/* Trigger button */}
-            {/* <button onClick={() => setIsModalOpen(true)} className="px-4 py-2 bg-blue-500 text-white rounded-md">
-              Open Modal
-            </button> */}
-
             {/* Modal */}
-            <Modal isOpen={open} onClose={() => setIsModalOpen(false)} />
+            <Modal isOpen={open} />
           </div>
 
 
@@ -332,18 +298,18 @@ const Home = () => {
 
           {/* Section-3 */}
           <section className=' max-sm:mt-8 '>
-            <div class="grid md:p-5 lg:space-y-5">
-              <div class=" flex justify-center"  >
+            <div className="grid md:p-5 lg:space-y-5">
+              <div className=" flex justify-center"  >
                 <p id='journey' className='lgh  dark:text-white'>Our Journey to success</p>
               </div>
 
-              <div class="PNYTrainingsPakistan  justify-center flex">
+              <div className="PNYTrainingsPakistan  justify-center flex">
                 <p className=' lgp max-sm:text-base  md:text-base md:px-3 dark:text-white'>
                   The journey shows the entrepreneurial growth of each individual student, with current goals to achieve victory. Through our success, we raise you up to be unstoppable in the world of opportunities.
                 </p>
               </div>
-              <div class="flex justify-center max-sm:mt-5 max-sm:mb-5">
-                <img src={newgroup} class="img-fluid" alt="" />
+              <div className="flex justify-center max-sm:mt-5 max-sm:mb-5">
+                <img src={newgroup} className="img-fluid" alt="" />
               </div>
             </div>
           </section>
@@ -359,20 +325,22 @@ const Home = () => {
             </div>
             <div className="grid md:grid-cols-1 lg:grid-cols-4 space-x-1 lg:mt-4 space-y-1 p-2 ">
               {
-                durationdata.map((data) => {
+                durationdata.map((data, index) => {
                   return (
-                    <>
-                      <div class="stats bg-blue-400 text-white">
-                        <div class="stat">
-                          <div class="text-center text-xl font-bold">{data.title}</div>
-                          <div class="text-center ">{data.description}</div>
+                    <React.Fragment key={index}>
+
+                      <div className="stats bg-blue-400 text-white" >
+                        <div className="stat">
+                          <div className="text-center text-xl font-bold">{data.title}</div>
+                          <div className="text-center ">{data.description}</div>
                           {/* <div className='flex justify-center'>
                             <a href="" className='text-white blinking-text'>Read More</a>
                           </div> */}
 
                         </div>
                       </div>
-                    </>
+
+                    </React.Fragment>
                   )
                 })
               }
@@ -472,13 +440,13 @@ const Home = () => {
                 <div className="whychooseus text-4xl font-bold  max-sm:text-center  max-sm:text-2xl">Why Choose US?</div>
 
                 <ul className='p-5 space-y-5 text-lg   max-sm:text-sm'>
-                  <li><i class="fa-sharp fa-regular fa-circle-check"></i> Money Making Skills</li>
-                  <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Hands on Experience during Training</li>
-                  <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Internship & Job Opportunities</li>
-                  <li> <i class="fa-sharp fa-regular fa-circle-check"></i> On-campus & Online Classes with Recorded Lectures</li>
-                  <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Highly Experienced Instructors</li>
-                  <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Professional Learning Environment</li>
-                  <li> <i class="fa-sharp fa-regular fa-circle-check"></i> Learning Management System</li>
+                  <li><i className="fa-sharp fa-regular fa-circle-check"></i> Money Making Skills</li>
+                  <li> <i className="fa-sharp fa-regular fa-circle-check"></i> Hands on Experience during Training</li>
+                  <li> <i className="fa-sharp fa-regular fa-circle-check"></i> Internship & Job Opportunities</li>
+                  <li> <i className="fa-sharp fa-regular fa-circle-check"></i> On-campus & Online Classes with Recorded Lectures</li>
+                  <li> <i className="fa-sharp fa-regular fa-circle-check"></i> Highly Experienced Instructors</li>
+                  <li> <i className="fa-sharp fa-regular fa-circle-check"></i> Professional Learning Environment</li>
+                  <li> <i className="fa-sharp fa-regular fa-circle-check"></i> Learning Management System</li>
                 </ul>
 
                 {/* <div className="buttons max-sm:flex lg:mt-5">

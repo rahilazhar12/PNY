@@ -541,8 +541,8 @@ export const ownersdata  = [
     image:wahab,
     name:"Wahab Yunus",
     designation:"Founder & CEO",
-    linkdin:<i class="fa-brands fa-linkedin"></i>,
-    twitter:<i class="fa-brands fa-twitter"></i>
+    linkdin:<i className="fa-brands fa-linkedin"></i>,
+    twitter:<i className="fa-brands fa-twitter"></i>
 
   },
   {
@@ -550,8 +550,8 @@ export const ownersdata  = [
     image: suleman,
     name:"Suleman Ikram",
     designation:"Co-Founder & Director",
-    linkdin:<i class="fa-brands fa-linkedin"></i>,
-    twitter:<i class="fa-brands fa-twitter"><a href="www.facebook.com"></a></i>
+    linkdin:<i className="fa-brands fa-linkedin"></i>,
+    twitter:<i className="fa-brands fa-twitter"><a href="www.facebook.com"></a></i>
 
   },
 ]

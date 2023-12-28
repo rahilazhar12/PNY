@@ -93,20 +93,19 @@ const Contactus = () => {
                                 </div>
                                 <div className="sm:col-span-2">
                                     <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">How can we help?</label>
-                                    <textarea id="message" rows={6} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Tell us a little about the project..." defaultValue={""}
-                                        onChange={(e) => setComment(e.target.value)} value={comment} />
+                                    <textarea
+                                        id="message"
+                                        rows={6}
+                                        className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                        placeholder="Tell us a little about the project..."
+                                        value={comment} // Use only the value prop
+                                        onChange={(e) => setComment(e.target.value)}
+                                    />
+
                                 </div>
                                 <div></div>
                             </form>
-                            {/* <div className='mb-5 text-[#525A64]'>Select courses (optional)</div>
-                            <div className="grid grid-cols-2">
-                                <div className='mb-3'> <input type="checkbox" class="checkbox checkbox-sm " /> One Year Diploma</div>
-                                <div className='mb-3'><input type="checkbox" class="checkbox checkbox-sm" /> Marketing</div>
-                                <div className='mb-3'><input type="checkbox" class="checkbox checkbox-sm" /> Web Development</div>
-                                <div className='mb-3'><input type="checkbox" class="checkbox checkbox-sm" /> Art & Design</div>
-                                <div className='mb-3'><input type="checkbox" class="checkbox checkbox-sm" /> Amazon Courses</div>
-                                <div className='mb-3'><input type="checkbox" class="checkbox checkbox-sm" /> Other</div>
-                            </div> */}
+
                             <div className='flex justify-center mt-5'><button className='bg-blue-500 w-full py-[12px] px-[20px] rounded-lg text-white' onClick={SubmitData}>Submit</button></div>
                         </div>
 
@@ -124,13 +123,14 @@ const Contactus = () => {
             <section>
                 <div className="grid justify-center xl:ml-8 lg:ml-0 md:ml-5 lg:grid-cols-3 md:grid-cols-2  lg:gap-x-10 lg:px-10  xl:p-10  gap-y-10  max-sm:p-3">
                     {
-                        contactus.map((item) => {
+                        contactus.map((item, index) => {
                             return (
-                                <>
-                                    <div class="card xl:w-[408px]  lg:w-[308px] md:w-[350px]  max-sm:w-full bg-base-100 shadow-2xl">
+                                <React.Fragment key={index}>
+
+                                    <div className="card xl:w-[408px]  lg:w-[308px] md:w-[350px]  max-sm:w-full bg-base-100 shadow-2xl">
                                         <figure><img className='p-6' src={item.image} alt="" /></figure>
-                                        <div class="card-body">
-                                            <h2 class="card-title text-[24px]  font-semibold">{item.title}</h2>
+                                        <div className="card-body">
+                                            <h2 className="card-title text-[24px]  font-semibold">{item.title}</h2>
                                             <p className='text-[16px]'>{item.description}</p>
                                             <div className='flex justify-between mt-3'>
                                                 <div className='text-[16px]'><span className='text-[#308AFF] mr-3'>Phone</span>{item.phone}</div>
@@ -142,7 +142,8 @@ const Contactus = () => {
 
                                         </div>
                                     </div>
-                                </>
+
+                                </React.Fragment>
                             )
                         })
                     }
