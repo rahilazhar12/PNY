@@ -1,21 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Searchbar from '../Components/Searchbar';
-import Footer from '../Components/Footer';
-import instructor from '../Categories/data/Instructor';
-import feature from '../Categories/data/Feature';
-// import Modal from './Modal';
-import Modalb from './Modalb';
-import { useParams } from 'react-router-dom';
 import { Blocks } from 'react-loader-spinner'
-import { Link } from 'react-router-dom';
 import parse, { domToReact } from 'html-react-parser';
 import { FaBookOpen, FaChalkboardTeacher, FaBriefcase, FaUserGraduate, FaUsers, FaVideo } from 'react-icons/fa';
 import { IconContext } from "react-icons";
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { Helmet } from 'react-helmet';
+import { useParams } from 'react-router-dom';
 
 
 const style = {
@@ -92,13 +84,11 @@ let modulesData = [
 const Coursedetail = () => {
 
   // const [modalOpen, setModalOpen] = useState(false);
-  const [modalOpenb, setModalOpenb] = useState(false);
   const [activeModule, setActiveModule] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [courseData, setCourseData] = useState(null);
   const [instructor, setInstructor] = useState(null);
   const [error, setError] = useState(null);
-  const [moduledata, setModuledata] = useState([])
   const [selectedModuleId, setSelectedModuleId] = useState(null);
   const [modules, setModules] = useState([]);
   const [id_address, setId_address] = useState('');
@@ -116,26 +106,6 @@ const Coursedetail = () => {
   }, []);
 
   const brochureLinkRef = useRef(null);
-
-
-  // const [isModalOpen, setModalOpen] = useState(false);
-  // const brochureLinkRef = useRef(null);
-
-  // const handleDownloadClick = () => {
-  //   setModalOpen(true);
-  // };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // Here, you can handle the form data, e.g., send it to a server
-  //   // ...
-
-  //   // Close the modal
-  //   setModalOpen(false);
-
-  //   // Trigger brochure download
-  //   brochureLinkRef.current.click();
-  // };
 
 
   const { courseSlug } = useParams();

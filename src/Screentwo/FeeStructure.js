@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Searchbar from '../Components/Searchbar'
-import Footer from '../Components/Footer'
+import { Link } from 'react-router-dom';
 import axios from 'axios'
 // Initialization for ES Users
 import {
@@ -71,13 +71,13 @@ const FeeStructure = () => {
 
         <header className="text-gray-600 body-font shadow-lg">
           <div className="container mx-auto flex flex-wrap py-2 flex-col md:flex-row items-center">
-            <a className="flex title-font font-medium items-center text-gray-900 mb-2 md:mb-0">
+            <Link className="flex title-font font-medium items-center text-gray-900 mb-2 md:mb-0">
               <span className="ml-3 text-sm text-gray-800">Home</span>
               <svg class="w-2 h-2 text-gray-800 dark:text-white mx-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1" />
               </svg>
               <span className="ml-3 text-sm text-blue-900">Fee Structure</span>
-            </a>
+            </Link>
           </div>
         </header>
         <header className="text-gray-600 body-font bg-[#308AFE]">
@@ -184,120 +184,6 @@ const FeeStructure = () => {
 
           </div>
         </header>
-
-        {/* <div className="container mt-3 mx-auto relative overflow-x-auto shadow-md sm:rounded-lg">
-          <table className="  w-full mx-auto text-sm text-left text-gray-500 dark:text-gray-400 border border-lg">
-            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-              <tr className="bg-slate-200">
-                <th scope="col" className="p-3">
-                  Serial No
-                </th>
-
-                <th scope="col" className="px-6 py-3">
-                  Course Name
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Course Fee
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Registration Fee
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <td className="w-4 p-4">
-                  01
-                </td>
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  Diploma in Advance Web Technology (DAWT)
-                </th>
-                <td className="px-6 py-4">
-                  PKR. 10,000 (Discounted fee)
-                  PKR. 15,000
-                </td>
-                <td className="px-6 py-4">
-                  PKR. 10,000
-                </td>
-
-              </tr>
-              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <td className="w-4 p-4">
-                  02
-                </td>
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  Become a Tailwind CSS, Python and Ruby on Rails Developer
-                </th>
-                <td className="px-6 py-4">
-                  PKR. 70,000
-                </td>
-                <td className="px-6 py-4">
-                  PKR. 5,000
-                </td>
-              </tr>
-              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <td className="w-4 p-4">
-                  03
-                </td>
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  Digital marketing with Artificial Intelligence & Project Management
-                </th>
-                <td className="px-6 py-4">
-                  PKR. 23,000
-                </td>
-                <td className="px-6 py-4">
-                  PKR. 2,000
-                </td>
-
-
-              </tr>
-              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <td className="w-4 p-4">
-                  04
-                </td>
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  Become Expert in Advance UiUx in figma, Digital Painting & Visual Merchandising
-                </th>
-                <td className="px-6 py-4">
-                  PKR. 55,000
-                </td>
-                <td className="px-6 py-4">
-                  PKR. 5,000
-                </td>
-              </tr>
-              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <td className="w-4 p-4">
-                  05
-                </td>
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  Digital Marketing & Artificial Intelligence (for technical analysis)
-                </th>
-                <td className="px-6 py-4">
-                  PKR. 100,000
-                </td>
-                <td className="px-6 py-4">
-                  PKR. 100,000
-                </td>
-              </tr>
-              <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <td className="w-4 p-4">
-                  06
-                </td>
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  Diploma in Advance Web Technology (DAWT)
-                </th>
-                <td className="px-6 py-4">
-                  PKR. 23,000
-                </td>
-                <td className="px-6 py-4">
-                  PKR. 2,000
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div> */}
-
-
 
         <div className=' grid grid-cols-1 max-sm:overflow-x-auto'>
           {searchTerm ? null :

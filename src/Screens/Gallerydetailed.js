@@ -30,7 +30,6 @@ const GalleryDetailed = () => {
 
   const openModal = (imageSrc) => {
     setIsOpen(true);
-    console.log(imageSrc , 'imgsrc_____')
     setSelectedImage(imageSrc);
   }
 
@@ -52,8 +51,6 @@ const GalleryDetailed = () => {
       })
       .catch(error => console.error(error));
 }, [id]);
-
-console.log(relatedImages , 'rel________')
 
   return (
     <>

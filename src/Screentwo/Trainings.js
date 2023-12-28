@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Searchbar from '../Components/Searchbar'
 import axios from 'axios'
 import { Blocks } from 'react-loader-spinner'
+import { Link } from 'react-router-dom'
 
 
 
@@ -130,13 +131,13 @@ const Trainings = () => {
 
       <header className="text-gray-600 body-font bg-gray-50">
         <div className="container mx-auto flex flex-wrap py-2 flex-col md:flex-row items-center">
-          <a className="flex title-font font-medium items-center text-gray-900 mb-2 md:mb-0">
+          <Link className="flex title-font font-medium items-center text-gray-900 mb-2 md:mb-0">
             <span className="ml-3 text-sm text-gray-800">Home</span>
             <svg class="w-2 h-2 text-gray-800 dark:text-white mx-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1" />
             </svg>
             <span className="ml-3 text-sm text-blue-900">Trainings</span>
-          </a>
+          </Link>
         </div>
       </header>
       <section class="">

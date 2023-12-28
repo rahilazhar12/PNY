@@ -60,16 +60,16 @@ const Blogdetails = () => {
                 {/* Text section */}
                 <div className="w-full md:w-1/2">
                   <h2 className="text-3xl font-bold mb-4 max-sm:text-center">{data.title} </h2>
-                  <p className="mb-4 max-sm:text-center w-[700px] max-sm:w-auto">{data.description_short}</p>               
-                  <p className="mb-4 max-sm:text-center w-[700px] max-sm:w-auto">Publish data : {data.published_date}</p>         
+                  <p className="mb-4 max-sm:text-center w-[700px] max-sm:w-auto">{data.description_short}</p>
+                  <p className="mb-4 max-sm:text-center w-[700px] max-sm:w-auto">Publish data : {data.published_date}</p>
                 </div>
 
                 {/* image section */}
                 <div className="w-full md:w-1/2 flex  justify-center items-center bg-gray-700 p-2 max-sm:mt-2">
                   {/* Responsive iframe container */}
                   <div className="w-full aspect-w-16 ">
-                   <img className='w-full h-[400px] max-sm:h-auto'  src={data.post_image_thumb} alt="" />
-                   
+                    <img className='w-full h-[400px] max-sm:h-auto' src={data.post_image_thumb} alt="" />
+
                   </div>
                 </div>
 
@@ -78,7 +78,7 @@ const Blogdetails = () => {
           </div>
 
         </section>
-      
+
         {parsedDescription}
       </main>
     </>

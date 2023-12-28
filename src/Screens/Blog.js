@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import cardData from '../Components/Data'
 import { Card } from 'flowbite-react'
 import { Button } from 'flowbite-react'
 import { Link } from 'react-router-dom'
 import Searchbar from '../Components/Searchbar'
-import { DarkThemeToggle, Flowbite } from 'flowbite-react';
+import {  Flowbite } from 'flowbite-react';
 import { Blocks } from 'react-loader-spinner'
 
 const Blog = () => {
