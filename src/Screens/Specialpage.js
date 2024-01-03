@@ -118,7 +118,7 @@ const Specialpage = () => {
 
                     <div>
                         <section className=' sticky top-10 max-sm:p-3'>
-                            <div className=''>
+                            <div className='pb-3'>
                                 <div className=' bg-[#234E87] lg:ml-10   rounded-t-xl lg:w-[390px]  h-[76px] flex justify-center items-center font-semibold text-3xl text-white'>Course we offer in Cities</div>
                                 <div className=' gap-1 grid'>
 
