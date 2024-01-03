@@ -20,7 +20,7 @@ const Trainings = () => {
 
   useEffect(() => {
     setIsLoading(true);  // Set loading state to true when the effect starts
-  
+
     axios.get('https://lms.pnytraining.com/api/trainingSchedules?type=month&duration=2')
       .then(response => {
         setBatches(response.data.Batches);
@@ -32,7 +32,7 @@ const Trainings = () => {
         setIsLoading(false);  // Set loading state to false when the request is complete, regardless of success or failure
       });
   }, []);
-  
+
 
   const handleCityClick = (city) => {
     setSelectedCity(city);
@@ -165,7 +165,9 @@ const Trainings = () => {
                 {Object.keys(displayedBatches).map(city => (
                   <button key={city} onClick={() => handleCityClick(city)}>
                     <li role="presentation">
-                      <button className="inline-block p-2 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">{city}</button>
+                      <button className={`inline-block p-2 border-b-2 rounded-t-lg ${selectedCity === city ? 'border-blue-500 text-blue-500' : 'border-transparent hover:text-gray-600 hover:border-gray-300'}`} id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected={selectedCity === city}>
+                        {city}
+                      </button>
                     </li>
                   </button>
                 ))}
@@ -201,14 +203,17 @@ const Trainings = () => {
                 {/* <h3>{selectedCity}</h3> */}
                 {/* <h4>Select a Division</h4> */}
 
-                <div>
-                  {getDivisions(batches[selectedCity]).map(division => (
-                    <button key={division} onClick={() => handleDivisionClick(division)}>
-                      <button type="button" class="text-white bg-[#308AFF] from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2">{division}</button>
-                    </button>
-                  ))}
-
-                </div>
+                {selectedCity && batches[selectedCity] && (
+                  <div>
+                    {getDivisions(batches[selectedCity]).map(division => (
+                      <button key={division} onClick={() => handleDivisionClick(division)}>
+                        <button type="button" className={`hover:text-white from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 mb-2 ${selectedDivision === division ? 'bg-[#308AFF]' : 'bg-transparent border border-blue-700 hover:bg-blue-500'}`}>
+                          {division}
+                        </button>
+                      </button>
+                    ))}
+                  </div>
+                )}
               </>
             )}
 

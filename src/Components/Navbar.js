@@ -14,7 +14,7 @@ const Navbar = () => {
             <li><Link to='https://www.pnygenius.com/' target='_blank'>Kids Courses</Link></li>
             <li><Link to='https://www.joinpnypink.com/' target='_blank'>Female Courses</Link></li>
             <li><Link to="/trainingschedule" target='_blank'>Training Schedule</Link></li>
-            <li> <Link to="/Feestruchure" target='_blank'>Fee Strcture</Link></li>
+            <li> <Link to="/Feestruchure" target='_blank'>Fee Structure</Link></li>
             <li><button className='navbarbuttons bg-[#308AFF] rounded-md px-[10px] py-[6px]'>Login</button></li>
             <li><button className='navbarbuttons bg-[#F10900] rounded-md px-[10px] py-[6px]'>Enroll Now</button></li>
 
@@ -31,7 +31,7 @@ const Navbar = () => {
             <li><Link to='https://www.pnygenius.com/' target='_blank'>Kids Courses</Link></li>
             <li><Link to='https://www.joinpnypink.com/' target='_blank'>Female Courses</Link></li>
             <li><Link to="/trainingschedule" target='_blank'>Training Schedule</Link></li>
-            <li> <Link to="/Feestruchure" target='_blank'>Fee Strcture</Link></li>
+            <li> <Link to="/Feestruchure" target='_blank'>Fee Structure</Link></li>
             <li className='bg-[#FFBA4A] blinking-text rounded-md flex cursor-pointer justify-center items-center'><Link to="/fast-track-pro-bootcamps">Fast Track Pro Bootcamps in 2023</Link></li>
             <li><button className='navbarbuttons bg-[#308AFF] rounded-md w-[70px] h-[px]'>Login</button></li>
             <li><button className='navbarbuttons bg-[#F10900] rounded-md w-[90px] h-[px]'>Enroll Now</button></li>

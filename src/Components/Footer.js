@@ -11,7 +11,6 @@ import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import Shortcourses from '../Screens/Shortcourses'
 
 
 const Footer = () => {
@@ -22,6 +21,9 @@ const Footer = () => {
 
     const redirectToCity = (cityName) => {
         navigate(`/city/${cityName}`);
+    };
+    const redirectshortcourses = (course) => {
+        navigate(`/shortcourses/${course}`);
     };
 
     useEffect(() => {
@@ -71,7 +73,20 @@ const Footer = () => {
                 </nav>
                 <nav>
                     <h1 className="text-black font-bold">Short Courses</h1>
-                    <Shortcourses courses={courses} />
+
+                    <div className='flex flex-col space-y-2'>
+                        <Link to='/short-courses-in-lahore'>Short courses in Lahore</Link>
+                        <Link to='/short-courses-in-rawalpindi'>Short courses in Rawalpindi</Link>
+                        <Link to='/short-courses-in-karachi'>Short courses in Karachi</Link>
+                        <Link to='/short-courses-in-faisalabad'>Short courses in Faisalabad</Link>
+                        <Link to='/short-courses-in-gujranwala'>Short courses in Gujranwala</Link>
+                        <Link to='/short-courses-in-multan'>Short courses in Multan</Link>
+                        <Link to='/short-course-in-sialkot'>Short courses in Sialkot</Link>
+                        <Link to='/short-courses-in-azad-kashmir'>Short courses in Azad-Kashmir</Link>
+
+                    </div>
+
+
                 </nav>
             </footer>
 

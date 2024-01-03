@@ -26,6 +26,14 @@ import Privacypolicy from '../Screens/Privacypolicy'
 import Citywisedata from '../Screens/Citywisedata'
 import Specialpage from '../Screens/Specialpage'
 import WhatsAppIcon from './Whatsappicon'
+import Lahore from '../Screens/Shortcourses/Lahore'
+import Multan from '../Screens/Shortcourses/Multan'
+import Rawalpindi from '../Screens/Shortcourses/Rawalpindi'
+import Gujranwala from '../Screens/Shortcourses/Gujranwala'
+import Faisalabad from '../Screens/Shortcourses/Faisalabad'
+import Karachi from '../Screens/Shortcourses/Karachi'
+import Sialkot from '../Screens/Shortcourses/Sialkot'
+import Azadkashmir from '../Screens/Shortcourses/AzadKashmir'
 
 
 
@@ -47,9 +55,9 @@ const Router = () => {
                 <Route path='/courses/:slug' element={<Categories />} />
 
 
-               
-                    <Route path='/:courseSlug' element={<Coursedetails />} />
-                
+
+                <Route path='/:courseSlug' element={<Coursedetails />} />
+
 
 
                 <Route path='/allcourses' element={<Allcourses />} />
@@ -65,6 +73,18 @@ const Router = () => {
                 <Route path='/privacy-policy' element={<Privacypolicy />} />
                 <Route path='/city/:name' element={<Citywisedata />} />
                 <Route path='/specialpage/:url' element={<Specialpage />} />
+
+                {/* Shortcourses */}
+                <Route path='/short-courses-in-lahore' element={<Lahore />} />
+                <Route path='/short-courses-in-multan' element={<Multan />} />
+                <Route path='/short-courses-in-rawalpindi' element={<Rawalpindi />} />
+                <Route path='/short-courses-in-karachi' element={<Karachi />} />
+                <Route path='/short-courses-in-faisalabad' element={<Faisalabad />} />
+                <Route path='/short-courses-in-azad-kashmir' element={<Azadkashmir />} />
+                <Route path='/short-course-in-sialkot' element={<Sialkot />} />
+                <Route path='/short-courses-in-gujranwala' element={<Gujranwala />} />
+
+
                 {/* <Route path='/allcourses' element={<Allcourses/>} /> */}
                 {/* <Route path='/c' element={<Carousal/>} /> */}
 
