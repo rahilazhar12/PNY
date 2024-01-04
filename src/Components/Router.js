@@ -32,8 +32,9 @@ import Rawalpindi from '../Screens/Shortcourses/Rawalpindi'
 import Gujranwala from '../Screens/Shortcourses/Gujranwala'
 import Faisalabad from '../Screens/Shortcourses/Faisalabad'
 import Karachi from '../Screens/Shortcourses/Karachi'
-import Sialkot from '../Screens/Shortcourses/Sialkot'
+import Sialkot from '../Screens/Shortcourses/Sialkotblogpage/Sialkot'
 import Azadkashmir from '../Screens/Shortcourses/AzadKashmir'
+import Sialkotdetails from '../Screens/Shortcourses/Sialkotdetails'
 
 
 
@@ -81,7 +82,8 @@ const Router = () => {
                 <Route path='/short-courses-in-karachi' element={<Karachi />} />
                 <Route path='/short-courses-in-faisalabad' element={<Faisalabad />} />
                 <Route path='/short-courses-in-azad-kashmir' element={<Azadkashmir />} />
-                <Route path='/short-course-in-sialkot' element={<Sialkot />} />
+                <Route path='/blog/short-course-in-sialkot' element={<Sialkot />} />
+                <Route path='/blog/short-course-in-sialkot/:slug' element={<Sialkotdetails />} />
                 <Route path='/short-courses-in-gujranwala' element={<Gujranwala />} />
 
 

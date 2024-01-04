@@ -81,7 +81,7 @@ const Footer = () => {
                         <Link to='/short-courses-in-faisalabad'>Short courses in Faisalabad</Link>
                         <Link to='/short-courses-in-gujranwala'>Short courses in Gujranwala</Link>
                         <Link to='/short-courses-in-multan'>Short courses in Multan</Link>
-                        <Link to='/short-course-in-sialkot'>Short courses in Sialkot</Link>
+                        <Link to='/blog/short-course-in-sialkot'>Short courses in Sialkot</Link>
                         <Link to='/short-courses-in-azad-kashmir'>Short courses in Azad-Kashmir</Link>
 
                     </div>
