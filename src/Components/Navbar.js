@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
   return (
     <>
-      <nav>
+      <nav className='sticky top-0 z-50'>
         <div className='max-sm:hidden md:hidden xl:block lg:block px-3 text-white  bg-[#152438] h-[50px]'>
           <ul className='flex  lg:justify-center  xl:justify-center space-x-4'>
             <li><span className='mr-1'>UAN -</span>03041111774</li>

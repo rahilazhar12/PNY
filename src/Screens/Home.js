@@ -216,22 +216,24 @@ const Home = () => {
           <div className="container mx-auto p-4 flex md:flex-col flex-col lg:flex-row xl:flex-row 2xl:flex-row md:items-center">
 
             <div className=" flex-1 max-sm:order-1 px-2  max-sm:text-center md:text-center lg:text-center xl:text-start 2xl:text-start max-sm:p-3">
-              <h1 className="text-xl  font-bold md:text-7xl max-sm:text-[36px]"> <span className='text-[#F10900]'>PNY</span> Trainings</h1>
+              <h1 className="text-xl text-center font-bold md:text-7xl max-sm:text-[36px]"> <span className='text-[#F10900]'>PNY</span> Trainings</h1>
 
-              <p className="mt-2 md:text-[48px] w-[400px] text-[20px] md:w-auto max-sm:w-auto font-semibold">
+              <p className="mt-2 md:text-[48px] w-[400px] text-[20px] md:w-auto max-sm:w-auto font-semibold text-center">
                 Pakistan <span className='text-[#F10900]'>No.1</span> IT Training Institute
               </p>
 
-              <p className="mt-1 text-sm md:text-base md:w-auto w-[400px] max-sm:w-auto">
+              <p className="mt-1 text-center text-sm md:text-base md:w-auto w-[400px] max-sm:w-auto">
                 Certified Courses with Money Making Skills! Empower Yourself with Practical Skills that Open Doors to Lucrative Opportunities
               </p>
             </div>
 
 
-            <div className="flex-1 w-full">
+           
+          </div>
+
+          <div className="flex-1 w-full">
               <Carousal />
             </div>
-          </div>
 
 
 
