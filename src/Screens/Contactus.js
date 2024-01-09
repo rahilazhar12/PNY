@@ -1,3 +1,5 @@
+/* global gtag */
+
 import React, { useState } from 'react'
 import Searchbar from '../Components/Searchbar'
 import { Card } from 'flowbite-react'
@@ -41,6 +43,16 @@ const Contactus = () => {
                 toast.success(data.message, {
                     duration: 5000
                 })
+                // Add Google Ads Conversion Tracking
+                if (typeof gtag === "function") {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-11426324515/-gJOCKL1pvsYEKPAv8gq',
+                        'value': 1.0,
+                        'currency': 'USD',
+                    });
+                }
+
+
                 setName('')
                 setPhone('')
                 setEmail('')
@@ -136,6 +148,9 @@ const Contactus = () => {
                                                 <div className='text-[16px]'><span className='text-[#308AFF] mr-3'>Phone</span>{item.phone}</div>
                                                 <Link to={item.link} className=' hover:border-b border-blue-500 font-semibold text-blue-500' target="_blank" rel="noopener noreferrer">
                                                     Visit Us
+                                                </Link>
+                                                <Link to={item.Map} className=' hover:border-b border-blue-500 font-semibold text-blue-500' target="_blank" rel="noopener noreferrer">
+                                                    Map
                                                 </Link>
                                             </div>
                                             <div><span className='text-[#308AFF] mr-4'>{item.phone1 ? 'Phone' : null}</span>{item.phone1}</div>

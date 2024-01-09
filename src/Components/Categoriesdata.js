@@ -15,6 +15,7 @@ const Categoriesdata = () => {
                 console.error('Error fetching data:', error);
             });
     }, []);
+    
     return (
         <>
             <section className=''>

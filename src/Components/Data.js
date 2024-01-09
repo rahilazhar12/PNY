@@ -258,8 +258,9 @@ export const contactus = [
     title: "Arfa Tower",
     description: "1st Floor 256 / A, Block R2 Near Shaukat Khanam Hospital, next to Standard Chartered, Lahore",
     phone: " 0304-1111774",
-    phone1:"0320-1443744",
-    link:"https://www.youtube.com/watch?v=_HulKf9eRew"
+    phone1: "0320-1443744",
+    Map: "https://maps.app.goo.gl/WoT7KdNiFN7kNJEm9",
+    link: "https://www.youtube.com/watch?v=_HulKf9eRew"
   },
   {
     id: 2,
@@ -267,7 +268,8 @@ export const contactus = [
     title: "Allama Iqbal Town Branch",
     description: "743 B Kashmir Block Allama Iqbal Town Lahore",
     phone: "0309-7774937",
-    link:"https://www.youtube.com/watch?v=ZK1s6QMCRi8"
+    Map: "https://maps.app.goo.gl/G6aX8FxukwVuiGYE9",
+    link: "https://www.youtube.com/watch?v=ZK1s6QMCRi8"
   },
   {
     id: 3,
@@ -275,7 +277,8 @@ export const contactus = [
     title: "Johar Town Branch",
     description: "1st Floor 256 / A, Block R2 Near Shaukat Khanam Hospital, next to Standard Chartered, Lahore",
     phone: "0309-7772259",
-    link:"https://www.youtube.com/watch?v=Y8kNFl5RVvU"
+    Map: "https://maps.app.goo.gl/SSSigyDGw329sF2y8",
+    link: "https://www.youtube.com/watch?v=Y8kNFl5RVvU"
   },
   {
     id: 4,
@@ -283,8 +286,9 @@ export const contactus = [
     title: "Multan Branch",
     description: "237-B, Model Town, Main Boulevard, Multan",
     phone: "0309-7772260",
-    phone1:"0309-7774685",
-    link:"https://www.facebook.com/pny.multan/videos/226519397106219"
+    phone1: "0309-7774685",
+    Map: "https://maps.app.goo.gl/fkZdwWjPfwk3Z2Ny9",
+    link: "https://www.facebook.com/pny.multan/videos/226519397106219"
   },
   {
     id: 5,
@@ -292,7 +296,8 @@ export const contactus = [
     title: "Rawalpindi Branch",
     description: "Office # 604, Alpha Techno Square NASTP, Old Airport Nur khan Airbase, Chaklala Cantt, Rawalpindi.",
     phone: "0300-8405591",
-    link:"https://www.youtube.com/watch?v=QVo6WNbZ3-o"
+    Map: "https://maps.app.goo.gl/hdd4wgvG6pcdDjbL9",
+    link: "https://www.youtube.com/watch?v=QVo6WNbZ3-o"
   },
 ]
 
@@ -535,23 +540,23 @@ export const faqs = [
 ]
 
 
-export const ownersdata  = [
+export const ownersdata = [
   {
-    id:1,
-    image:wahab,
-    name:"Wahab Yunus",
-    designation:"Founder & CEO",
-    linkdin:<i className="fa-brands fa-linkedin"></i>,
-    twitter:<i className="fa-brands fa-twitter"></i>
+    id: 1,
+    image: wahab,
+    name: "Wahab Yunus",
+    designation: "Founder & CEO",
+    linkdin: <i className="fa-brands fa-linkedin"></i>,
+    twitter: <i className="fa-brands fa-twitter"></i>
 
   },
   {
-    id:2,
+    id: 2,
     image: suleman,
-    name:"Suleman Ikram",
-    designation:"Co-Founder & Director",
-    linkdin:<i className="fa-brands fa-linkedin"></i>,
-    twitter:<i className="fa-brands fa-twitter"><a href="www.facebook.com"></a></i>
+    name: "Suleman Ikram",
+    designation: "Co-Founder & Director",
+    linkdin: <i className="fa-brands fa-linkedin"></i>,
+    twitter: <i className="fa-brands fa-twitter"><a href="www.facebook.com"></a></i>
 
   },
 ]
