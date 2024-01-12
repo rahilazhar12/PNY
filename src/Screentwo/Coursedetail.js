@@ -207,7 +207,7 @@ const Coursedetail = () => {
   const module = modulesData[activeModule];
 
 
- console.log(courseData.id , 'rahil______')
+  console.log(courseData.id, 'rahil______')
 
 
 
@@ -302,10 +302,10 @@ const Coursedetail = () => {
                       Download Course Brochure
                     </button>
 
-                   
-                     
 
-                    
+
+
+
 
                     <a ref={brochureLinkRef} href={courseData.brochure} target="_blank" style={{ display: 'none' }}>
                       Download Brochure Link
@@ -372,7 +372,7 @@ const Coursedetail = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 border rounded-lg w-full mx-auto shadow-lg">
 
             {/* Module List */}
-            <div className='border md:w-[172px] w-full'>
+            <div className='border md:w-[172px] w-full overflow-y-auto max-h-[452px]'>
               {modules.map((module, index) => (
                 <div
                   key={module.id}
@@ -411,6 +411,7 @@ const Coursedetail = () => {
             </div>
           </div>
         </section>
+
 
         <section >
           <div className="bg-blue-50 py-10">
