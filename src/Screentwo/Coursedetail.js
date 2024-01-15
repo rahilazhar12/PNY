@@ -134,7 +134,7 @@ const Coursedetail = () => {
     };
 
     fetchCourseData();
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }, [courseSlug]);
 
 
@@ -159,20 +159,20 @@ const Coursedetail = () => {
 
 
 
-  if (isLoading) {
-    return (
-      <div className="flex justify-center items-center min-h-screen">
-        <Blocks
-          visible={true}
-          height="80"
-          width="80"
-          ariaLabel="blocks-loading"
-          wrapperStyle={{}}
-          wrapperClass="blocks-wrapper"
-        />
-      </div>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <div className="flex justify-center items-center min-h-screen">
+  //       <Blocks
+  //         visible={true}
+  //         height="80"
+  //         width="80"
+  //         ariaLabel="blocks-loading"
+  //         wrapperStyle={{}}
+  //         wrapperClass="blocks-wrapper"
+  //       />
+  //     </div>
+  //   );
+  // }
 
   const parsedDescription = parse(courseData.description, {
     replace: domNode => {
@@ -369,14 +369,14 @@ const Coursedetail = () => {
 
         </div>
         <section className='p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14'>
-          <div className="grid grid-cols-1 md:grid-cols-4 border rounded-lg w-full mx-auto shadow-lg">
+          <div className="grid grid-cols-1 md:grid-cols-4 border rounded-lg w-[900px]  mx-auto shadow-lg">
 
             {/* Module List */}
-            <div className='border md:w-[172px] w-full overflow-y-auto max-h-[452px]'>
+            <div className='border md:w-[172px] w-full overflow-y-auto max-h-[800px]'>
               {modules.map((module, index) => (
                 <div
                   key={module.id}
-                  className={`h-[auto] md:h-[113px] flex border border-black/25 shadow-lg justify-center items-center ${selectedModuleId === module.id ? 'bg-blue-500 text-white' : 'bg-white'
+                  className={`h-auto md:h-[113px] flex border border-black/25 shadow-lg justify-center items-center ${selectedModuleId === module.id ? 'bg-blue-500 text-white' : 'bg-white'
                     }`}
                   onClick={() => handleModuleClick(module.id)}
                 >
@@ -386,12 +386,12 @@ const Coursedetail = () => {
             </div>
 
             {/* Module Details */}
-            <div className='col-span-3 md:col-span-2'>
+            <div className='col-span-3 md:col-span-3'>
 
-              <div className='text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-black mb-5 max-sm:mb-0 max-sm:text-center'>
+              <div className='text-lg  md:text-2xl lg:text-3xl xl:text-3xl font-bold text-black mb-5 max-sm:mb-0 max-sm:text-center p-4'>
                 Key Features of this course
               </div>
-              <div className='space-y-2 md:space-y-4 lg:space-y-5 xl:space-y-6 max-sm:list-none max-sm:p-8'>
+              <div className='space-y-2 max-sm:list-none max-sm:p-8'>
                 {modules
                   .filter((module) => module.id === selectedModuleId)
                   .map((module) => (
