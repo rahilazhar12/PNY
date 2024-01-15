@@ -89,7 +89,8 @@ const Coursedetail = () => {
   const [courseData, setCourseData] = useState(null);
   const [instructor, setInstructor] = useState(null);
   const [error, setError] = useState(null);
-  const [selectedModuleId, setSelectedModuleId] = useState(null);
+  const [selectedModuleId, setSelectedModuleId] = useState(modulesData[0]?.id); 
+  // ...
   const [modules, setModules] = useState([]);
   const [id_address, setId_address] = useState('');
 
@@ -146,11 +147,25 @@ const Coursedetail = () => {
         const response = await fetch(`https://www.pnytrainings.com/api/course/modules/${courseData.id}`);
         const data = await response.json();
         setModules(data.course_modules);
+        // Set the selectedModuleId to the ID of the first module
+        if (data.course_modules.length > 0) {
+          setSelectedModuleId(data.course_modules[0].id);
+        }
       };
-
+  
       fetchData();
     }
   }, [courseData]); // Depend on courseData
+  
+  // ...
+  
+  const Coursedetail = () => {
+  
+    // Initialize selectedModuleId with the ID of the first module from modulesData
+    const [selectedModuleId, setSelectedModuleId] = useState(modulesData[0]?.id); 
+    // ...
+  };
+  
 
   const handleModuleClick = (moduleId) => {
     setSelectedModuleId(moduleId);
