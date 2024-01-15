@@ -89,7 +89,7 @@ const Coursedetail = () => {
   const [courseData, setCourseData] = useState(null);
   const [instructor, setInstructor] = useState(null);
   const [error, setError] = useState(null);
-  const [selectedModuleId, setSelectedModuleId] = useState(modulesData[0]?.id); 
+  const [selectedModuleId, setSelectedModuleId] = useState(modulesData[0]?.id);
   // ...
   const [modules, setModules] = useState([]);
   const [id_address, setId_address] = useState('');
@@ -152,20 +152,20 @@ const Coursedetail = () => {
           setSelectedModuleId(data.course_modules[0].id);
         }
       };
-  
+
       fetchData();
     }
   }, [courseData]); // Depend on courseData
-  
+
   // ...
-  
-  const Coursedetail = () => {
-  
-    // Initialize selectedModuleId with the ID of the first module from modulesData
-    const [selectedModuleId, setSelectedModuleId] = useState(modulesData[0]?.id); 
-    // ...
-  };
-  
+
+  // const Coursedetail = () => {
+
+  //   // Initialize selectedModuleId with the ID of the first module from modulesData
+  //   const [selectedModuleId, setSelectedModuleId] = useState(modulesData[0]?.id); 
+  //   // ...
+  // };
+
 
   const handleModuleClick = (moduleId) => {
     setSelectedModuleId(moduleId);
@@ -357,7 +357,7 @@ const Coursedetail = () => {
                     </div>
                   </div>
                   <button className="bg-[#308AFF] text-white font-bold py-2 px-4 rounded">Free Orientation Class</button>
-                  <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Pay Now</button>
+                  <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Enroll Now</button>
                 </div>
               </div>
 
