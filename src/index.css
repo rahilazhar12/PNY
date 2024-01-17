@@ -183,4 +183,24 @@ li:hover > button svg {
   }
 }
 
+/* Styling the scrollbar track (background) */
+.overflow-y-auto::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Light gray track */
+  border-radius: 10px; /* Rounded corners for the track */
+}
 
+/* Styling the scrollbar handle */
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: #888; /* Dark gray handle */
+  border-radius: 10px; /* Rounded corners for the handle */
+}
+
+/* Handle on hover */
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Darker shade when hovered */
+}
+
+/* Styling the scrollbar width */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 8px; /* Narrow width */
+}
