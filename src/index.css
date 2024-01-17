@@ -202,5 +202,5 @@ li:hover > button svg {
 
 /* Styling the scrollbar width */
 .overflow-y-auto::-webkit-scrollbar {
-  width: 8px; /* Narrow width */
+  width: 0px; /* Narrow width */
 }
