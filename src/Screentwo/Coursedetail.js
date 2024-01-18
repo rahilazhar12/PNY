@@ -222,7 +222,7 @@ const Coursedetail = () => {
   const module = modulesData[activeModule];
 
 
-  console.log(courseData.id, 'rahil______')
+
 
 
 
@@ -366,7 +366,7 @@ const Coursedetail = () => {
                 {/* Responsive iframe container */}
                 <div className="w-full aspect-w-16 aspect-h-9">
                   {/* Iframe YouTube */}
-                  <iframe className="w-full h-[300px] max-sm:h-[100px]" src={`https://www.youtube.com/embed/${courseData.video}`} title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
+                  <iframe className="w-full h-[300px] max-sm:h-[150px]" src={`https://www.youtube.com/embed/${courseData.video}`} title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
                   </iframe>
                 </div>
               </div>
@@ -384,10 +384,10 @@ const Coursedetail = () => {
 
         </div>
         <section className='p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14'>
-          <div className="grid grid-cols-1 md:grid-cols-4 border rounded-lg w-[900px] h-[450px]  mx-auto shadow-lg">
+          <div className="grid grid-cols-1 md:grid-cols-4 border rounded-lg w-[900px] max-sm:w-auto md:w-auto max-sm:h-[750px] h-[450px]  mx-auto shadow-lg">
 
             {/* Module List */}
-            <div className='border md:w-[172px] w-full overflow-y-auto max-h-[800px]'>
+            <div className='border md:w-[172px] w-full overflow-y-auto max-h-auto'>
               {modules.map((module, index) => (
                 <div
                   key={module.id}
@@ -401,12 +401,12 @@ const Coursedetail = () => {
             </div>
 
             {/* Module Details */}
-            <div className='col-span-3 md:col-span-3'>
+            <div className='col-span-3 md:col-span-3 overflow-y-auto max-h-auto'>
 
               <div className='text-lg  md:text-2xl lg:text-3xl xl:text-3xl font-bold text-black mb-5 max-sm:mb-0 max-sm:text-center p-4'>
                 Key Features of this Course
               </div>
-              <div className='space-y-2 max-sm:list-none max-sm:p-8'>
+              <div className='space-y-2 max-sm:list-none max-sm:p-8 '>
                 {modules
                   .filter((module) => module.id === selectedModuleId)
                   .map((module) => (
@@ -432,7 +432,7 @@ const Coursedetail = () => {
           <div className="bg-blue-50 py-10">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl font-bold text-center text-black mb-6">Develop your Academic network through Diverse Environment</h2>
-              <p className="text-center text-black w-[990px] max-sm:w-auto mx-auto mb-10">We discover your personal and professional growth capitalize on opportunities through which you will get profound impact on various employment and career advancement.</p>
+              <p className="text-center text-black w-auto max-sm:w-auto mx-auto mb-10">We discover your personal and professional growth capitalize on opportunities through which you will get profound impact on various employment and career advancement.</p>
               <IconContext.Provider value={{ size: "2em", className: "text-blue-600" }}>
                 <div className="grid grid-cols-6 gap-4 text-center max-sm:grid-cols-1">
                   <div className="flex flex-col items-center">
