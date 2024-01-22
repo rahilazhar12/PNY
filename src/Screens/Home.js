@@ -370,7 +370,7 @@ const Home = () => {
                             {item.obj.length > 0 && item.obj[0].description_short}
                           </div>
 
-                          <div><Link to={`/${item.url_slug}`} target='_blank' className='text-blue-500 font-semibold'>View Course</Link></div>
+                          <div><Link to={`/courses/${item.url_slug}`} target='_blank' className='text-blue-500 font-semibold'>View Course</Link></div>
                         </div>
                       </div>
                     </>
