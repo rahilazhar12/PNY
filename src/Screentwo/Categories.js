@@ -114,8 +114,8 @@ const Categories = () => {
                         <p>Design</p>
                       </div>
                       <div className="flex">
-                        <i className="fas fa-clock text-gray-400 mt-1 mx-1"></i>
-                        <p>6 Months</p>
+                        {/* <i className="fas fa-clock text-gray-400 mt-1 mx-1"></i> */}
+                       
                       </div>
                     </div>
                     <div className="w-full">
