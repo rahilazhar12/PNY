@@ -441,27 +441,30 @@ const Coursedetail = () => {
         </div>
 
         {/* Accordion Content for Module Details */}
-        <div className={`overflow-hidden transition-all duration-500 ease-in-out ${selectedModuleId === module.id ? 'max-h-screen py-4' : 'max-h-0'}`}>
-          <div className='px-4'>
-            <div className='text-lg font-bold text-black mb-2'>
-              Key Features of {module.title}
-            </div>
-            {selectedModuleId === module.id && parse(module.key_features, {
-              replace: domNode => {
-                if (domNode.type === 'tag') {
-                  if (domNode.name === 'ul') {
-                    const props = { className: 'list-disc' };
-                    return <ul {...props}>{domToReact(domNode.children)}</ul>;
+        <div className={`transition-all duration-500 ease-in-out overflow-hidden ${selectedModuleId === module.id ? 'max-h-screen py-4' : 'max-h-0'}`}>
+          {selectedModuleId === module.id && (
+            <div className='px-4'>
+              <div className='text-lg font-bold text-black mb-2'>
+                Key Features of {module.title}
+              </div>
+              {parse(module.key_features, {
+                replace: domNode => {
+                  if (domNode.type === 'tag') {
+                    if (domNode.name === 'ul') {
+                      const props = { className: 'list-disc' };
+                      return <ul {...props}>{domToReact(domNode.children)}</ul>;
+                    }
                   }
                 }
-              }
-            })}
-          </div>
+              })}
+            </div>
+          )}
         </div>
       </div>
     ))}
   </div>
 </section>
+
 
 
 
