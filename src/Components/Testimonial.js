@@ -5,8 +5,8 @@ const Testimonial = () => {
   return (
     <>
       <section className='flex justify-center items-center flex-col p-3 space-y-3'>
-        <div className='lgh'>Leaders of Youth</div>
-        <div className='lgp'>PNY Trainings' CEO and Director are visionary leaders, inspiring youth on a transformative journey toward a promising future, making a path to success and prosperity.</div>
+        <div className='lgh dark:text-white'>Leaders of Youth</div>
+        <div className='lgp dark:text-white'>PNY Trainings' CEO and Director are visionary leaders, inspiring youth on a transformative journey toward a promising future, making a path to success and prosperity.</div>
       </section>
       <div className='flex  justify-center p-5 max-sm:p-4'>
         <div className='grid grid-cols-2 max-sm:grid-cols-1 gap-4'>

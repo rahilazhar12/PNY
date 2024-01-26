@@ -47,7 +47,7 @@ const Footer = () => {
                         Whatsapp: 03201443744</p>
                 </aside>
                 <nav className='max-sm:text-sm'>
-                    <header className=" text-black font-bold">Quick Link</header>
+                    <header className=" text-black font-bold  dark:text-white">Quick Link</header>
                     <Link to='/faqs' className="link link-hover">FAQs</Link>
                     <Link className="link link-hover">Admission</Link>
                     <Link to='/gallery' className="link link-hover">Gallery</Link>
@@ -55,7 +55,7 @@ const Footer = () => {
                     <Link to='/privacy-policy' className="link link-hover">Privacy Policy</Link>
                 </nav>
                 <nav>
-                    <header className="text-black font-bold">Offered Courses</header>
+                    <header className="text-black font-bold dark:text-white">Offered Courses</header>
                     <Link className="link link-hover">Meta Social Media Marketing Bootcamp</Link>
                     <Link className="link link-hover">Instagram Marketing Expert Bootcamp</Link>
                     <Link className="link link-hover">Deep Learning and Computer Vision for Python</Link>
@@ -66,13 +66,13 @@ const Footer = () => {
                 </nav>
 
                 <nav>
-                    <header className="text-black font-bold">Language Courses</header>
+                    <header className="text-black font-bold dark:text-white">Language Courses</header>
                     <Link className="link link-hover">Spoken English Language Course</Link>
                     <Link className="link link-hover">IELTS prepration course</Link>
                     <Link className="link link-hover">Pearson Test of English</Link>
                 </nav>
                 <nav>
-                    <h1 className="text-black font-bold">Short Courses</h1>
+                    <h1 className="text-black font-bold dark:text-white">Short Courses</h1>
 
                     <div className='flex flex-col space-y-2'>
                         <Link to='/short-courses-in-lahore'>Short courses in Lahore</Link>
@@ -100,35 +100,35 @@ const Footer = () => {
                 <nav className='col-span-2'>
 
                     <img src={arfatower} alt="" />
-                    <header className="text-black font-bold">Arfa Tower (Head Office)</header>
+                    <header className="text-black dark:text-white font-bold">Arfa Tower (Head Office)</header>
                     <p className="  lg:w-[150px]">Office 1, Level #14, Arfa Software Technology Park, Ferozepur Road Lahore</p>
 
                 </nav>
                 <nav className='col-span-2' >
                     <img src={iqbaltown} alt="" />
-                    <header className="text-black font-bold">Iqbal Town</header>
+                    <header className="text-black font-bold dark:text-white">Iqbal Town</header>
                     <Link className="  lg:w-[150px]">743 B Kashmir Block Allama Iqbal Town Lahore</Link>
 
                 </nav>
                 <nav className='col-span-2'>
                     <img src={johartown} alt="" />
-                    <header className="text-black font-bold">Johar Town</header>
+                    <header className="text-black font-bold dark:text-white">Johar Town</header>
                     <Link className="  lg:w-[150px]">1st Floor 256 / A, Block R2 Near Shaukat Khanam Hospital, next to Standard Chartered, Lahore</Link>
 
                 </nav>
                 <nav className='col-span-2'>
                     <img src={multan} alt="" />
-                    <header className="text-black font-bold">Multan</header>
+                    <header className="text-black font-bold dark:text-white">Multan</header>
                     <Link className=" lg:w-[150px]">237-B, Model Town, Main Boulevard, Multan</Link>
                 </nav>
                 <nav className='col-span-2'>
                     <img src={multan} alt="" />
-                    <header className="text-black font-bold">Rawalpindi</header>
+                    <header className="text-black font-bold dark:text-white">Rawalpindi</header>
                     <Link className=" lg:w-[150px]">Office # 604, Alpha Techno Square NASTP, Old Airport Nur khan Airbase, Chaklala Cantt, Rawalpindi.</Link>
                 </nav>
                 <nav>
                     <img src={allbrances} alt="" />
-                    <header className="text-black font-bold">View All Branches</header>
+                    <header className="text-black font-bold dark:text-white">View All Branches</header>
                     <Link className="link link-hover w-[150px]"> View All Branches</Link>
                     <Link to='https://www.dmca.com/Protection/Status.aspx?ID=7c917940-1e0d-4855-93f4-76d5632f1b81&refurl=https://www.pnytrainings.com/'>
                         <img className=' cursor-pointer' src="https://www.locklizard.com/wp-content/uploads/2023/04/dmca-protected.png" alt="" />
@@ -137,10 +137,10 @@ const Footer = () => {
             </footer>
             <footer className="footer footer-center p-4 bg-base-300 text-base-content">
                 <aside>
-                    <p className='text-xl font-bold'>Courses We Offers in Cities</p>
-                    <div>
+                    <p className='text-xl font-bold '>Courses We Offers in Cities</p>
+                    <div> 
                         {["Lahore", "Rawalpindi", "Karachi", "Multan", "Sialkot", "Faisalabad", "Gujranwala", "Azad Kashmir", "Islamabad"].map((city) => (
-                            <button key={city} className="btn btn-link text-black" onClick={() => redirectToCity(city)}>
+                            <button key={city} className="btn btn-link text-black dark:text-white" onClick={() => redirectToCity(city)}>
                                 {city}
                             </button>
                         ))}

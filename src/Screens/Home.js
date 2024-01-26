@@ -216,24 +216,24 @@ const Home = () => {
           <div className="container mx-auto p-4 flex md:flex-col flex-col lg:flex-row xl:flex-row 2xl:flex-row md:items-center">
 
             <div className=" flex-1 max-sm:order-1 px-2  max-sm:text-center md:text-center lg:text-center xl:text-start 2xl:text-start max-sm:p-3">
-              <h1 className="text-xl text-center font-bold md:text-7xl max-sm:text-[36px]"> <span className='text-[#F10900]'>PNY</span> Trainings</h1>
+              <h1 className="text-xl dark:text-white text-center font-bold md:text-7xl max-sm:text-[36px]"> <span className='text-[#F10900]'>PNY</span> Trainings</h1>
 
-              <p className="mt-2 md:text-[48px] w-[400px] text-[20px] md:w-auto max-sm:w-auto font-semibold text-center">
+              <p className="mt-2 dark:text-white md:text-[48px] w-[400px] text-[20px] md:w-auto max-sm:w-auto font-semibold text-center">
                 Pakistan <span className='text-[#F10900]'>No.1</span> IT Training Institute
               </p>
 
-              <p className="mt-1 text-center text-sm md:text-base md:w-auto w-[400px] max-sm:w-auto">
+              <p className="mt-1 dark:text-white text-center text-sm md:text-base md:w-auto w-[400px] max-sm:w-auto">
                 Certified Courses with Money Making Skills! Empower Yourself with Practical Skills that Open Doors to Lucrative Opportunities
               </p>
             </div>
 
 
-           
+
           </div>
 
           <div className="flex-1 w-full">
-              <Carousal />
-            </div>
+            <Carousal />
+          </div>
 
 
 
@@ -241,7 +241,7 @@ const Home = () => {
           <section className='bg-blue-100' style={{ backgroundImage: `url(${vector})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <div className="grid justify-center lg:p-28 md:p-20 max-sm:p-5 ">
 
-              <div className='lg:text-5xl lg:w-[778px]  max-sm:p- font-bold text-center dark:text-white'>
+              <div className='lg:text-5xl lg:w-[778px]  max-sm:p- font-bold text-center dark:text-black'>
                 Admissions are open for the fresh
                 batch. Let’s grow together!
               </div>
@@ -255,40 +255,40 @@ const Home = () => {
           {/* Section-3 */}
           <section>
             <div className="bg-white text-center p-8">
-              <h2 className="text-2xl font-semibold mb-4 lgh">We Develop Your Inspiring Career with Standard</h2>
-              <p className="mb-8 w-[990px] md:w-auto max-sm:w-auto mx-auto">PNY Trainings Pakistan is the leading IT training institute, offering 100+ courses through online and physical classes. We provide internship opportunities and have a dedicated job cell to help you jumpstart your career.</p>
+              <h2 className="text-2xl font-semibold mb-4 lgh dark:text-black">We Develop Your Inspiring Career with Standard</h2>
+              <p className="mb-8 w-[990px] md:w-auto max-sm:w-auto mx-auto dark:text-black">PNY Trainings Pakistan is the leading IT training institute, offering 100+ courses through online and physical classes. We provide internship opportunities and have a dedicated job cell to help you jumpstart your career.</p>
               <div className="grid grid-cols-4 gap-4 max-sm:grid-cols-2">
                 <div className="flex flex-col items-center">
                   <FaGlobeAmericas className="text-4xl mb-2 text-blue-500" />
-                  <span className=' font-semibold'>International Collaborations</span>
+                  <span className=' font-semibold dark:text-black'>International Collaborations</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <FaAward className="text-4xl mb-2 text-blue-500" />
-                  <span className=' font-semibold'>Awarded by USA Education 2.0</span>
+                  <span className=' font-semibold dark:text-black'>Awarded by USA Education 2.0</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <FaBuilding className="text-4xl mb-2 text-blue-500" />
-                  <span className=' font-semibold'>Multiple Branches in Pakistan</span>
+                  <span className=' font-semibold dark:text-black'>Multiple Branches in Pakistan</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <FaUniversity className="text-4xl mb-2 text-blue-500" />
-                  <span className=' font-semibold'>Affiliated with Govt. (PSDA & PBTE)</span>
+                  <span className=' font-semibold dark:text-black'>Affiliated with Govt. (PSDA & PBTE)</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <FaUsers className="text-4xl mb-2 text-blue-500" />
-                  <span className=' font-semibold'>75000+ Alumni</span>
+                  <span className=' font-semibold dark:text-black'>75000+ Alumni</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <FaBook className="text-4xl mb-2 text-blue-500" />
-                  <span className=' font-semibold'>100+ Professional Programs</span>
+                  <span className=' font-semibold dark:text-black'>100+ Professional Programs</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <FaChalkboardTeacher className="text-4xl mb-2 text-blue-500" />
-                  <span className=' font-semibold'>150+ Instructors</span>
+                  <span className=' font-semibold dark:text-black'>150+ Instructors</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <FaHandshake className="text-4xl mb-2 text-blue-500" />
-                  <span className=' font-semibold'>80+ MoU's Sign</span>
+                  <span className=' font-semibold dark:text-black'>80+ MoU's Sign</span>
                 </div>
               </div>
             </div>
@@ -363,10 +363,10 @@ const Home = () => {
                       <div className='col-span-4'>
                         <div className="mainbox  lg:h-96 xl:h-80 md:h-80 bg-[#F0F7FF] p-5 space-y-2 rounded">
                           <div className="img"> <img src={icon} alt="" /> </div>
-                          <div className="development lg:text-2xl font-semibold font-Inter">{item.name}</div>
+                          <div className="development lg:text-2xl font-semibold dark:text-black font-Inter">{item.name}</div>
 
                           {/* Display the short description from the first object in the item.obj array */}
-                          <div className="paragraph">
+                          <div className="paragraph dark:text-black">
                             {item.obj.length > 0 && item.obj[0].description_short}
                           </div>
 
@@ -439,16 +439,16 @@ const Home = () => {
           <section className='bg-[#F9FAFB] md:p-5 '>
             <div className="grid grid-cols-12  max-sm:grid-cols-6">
               <div className='col-span-6 max-sm:p-5 lg:px-10 py-10 max-sm:order-1'>
-                <div className="whychooseus text-4xl font-bold  max-sm:text-center  max-sm:text-2xl">Why Choose US?</div>
+                <div className="whychooseus text-4xl font-bold  max-sm:text-center dark:text-black  max-sm:text-2xl">Why Choose US?</div>
 
                 <ul className='p-5 space-y-5 text-lg   max-sm:text-sm'>
-                  <li><i className="fa-sharp fa-regular fa-circle-check"></i> Money Making Skills</li>
-                  <li> <i className="fa-sharp fa-regular fa-circle-check"></i> Hands on Experience during Training</li>
-                  <li> <i className="fa-sharp fa-regular fa-circle-check"></i> Internship & Job Opportunities</li>
-                  <li> <i className="fa-sharp fa-regular fa-circle-check"></i> On-campus & Online Classes with Recorded Lectures</li>
-                  <li> <i className="fa-sharp fa-regular fa-circle-check"></i> Highly Experienced Instructors</li>
-                  <li> <i className="fa-sharp fa-regular fa-circle-check"></i> Professional Learning Environment</li>
-                  <li> <i className="fa-sharp fa-regular fa-circle-check"></i> Learning Management System</li>
+                  <li className='dark:text-black'><i className="fa-sharp fa-regular fa-circle-check dark:text-black"></i> Money Making Skills</li>
+                  <li className='dark:text-black'> <i className="fa-sharp fa-regular fa-circle-check dark:text-black"></i> Hands on Experience during Training</li>
+                  <li className='dark:text-black'> <i className="fa-sharp fa-regular fa-circle-check dark:text-black"></i> Internship & Job Opportunities</li>
+                  <li className='dark:text-black'> <i className="fa-sharp fa-regular fa-circle-check dark:text-black"></i> On-campus & Online Classes with Recorded Lectures</li>
+                  <li className='dark:text-black'> <i className="fa-sharp fa-regular fa-circle-check dark:text-black"></i> Highly Experienced Instructors</li>
+                  <li className='dark:text-black'> <i className="fa-sharp fa-regular fa-circle-check dark:text-black"></i> Professional Learning Environment</li>
+                  <li className='dark:text-black'> <i className="fa-sharp fa-regular fa-circle-check dark:text-black"></i> Learning Management System</li>
                 </ul>
 
                 {/* <div className="buttons max-sm:flex lg:mt-5">
@@ -525,8 +525,8 @@ const Home = () => {
           {/* Section-8 */}
           <section className='bg-[#F9FAFB] h-auto'>
             <div className="grid justify-center lg:p-10">
-              <div className=" lgh dark:text-white max-sm:mt-10">Our Collaborations</div>
-              <div className=" lgp max-sm:p-3 md:px-10 md:py-2 dark:text-white">Discover the strength of our network as we join hands with key partners to innovate and create impactful digital learning experiences for today's youth.</div>
+              <div className=" lgh  dark:text-black max-sm:mt-10 ">Our Collaborations</div>
+              <div className=" lgp max-sm:p-3 md:px-10 md:py-2 dark:text-black">Discover the strength of our network as we join hands with key partners to innovate and create impactful digital learning experiences for today's youth.</div>
 
               <div className="carousal md:px-5 max-sm:px-4">
                 <Carousalhome />
@@ -540,12 +540,12 @@ const Home = () => {
 
             <div id='trainer' className="grid space-y-3 max-sm:p-6 lg:px-48 lg:py-10 bg-[#F9FAFB] text-justify md:p-5">
               <div className="grid">
-                <div className="lgh dark:text-white">Our trainers certified from</div>
+                <div className="lgh dark:text-black">Our trainers certified from</div>
                 <div className="imageaffiliation flex justify-center max-sm:p-2 lg:py-10 md:px-5 ">
                   <img src={frame2} alt="" />
                 </div>
               </div>
-              {parsedDescription}
+              <div className='dark:text-black'>{parsedDescription}</div>
               {/* <div>PNY Trainings is the best IT institution in Lahore Pakistan that conducts different training programs aimed at helping young career seekers understand the basic information technology functioning of the sector and the job role they aspire to take on. Their insight and vision have assisted us to enhance the knowledge and skills of youngsters to take on modern-day corporate challenges. Getting a good start in a career is a cherished dream for every career candidate. However, this is easier said than done especially in today's challenging career range. To achieve this dream basic college education is rarely enough, especially in Pakistan. Today's highly competitive and demanding employment market is looking for only talented and skilled manpower with enough command of the information technology industry essentials. To make a mark you must have the necessary knowledge, skills, and capability to provide to the specific industry you aspire to enter into an increase. This is equally true across domains of Technology, Business, Development, and Designing, IT Software Development, Digital Marketing Courses, and many more.</div> */}
               {/* <div>One of the ways that you can gain an advantage over your contemporaries is to undergo courses offered by reputable training institutes in Lahore. There are so many seats available in Arfa tower short courses and all you have to do is to enroll yourself in your desired course. PNY Trainings offers different courses in Lahore, Islamabad, Rawalpindi, Karachi, and other major cities of Pakistan.</div> */}
               {/* <div>PNYTrainings is one of the promising and Best IT institutes in Lahore that comes up with amazing courses, training, and almost all short courses in Lahore. We are the introducers to numerous IT trends, courses, and certifications in Lahore. The motive of the PNY Arfa Tower short courses is to provide the best courses with guaranteed results for everyone.</div> */}

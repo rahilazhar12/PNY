@@ -4,7 +4,7 @@ import map from '../Assets/images/noun-pakistan-264183 1.png'
 const Map = () => {
     return (
         <section className=' lg:mt-5'>
-            <div className='lgh'>We Build Leaders For professional work</div>
+            <div className='lgh dark:text-white'>We Build Leaders For professional work</div>
             <div className="grid lg:grid-cols-2 md:grid-cols-2 xl:grid-cols-2 lg:px-20 lg:py-10 md:px-3 md:py-10 max-sm:p-1 ">
                 <div className='max-sm:order-1 '> 
                     <div className='bg-blue-500 rounded-xl text-white xl:w-[541px] xl:h-[239px] xl:py-[47px] xl:px-[32px]  lg:w-[362px] lg:h-[200px] lg:px-[13px] lg:py-[26px] md:w-[362px] md:h-[200px] md:px-[10px] md:py-[20px] max-sm:px-3 max-sm:py-10'>
