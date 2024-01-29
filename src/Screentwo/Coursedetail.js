@@ -385,7 +385,7 @@ const Coursedetail = () => {
         </div>
         <section 
   className='hidden sm:block p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14'>
-  <div className="grid grid-cols-1 md:grid-cols-4 border rounded-lg w-full mx-auto shadow-lg">
+  <div className="grid grid-cols-1 md:grid-cols-4 border rounded-lg w-full mx-auto shadow-lg lg:h-[450px] md:h-[450px] ">
     
     {/* Module List */}
     <div className='border md:w-[172px] w-full overflow-y-auto'>
@@ -402,7 +402,7 @@ const Coursedetail = () => {
     </div>
 
     {/* Module Details */}
-    <div className='col-span-3 md:col-span-3 overflow-y-auto'>
+    <div className='col-span-3 md:col-span-3 overflow-y-auto '>
       <div className='text-lg md:text-2xl lg:text-3xl xl:text-3xl font-bold text-black mb-5 p-4'>
         Key Features of this Course
       </div>
