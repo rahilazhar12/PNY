@@ -86,25 +86,25 @@ const Contactus = () => {
                     </div>
                     <div>
                         <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-                            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Contact Us with Your Queries</h2>
+                            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-black">Contact Us with Your Queries</h2>
                             {/* <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">You can reach us anytime via <span className='text-[#308AFF]'>hr@pnytrainings.com</span></p> */}
                             <form action="#" className="space-y-8">
                                 <div>
-                                    <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Name</label>
+                                    <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Name</label>
                                     <input type="text" id="email" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Your name" required onChange={(e) => setName(e.target.value)} value={name} />
                                 </div>
                                 <div>
-                                    <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
+                                    <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Email</label>
                                     <input type="text" id="subject" className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="you@company.com" required
                                         onChange={(e) => setEmail(e.target.value)} value={email} />
                                 </div>
                                 <div>
-                                    <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Phone number</label>
+                                    <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Phone number</label>
                                     <input type="text" id="subject" className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="+92 (303) 4243782" required
                                         onChange={(e) => setPhone(e.target.value)} value={phone} />
                                 </div>
                                 <div className="sm:col-span-2">
-                                    <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">How can we help?</label>
+                                    <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">How can we help?</label>
                                     <textarea
                                         id="message"
                                         rows={6}
@@ -128,8 +128,8 @@ const Contactus = () => {
             </section>
 
             <section className='mt-10 lg:mb-10 lg:space-y-3'>
-                <div className='lgh'>Our Branches</div>
-                <div className='text-center text-[20px] font-medium'>Find our more Branches in Pakistan </div>
+                <div className='lgh dark:text-white'>Our Branches</div>
+                <div className='text-center text-[20px] font-medium dark:text-white'>Find our more Branches in Pakistan </div>
             </section>
 
             <section>
@@ -142,10 +142,10 @@ const Contactus = () => {
                                     <div className="card xl:w-[408px]  lg:w-[308px] md:w-[350px]  max-sm:w-full bg-base-100 shadow-2xl">
                                         <figure><img className='p-6' src={item.image} alt="" /></figure>
                                         <div className="card-body">
-                                            <h2 className="card-title text-[24px]  font-semibold">{item.title}</h2>
-                                            <p className='text-[16px]'>{item.description}</p>
+                                            <h2 className="card-title text-[24px]  font-semibold dark:text-white">{item.title}</h2>
+                                            <p className='text-[16px] dark:text-white'>{item.description}</p>
                                             <div className='flex justify-between mt-3'>
-                                                <div className='text-[16px]'><span className='text-[#308AFF] mr-3'>Phone</span>{item.phone}</div>
+                                                <div className='text-[16px] dark:text-white'><span className='text-[#308AFF] mr-3'>Phone</span>{item.phone}</div>
                                                 <Link to={item.link} className=' hover:border-b border-blue-500 font-semibold text-blue-500' target="_blank" rel="noopener noreferrer">
                                                     Visit Us
                                                 </Link>
@@ -153,7 +153,7 @@ const Contactus = () => {
                                                     Map
                                                 </Link>
                                             </div>
-                                            <div><span className='text-[#308AFF] mr-4'>{item.phone1 ? 'Phone' : null}</span>{item.phone1}</div>
+                                            <div className='dark:text-white'><span className='text-[#308AFF]  mr-4'>{item.phone1 ? 'Phone' : null}</span>{item.phone1}</div>
 
                                         </div>
                                     </div>
