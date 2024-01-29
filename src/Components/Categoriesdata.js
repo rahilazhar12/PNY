@@ -18,7 +18,7 @@ const Categoriesdata = () => {
     
     return (
         <>
-            <section className=''>
+            <section className='mt-2'>
                 <div className="group inline-block">
                     <button className="outline-none focus:outline-none  border px-3 py-1 bg-blue-400 text-white h-[36px]  rounded-lg flex items-center w-52">
                         <span className="pr-1 font-semibold flex-1">Categories</span>

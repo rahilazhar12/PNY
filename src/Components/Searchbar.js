@@ -5,6 +5,7 @@ import { DarkThemeToggle, Flowbite } from 'flowbite-react';
 import { motion } from 'framer-motion';
 import { BiCategory } from 'react-icons/bi'
 import Categoriesdata from './Categoriesdata';
+import Allcoursessearchbar from './Allcoursessearchbar';
 
 const Searchbar = () => {
 
@@ -35,9 +36,11 @@ const Searchbar = () => {
                     </div>
 
                     {/* Searchbar */}
-                    <div className=' max-sm:flex max-sm:justify-center lg:col-span-6 xl:col-span-4 md:col-span-5'>
+                    {/* <div className=' max-sm:flex max-sm:justify-center lg:col-span-6 xl:col-span-4 md:col-span-5'>
                         <input className='border max-sm:p-3 lg:w-80  md:w-80 md:ml-20 xl:ml-0 xl:w-full  lg:ml-20 h-9 rounded' placeholder='Search for the software or skills you want to learn' type="text" />
-                    </div>
+                    </div> */}
+
+                    <Allcoursessearchbar/>
 
                     <div className=' lg:col-span-3 xl:col-span-5 md:col-span-12'>
                         <div className=' text-slate-900 dark:text-white  text-base font-medium tracking-tight">Writes Upside-Down lg:mt-2'>
