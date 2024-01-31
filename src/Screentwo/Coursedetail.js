@@ -261,8 +261,7 @@ const Coursedetail = () => {
         //   duration: 5000
         // })
         // setOpen(false)
-        // alert(data.message)
-        alert('I love you')
+        alert(data.message)
         brochureLinkRef.current.click();
       })
       .catch((error) => {
@@ -372,7 +371,7 @@ const Coursedetail = () => {
                   <iframe className="w-full h-[300px] max-sm:h-[150px]" src={`https://www.youtube.com/embed/${courseData.video}`} title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
                   </iframe>
 
-                  
+
                 </div>
               </div>
 
@@ -388,87 +387,87 @@ const Coursedetail = () => {
           </div>
 
         </div>
-        <section 
-  className='hidden sm:block p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14'>
-  <div className="grid grid-cols-1 md:grid-cols-4 border rounded-lg w-full mx-auto shadow-lg lg:h-[450px] md:h-[450px] ">
-    
-    {/* Module List */}
-    <div className='border md:w-[172px] w-full overflow-y-auto'>
-      {modules.map((module, index) => (
-        <div
-          key={module.id}
-          className={`h-auto md:h-[113px] flex border border-black/25 shadow-lg justify-center items-center ${selectedModuleId === module.id ? 'bg-blue-500 text-white' : 'bg-white'
-            }`}
-          onClick={() => handleModuleClick(module.id)}
-        >
-          {module.title} <span className='ml-3'><i className="fa-solid fa-arrow-right"></i></span>
-        </div>
-      ))}
-    </div>
+        <section
+          className='hidden sm:block p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14'>
+          <div className="grid grid-cols-1 md:grid-cols-4 border rounded-lg w-full mx-auto shadow-lg lg:h-[450px] md:h-[450px] ">
 
-    {/* Module Details */}
-    <div className='col-span-3 md:col-span-3 overflow-y-auto '>
-      <div className='text-lg md:text-2xl lg:text-3xl xl:text-3xl font-bold text-black mb-5 p-4'>
-        Key Features of this Course
-      </div>
-      <div className='space-y-2'>
-        {modules
-          .filter((module) => module.id === selectedModuleId)
-          .map((module) => (
-            parse(module.key_features, {
-              replace: domNode => {
-                if (domNode.type === 'tag') {
-                  if (domNode.name === 'ul') {
-                    const props = { className: 'list-disc p-4 flex flex-col space-y-3' };
-                    return <p {...props}>{domToReact(domNode.children)}</p>;
-                  }
-                }
-              }
-            })
-          ))}
-      </div>
-    </div>
-  </div>
-</section>
-
-<section className='p-4 sm:hidden'>
-  <div className="flex flex-col border rounded-lg w-full mx-auto shadow-lg">
-
-    {modules.map((module, index) => (
-      <div key={module.id}>
-        {/* Module Item */}
-        <div
-          className={`flex flex-col border border-black/25 shadow-lg justify-center items-center p-2 cursor-pointer ${selectedModuleId === module.id ? 'bg-blue-500 text-white' : 'bg-white'
-            }`}
-          onClick={() => handleModuleClick(module.id)}
-        >
-          {module.title}
-        </div>
-
-        {/* Accordion Content for Module Details */}
-        <div className={`transition-all duration-500 ease-in-out overflow-hidden ${selectedModuleId === module.id ? 'max-h-screen py-4' : 'max-h-0'}`}>
-          {selectedModuleId === module.id && (
-            <div className='px-4'>
-              <div className='text-lg font-bold text-black mb-2'>
-                Key Features of {module.title}
-              </div>
-              {parse(module.key_features, {
-                replace: domNode => {
-                  if (domNode.type === 'tag') {
-                    if (domNode.name === 'ul') {
-                      const props = { className: 'list-disc' };
-                      return <ul {...props}>{domToReact(domNode.children)}</ul>;
-                    }
-                  }
-                }
-              })}
+            {/* Module List */}
+            <div className='border md:w-[172px] w-full overflow-y-auto'>
+              {modules.map((module, index) => (
+                <div
+                  key={module.id}
+                  className={`h-auto md:h-[113px] flex border border-black/25 shadow-lg justify-center items-center ${selectedModuleId === module.id ? 'bg-blue-500 text-white' : 'bg-white'
+                    }`}
+                  onClick={() => handleModuleClick(module.id)}
+                >
+                  {module.title} <span className='ml-3'><i className="fa-solid fa-arrow-right"></i></span>
+                </div>
+              ))}
             </div>
-          )}
-        </div>
-      </div>
-    ))}
-  </div>
-</section>
+
+            {/* Module Details */}
+            <div className='col-span-3 md:col-span-3 overflow-y-auto '>
+              <div className='text-lg md:text-2xl lg:text-3xl xl:text-3xl font-bold text-black mb-5 p-4'>
+                Key Features of this Course
+              </div>
+              <div className='space-y-2'>
+                {modules
+                  .filter((module) => module.id === selectedModuleId)
+                  .map((module) => (
+                    parse(module.key_features, {
+                      replace: domNode => {
+                        if (domNode.type === 'tag') {
+                          if (domNode.name === 'ul') {
+                            const props = { className: 'list-disc p-4 flex flex-col space-y-3' };
+                            return <p {...props}>{domToReact(domNode.children)}</p>;
+                          }
+                        }
+                      }
+                    })
+                  ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className='p-4 sm:hidden'>
+          <div className="flex flex-col border rounded-lg w-full mx-auto shadow-lg">
+
+            {modules.map((module, index) => (
+              <div key={module.id}>
+                {/* Module Item */}
+                <div
+                  className={`flex flex-col border border-black/25 shadow-lg justify-center items-center p-2 cursor-pointer ${selectedModuleId === module.id ? 'bg-blue-500 text-white' : 'bg-white'
+                    }`}
+                  onClick={() => handleModuleClick(module.id)}
+                >
+                  {module.title}
+                </div>
+
+                {/* Accordion Content for Module Details */}
+                <div className={`transition-all duration-500 ease-in-out overflow-hidden ${selectedModuleId === module.id ? 'max-h-screen py-4' : 'max-h-0'}`}>
+                  {selectedModuleId === module.id && (
+                    <div className='px-4'>
+                      <div className='text-lg font-bold text-black mb-2'>
+                        Key Features of {module.title}
+                      </div>
+                      {parse(module.key_features, {
+                        replace: domNode => {
+                          if (domNode.type === 'tag') {
+                            if (domNode.name === 'ul') {
+                              const props = { className: 'list-disc' };
+                              return <ul {...props}>{domToReact(domNode.children)}</ul>;
+                            }
+                          }
+                        }
+                      })}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
 
 
