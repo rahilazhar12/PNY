@@ -365,9 +365,13 @@ const Coursedetail = () => {
               <div className="w-full md:w-1/2 flex  justify-center items-center bg-gray-700 p-2 max-sm:mt-2">
                 {/* Responsive iframe container */}
                 <div className="w-full aspect-w-16 aspect-h-9">
+
+
                   {/* Iframe YouTube */}
                   <iframe className="w-full h-[300px] max-sm:h-[150px]" src={`https://www.youtube.com/embed/${courseData.video}`} title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
                   </iframe>
+
+                  
                 </div>
               </div>
 

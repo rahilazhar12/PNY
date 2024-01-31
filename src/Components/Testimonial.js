@@ -23,7 +23,7 @@ const Testimonial = () => {
                   {items.designation}
                 </p>
                 <p className="mb-4 text-base text-blue-500 dark:text-neutral-200">
-                  {items.twitter} <span className='ml-5'>{items.linkdin}</span>
+                  {/* {items.twitter} <span className='ml-5'>{items.linkdin}</span> */}
                 </p>
               </div>
             </div>
