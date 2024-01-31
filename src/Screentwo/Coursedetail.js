@@ -261,7 +261,8 @@ const Coursedetail = () => {
         //   duration: 5000
         // })
         // setOpen(false)
-        alert(data.message)
+        // alert(data.message)
+        alert('I love you')
         brochureLinkRef.current.click();
       })
       .catch((error) => {
