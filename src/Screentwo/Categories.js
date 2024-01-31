@@ -110,8 +110,8 @@ const Categories = () => {
                      </Link>
                     <div className="flex justify-between w-50 mb-4">
                       <div className="flex">
-                        <i className="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
-                        <p>Design</p>
+                        {/* <i className="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i> */}
+                        <p>{category.name}</p>
                       </div>
                       <div className="flex">
                         {/* <i className="fas fa-clock text-gray-400 mt-1 mx-1"></i> */}
