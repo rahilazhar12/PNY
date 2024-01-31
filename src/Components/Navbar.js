@@ -9,7 +9,7 @@ const Navbar = () => {
           <ul className='flex  lg:justify-center  xl:justify-center space-x-4'>
             <li><span className='mr-1'>UAN -</span>03041111774</li>
             <li><span className='mr-1'><i class="fa-solid fa-envelope"></i></span>info@pnytrainings.com</li>
-            <li className='bg-[#FFBA4A] blinking-text  cursor-pointer flex justify-center items-center lg:w-[350px] h-[21px] xl:w-[200px] text-black '><Link to="/fast-track-pro-bootcamps">Fast Track Pro Bootcamps in 2023</Link></li>
+            <li className='bg-[#FFBA4A] blinking-text  cursor-pointer flex justify-center items-center lg:w-[350px] h-[21px] xl:w-[200px] text-black '><Link to="/fast-track-pro-bootcamps">Fast Track Pro Bootcamps in 2024</Link></li>
             <li><Link to='https://eraflip.com/' target='_blank'>Amazon Services</Link></li>
             <li><Link to='https://www.pnygenius.com/' target='_blank'>Kids Courses</Link></li>
             <li><Link to='https://www.joinpnypink.com/' target='_blank'>Female Courses</Link></li>
@@ -32,7 +32,7 @@ const Navbar = () => {
             <li><Link to='https://www.joinpnypink.com/' target='_blank'>Female Courses</Link></li>
             <li><Link to="/trainingschedule" target='_blank'>Training Schedule</Link></li>
             <li> <Link to="/Feestruchure" target='_blank'>Fee Structure</Link></li>
-            <li className='bg-[#FFBA4A] blinking-text rounded-md flex cursor-pointer justify-center items-center'><Link to="/fast-track-pro-bootcamps">Fast Track Pro Bootcamps in 2023</Link></li>
+            <li className='bg-[#FFBA4A] blinking-text rounded-md flex cursor-pointer justify-center items-center'><Link to="/fast-track-pro-bootcamps">Fast Track Pro Bootcamps in 2024</Link></li>
             <li><button className='navbarbuttons bg-[#308AFF] rounded-md w-[70px] h-[px]'>Login</button></li>
             <li><button className='navbarbuttons bg-[#F10900] rounded-md w-[90px] h-[px]'>Enroll Now</button></li>
           </ul>
