@@ -107,38 +107,36 @@ const Specialpage = () => {
             </section>
 
 
-
-            <div className='container mt-5'>
-                <div className=' grid grid-cols-3 max-sm:grid-cols-1'>
-                    <div className=' col-span-2 overflow-y-auto max-h-[600px]'>
-                        <img className='h-[400px] w-full p-2' src={data.special_page?.spage_image} alt="" />
-
-                        {data.special_page ? parsedDescription : <p>Loading...</p>} {/* Or an error message */}
+            <div className="container mx-auto px-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 overflow-y-auto max-h-[600px]">
+                    {/* Left side: Image and Content */}
+                    <div className="md:col-span-2 lg:col-span-3">
+                        <img src={data.special_page?.spage_image} alt="Content" className="w-full" />
+                        <div className="mt-4">
+                            {data.special_page ? parsedDescription : <p>Loading...</p>} {/* Or an error message */}
+                        </div>
                     </div>
 
-                    <div>
-                        <section className=' sticky top-10 max-sm:p-3'>
-                            <div className='pb-3'>
-                                <div className=' bg-[#234E87] lg:ml-10   rounded-t-xl lg:w-[390px]  h-[76px] flex justify-center items-center font-semibold text-3xl text-white'>Course we offer in Cities</div>
-                                <div className=' gap-1 grid'>
-
-                                    <div className='bg-[#EEFFFB] lg:w-[390px] lg:ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Lahore</div>
-
-                                    <div className='bg-[#EEFFFB] lg:w-[390px] lg:ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Rawalpindi</div>
-                                    <div className='bg-[#EEFFFB] lg:w-[390px] lg:ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Karachi</div>
-                                    <div className='bg-[#EEFFFB] lg:w-[390px] lg:ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Multan</div>
-                                    <div className='bg-[#EEFFFB] lg:w-[390px] lg:ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Sialkot</div>
-                                    <div className='bg-[#EEFFFB] lg:w-[390px] lg:ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Faislabad</div>
-                                    <div className='bg-[#EEFFFB] lg:w-[390px] lg:ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Gujranwala</div>
-                                    <div className='bg-[#EEFFFB] lg:w-[390px] lg:ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Azad Kashmir</div>
-                                    <div className='bg-[#EEFFFB] lg:w-[390px] lg:ml-10 font-semibold  h-[50px] flex justify-start items-center  p-2'>Islamabad</div>
-
-                                </div>
-                            </div>
-                        </section>
+                    {/* Right side: Table of Cities */}
+                    <div className="md:col-span-1 lg:col-span-1 bg-gray-100 p-4 bg-green-50">
+                        <h3 className="font-bold text-lg mb-2 bg-blue-900 text-white p-3 rounded">COURSES WE OFFER IN CITIES</h3>
+                        <ul className='flex space-y-10 flex-col'>
+                            {/* List out the cities */}
+                            <li className=''>Lahore</li>
+                            <li>Rawalpindi</li>
+                            <li>Karachi</li>
+                            <li>Multan</li>
+                            <li>Sialkot</li>
+                            <li>Faislabad</li>
+                            <li>Gujranwala</li>
+                            <li>Azad Kashmir</li>
+                            <li>Islamabad</li>
+                            {/* ... more cities */}
+                        </ul>
                     </div>
                 </div>
             </div>
+
         </>
     )
 }
