@@ -102,12 +102,13 @@ const AllCourses = () => {
                                       <p className="text-blue-500">{detail.name}</p>
                                     </div>
                                     <div className="flex ">
-                                      <i className="fas fa-clock text-gray-400 mt-1 mx-1"></i>
-                                      <p>{detail.duration} Months</p>
+                                      {/* <i className="fas fa-clock text-gray-400 mt-1 mx-1"></i> */}
+                                      {/* <p>{detail.duration} Months</p> */}
+                                      <div>Course Fee : {detail.monthly_tution_fee}</div>
                                     </div>
                                   </div>
                                   <div className="w-full">
-                                    <h2 className="title-font font-medium text-lg text-gray-900">{detail.name}</h2>
+                                    {/* <h2 className="title-font font-medium text-lg text-gray-900">{detail.name}</h2> */}
                                     {/* <p>{detail.description_short}</p> */}
                                     <h3 className="text-red-500 font-bold mb-0.5 mt-1">{detail.teacher}</h3>
                                   </div>
