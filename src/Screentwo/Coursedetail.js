@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const style = {
@@ -599,7 +600,9 @@ const Coursedetail = () => {
                 <div className="divide-y divide-gray-200">
                   {courses.map((course) => (
                     <div key={course.id} className="p-4 bg-[#EEFFFB] hover:bg-blue-200 cursor-pointer">
+                      <Link to={`/${course.url_slug}`}>
                       {course.name}
+                      </Link>
                     </div>
                   ))}
                 </div>
