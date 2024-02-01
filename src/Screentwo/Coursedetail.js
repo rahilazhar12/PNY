@@ -93,6 +93,7 @@ const Coursedetail = () => {
   // ...
   const [modules, setModules] = useState([]);
   const [id_address, setId_address] = useState('');
+  const [courses, setCourses] = useState([]);
 
 
   const [open, setOpen] = React.useState(false);
@@ -105,6 +106,24 @@ const Coursedetail = () => {
       .then(data => setId_address(data.ip))
       .catch(error => console.error('Error fetching IP address:', error));
   }, []);
+
+
+  useEffect(() => {
+    // Function to fetch course data
+    const fetchCourses = async () => {
+      try {
+        // Replace this URL with the actual URL of the API if you're fetching from a live API
+        const response = await fetch('https://www.pnytrainings.com/api/course/list');
+        const data = await response.json();
+        setCourses(data.course_list);
+      } catch (error) {
+        console.error("Error fetching courses:", error);
+      }
+    };
+
+    fetchCourses();
+  }, []);
+
 
   const brochureLinkRef = useRef(null);
 
@@ -174,20 +193,20 @@ const Coursedetail = () => {
 
 
 
-  if (isLoading) {
-    return (
-      <div className="flex justify-center items-center min-h-screen">
-        <Blocks
-          visible={true}
-          height="80"
-          width="80"
-          ariaLabel="blocks-loading"
-          wrapperStyle={{}}
-          wrapperClass="blocks-wrapper"
-        />
-      </div>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <div className="flex justify-center items-center min-h-screen">
+  //       <Blocks
+  //         visible={true}
+  //         height="80"
+  //         width="80"
+  //         ariaLabel="blocks-loading"
+  //         wrapperStyle={{}}
+  //         wrapperClass="blocks-wrapper"
+  //       />
+  //     </div>
+  //   );
+  // }
 
   const parsedDescription = parse(courseData.description, {
     replace: domNode => {
@@ -269,6 +288,10 @@ const Coursedetail = () => {
       });
   }
 
+
+
+
+ 
   return (
     <>
       <Helmet>
@@ -556,13 +579,13 @@ const Coursedetail = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 ">
             <div className="grid md:grid-cols-3 gap-6">
               {/* Content Section */}
-              <div className="md:col-span-2 bg-white p-10 shadow rounded max-h-[800px] relative">
+              <div className="md:col-span-2 bg-white p-10 shadow rounded max-h-[950px] relative">
                 <div class="sticky bottom-0 flex justify-center">
                   <div class="animate-bounce">
                     <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16" id="IconChangeColor"> <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" id="mainIconPathAttribute" stroke-width="0" stroke="#ff0000" filter="url(#shadow)"></path> <filter id="shadow"><feDropShadow id="shadowValue" stdDeviation=".5" dx="0" dy="0" flood-color="black"></feDropShadow></filter><filter id="shadow"><feDropShadow id="shadowValue" stdDeviation=".5" dx="0" dy="0" flood-color="black"></feDropShadow></filter></svg>
                   </div>
                 </div>
-                <div className="scroll-content  max-h-[800px]">
+                <div className="scroll-content overflow-y-auto max-h-[800px]">
                   <p className="text-gray-700">{parsedDescription}</p>
                 </div>
               </div>
@@ -574,9 +597,9 @@ const Coursedetail = () => {
                   COURSES WE OFFER
                 </div>
                 <div className="divide-y divide-gray-200">
-                  {['The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D', 'The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D', 'The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D', 'The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D', 'The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D', 'The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D', 'The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D', 'The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D', 'The Art of Animated Design: Motion Graphics with After Effects & Cinema 4D'].map((city) => (
-                    <div className="p-4 bg-[#EEFFFB] hover:bg-blue-200 cursor-pointer">
-                      {city}
+                  {courses.map((course) => (
+                    <div key={course.id} className="p-4 bg-[#EEFFFB] hover:bg-blue-200 cursor-pointer">
+                      {course.name}
                     </div>
                   ))}
                 </div>

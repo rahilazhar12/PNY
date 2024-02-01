@@ -6,7 +6,7 @@ import instructornew from '../Categories/data/Instructor'
 import { Blocks } from 'react-loader-spinner'
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { useNavigate } from 'react-router-dom';
+
 
 const Categories = () => {
   const [category, setCategory] = useState(null);
@@ -17,7 +17,7 @@ const Categories = () => {
   const { slug } = useParams();
 
 
-  const navigate = useNavigate()
+ 
 
   useEffect(() => {
     const fetchData = async () => {

@@ -5,6 +5,7 @@ import parse, { domToReact } from 'html-react-parser';
 import { Blocks } from 'react-loader-spinner'
 import Searchbar from '../Components/Searchbar'
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 
 const Specialpage = () => {
@@ -122,7 +123,7 @@ const Specialpage = () => {
                         <h3 className="font-bold text-lg mb-2 bg-blue-900 text-white p-3 rounded">COURSES WE OFFER IN CITIES</h3>
                         <ul className='flex space-y-10 flex-col'>
                             {/* List out the cities */}
-                            <li className=''>Lahore</li>
+                            <li><Link to=''>Lahore</Link></li>
                             <li>Rawalpindi</li>
                             <li>Karachi</li>
                             <li>Multan</li>
