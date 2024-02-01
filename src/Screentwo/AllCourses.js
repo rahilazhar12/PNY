@@ -93,7 +93,7 @@ const AllCourses = () => {
                             <div key={detail.id}>
                               <div className="w-full p-4">
                                 <div className="bg-white p-4 rounded-lg shadow-md">
-                                  <Link to={`/coursedetails/${detail.url_slug}`}>
+                                  <Link to={`/${detail.url_slug}`}>
                                   <img src={detail.course_image} alt="Image 1" className="w-full rounded h-40 object-cover mb-4" />
                                   </Link>
                                   <div className="flex justify-between w-50 mb-4">
@@ -108,7 +108,7 @@ const AllCourses = () => {
                                   </div>
                                   <div className="w-full">
                                     <h2 className="title-font font-medium text-lg text-gray-900">{detail.name}</h2>
-                                    <p>{detail.description_short}</p>
+                                    {/* <p>{detail.description_short}</p> */}
                                     <h3 className="text-red-500 font-bold mb-0.5 mt-1">{detail.teacher}</h3>
                                   </div>
                                 </div>
