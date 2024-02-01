@@ -193,20 +193,20 @@ const Coursedetail = () => {
 
 
 
-  // if (isLoading) {
-  //   return (
-  //     <div className="flex justify-center items-center min-h-screen">
-  //       <Blocks
-  //         visible={true}
-  //         height="80"
-  //         width="80"
-  //         ariaLabel="blocks-loading"
-  //         wrapperStyle={{}}
-  //         wrapperClass="blocks-wrapper"
-  //       />
-  //     </div>
-  //   );
-  // }
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <Blocks
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="blocks-loading"
+          wrapperStyle={{}}
+          wrapperClass="blocks-wrapper"
+        />
+      </div>
+    );
+  }
 
   const parsedDescription = parse(courseData.description, {
     replace: domNode => {
