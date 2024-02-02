@@ -212,6 +212,11 @@ const Home = () => {
           </div>
 
 
+          <div className="flex-1 w-full">
+            <Carousal />
+          </div>
+
+
           {/* Section-2 */}
           <div className="container mx-auto p-4 flex md:flex-col flex-col lg:flex-row xl:flex-row 2xl:flex-row md:items-center">
 
@@ -231,9 +236,6 @@ const Home = () => {
 
           </div>
 
-          <div className="flex-1 w-full">
-            <Carousal />
-          </div>
 
 
 
