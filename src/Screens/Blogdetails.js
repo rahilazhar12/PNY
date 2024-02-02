@@ -20,7 +20,12 @@ const Blogdetails = () => {
   }, [slug]);
 
   if (!data) {
-    return <div>Loading...</div>;
+    return (
+      <div className="loader-container text-center">
+        <div className="loader"></div>
+        {/* <p>Loading...</p> */}
+      </div>
+    );
   }
 
   const parsedDescription = parse(data.description, {

@@ -35,7 +35,6 @@ const Flyers = () => {
         setModalOpen(true);
     };
 
-
     if (loading) {
         return (
             <div className="loader-container text-center">

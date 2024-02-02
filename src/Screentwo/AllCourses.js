@@ -10,13 +10,17 @@ const AllCourses = () => {
   const [pro, setPro] = useState([]);
   const [selectedCourse, setSelectedCourse] = useState([]);
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState('')
 
   const detadata = async () => {
     let res = await fetch('https://www.pnytrainings.com/api/get-courses');
+    setLoading(true)
     res = await res.json();
     setPro(res);
     setData(res);
     setSelectedCourse(res); // Initialize selectedCourse with all courses
+    setLoading(false)
+
   };
 
   useEffect(() => {
@@ -54,6 +58,17 @@ const AllCourses = () => {
 
   let courseNames = pro.map((courseData) => courseData.name);
 
+
+
+  if (loading) {
+    return (
+      <div className="loader-container text-center">
+        <div className="loader"></div>
+        {/* <p>Loading...</p> */}
+      </div>
+    );
+  }
+
   return (
     <>
       <div>
@@ -75,54 +90,54 @@ const AllCourses = () => {
                 </span>
               ))}
             </div>
-           
+
           </div>
         </section>
-         
+
 
         <section className="text-gray-600 body-fon">
-              <div className="container px-5 py-10 mx-auto">
-                <div className="grid lg:grid-cols-1 p-3">
-                  {selectedCourse.map((courseData) => {
-                    return (
-                      <div key={courseData.id}>
-                        <h1 className=' text-2xl font-semibold px-6'>{courseData.name}</h1>
-                        <h1 className='text-2xl text-white' onClick={() => handleCourseClick(courseData.name)}></h1>
-                        <div className=' grid lg:grid-cols-4'>
-                          {courseData.obj && courseData.obj.map((detail) => (
-                            <div key={detail.id}>
-                              <div className="w-full p-4">
-                                <div className="bg-white p-4 rounded-lg shadow-md">
-                                  <Link to={`/${detail.url_slug}`}>
-                                  <img src={detail.course_image} alt="Image 1" className="w-full rounded h-40 object-cover mb-4" />
-                                  </Link>
-                                  <div className="flex justify-between w-50 mb-4">
-                                    <div className="flex">
-                                      <i className="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
-                                      <p className="text-blue-500">{detail.name}</p>
-                                    </div>
-                                    <div className="flex ">
-                                      {/* <i className="fas fa-clock text-gray-400 mt-1 mx-1"></i> */}
-                                      {/* <p>{detail.duration} Months</p> */}
-                                      <div>Course Fee : {detail.monthly_tution_fee}</div>
-                                    </div>
-                                  </div>
-                                  <div className="w-full">
-                                    {/* <h2 className="title-font font-medium text-lg text-gray-900">{detail.name}</h2> */}
-                                    {/* <p>{detail.description_short}</p> */}
-                                    <h3 className="text-red-500 font-bold mb-0.5 mt-1">{detail.teacher}</h3>
-                                  </div>
+          <div className="container px-5 py-10 mx-auto">
+            <div className="grid lg:grid-cols-1 p-3">
+              {selectedCourse.map((courseData) => {
+                return (
+                  <div key={courseData.id}>
+                    <h1 className=' text-2xl font-semibold px-6'>{courseData.name}</h1>
+                    <h1 className='text-2xl text-white' onClick={() => handleCourseClick(courseData.name)}></h1>
+                    <div className=' grid lg:grid-cols-4'>
+                      {courseData.obj && courseData.obj.map((detail) => (
+                        <div key={detail.id}>
+                          <div className="w-full p-4">
+                            <div className="bg-white p-4 rounded-lg shadow-md">
+                              <Link to={`/${detail.url_slug}`}>
+                                <img src={detail.course_image} alt="Image 1" className="w-full rounded h-40 object-cover mb-4" />
+                              </Link>
+                              <div className="flex justify-between w-50 mb-4">
+                                <div className="flex">
+                                  <i className="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
+                                  <p className="text-blue-500">{detail.name}</p>
+                                </div>
+                                <div className="flex ">
+                                  {/* <i className="fas fa-clock text-gray-400 mt-1 mx-1"></i> */}
+                                  {/* <p>{detail.duration} Months</p> */}
+                                  <div>Course Fee : {detail.monthly_tution_fee}</div>
                                 </div>
                               </div>
+                              <div className="w-full">
+                                {/* <h2 className="title-font font-medium text-lg text-gray-900">{detail.name}</h2> */}
+                                {/* <p>{detail.description_short}</p> */}
+                                <h3 className="text-red-500 font-bold mb-0.5 mt-1">{detail.teacher}</h3>
+                              </div>
                             </div>
-                          ))}
+                          </div>
                         </div>
-                      </div>
-                    )
-                  })}
-                </div>
-              </div>
-            </section>
+                      ))}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
 
 
 

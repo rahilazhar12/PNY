@@ -43,18 +43,12 @@ const Blog = () => {
 
     if (isLoading) {
         return (
-            <div className="flex justify-center items-center min-h-screen">
-                <Blocks
-                    visible={true}
-                    height="80"
-                    width="80"
-                    ariaLabel="blocks-loading"
-                    wrapperStyle={{}}
-                    wrapperClass="blocks-wrapper"
-                />
-            </div>
+          <div className="loader-container text-center">
+            <div className="loader"></div>
+            {/* <p>Loading...</p> */}
+          </div>
         );
-    }
+      }
 
     return (
         <Flowbite>
