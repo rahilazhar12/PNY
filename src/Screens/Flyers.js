@@ -7,12 +7,15 @@ const Flyers = () => {
     const [selectedCategory, setSelectedCategory] = useState(null); // New state for tracking selected category
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedFlyer, setSelectedFlyer] = useState(null);
+    const [loading, setLoading] = useState('')
 
     useEffect(() => {
         const fetchData = async () => {
+            setLoading(true)
             try {
                 const response = await axios.get('https://www.pnytrainings.com/api/flyers');
                 setData(response.data);
+                setLoading(false)
             } catch (error) {
                 console.error("Error fetching data: ", error);
             }
@@ -31,16 +34,28 @@ const Flyers = () => {
         setSelectedFlyer(flyerData);
         setModalOpen(true);
     };
+
+
+    if (loading) {
+        return (
+            <div className="loader-container text-center">
+                <div className="loader"></div>
+                {/* <p>Loading...</p> */}
+            </div>
+        );
+    }
+
+
     
 
-   
+
     return (
         <div className='grid grid-cols-4 gap-3 p-3'>
             {data.flyers && Object.keys(data.flyers).map((flyerKey, index) => {
                 const flyer = data.flyers[flyerKey];
                 // Check if 'obj' exists and is an array, otherwise fallback to an empty array
                 const flyerName = flyer.name; // Get the name of the flyer
-    
+
                 return (
                     <div key={index}>
                         <h3 onClick={() => handleFlyerClick(flyerKey)} style={{ cursor: 'pointer' }}>
@@ -58,7 +73,7 @@ const Flyers = () => {
                     </div>
                 );
             })}
-    
+
             {selectedFlyer && (
                 <Flyermodal
                     open={modalOpen}
@@ -69,9 +84,9 @@ const Flyers = () => {
             )}
         </div>
     );
-    
-        
-    
+
+
+
 }
 
 export default Flyers;
