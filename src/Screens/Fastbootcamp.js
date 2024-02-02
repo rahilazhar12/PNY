@@ -66,7 +66,7 @@ const Fastbootcamp = () => {
 
                                     <div key={course.id} className="p-4  w-full">
                                         <div className="p-4 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
-                                            <Link to={course.url_slug }>
+                                            <Link to={`/${course.url_slug }`}>
                                                 <img src={course.course_image} alt="Image 1" className="" />
                                             </Link>
                                             <div className="flex justify-between w-50 mb-4">

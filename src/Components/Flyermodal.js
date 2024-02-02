@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
 const style = {
     position: 'absolute',
@@ -56,10 +57,12 @@ const TransitionsModal = ({ open, handleClose, flyerData, selectedFlyer }) => {
 
                                         {/* Iterate through your data and create table rows */}
                                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                            <Link target='_blank' to={course.brochure_download}>
                                             <td className="py-4 px-6 ">
                                             <span className=' text-black font-bold'>{index + 1}.</span><a className=' ' target='_blank' href={course.brochure}>  <span className=' text-lg hover:text-red-300'><span
                                                     className='  '></span>{course.class_name}</span></a>
                                             </td>
+                                            </Link>
                                             {/* Add more table data cells here if needed */}
                                         </tr>
                                         {/* Repeat for more rows as needed */}

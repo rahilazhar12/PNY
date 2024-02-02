@@ -74,6 +74,7 @@ const Router = () => {
                 <Route path='/privacy-policy' element={<Privacypolicy />} />
                 <Route path='/city/:name' element={<Citywisedata />} />
                 <Route path='/specialpage/:url' element={<Specialpage />} />
+               
 
                 {/* Shortcourses */}
                 <Route path='/short-courses-in-lahore' element={<Lahore />} />
