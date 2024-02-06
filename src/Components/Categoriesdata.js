@@ -33,26 +33,21 @@ const Categoriesdata = () => {
             </span>
           </button>
           <ul className="bg-white border z-50 rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32">
-            <li className="ml-3">
-              <Link to="/google-scholarship-certification-in-lahore-pakistan">
-                Google Certification
-              </Link>
-            </li>
+           
             {data.map((item) => {
               return (
-                <>
-                  <li className="rounded-sm relative px-3 py-1 hover:bg-gray-100">
-                    {/* Main Category Link */}
-                    <Link
-                      to={`/courses/${item.url_slug}`}
-                      className="w-full text-left flex items-center outline-none focus:outline-none"
-                    >
-                      <span className="pr-1 flex-1">{item.name}</span>
-                    </Link>
-                  </li>
-                </>
-              )
+                <li className="rounded-sm relative px-3 py-1 hover:bg-gray-100" key={item.url_slug}>
+                  {/* Main Category Link */}
+                  <Link
+                    to={item.url_slug === 'google-scholarship-certification-in-lahore-pakistan' || item.url_slug === 'fast-track-pro-bootcamps' ? `/${item.url_slug}` : `/courses/${item.url_slug}`}
+                    className="w-full text-left flex items-center outline-none focus:outline-none"
+                  >
+                    <span className="pr-1 flex-1">{item.name}</span>
+                  </Link>
+                </li>
+              );
             })}
+
           </ul>
         </div>
       </section>
