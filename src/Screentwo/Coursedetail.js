@@ -286,7 +286,7 @@ const Coursedetail = () => {
 
 
 
- 
+
   return (
     <>
       <Helmet>
@@ -425,7 +425,7 @@ const Coursedetail = () => {
 
             {/* Module Details */}
             <div className='col-span-3 md:col-span-3 overflow-y-auto '>
-              <div className='text-lg md:text-2xl lg:text-3xl xl:text-3xl font-bold text-black mb-5 p-4'>
+              <div className='text-lg dark:text-white md:text-2xl lg:text-3xl xl:text-3xl font-bold text-black mb-5 p-4'>
                 Key Features of this Course
               </div>
               <div className='space-y-2'>
@@ -436,7 +436,7 @@ const Coursedetail = () => {
                       replace: domNode => {
                         if (domNode.type === 'tag') {
                           if (domNode.name === 'ul') {
-                            const props = { className: 'list-disc p-4 flex flex-col space-y-3' };
+                            const props = { className: 'list-disc dark:text-white p-4 flex flex-col space-y-3' };
                             return <p {...props}>{domToReact(domNode.children)}</p>;
                           }
                         }
@@ -595,7 +595,7 @@ const Coursedetail = () => {
                   {courses.map((course) => (
                     <div key={course.id} className="p-4 bg-[#EEFFFB] hover:bg-blue-200 cursor-pointer">
                       <Link to={`/${course.url_slug}`}>
-                      {course.name}
+                        <span className='dark:text-black'> {course.name}</span>
                       </Link>
                     </div>
                   ))}

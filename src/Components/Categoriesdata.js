@@ -36,7 +36,7 @@ const Categoriesdata = () => {
            
             {data.map((item) => {
               return (
-                <li className="rounded-sm relative px-3 py-1 hover:bg-gray-100" key={item.url_slug}>
+                <li className="rounded-sm relative px-3 py-1 dark:text-black hover:bg-gray-100" key={item.url_slug}>
                   {/* Main Category Link */}
                   <Link
                     to={item.url_slug === 'google-scholarship-certification-in-lahore-pakistan' || item.url_slug === 'fast-track-pro-bootcamps' ? `/${item.url_slug}` : `/courses/${item.url_slug}`}

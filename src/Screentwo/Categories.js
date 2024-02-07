@@ -17,7 +17,7 @@ const Categories = () => {
   const { slug } = useParams();
 
 
- 
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,10 +54,10 @@ const Categories = () => {
     );
   }
 
-  console.log(category , 'cat')
+  console.log(category, 'cat')
 
 
-  
+
 
   return (
     <>
@@ -79,7 +79,7 @@ const Categories = () => {
             </div>
           ))}
         </div> */}
-       
+
         <div className='main'>
           <section className="text-gray-600 body-font bg-[#152438]">
             <div className="container  py-20 mx-auto">
@@ -90,18 +90,18 @@ const Categories = () => {
             </div>
           </section>
         </div>
-        
+
         <section className="text-gray-600 body-font">
           <div className="container px-5 py-20 mx-auto">
-            <h1 className="text-3xl font-bold text-gray-900 mb-3 ml-5"> Feature Courses of {category.name}</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-3 ml-5 dark:text-white"> Feature Courses of {category.name}</h1>
             <div className="flex flex-wrap -m-4 items-center justify-center">
               {courses.length > 0 && (courses.map((item, index) => (
-    
+
                 <div key={index} className="p-4 lg:w-1/4 md:w-1/2 w-full">
                   <div className="p-4 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
-                   <Link to={`/${item.url_slug}`}>
-                     <img  src={item.course_image} alt="Image 1" className="  cursor-pointer w-full object-cover rounded-xl mb-2" />
-                     </Link>
+                    <Link to={`/${item.url_slug}`}>
+                      <img src={item.course_image} alt="Image 1" className="  cursor-pointer w-full object-cover rounded-xl mb-2" />
+                    </Link>
                     <div className="flex justify-between w-50 mb-4">
                       <div className="flex">
                         {/* <i className="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i> */}
@@ -109,7 +109,7 @@ const Categories = () => {
                       </div>
                       <div className="flex">
                         {/* <i className="fas fa-clock text-gray-400 mt-1 mx-1"></i> */}
-                       
+
                       </div>
                     </div>
                     <div className="w-full">

@@ -5,6 +5,7 @@ import johartown from '../Assets/image/Jahor town.png'
 import multan from '../Assets/image/Multan.png'
 import allbrances from '../Assets/image/Group 48095475.png'
 import pnylogonew from '../Assets/image/PNY Trainings logo.png'
+import pnylogodark from '../Assets/image/pny logo dark.jpg.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
@@ -39,7 +40,8 @@ const Footer = () => {
 
             <footer className="footer p-10 bg-base-200 text-base-content">
                 <aside className='lg:w-[361px]'>
-                    <img src={pnylogonew} alt="" width={159} />
+                    <img className='block dark:hidden' src={pnylogonew} alt="" width={159} />
+                    <img className='dark:block hidden' src={pnylogodark} alt="" width={159} />
                     <p> <span className='font-bold'>Head Office</span> <br />
                         Office # 1, Level # 14, Arfa Software Technology Park,
                         Ferozepur Road Lahore, Pakistan

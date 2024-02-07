@@ -1,6 +1,7 @@
-import React , {useState , useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import PNYlogo from '../Assets/image/logohr.png'
+import PNYlogo from '../Assets/image/PNY Trainings logo.png'
+import PNYdark from '../Assets/image/pny logo dark.jpg.png'
 import { DarkThemeToggle, Flowbite } from 'flowbite-react';
 import { motion } from 'framer-motion';
 import { BiCategory } from 'react-icons/bi'
@@ -14,24 +15,31 @@ const Searchbar = () => {
     useEffect(() => {
         // Fetch data from the provided URL
         fetch('https://www.pnytrainings.com/api/header_menu')
-          .then((response) => response.json())
-          .then((data) => {
-            setData(data);
-          })
-          .catch((error) => {
-            console.error('Error fetching data:', error);
-          });
-      }, []);
+            .then((response) => response.json())
+            .then((data) => {
+                setData(data);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
     return (
         <Flowbite>
             <section className='p-4 shadow-md'>
                 <div className="grid lg:grid-cols-12 md:grid-cols-8 max-sm:space-y-1">
-                  <Link to='/'> <div className=' max-sm:flex max-sm:justify-center  lg:col-span-1 '>
-                       <img className=' cursor-pointer lg:w-[75px] h-[55px]' src={PNYlogo} alt="" /> </div></Link> 
+                    <Link to='/'>
+                        <div className='max-sm:flex max-sm:justify-center lg:col-span-1'>
+                            {/* Show this image only in dark mode */}
+                            <img className='cursor-pointer lg:w-[85px] h-[75px] dark:block hidden' src={PNYdark} alt="" />
+                            {/* Show this image only in light mode */}
+                            <img className='cursor-pointer lg:w-[85px] h-[75px] block dark:hidden' src={PNYlogo} alt="" />
+                        </div>
+                    </Link>
+
 
                     <div className=' lg:col-span-2 md:col-span-2'>
                         <div className=' max-sm:flex max-sm:justify-center'>
-                          <Categoriesdata/>
+                            <Categoriesdata />
                         </div>
                     </div>
 
@@ -40,7 +48,7 @@ const Searchbar = () => {
                         <input className='border max-sm:p-3 lg:w-80  md:w-80 md:ml-20 xl:ml-0 xl:w-full  lg:ml-20 h-9 rounded' placeholder='Search for the software or skills you want to learn' type="text" />
                     </div> */}
 
-                    <Allcoursessearchbar/>
+                    <Allcoursessearchbar />
 
                     <div className=' lg:col-span-3 xl:col-span-5 md:col-span-12'>
                         <div className=' text-slate-900 dark:text-white  text-base font-medium tracking-tight">Writes Upside-Down lg:mt-2'>

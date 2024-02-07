@@ -1,5 +1,6 @@
 import React from 'react'
 import map from '../Assets/images/noun-pakistan-264183 1.png'
+import darkmap from '../Assets/image/darkmap.png'
 
 const Map = () => {
     return (
@@ -23,7 +24,8 @@ const Map = () => {
 
 
                 <div className=' max-sm:p-2 '>
-                    <img src={map} alt="" />
+                    <img className='block dark:hidden' src={map} alt="" />
+                    <img className='dark:block hidden' src={darkmap} alt="" />
                 </div>
             </div>
 
