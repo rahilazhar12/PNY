@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Searchbar from '../Components/Searchbar';
 import parse, { domToReact } from 'html-react-parser';
-import { Blocks } from 'react-loader-spinner'
 
 const GoogleCertification = () => {
   const [data, setData] = useState(null);
@@ -25,15 +24,9 @@ const GoogleCertification = () => {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
-        <Blocks
-          visible={true}
-          height="80"
-          width="80"
-          ariaLabel="blocks-loading"
-          wrapperStyle={{}}
-          wrapperClass="blocks-wrapper"
-        />
+      <div className="loader-container text-center">
+        <div className="loader"></div>
+        {/* <p>Loading...</p> */}
       </div>
     );
   }
