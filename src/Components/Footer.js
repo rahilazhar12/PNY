@@ -50,7 +50,7 @@ const Footer = () => {
                     <Link to="/faqs" className="link link-hover">
                         FAQs
                     </Link>
-                    <Link className="link link-hover">Admission</Link>
+                    <Link to='https://lms.pnytraining.com' className="link link-hover">Admission</Link>
                     <Link to="/gallery" className="link link-hover">
                         Gallery
                     </Link>
@@ -221,7 +221,7 @@ const Footer = () => {
 
             <section className="flex flex-col items-center justify-center gap-4 p-3 mb-10">
       <div className="text-center">
-        Copyright © 2023 - All rights reserved by PNY Trainings
+        Copyright © 2024 - All rights reserved by PNY Trainings
       </div>
       <div className="flex space-x-4">
         {/* Icons with Links */}

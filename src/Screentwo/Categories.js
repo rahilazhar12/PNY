@@ -93,7 +93,7 @@ const Categories = () => {
 
         <section className="text-gray-600 body-font bg-gray-100">
           <div className="container px-5 py-20 mx-auto">
-            <h1 className="text-3xl font-bold text-gray-900 mb-3 ml-5 dark:text-white">
+            <h1 className="text-3xl font-bold text-gray-900 mb-3 ml-5 dark:text-black">
               {" "}
               Feature Courses of {category.name}
             </h1>

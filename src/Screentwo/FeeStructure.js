@@ -72,11 +72,11 @@ const FeeStructure = () => {
         <header className="text-gray-600 body-font shadow-lg">
           <div className="container mx-auto flex flex-wrap py-2 flex-col md:flex-row items-center">
             <Link className="flex title-font font-medium items-center text-gray-900 mb-2 md:mb-0">
-              <span className="ml-3 text-sm text-gray-800">Home</span>
+              <span className="ml-3 text-sm text-gray-800 dark:text-white">Home</span>
               <svg class="w-2 h-2 text-gray-800 dark:text-white mx-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1" />
               </svg>
-              <span className="ml-3 text-sm text-blue-900">Fee Structure</span>
+              <span className="ml-3 text-sm text-blue-900 dark:text-white">Fee Structure</span>
             </Link>
           </div>
         </header>
@@ -88,9 +88,9 @@ const FeeStructure = () => {
         <section class="text-gray-600 body-font">
           <div class="container px-4 py-10 mx-auto">
             <div class="lg:w-3/3 flex flex-col sm:flex-row sm:items-center items-start w-full mx-auto">
-              <h1 class="flex-grow sm:pr-16 text-2xl font-bold text-black">Fee Structure</h1>
+              <h1 class="flex-grow sm:pr-16 text-2xl font-bold text-black dark:text-white">Fee Structure</h1>
               <div>
-                <button class="flex-shrink-0  rounded-md text-blue-900 border-blue-500 border-solid border-2 py-2 px-2 focus:outline-none hover:bg-[#308AFF] rounded mt-10 sm:mt-0 mx-3">Enrol Now (Limited seats left)</button>
+                <button class="flex-shrink-0  rounded-md text-blue-900 border-blue-500 border-solid border-2 py-2 px-2 focus:outline-none hover:bg-[#308AFF] rounded mt-10 sm:mt-0 mx-3 dark:text-white">Enrol Now (Limited seats left)</button>
                 <button class="flex-shrink-0 rounded-md text-white bg-blue-500 border-0 py-2 px-2 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0">Training Schedule</button>
               </div>
             </div>

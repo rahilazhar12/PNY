@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PNYlogo from "../Assets/image/PNY Trainings logo.png";
-import PNYdark from "../Assets/image/pny logo dark.jpg.png";
+// import PNYdark from "../Assets/image/pny logo dark.jpg.png";
 import { Flowbite } from "flowbite-react";
 import Categoriesdata from "./Categoriesdata";
 import Allcoursessearchbar from "./Allcoursessearchbar";
@@ -9,18 +9,18 @@ import Allcoursessearchbar from "./Allcoursessearchbar";
 const Searchbar = () => {
     return (
         <Flowbite>
-            <section className="p-4 shadow-md sticky top-12 z-50 bg-white">
+            <section className="p-4 shadow-md sticky top-12 z-50 bg-white  max-sm:z-0 max-sm:top-0 ">
                 <div className="grid lg:grid-cols-12 md:grid-cols-8 max-sm:space-y-1">
                     <Link to="/">
                         <div className="max-sm:flex max-sm:justify-center lg:col-span-1">
-                            <img
+                            {/* <img
                                 className="cursor-pointer lg:w-[85px] h-[75px] dark:block hidden"
                                 src={PNYdark}
                                 alt=""
-                            />
+                            /> */}
                             {/* Show this image only in light mode */}
                             <img
-                                className="cursor-pointer lg:w-[85px] h-[75px] block dark:hidden"
+                                className="cursor-pointer lg:w-[85px] h-[75px] "
                                 src={PNYlogo}
                                 alt=""
                             />
@@ -37,7 +37,7 @@ const Searchbar = () => {
 
                     <div className=" lg:col-span-3 xl:col-span-5 md:col-span-12">
                         <div className=' text-slate-900 dark:text-white  text-base font-medium tracking-tight">Writes Upside-Down lg:mt-2'>
-                            <ul className="flex max-sm:justify-center gap-5  lg:justify-end">
+                            <ul className="flex max-sm:justify-center gap-5  lg:justify-end dark:text-black">
                                 <li className="font-bold hover:text-blue-400 mt-1">
                                     <Link to="/">Home</Link>
                                 </li>
