@@ -23,7 +23,7 @@ const AboutUs = () => {
         {/* Section-1 */}
         <section className='bg-[#152438] max-sm:h-auto md:p-20 lg:h-[300px]  text-white max-sm:py-10'>
           <div className="grid ">
-            <div className='lg:text-5xl max-sm:text-center bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500  font-bold max-sm:text-3xl md:text-center md:text-3xl'>About Us</div>
+            <div style={{animation:"riseUp 2s ease-out forwards"}} className='lg:text-5xl max-sm:text-center bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500  font-bold max-sm:text-3xl md:text-center md:text-3xl'>About Us</div>
             <div className='text-center'><TypingAnimation /></div>
             
            

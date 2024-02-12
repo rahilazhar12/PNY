@@ -126,8 +126,6 @@ li:hover > button svg {
   cursor: pointer;
 }
 
-
-
 .typing-text {
   border-right: 2px solid black;
   white-space: nowrap;
@@ -156,16 +154,12 @@ li:hover > button svg {
   }
 }
 
-
-
-
 .spinner-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-
 
 .loader-container {
   display: flex;
@@ -184,9 +178,32 @@ li:hover > button svg {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
+@keyframes riseUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
-
+@keyframes widthexpand {
+  from {
+    transform: translatex(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translatex(0);
+    opacity: 1;
+  }
+}

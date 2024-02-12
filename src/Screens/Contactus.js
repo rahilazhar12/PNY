@@ -61,8 +61,17 @@ const Contactus = () => {
       </section>
 
       <section className="lg:h-[254px] bg-[#152438;] text-white flex flex-col justify-center items-center max-sm:p-5">
-        <div className="text-[48px] max-sm:text-[24px] font-semibold">
-          Contact Us
+        <div className="text-[48px] max-sm:text-[24px] font-semibold riseUp 1s ease-out forwards space-y-3">
+          <h1
+            className="text-white text-6xl font-bold -z-50 text-center"
+            style={{
+              animation: 'riseUp 2s ease-out forwards', // Change the duration and ease as needed
+            }}
+          >
+            Contact Us
+
+          </h1>
+          <h4  className="text-center text-xl">Our Team is always ready to help</h4>
         </div>
         {/* <div className='text-[20px] font-normal max-sm:text-[16px] max-sm:text-center'>Learn more about the company and the team behind it.</div> */}
       </section>
