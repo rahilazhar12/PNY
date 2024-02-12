@@ -2,9 +2,7 @@
 
 import React, { useState } from "react";
 import Searchbar from "../Components/Searchbar";
-import { Card } from "flowbite-react";
 import arfatower from "../Assets/image/Image.png";
-import arfa from "../Assets/image/arfa.png";
 import { contactus } from "../Components/Data";
 import { Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";

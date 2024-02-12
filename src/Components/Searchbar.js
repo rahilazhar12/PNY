@@ -9,7 +9,9 @@ import Allcoursessearchbar from "./Allcoursessearchbar";
 const Searchbar = () => {
     return (
         <Flowbite>
-            <section className="p-4 shadow-md sticky top-12 z-50 bg-white  max-sm:z-0 max-sm:top-0 ">
+            {/* <section className="p-4 shadow-md sticky top-12 z-50 bg-white "> */}
+
+            <section className="p-4 shadow-md bg-white ">
                 <div className="grid lg:grid-cols-12 md:grid-cols-8 max-sm:space-y-1">
                     <Link to="/">
                         <div className="max-sm:flex max-sm:justify-center lg:col-span-1">

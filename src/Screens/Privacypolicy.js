@@ -38,15 +38,15 @@ const Privacypolicy = () => {
       if (domNode.type === "tag") {
         // For example, add a class to all <p> elements
         if (domNode.name === "p") {
-          const props = { className: "px-5" };
+          const props = { className: "px- dark:text-white" };
           return <p {...props}>{domToReact(domNode.children)}</p>;
         }
         if (domNode.name === "h3") {
-          const props = { className: "p-5 text-lg" };
+          const props = { className: "p-5 text-lg dark:text-white" };
           return <p {...props}>{domToReact(domNode.children)}</p>;
         }
         if (domNode.name === "ul") {
-          const props = { className: "p-5" };
+          const props = { className: "p-5 dark:text-white" };
           return <p {...props}>{domToReact(domNode.children)}</p>;
         }
       }
