@@ -45,11 +45,11 @@ const Flyers = () => {
     }
 
 
-    
+
 
 
     return (
-        <div className='grid grid-cols-4 gap-3 p-3'>
+        <div className='grid grid-cols-4 max-sm:grid-cols-1 gap-3 p-3'>
             {data.flyers && Object.keys(data.flyers).map((flyerKey, index) => {
                 const flyer = data.flyers[flyerKey];
                 // Check if 'obj' exists and is an array, otherwise fallback to an empty array
