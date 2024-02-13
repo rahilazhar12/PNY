@@ -9,7 +9,7 @@ const GoogleCertification = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-        setIsLoading(true)
+      setIsLoading(true)
       try {
         const response = await axios.get('https://www.pnytrainings.com/api/pages/google-scholarship-certification-in-lahore-pakistan');
         setData(response.data);
@@ -58,14 +58,14 @@ const GoogleCertification = () => {
 
   return (
     <main>
-      <div className='container  '>
+      <div className='  '>
         <section>
           <Searchbar />
         </section>
 
         <section>
           <div className='grid grid-cols-1'>
-            <img className='w-full' src={data.page_banner} alt={data.page.page_title} />
+            <img className='w-full 2xl:w-full' src={data.page_banner} alt={data.page.page_title} />
           </div>
         </section>
 
