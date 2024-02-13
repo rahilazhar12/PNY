@@ -71,7 +71,7 @@ const Contactus = () => {
             Contact Us
 
           </h1>
-          <h4  className="text-center text-xl">Our Team is always ready to help</h4>
+          <h4 className="text-center text-xl">Our Team is always ready to help</h4>
         </div>
         {/* <div className='text-[20px] font-normal max-sm:text-[16px] max-sm:text-center'>Learn more about the company and the team behind it.</div> */}
       </section>
@@ -214,7 +214,7 @@ const Contactus = () => {
                         Map
                       </Link>
                     </div>
-                    <div className="dark:text-white">
+                    <div className="dark:text-black">
                       <span className="text-[#308AFF]  mr-4">
                         {item.phone1 ? "Phone" : null}
                       </span>
