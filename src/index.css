@@ -207,3 +207,30 @@ li:hover > button svg {
     opacity: 1;
   }
 }
+
+@keyframes slideBackground {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animated-gradient-div {
+  width: 100%;
+  /* height: 100vh; Use 100% of the viewport height */
+  background-size: 200% 200%;
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 0, 0),
+    /* Red */ rgb(255, 255, 0),
+    /* Yellow */ rgb(0, 255, 0),
+    /* Green */ rgb(0, 255, 255),
+    /* Cyan */ rgb(0, 0, 255),
+    /* Blue */ rgb(255, 0, 255),
+    /* Magenta */ rgb(255, 0, 0)
+  ); /* Red */
+  animation: slideBackground 10s ease infinite;
+}
