@@ -58,7 +58,7 @@ const GoogleCertification = () => {
 
   return (
     <main>
-      <div className='  '>
+      <div>
         <section>
           <Searchbar />
         </section>

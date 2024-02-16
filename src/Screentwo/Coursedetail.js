@@ -195,6 +195,7 @@ const Coursedetail = () => {
     );
   }
 
+
   const parsedDescription = parse(courseData.description, {
     replace: (domNode) => {
       if (domNode.type === "tag") {
@@ -264,6 +265,8 @@ const Coursedetail = () => {
       });
   }
 
+  console.log(courseData.brochure)
+
   return (
     <>
       <Helmet>
@@ -325,7 +328,7 @@ const Coursedetail = () => {
 
                     <Link
                       ref={brochureLinkRef}
-                      href={courseData.brochure}
+                      to={courseData.brochure}
                       target="_blank"
                       style={{ display: "none" }}
                     >
@@ -463,11 +466,10 @@ const Coursedetail = () => {
               {modules.map((module, index) => (
                 <div
                   key={module.id}
-                  className={`h-auto md:h-[113px] flex border border-black/25 shadow-lg justify-center items-center ${
-                    selectedModuleId === module.id
+                  className={`h-auto md:h-[113px] flex border border-black/25 shadow-lg justify-center items-center ${selectedModuleId === module.id
                       ? "bg-blue-500 text-white"
                       : "bg-white"
-                  }`}
+                    }`}
                   onClick={() => handleModuleClick(module.id)}
                 >
                   {module.title}{" "}
@@ -514,11 +516,10 @@ const Coursedetail = () => {
               <div key={module.id}>
                 {/* Module Item */}
                 <div
-                  className={`flex flex-col border border-black/25 shadow-lg justify-center items-center p-2 cursor-pointer ${
-                    selectedModuleId === module.id
+                  className={`flex flex-col border border-black/25 shadow-lg justify-center items-center p-2 cursor-pointer ${selectedModuleId === module.id
                       ? "bg-blue-500 text-white"
                       : "bg-white"
-                  }`}
+                    }`}
                   onClick={() => handleModuleClick(module.id)}
                 >
                   {module.title}
@@ -526,11 +527,10 @@ const Coursedetail = () => {
 
                 {/* Accordion Content for Module Details */}
                 <div
-                  className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                    selectedModuleId === module.id
+                  className={`transition-all duration-500 ease-in-out overflow-hidden ${selectedModuleId === module.id
                       ? "max-h-screen py-4"
                       : "max-h-0"
-                  }`}
+                    }`}
                 >
                   {selectedModuleId === module.id && (
                     <div className="px-4">
