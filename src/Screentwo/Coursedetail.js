@@ -736,7 +736,7 @@ const Coursedetail = () => {
           <section class="text-gray-600 body-font px-16">
             <div class="container py-8 mx-auto">
               <div class="lg:w-1/1 flex flex-col sm:flex-row sm:items-center items-center mx-auto">
-                <h1 class="flex-grow sm:pr-16 text-2xl font-bold text-black ">
+                <h1 class="flex-grow sm:pr-16 text-2xl font-bold text-black dark:text-white ">
                   More Courses
                 </h1>
                 {/* <button class="flex-shrink-0 text-white border-0 py-2 px-2 focus:outline-none hover:bg-[#308AFF] rounded text-sm bg-[#308AFF] mt-4 sm:mt-0 sm:w-auto self-center">View All Courses</button> */}
