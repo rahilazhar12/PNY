@@ -5,10 +5,12 @@ import parse, { domToReact } from "html-react-parser";
 import Searchbar from "../Components/Searchbar";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import gif from '../Assets/image/gif.gif'
 
 const Specialpage = () => {
   const { url } = useParams();
   const [data, setData] = useState({});
+  const [cities, setCities] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -16,7 +18,7 @@ const Specialpage = () => {
       setIsLoading(true);
       try {
         let response = await axios.get(
-          `https://www.pnytrainings.com/api/city/specialpage/${url}`
+          `https://www.admin786.pnytrainings.com/api/city/specialpage/${url}`
         );
         setData(response.data);
         setIsLoading(false);
@@ -26,6 +28,22 @@ const Specialpage = () => {
     window.scrollTo(0, 0);
   }, [url]);
 
+  useEffect(() => {
+    const fetchCities = async () => {
+      try {
+        const response = await fetch('https://www.admin786.pnytrainings.com/api/city/all');
+        const data = await response.json();
+        // Assuming the data structure is similar to the one you've provided
+        setCities(data.cities);
+      } catch (error) {
+        console.error('Failed to fetch cities:', error);
+      }
+    };
+
+    fetchCities();
+    window.scrollTo(0, 0);
+  }, []);
+
   const parsedDescription = data.special_page
     ? parse(data.special_page.description, {
       replace: (domNode) => {
@@ -34,7 +52,7 @@ const Specialpage = () => {
         if (domNode.type === "tag") {
           // For example, add a class to all <p> elements
           if (domNode.name === "p") {
-            const props = { className: "p-5 dark:text-white" };
+            const props = { className: "p-5 dark:text-white text-justify" };
             return <p {...props}>{domToReact(domNode.children)}</p>;
           }
           if (domNode.name === "h3") {
@@ -59,12 +77,17 @@ const Specialpage = () => {
 
   if (isLoading) {
     return (
-      <div className="loader-container text-center">
-        <div className="loader"></div>
+      <div className="loader-wrapper">
+        {/* Semi-transparent background */}
+        <div className="loader-overlay"></div>
+        {/* Loader */}
+        <div className="loaderContainer">
+          {/* Use the gif as a loader */}
+          <img className="w-52 h-52" src={gif} alt="Loading..." />
+        </div>
       </div>
     );
   }
-
   console.log(data.special_page.meta_title, "radata");
 
   return (
@@ -87,14 +110,14 @@ const Specialpage = () => {
         </div>
       </section>
 
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 overflow-y-auto max-h-[600px]">
+      <div className="container mx-auto px-4 mt-10 max-sm:mt-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
           {/* Left side: Image and Content */}
           <div className="md:col-span-2 lg:col-span-3">
             <img
               src={data.special_page?.spage_image}
               alt="Content"
-              className="w-full"
+              className="w-full max-sm:mt-5"
             />
             <div className="mt-4">
               {data.special_page ? parsedDescription : <p>Loading...</p>}{" "}
@@ -103,25 +126,23 @@ const Specialpage = () => {
           </div>
 
           {/* Right side: Table of Cities */}
-          <div className="md:col-span-1 lg:col-span-1 p-4 ">
-            <h3 className="font-bold text-lg mb-2 bg-blue-900 text-white p-3 rounded">
+          <div className="md:col-span-1 lg:col-span-1 p-4 bg-green-100 h-[500px] max-sm:h-auto rounded-lg max-sm:mb-2">
+            <h3 className="font-bold text-lg mb-2 bg-blue-900 text-white p-2 rounded">
               COURSES WE OFFER IN CITIES
             </h3>
-            <ul className="flex space-y-10 flex-col">
-              {/* List out the cities */}
-              <li>
-                <Link to="">Lahore</Link>
-              </li>
-              <li>Rawalpindi</li>
-              <li>Karachi</li>
-              <li>Multan</li>
-              <li>Sialkot</li>
-              <li>Faislabad</li>
-              <li>Gujranwala</li>
-              <li>Azad Kashmir</li>
-              <li>Islamabad</li>
+            <ul className="space-y-3">
+              {cities.map((city) => (
+                <li key={city.id} className="hover:bg-green-200">
+                  {/* Make the Link fill the entire LI by using block display */}
+                  <Link to={`/city/${city.url_slug}`} className="block p-2 mt-3 -m-2">
+                    {city.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
+
+
         </div>
       </div>
     </>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Searchbar from "../Components/Searchbar";
 import { Link } from "react-router-dom";
+import gif from '../Assets/image/gif.gif'
 
 const Fastbootcamp = () => {
   const [data, setData] = useState({ page: [] });
@@ -11,7 +12,7 @@ const Fastbootcamp = () => {
       setIsLoading(true);
       try {
         const response = await fetch(
-          "https://www.pnytrainings.com/api/pages/fast-track-pro-bootcamps"
+          "https://www.admin786.pnytrainings.com/api/pages/fast-track-pro-bootcamps"
         );
         const fetchedData = await response.json();
         setData(fetchedData);
@@ -24,14 +25,22 @@ const Fastbootcamp = () => {
 
     fetchData();
   }, []);
+
+
   if (isLoading) {
     return (
-      <div className="loader-container text-center">
-        <div className="loader"></div>
-        {/* <p>Loading...</p> */}
+      <div className="loader-wrapper">
+        {/* Semi-transparent background */}
+        <div className="loader-overlay"></div>
+        {/* Loader */}
+        <div className="loaderContainer">
+          {/* Use the gif as a loader */}
+          <img className="w-52 h-52" src={gif} alt="Loading..." />
+        </div>
       </div>
     );
   }
+
 
   return (
     <main className="">
@@ -69,13 +78,16 @@ const Fastbootcamp = () => {
                         <h2 className="title-font font-medium text-sm text-gray-900 mb-3">
                           {course.name}
                         </h2>
-                        <h2 className="text-black">
+                        {/* <h2 className="text-black">
                           Course Fee : {course.monthly_tution_fee}
-                        </h2>
-                        <h3 className="text-red-500 mt-1 mb-1">
+                        </h2> */}
+                        {/* <h3 className="text-red-500 mt-1 mb-1">
                           {course.teacher}
-                        </h3>
+                        </h3> */}
                       </div>
+                      <Link to={`/${course.url_slug}`}>
+                        <button className="bg-blue-500 px-4 py-2 rounded text-white">More Details</button>
+                      </Link>
                     </div>
                   </div>
                 ))}

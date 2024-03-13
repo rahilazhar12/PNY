@@ -3,12 +3,13 @@ import { faqs } from '../Components/Data';
 import faq from '../Assets/Faqs Icons/logofaq.png'
 import Searchbar from '../Components/Searchbar'
 import axios from 'axios';
-
+import gif from '../Assets/image/gif.gif'
 
 const Faqs = () => {
     const [selectedFaq, setSelectedFaq] = useState(null);
     const [showSubDetails, setShowSubDetails] = useState({});
     const [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const titleHandler = (faq) => {
         setSelectedFaq(faq);
@@ -27,18 +28,36 @@ const Faqs = () => {
 
     useEffect(() => {
         const fetchDataCityWise = async () => {
+            setIsLoading(true)
             try {
                 const response = await axios.get(
-                    'https://www.pnytrainings.com/api/faqs'
+                    'https://www.admin786.pnytrainings.com/api/faqs'
                 );
                 setData(response.data.faqs.category);
+
             } catch (error) {
                 console.error('Error fetching data:', error);
+            } finally {
+                setIsLoading(false)
             }
         };
 
         fetchDataCityWise();
     }, []);
+
+    if (isLoading) {
+        return (
+            <div className="loader-wrapper">
+                {/* Semi-transparent background */}
+                <div className="loader-overlay"></div>
+                {/* Loader */}
+                <div className="loaderContainer">
+                    {/* Use the gif as a loader */}
+                    <img className="w-52 h-52" src={gif} alt="Loading..." />
+                </div>
+            </div>
+        );
+    }
 
     return (
         <main>
@@ -82,27 +101,27 @@ const Faqs = () => {
                             </div>
                         </section>
                         <section>
-                <div className='text-center mb-4 text-[32px] font-semibold '>{selectedFaq?.name}</div>
-                <div>
-                    {selectedFaq?.faqs.map((detail, index) => (
-                        <div key={index} className="block w-full rounded-lg bg-white text-left shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 mb-4  ">
-                            <div className="p-6 max-sm:p-3">
-                                <p className="text-base text-neutral-600 dark:text-neutral-200">
-                                    {detail.question}
-                                </p>
-                                <div className='flex justify-end'>
-                                    <button onClick={() => ToggleSubDetails(index)}>
-                                        {showSubDetails[index] ? <i className="fa-solid fa-minus"></i> : <i className="fa-solid fa-plus"></i>}
-                                    </button>
-                                </div>
-                                {showSubDetails[index] && (
-                                    <div dangerouslySetInnerHTML={{ __html: detail.answer }} />
-                                )}
+                            <div className='text-center mb-4 text-[32px] font-semibold '>{selectedFaq?.name}</div>
+                            <div>
+                                {selectedFaq?.faqs.map((detail, index) => (
+                                    <div key={index} className="block w-full rounded-lg bg-white text-left shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 mb-4  ">
+                                        <div className="p-6 max-sm:p-3">
+                                            <p className="text-base text-neutral-600 dark:text-neutral-200">
+                                                {detail.question}
+                                            </p>
+                                            <div className='flex justify-end'>
+                                                <button onClick={() => ToggleSubDetails(index)}>
+                                                    {showSubDetails[index] ? <i className="fa-solid fa-minus"></i> : <i className="fa-solid fa-plus"></i>}
+                                                </button>
+                                            </div>
+                                            {showSubDetails[index] && (
+                                                <div dangerouslySetInnerHTML={{ __html: detail.answer }} />
+                                            )}
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
+                        </section>
 
                     </div>
                 </div>

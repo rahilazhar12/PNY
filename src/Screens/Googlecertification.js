@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Searchbar from '../Components/Searchbar';
 import parse, { domToReact } from 'html-react-parser';
+import gif from '../Assets/image/gif.gif'
 
 const GoogleCertification = () => {
   const [data, setData] = useState(null);
@@ -11,7 +12,7 @@ const GoogleCertification = () => {
     const fetchData = async () => {
       setIsLoading(true)
       try {
-        const response = await axios.get('https://www.pnytrainings.com/api/pages/google-scholarship-certification-in-lahore-pakistan');
+        const response = await axios.get('https://www.admin786.pnytrainings.com/api/pages/google-scholarship-certification-in-lahore-pakistan');
         setData(response.data);
         setIsLoading(false)
       } catch (error) {
@@ -24,9 +25,14 @@ const GoogleCertification = () => {
 
   if (isLoading) {
     return (
-      <div className="loader-container text-center">
-        <div className="loader"></div>
-        {/* <p>Loading...</p> */}
+      <div className="loader-wrapper">
+        {/* Semi-transparent background */}
+        <div className="loader-overlay"></div>
+        {/* Loader */}
+        <div className="loaderContainer">
+          {/* Use the gif as a loader */}
+          <img className="w-52 h-52" src={gif} alt="Loading..." />
+        </div>
       </div>
     );
   }

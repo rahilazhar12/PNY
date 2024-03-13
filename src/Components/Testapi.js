@@ -8,7 +8,7 @@ const Testapi = () => {
 
   useEffect(() => {
     // Fetch data from the provided URL
-    fetch('https://www.pnytrainings.com/api/header_menu')
+    fetch('https://www.admin786.pnytrainings.com/api/header_menu')
       .then((response) => response.json())
       .then((data) => {
         setData(data);

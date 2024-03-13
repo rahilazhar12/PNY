@@ -1,23 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import course from '../Categories/data/courses';
-import instructor from '../Categories/data/Instructor';
+// import instructor from '../Categories/data/Instructor';
 import Searchbar from '../Components/Searchbar';
-import Footer from '../Components/Footer';
-import { frame } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import gif from '../Assets/image/gif.gif'
 
 const AllCourses = () => {
   const [pro, setPro] = useState([]);
   const [selectedCourse, setSelectedCourse] = useState([]);
-  const [data, setData] = useState([]);
+
   const [loading, setLoading] = useState('')
 
   const detadata = async () => {
-    let res = await fetch('https://www.pnytrainings.com/api/get-courses');
+    let res = await fetch('https://www.admin786.pnytrainings.com/api/get-courses');
     setLoading(true)
     res = await res.json();
     setPro(res);
-    setData(res);
     setSelectedCourse(res); // Initialize selectedCourse with all courses
     setLoading(false)
 
@@ -62,12 +59,18 @@ const AllCourses = () => {
 
   if (loading) {
     return (
-      <div className="loader-container text-center">
-        <div className="loader"></div>
-        {/* <p>Loading...</p> */}
+      <div className="loader-wrapper">
+        {/* Semi-transparent background */}
+        <div className="loader-overlay"></div>
+        {/* Loader */}
+        <div className="loaderContainer">
+          {/* Use the gif as a loader */}
+          <img className="w-52 h-52" src={gif} alt="Loading..." />
+        </div>
       </div>
     );
   }
+
 
   return (
     <>
@@ -75,24 +78,26 @@ const AllCourses = () => {
         <section>
           <Searchbar />
         </section>
-        <section className="text-gray-400  body-font bg-[#152438]">
+        <section className="text-gray-400 body-font bg-[#152438]">
           <div className="container px-5 py-16 mx-auto">
-            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-bold  text-center text-white">Explore Skilled Courses</h1>
-            <div className=' flex flex-wrap justify-evenly '>
+            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-8 text-center text-white">Explore Skilled Courses</h1>
+            <div className='flex flex-wrap justify-center space-x-4'>
               {allCoursesButton}
               {courseNames.map((courseName) => (
-                <span key={courseName} className='text-white'>
-                  <div className="">
-                    <button onClick={() => handleCourseClick(courseName)} type="button" className={`text-white border border-gray-300 hover:bg-blue-800 px-3 py-1 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-2`}>
-                      {courseName}
-                    </button>
-                  </div>
-                </span>
+                <div key={courseName} className="mb-4">
+                  <button
+                    onClick={() => handleCourseClick(courseName)}
+                    type="button"
+                    className={`text-white border border-gray-300 hover:bg-blue-800 px-4 py-2 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`}
+                  >
+                    {courseName}
+                  </button>
+                </div>
               ))}
             </div>
-
           </div>
         </section>
+
 
 
         <section className="text-gray-600 body-fon">
@@ -116,17 +121,13 @@ const AllCourses = () => {
                                   <i className="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
                                   <p className="text-blue-500">{detail.name}</p>
                                 </div>
-                                <div className="flex ">
-                                  {/* <i className="fas fa-clock text-gray-400 mt-1 mx-1"></i> */}
-                                  {/* <p>{detail.duration} Months</p> */}
-                                  <div>Course Fee : {detail.monthly_tution_fee}</div>
-                                </div>
+
+
                               </div>
-                              <div className="w-full">
-                                {/* <h2 className="title-font font-medium text-lg text-gray-900">{detail.name}</h2> */}
-                                {/* <p>{detail.description_short}</p> */}
-                                <h3 className="text-red-500 font-bold mb-0.5 mt-1">{detail.teacher}</h3>
-                              </div>
+                              <Link to={`/${detail.url_slug}`} className='flex'>
+                                <button className='bg-blue-500 text-white px-4 py-2 rounded'>More Details</button>
+                              </Link>
+
                             </div>
                           </div>
                         </div>
@@ -141,7 +142,7 @@ const AllCourses = () => {
 
 
 
-        <section className="text-gray-600 body-font shadow-md bg-gray-100 text-center pt-16">
+        {/* <section className="text-gray-600 body-font shadow-md bg-gray-100 text-center pt-16">
           <h1 className=" text-black sm:text-3xl text-2xl text-center font-medium title-font text-gray-900 mb-5 font-bold">Most Popular Instructors in Marketing</h1>
           <div className="container px-5 py-2 mx-auto ml-15">
             <div className="flex flex-wrap -m-4">
@@ -162,7 +163,7 @@ const AllCourses = () => {
               )}
             </div>
           </div>
-        </section>
+        </section> */}
 
 
 

@@ -51,7 +51,7 @@ const Home = () => {
     }
 
     // Fetch data from the provided URL
-    fetch("https://www.pnytrainings.com/api/get-courses")
+    fetch("https://www.admin786.pnytrainings.com/api/get-courses")
       .then((response) => response.json())
       .then((data) => {
         setData(data);
@@ -79,7 +79,7 @@ const Home = () => {
   // -------------------------------Fetch Home Page Content-------------------------------------------------------------------
   useEffect(() => {
     // Fetch data from the provided URL
-    fetch("https://www.pnytrainings.com/api/pages/home_page_content")
+    fetch("https://www.admin786.pnytrainings.com/api/pages/home_page_content")
       .then((response) => response.json())
       .then((data) => {
         setHome(data);
@@ -89,28 +89,28 @@ const Home = () => {
       });
   }, []);
 
-  // ---------------------------------------------------------------------------------------------------------------------
+  // -------------------------------------------------------------------------------------------------------------------------
 
   const parsedDescription = home.page
     ? parse(home.page.page_description || "", {
-        replace: (domNode) => {
-          if (domNode.type === "tag") {
-            // For example, add a class to all <p> elements
-            if (domNode.name === "p") {
-              const props = { className: "p-5" };
-              return <p {...props}>{domToReact(domNode.children)}</p>;
-            }
-            if (domNode.name === "h3") {
-              const props = { className: "p-5 text-lg" };
-              return <p {...props}>{domToReact(domNode.children)}</p>;
-            }
-            if (domNode.name === "ul") {
-              const props = { className: "p-5" };
-              return <p {...props}>{domToReact(domNode.children)}</p>;
-            }
+      replace: (domNode) => {
+        if (domNode.type === "tag") {
+          // For example, add a class to all <p> elements
+          if (domNode.name === "p") {
+            const props = { className: "p-5" };
+            return <p {...props}>{domToReact(domNode.children)}</p>;
           }
-        },
-      })
+          if (domNode.name === "h3") {
+            const props = { className: "p-5 text-lg" };
+            return <p {...props}>{domToReact(domNode.children)}</p>;
+          }
+          if (domNode.name === "ul") {
+            const props = { className: "p-5" };
+            return <p {...props}>{domToReact(domNode.children)}</p>;
+          }
+        }
+      },
+    })
     : null;
   // ---------------------------------------------------------------------------------------------------------
 
@@ -206,7 +206,7 @@ const Home = () => {
     // formData.append('comment', comment);
 
     // Use fetch to send the request
-    fetch("https://www.pnytrainings.com/api/newsletter", {
+    fetch("https://www.admin786.pnytrainings.com/api/newsletter", {
       method: "POST",
       body: formData,
     })
@@ -298,12 +298,13 @@ const Home = () => {
               <h2 className="text-2xl font-semibold mb-4 lgh dark:text-black">
                 We Develop Your Inspiring Career with Standard
               </h2>
-              <p className="mb-8 w-[990px] md:w-auto max-sm:w-auto mx-auto dark:text-black">
+              <p className="mb-8 mx-auto md:w-auto max-w-full dark:text-black px-4 md:px-0">
                 PNY Trainings Pakistan is the leading IT training institute,
                 offering 100+ courses through online and physical classes. We
                 provide internship opportunities and have a dedicated job cell
                 to help you jumpstart your career.
               </p>
+
               <div className="grid grid-cols-4 gap-4 max-sm:grid-cols-2">
                 <div className="flex flex-col items-center">
                   <FaGlobeAmericas className="text-4xl mb-2 text-blue-500" />
@@ -513,7 +514,7 @@ const Home = () => {
               </div>
             </div> */}
             <div className="viewmore flex justify-center p-5">
-              <Link to="allcourses">
+              <Link to={`/allcourses`}>
                 {" "}
                 <button className="font-semibold text-base w-28 h-12 text-blue-600 bg-[#E5F1FF] rounded-lg">
                   View More

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Searchbar from '../Components/Searchbar'
 import { Link } from 'react-router-dom';
 import axios from 'axios'
+import gif from '../Assets/image/gif.gif'
 // Initialization for ES Users
 import {
   Ripple,
@@ -45,6 +46,7 @@ const FeeStructure = () => {
       } finally {
         setIsLoading(false);
       }
+      window.scrollTo(0, 0);
     };
 
 
@@ -58,6 +60,20 @@ const FeeStructure = () => {
 
 
   const parentTabContentSelector = "data-tabs-target"
+
+  if (isloading) {
+    return (
+      <div className="loader-wrapper">
+        {/* Semi-transparent background */}
+        <div className="loader-overlay"></div>
+        {/* Loader */}
+        <div className="loaderContainer">
+          {/* Use the gif as a loader */}
+          <img className="w-52 h-52" src={gif} alt="Loading..." />
+        </div>
+      </div>
+    );
+  }
 
 
 
@@ -225,11 +241,11 @@ const FeeStructure = () => {
 
 
           {isloading ? <p>Loading courses...</p> : courses.length > 0 ? (
-            <div className="overflow-x-auto">
-              <table className="min-w-full max-sm:w-auto">
+            <div className="overflow-x-auto shadow-md sm:rounded-lg">
+              <table className="min-w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                  <tr className="bg-slate-200">
-                    <th scope="col" className="p-3">
+                  <tr>
+                    <th scope="col" className="p-4">
                       Serial No
                     </th>
                     <th scope="col" className="px-6 py-3">
@@ -245,13 +261,13 @@ const FeeStructure = () => {
                 </thead>
                 <tbody>
                   {courses.map((course, index) => (
-                    <tr className="bg-white border-b text-center dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" key={course.Program_Id}>
-                      <td className="w-4 p-4">
+                    <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" key={course.Program_Id}>
+                      <td className="px-4 py-3">
                         {index + 1}
                       </td>
-                      <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="px-6 py-4 font-medium text-gray-900 dark:text-white">
                         {course.Program_Name}
-                      </th>
+                      </td>
                       <td className="px-6 py-4">
                         {course.Program_Fee}
                       </td>
@@ -263,6 +279,7 @@ const FeeStructure = () => {
                 </tbody>
               </table>
             </div>
+
 
           ) : <p>No courses available.</p>}
         </div>

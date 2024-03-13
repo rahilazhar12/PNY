@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Searchbar from '../Components/Searchbar'
 import axios from 'axios'
-import { Blocks } from 'react-loader-spinner'
+import gif from '../Assets/image/gif.gif'
 import { Link } from 'react-router-dom'
 
 
@@ -31,6 +31,7 @@ const Trainings = () => {
       .finally(() => {
         setIsLoading(false);  // Set loading state to false when the request is complete, regardless of success or failure
       });
+    window.scrollTo(0, 0);
   }, []);
 
 
@@ -106,19 +107,17 @@ const Trainings = () => {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
-        <Blocks
-          visible={true}
-          height="80"
-          width="80"
-          ariaLabel="blocks-loading"
-          wrapperStyle={{}}
-          wrapperClass="blocks-wrapper"
-        />
-      </div>
+        <div className="loader-wrapper">
+            {/* Semi-transparent background */}
+            <div className="loader-overlay"></div>
+            {/* Loader */}
+            <div className="loaderContainer">
+                {/* Use the gif as a loader */}
+                <img className="w-52 h-52" src={gif} alt="Loading..." />
+            </div>
+        </div>
     );
-  }
-
+}
 
 
 
@@ -248,36 +247,45 @@ const Trainings = () => {
       </header>
 
 
-      <div class=" container relative overflow-x-auto px-5 max-sm:ml-0 ml-5 mt-5">
-        <table className="min-w-full">
-          <thead>
+      <div class="container mx-auto overflow-x-auto px-5 mt-5">
+    <table class="min-w-full bg-white shadow overflow-hidden rounded-lg">
+        <thead class="bg-gray-50">
             <tr>
-              <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Course Name</th>
-              <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Start Date</th>
-              <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Session Timings</th>
-              <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Duration</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Course Name
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Start Date
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Session Timings
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Duration
+                </th>
             </tr>
-          </thead>
-          <tbody>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
             {selectedCity && displayedBatches[selectedCity] && displayedBatches[selectedCity].filter(batch => (!selectedDivision || (batch.branch && batch.branch.DivisionName === selectedDivision))).map(batch => (
-              <tr key={batch.id} className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  {batch.courseName}
-                </td>
-                <td className="px-6 py-4">
-                  {batch.start_date}
-                </td>
-                <td className="px-6 py-4">
-                  {formatSessionTimings(batch.days)}
-                </td>
-                <td className="px-6 py-4">
-                  {calculateDurationInMonths(batch.start_date, batch.end_date)}
-                </td>
-              </tr>
+                <tr key={batch.id} class="hover:bg-gray-100">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        {batch.courseName}
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        {batch.start_date}
+                    </td>
+                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">
+                        {formatSessionTimings(batch.days)}
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        {calculateDurationInMonths(batch.start_date, batch.end_date)}
+                    </td>
+                </tr>
             ))}
-          </tbody>
-        </table>
-      </div>
+        </tbody>
+    </table>
+</div>
+
 
 
     </div>

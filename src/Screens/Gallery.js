@@ -3,7 +3,7 @@ import { GalleryData } from '../Components/Data'
 import { Link } from 'react-router-dom'
 import Searcbar from '../Components/Searchbar'
 import axios from 'axios'
-import { Blocks } from 'react-loader-spinner'
+import gif from '../Assets/image/gif.gif'
 
 
 const Gallery = () => {
@@ -15,32 +15,50 @@ const Gallery = () => {
         const fetchdata = async () => {
             setIsLoading(true)
             try {
-                let response = await axios.get("https://www.pnytrainings.com/api/gallery")
+                let response = await axios.get("https://www.admin786.pnytrainings.com/api/gallery")
                 setImage(response.data.galleries)
             } catch (error) {
                 console.log(error)
-            }finally {
+            } finally {
                 setIsLoading(false)
             }
         }
         fetchdata()
-        window.scrollTo(0 , 0)
+        window.scrollTo(0, 0)
     }, [])
+
+    useEffect(() => {
+        const handlePopState = () => {
+            window.scrollTo(0, 0);
+        };
+
+        // Listen for popstate event
+        window.addEventListener('popstate', handlePopState);
+
+        // Remove event listener on cleanup
+        return () => window.removeEventListener('popstate', handlePopState);
+    }, []); // Empty dependency array means it runs once on mount
+
+    if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual';
+    }
+
 
     if (isLoading) {
         return (
-          <div className="flex justify-center items-center min-h-screen">
-            <Blocks
-              visible={true}
-              height="80"
-              width="80"
-              ariaLabel="blocks-loading"
-              wrapperStyle={{}}
-              wrapperClass="blocks-wrapper"
-            />
-          </div>
+            <div className="loader-wrapper">
+                {/* Semi-transparent background */}
+                <div className="loader-overlay"></div>
+                {/* Loader */}
+                <div className="loaderContainer">
+                    {/* Use the gif as a loader */}
+                    <img className="w-52 h-52" src={gif} alt="Loading..." />
+                </div>
+            </div>
         );
-      }
+    }
+
+
 
     console.log(image, 'image____________')
     return (

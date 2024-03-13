@@ -42,13 +42,14 @@ const Router = () => {
       <WhatsAppIcon />
 
       <Routes>
+        {/* <Route path="/~letu79su" element={<Home />} /> */}
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<Design />} />
         <Route path="/blog/marketing/:slug" element={<Blogdetails />} />
         <Route path="/contactus" element={<Contactus />} />
-        <Route path="/trainingschedule" element={<Trainingschedule />} />
+        <Route path="/training-schedule" element={<Trainingschedule />} />
         <Route path="/Feestruchure" element={<Feestruchure />} />
         <Route path="/courses/:slug" element={<Categories />} />
 

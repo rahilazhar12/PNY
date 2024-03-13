@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Searchbar from "../Components/Searchbar";
 import parse, { domToReact } from "html-react-parser";
 import axios from "axios";
+import gif from '../Assets/image/gif.gif'
 const Privacypolicy = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -11,7 +12,7 @@ const Privacypolicy = () => {
       setIsLoading(true);
       try {
         const response = await axios.get(
-          "https://www.pnytrainings.com/api/pages/privacy-policy"
+          "https://www.admin786.pnytrainings.com/api/pages/privacy-policy"
         );
         setData(response.data);
         setIsLoading(false);
@@ -24,34 +25,44 @@ const Privacypolicy = () => {
     window.scrollTo(0, 0);
   }, []);
 
+
   if (isLoading) {
     return (
-      <div className="loader-container text-center">
-        <div className="loader"></div>
-        {/* <p>Loading...</p> */}
+      <div className="loader-wrapper">
+        {/* Semi-transparent background */}
+        <div className="loader-overlay"></div>
+        {/* Loader */}
+        <div className="loaderContainer">
+          {/* Use the gif as a loader */}
+          <img className="w-52 h-52" src={gif} alt="Loading..." />
+        </div>
       </div>
     );
   }
 
+
   const parsedDescription = parse(data.page.page_description, {
     replace: (domNode) => {
       if (domNode.type === "tag") {
-        // For example, add a class to all <p> elements
         if (domNode.name === "p") {
-          const props = { className: "px- dark:text-white" };
+          // Adding responsive padding and text alignment classes
+          const props = { className: "px-4 sm:px-32 py-2 text-justify dark:text-white" };
           return <p {...props}>{domToReact(domNode.children)}</p>;
         }
         if (domNode.name === "h3") {
-          const props = { className: "p-5 text-lg dark:text-white" };
+          // Adjusting padding and font size for smaller screens
+          const props = { className: "p-3 sm:p-5 text-base sm:text-lg dark:text-white" };
           return <p {...props}>{domToReact(domNode.children)}</p>;
         }
         if (domNode.name === "ul") {
-          const props = { className: "p-5 dark:text-white" };
+          // Adjusting padding for smaller screens
+          const props = { className: "p-3 sm:p-5 dark:text-white" };
           return <p {...props}>{domToReact(domNode.children)}</p>;
         }
       }
     },
   });
+
   return (
     <main>
       <section>
@@ -59,13 +70,11 @@ const Privacypolicy = () => {
       </section>
 
       <section>
-        <div className=" bg-[#152438] text-white h-[306px] flex flex-col justify-center items-center">
-          <div className=" text-[48px] font-semibold">Privacy Policy</div>
-          <div className=" text-[20px] font-normal w-[768px] text-center">
-            <p></p>
-          </div>
+        <div className="bg-[#152438] text-white h-[206px] flex flex-col justify-center items-center">
+          <div className="text-4xl sm:text-[48px] font-semibold">Privacy Policy</div>
         </div>
       </section>
+
 
       {parsedDescription}
     </main>

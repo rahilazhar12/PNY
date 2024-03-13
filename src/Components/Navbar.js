@@ -13,11 +13,16 @@ const Navbar = () => {
             <li><Link to='https://eraflip.com/' target='_blank'>Amazon Services</Link></li>
             <li><Link to='https://www.pnygenius.com/' target='_blank'>Kids Courses</Link></li>
             <li><Link to='https://www.joinpnypink.com/' target='_blank'>Female Courses</Link></li>
-            <li><Link to='/flyers' target='_blank'>E-Flyers</Link></li>
-            <li><Link to="/trainingschedule" target='_blank'>Training Schedule</Link></li>
-            <li> <Link to="/Feestruchure" target='_blank'>Fee Structure</Link></li>
-            <li><button className='navbarbuttons bg-[#308AFF] rounded-md px-[10px] py-[6px]'>Login</button></li>
-            <li><button className='navbarbuttons bg-[#F10900] rounded-md px-[10px] py-[6px]'>Enroll Now</button></li>
+            <li><Link to='/flyers'>E-Flyers</Link></li>
+            <li><Link to='/training-schedule'>Training Schedule</Link></li>
+            <li> <Link to='/Feestruchure'>Fee Structure</Link></li>
+
+            {/* <li><button className='navbarbuttons bg-[#308AFF] rounded-md px-2 py-2 '>Login</button></li> */}
+            <li>
+              <Link to='https://lms.pnytraining.com/' target='_blank'>
+                <button className='navbarbuttons bg-[#F10900] rounded-md px-2  py-2 xl:py-2 2xl:py-2 md:py-0 lg:py-0 '>Enroll Now</button>
+              </Link>
+            </li>
 
           </ul>
         </div>
@@ -31,15 +36,15 @@ const Navbar = () => {
             <li><Link to='https://eraflip.com/' target='_blank'>Amazon Services</Link></li>
             <li><Link to='https://www.pnygenius.com/' target='_blank'>Kids Courses</Link></li>
             <li><Link to='https://www.joinpnypink.com/' target='_blank'>Female Courses</Link></li>
-            <li><Link to='/flyers' target='_blank'>E-Flyers</Link></li>
-            <li><Link to="/trainingschedule" target='_blank'>Training Schedule</Link></li>
-            <li> <Link to="/Feestruchure" target='_blank'>Fee Structure</Link></li>
+            <li><Link to='/flyers'>E-Flyers</Link></li>
+            <li><Link to='/training-schedule'>Training Schedule</Link></li>
+            <li> <Link to='/Feestruchure'>Fee Structure</Link></li>
             <li className='bg-[#FFBA4A] blinking-text rounded-md flex cursor-pointer justify-center items-center'><Link to="/fast-track-pro-bootcamps">Fast Track Pro Bootcamps in 2024</Link></li>
-            <li><button className='navbarbuttons bg-[#308AFF] rounded-md w-[70px] h-[px]'>Login</button></li>
+            {/* <li><button className='navbarbuttons bg-[#308AFF] rounded-md w-[70px] h-[px]'>Login</button></li> */}
             <li><button className='navbarbuttons bg-[#F10900] rounded-md w-[90px] h-[px]'>Enroll Now</button></li>
           </ul>
         </div>
-      </nav>
+      </nav >
 
 
 

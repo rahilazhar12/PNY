@@ -4,7 +4,7 @@ import axios from 'axios';
 import parse, { domToReact } from 'html-react-parser';
 import Searchbar from '../../Components/Searchbar'
 import { Helmet } from 'react-helmet';
-import { Blocks } from 'react-loader-spinner'
+import gif from '../../Assets/image/gif.gif'
 
 const Gujranwala = () => {
   const [courses, setCourses] = useState({ page_description: '' });
@@ -15,7 +15,7 @@ const Gujranwala = () => {
     const fetchCourses = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get(`https://www.pnytrainings.com/api/shortcourse/short-courses-in-gujranwala`);
+        const response = await axios.get(`https://www.admin786.pnytrainings.com/api/shortcourse/short-courses-in-gujranwala`);
         setCourses(response.data.course);
         setMeta(response.data.metas);
 
@@ -36,23 +36,23 @@ const Gujranwala = () => {
       if (domNode.type === 'tag') {
         // For example, add a class to all <p> elements
         if (domNode.name === 'p') {
-          const props = { className: 'p-5' };
+          const props = { className: 'px-32 py-2 max-sm:p-2 text-justify' };
           return <p {...props}>{domToReact(domNode.children)}</p>;
         }
         if (domNode.name === 'h3') {
-          const props = { className: 'p-5 text-lg' };
+          const props = { className: 'px-32 py-2 max-sm:p-2 text-lg' };
           return <p {...props}>{domToReact(domNode.children)}</p>;
         }
         if (domNode.name === 'h2') {
-          const props = { className: 'p-5 text-lg' };
+          const props = { className: 'px-32 py-2 max-sm:p-2 text-lg' };
           return <p {...props}>{domToReact(domNode.children)}</p>;
         }
         if (domNode.name === 'h1') {
-          const props = { className: 'p-5 text-lg' };
+          const props = { className: 'px-32 py-2 max-sm:p-2 text-lg' };
           return <p {...props}>{domToReact(domNode.children)}</p>;
         }
         if (domNode.name === 'ul') {
-          const props = { className: 'p-5' };
+          const props = { className: 'px-32 py-2 max-sm:p-2' };
           return <p {...props}>{domToReact(domNode.children)}</p>;
         }
         // if (domNode.name === 'a') {
@@ -65,19 +65,17 @@ const Gujranwala = () => {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
-        <Blocks
-          visible={true}
-          height="80"
-          width="80"
-          ariaLabel="blocks-loading"
-          wrapperStyle={{}}
-          wrapperClass="blocks-wrapper"
-        />
+      <div className="loader-wrapper">
+        {/* Semi-transparent background */}
+        <div className="loader-overlay"></div>
+        {/* Loader */}
+        <div className="loaderContainer">
+          {/* Use the gif as a loader */}
+          <img className="w-52 h-52" src={gif} alt="Loading..." />
+        </div>
       </div>
     );
   }
-
 
 
 
@@ -110,7 +108,7 @@ const Gujranwala = () => {
         {/* <div className='text-[20px] font-normal max-sm:text-[16px] max-sm:text-center'>Learn more about the company and the team behind it.</div> */}
       </section>
       <div className='w-full'>
-        <img className='w-full' src={courses.page_image} alt="" />
+        <img className='w-full px-32 py-2 max-sm:p-2' src={courses.page_image} alt="" />
       </div>
 
       {courses.page_description && parsedDescription}

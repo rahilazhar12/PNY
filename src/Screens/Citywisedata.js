@@ -3,8 +3,8 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import { Blocks } from 'react-loader-spinner'
 import Searchbar from '../Components/Searchbar'
+import gif from '../Assets/image/gif.gif'
 
 
 const Citywisedata = () => {
@@ -18,7 +18,7 @@ const Citywisedata = () => {
         const fetchdatacitywise = async () => {
             setIsLoading(true)
             try {
-                let response = await axios.get(`https://www.pnytrainings.com/api/city/${name}`)
+                let response = await axios.get(`https://www.admin786.pnytrainings.com/api/city/${name}`)
                 setData(response.data)
                 setIsLoading(false)
             } catch (error) {
@@ -29,17 +29,40 @@ const Citywisedata = () => {
         window.scrollTo(0, 0)
     }, [name])
 
+
+    useEffect(() => {
+        const handlePopState = () => {
+            window.scrollTo(0, 0);
+        };
+
+        // Listen for popstate event
+        window.addEventListener('popstate', handlePopState);
+
+        // Remove event listener on cleanup
+        return () => window.removeEventListener('popstate', handlePopState);
+    }, []); // Empty dependency array means it runs once on mount
+
+    if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual';
+    }
+
+
+
     if (isLoading) {
         return (
-          <div className="loader-container text-center">
-            <div className="loader"></div>
-            {/* <p>Loading...</p> */}
-          </div>
+            <div className="loader-wrapper">
+                {/* Semi-transparent background */}
+                <div className="loader-overlay"></div>
+                {/* Loader */}
+                <div className="loaderContainer">
+                    {/* Use the gif as a loader */}
+                    <img className="w-52 h-52" src={gif} alt="Loading..." />
+                </div>
+            </div>
         );
-      }
-   
+    }
 
-  
+
 
 
 

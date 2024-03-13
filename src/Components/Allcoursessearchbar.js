@@ -10,7 +10,7 @@ const Allcoursessearchbar = () => {
     if (query.trim().length > 2) {
       setLoading(true); // Start loading
       fetch(
-        `https://www.pnytrainings.com/api/search/${encodeURIComponent(
+        `https://www.admin786.pnytrainings.com/api/search/${encodeURIComponent(
           query.trim()
         )}`
       )
@@ -45,8 +45,6 @@ const Allcoursessearchbar = () => {
         />
         {loading && (
           <div className="absolute right-0 top-0 mt-3 mr-4">
-            {/* Loader here */}
-            <div className="loader"></div>
           </div>
         )}
       </div>

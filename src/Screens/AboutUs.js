@@ -23,24 +23,28 @@ const AboutUs = () => {
         {/* Section-1 */}
         <section className='bg-[#152438] max-sm:h-auto md:p-20 lg:h-[300px]  text-white max-sm:py-10'>
           <div className="grid ">
-            <div style={{animation:"riseUp 2s ease-out forwards"}} className='lg:text-5xl max-sm:text-center bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500  font-bold max-sm:text-3xl md:text-center md:text-3xl'>About Us</div>
+            <div style={{ animation: "riseUp 2s ease-out forwards" }} className='lg:text-5xl max-sm:text-center bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500  font-bold max-sm:text-3xl md:text-center md:text-3xl'>About Us</div>
             <div className='text-center'><TypingAnimation /></div>
-            
-           
+
+
           </div>
         </section>
 
         {/* Section-2 */}
-        <section className='grid lg:grid-cols-12 lg:h-[400px] max-sm:h-auto md:mt-5 md:px-10 '>
-          <div className='col-span-6 max-sm:order-1 lg:p-10 max-sm:p-2 max-sm:space-y-2 space-y-3'>
-            <div className="lg:text-[42px] md:text-3xl max-sm:text-3xl font-bold dark:text-white">Who we are?</div>
-            <div className=" lg:text-[26px] max-sm:text-2xl md:text-2xl  font-bold max-sm:text-[#F10900] dark:text-white">PNY Trainings: A renowned IT Training institute in Pakistan since 2014</div>
-            <div className="text-base  text-[20px] text-justify max-sm:text-center"><p className='lg:w-[550px] dark:text-white'>Offering professional IT diplomas and short courses for students and professionals seeking career growth. As pioneers in comprehensive training, we have helped thousands of students secure lucrative jobs in the expanding IT industry. With top-level industry experienced instructors and multiple branches nationwide, we are committed to empowering individuals in their IT journey. Join us today and unlock your potential in the world of technology.</p></div>
+        <section className='grid lg:grid-cols-12 gap-4 lg:h-[400px] md:mt-5 px-4 md:px-10'>
+          <div className='col-span-6 flex flex-col justify-center p-4 lg:p-10'>
+            <h2 className="text-3xl max-sm:text-center lg:text-[42px] font-bold text-gray-900 dark:text-white">Who we are?</h2>
+            <h3 className="text-2xl max-sm:text-center lg:text-[26px] font-bold text-red-600 dark:text-white mt-3">PNY Trainings: A renowned IT Training institute in Pakistan since 2014</h3>
+
+            <p className="text-lg lg:text-[20px] text-gray-700 dark:text-white text-justify max-sm:text-center mt-4">Offering professional IT diplomas and short courses for students and professionals seeking career growth. As pioneers in comprehensive training, we have helped thousands of students secure lucrative jobs in the expanding IT industry. With top-level industry experienced instructors and multiple branches nationwide, we are committed to empowering individuals in their IT journey. Join us today and unlock your potential in the world of technology.</p>
+
+
           </div>
-          <div className='col-span-6 lg:h-80  flex justify-end md:justify-center md:mt-3'>
-            <img className='lg:w-[591px] lg:h-[375px]' src={grouppicture} alt="" />
+          <div className='col-span-6 flex justify-center items-center lg:justify-end p-4'>
+            <img className='w-full lg:w-[591px] lg:h-[375px] object-cover' src={grouppicture} alt="Group Picture" />
           </div>
         </section>
+
 
         {/* section-3 */}
         <section className=' lg:mb-10 lg:mt-10 bg-[#F9FAFB] p-10'>
@@ -61,8 +65,11 @@ const AboutUs = () => {
         {/* Section-4 */}
         <section className=' xl:h-auto lg:h-auto md:h-auto max-sm:h-auto p-5 max-sm:p-2'>
           <div className='flex justify-center'>
-            <p className=' lg:text-[42px] max-sm:text-[18px]  md:text-[30px] md:font-bold text-center w-[1084px] font-bold dark:text-white'>Wahab Yunus, as the CEO of PNY Trainings, is unlocking the potential in youth to be victorious.</p>
+            <p className='text-[18px] sm:text-[30px] md:font-bold lg:text-[42px] text-center font-bold dark:text-white w-full px-4 lg:w-[1084px]'>
+              Wahab Yunus, as the CEO of PNY Trainings, is unlocking the potential in youth to be victorious.
+            </p>
           </div>
+
           <div className="grid xl:grid-cols-2 lg:grid-cols-2 text-white rounded md:grid-cols-1 md:h-auto max-sm:grid-cols-1 xl:mt-20  bg-[#152438] max-sm:h-auto lg:h-[420px] xl:w-[1266px] mx-auto max-sm:mt-10 md:mt-10">
             <div className='p-10'>
               <div className='lg:text-[36px] font-semibold'>CEO Message</div>

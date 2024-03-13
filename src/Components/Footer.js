@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import arfatower from "../Assets/image/arfa tower.png";
 import iqbaltown from "../Assets/image/iqbal town.png";
 import johartown from "../Assets/image/Jahor town.png";
 import multan from "../Assets/image/Multan.png";
+import rawal from "../Assets/image/rawalpindi.png";
 import allbrances from "../Assets/image/Group 48095475.png";
 import pnylogonew from "../Assets/image/PNY Trainings logo.png";
 import pnylogodark from "../Assets/image/pny logo dark.jpg.png";
@@ -16,9 +17,49 @@ import { FaInstagram } from "react-icons/fa";
 const Footer = () => {
     const navigate = useNavigate();
 
+    const [offeredCourses, setOfferedCourses] = useState([]);
+    const [languageCourses, setLanguageCourses] = useState([]);
+
+
     const redirectToCity = (cityName) => {
         navigate(`/city/${cityName}`);
     };
+
+    useEffect(() => {
+        const fetchOfferedCourses = async () => {
+            try {
+                let response = await fetch('https://www.admin786.pnytrainings.com/api/footer/offeredcourses');
+                let data = await response.json();
+                // Assuming the data is directly in the format you provided
+                setOfferedCourses(data.courses_links);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchOfferedCourses();
+    }, []);
+
+
+    useEffect(() => {
+        const fetchLanguageCourses = async () => {
+            try {
+                let response = await fetch('https://www.admin786.pnytrainings.com/api/footer/languagecourses');
+                let data = await response.json();
+                // Assuming the response data structure is similar to the previous one
+                setLanguageCourses(data.courses_links);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchLanguageCourses();
+    }, []);
+
+
+
+
+
 
     return (
         <div>
@@ -61,7 +102,28 @@ const Footer = () => {
                         Privacy Policy
                     </Link>
                 </nav>
-                <nav>
+
+                <div >
+                    <h1 className="text-black font-bold dark:text-white">Courses Offered</h1>
+                    <ul className="space-y-3">
+                        {offeredCourses.map((course) => (
+                            // Using an anchor tag for external links
+                            <li key={course.id}>
+                                <Link to={course.url_slug} >
+                                    {course.name}
+                                </Link>
+                            </li>
+
+                            // Uncomment the below code and comment out the <a> tag above to see how you'd use Link for internal navigation
+                            /*
+                            <li key={course.id}>
+                              <Link to={course.url_slug}>{course.name}</Link>
+                            </li>
+                            */
+                        ))}
+                    </ul>
+                </div>
+                {/* <nav>
                     <header className="text-black font-bold dark:text-white">
                         Offered Courses
                     </header>
@@ -82,9 +144,9 @@ const Footer = () => {
                         Bootcamp Advacne UI/UX with Figma
                     </Link>
                     <Link className="link link-hover">Bootcamp - Python</Link>
-                </nav>
+                </nav> */}
 
-                <nav>
+                {/* <nav>
                     <header className="text-black font-bold dark:text-white">
                         Language Courses
                     </header>
@@ -93,7 +155,22 @@ const Footer = () => {
                     </Link>
                     <Link className="link link-hover">IELTS prepration course</Link>
                     <Link className="link link-hover">Pearson Test of English</Link>
-                </nav>
+                </nav> */}
+
+                <div>
+                    <h1 className="text-black font-bold dark:text-white">Language Courses</h1>
+                    <ul className="space-y-2">
+                        {languageCourses.map((course) => (
+                            <li key={course.id}>
+                                <Link to={course.url_slug}>
+                                    {course.name}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+
                 <nav>
                     <h1 className="text-black font-bold dark:text-white">
                         Short Courses
@@ -134,7 +211,7 @@ const Footer = () => {
                     <header className="text-black dark:text-white font-bold">
                         Arfa Tower (Head Office)
                     </header>
-                    <p className="  lg:w-[150px]">
+                    <p className="">
                         Office 1, Level #14, Arfa Software Technology Park, Ferozepur Road
                         Lahore
                     </p>
@@ -144,53 +221,47 @@ const Footer = () => {
                     <header className="text-black font-bold dark:text-white">
                         Iqbal Town
                     </header>
-                    <Link className="  lg:w-[150px]">
+                    <Link className="">
                         743 B Kashmir Block Allama Iqbal Town Lahore
                     </Link>
                 </nav>
-                <nav className="col-span-2">
+                <nav className="col-span-2 md:col-span-3">
                     <img src={johartown} alt="" />
                     <header className="text-black font-bold dark:text-white">
                         Johar Town
                     </header>
-                    <Link className="  lg:w-[150px]">
+                    <Link className=" ">
                         1st Floor 256 / A, Block R2 Near Shaukat Khanam Hospital, next to
                         Standard Chartered, Lahore
                     </Link>
                 </nav>
-                <nav className="col-span-2">
+                <nav className="col-span-2 ">
                     <img src={multan} alt="" />
                     <header className="text-black font-bold dark:text-white">
                         Multan
                     </header>
-                    <Link className=" lg:w-[150px]">
+                    <Link className="">
                         237-B, Model Town, Main Boulevard, Multan
                     </Link>
                 </nav>
-                <nav className="col-span-2">
-                    <img src={multan} alt="" />
+                <nav className="col-span-2 md:col-span-3">
+                    <img src={rawal} alt="" />
                     <header className="text-black font-bold dark:text-white">
                         Rawalpindi
                     </header>
-                    <Link className=" lg:w-[150px]">
+                    <Link className=" ">
                         Office # 604, Alpha Techno Square NASTP, Old Airport Nur khan
                         Airbase, Chaklala Cantt, Rawalpindi.
                     </Link>
                 </nav>
-                <nav>
+                {/* <nav>
                     <img src={allbrances} alt="" />
                     <header className="text-black font-bold dark:text-white">
                         View All Branches
                     </header>
                     <Link className="link link-hover w-[150px]"> View All Branches</Link>
-                    <Link to="https://www.dmca.com/Protection/Status.aspx?ID=7c917940-1e0d-4855-93f4-76d5632f1b81&refurl=https://www.pnytrainings.com/">
-                        <img
-                            className=" cursor-pointer"
-                            src="https://www.locklizard.com/wp-content/uploads/2023/04/dmca-protected.png"
-                            alt=""
-                        />
-                    </Link>
-                </nav>
+
+                </nav> */}
             </footer>
             <footer className="footer footer-center p-4 bg-base-300 text-base-content">
                 <aside>
@@ -220,28 +291,36 @@ const Footer = () => {
             </footer>
 
             <section className="flex flex-col items-center justify-center gap-4 p-3 mb-10">
-      <div className="text-center">
-        Copyright © 2024 - All rights reserved by PNY Trainings
-      </div>
-      <div className="flex space-x-4">
-        {/* Icons with Links */}
-        <Link to="https://twitter.com/PnyTrainings" target="_blank">
-          <FaTwitter className="text-xl hover:text-blue-500" />
-        </Link>
-        <Link to="https://www.facebook.com/PNY.Trainings" target="_blank">
-          <FaFacebook className="text-xl hover:text-blue-500" />
-        </Link>
-        <Link to="https://pk.linkedin.com/company/pny-trainings" target="_blank">
-          <FaLinkedin className="text-xl hover:text-blue-700" />
-        </Link>
-        <Link to="https://www.youtube.com/channel/UCdkE8Zm_dNclx3B7s-t6pBQ" target="_blank">
-          <FaYoutube className="text-xl hover:text-red-600" />
-        </Link>
-        <Link to="https://www.instagram.com/pny.trainings/" target="_blank">
-          <FaInstagram className="text-xl hover:text-pink-600" />
-        </Link>
-      </div>
-    </section>
+                <div className="text-center">
+                    Copyright © 2024 - All rights reserved by PNY Trainings
+                </div>
+                <div className="flex space-x-4">
+                    {/* Icons with Links */}
+                    <Link to="https://twitter.com/PnyTrainings" target="_blank">
+                        <FaTwitter className="text-xl hover:text-blue-500" />
+                    </Link>
+                    <Link to="https://www.facebook.com/PNY.Trainings" target="_blank">
+                        <FaFacebook className="text-xl hover:text-blue-500" />
+                    </Link>
+                    <Link to="https://pk.linkedin.com/company/pny-trainings" target="_blank">
+                        <FaLinkedin className="text-xl hover:text-blue-700" />
+                    </Link>
+                    <Link to="https://www.youtube.com/channel/UCdkE8Zm_dNclx3B7s-t6pBQ" target="_blank">
+                        <FaYoutube className="text-xl hover:text-red-600" />
+                    </Link>
+                    <Link to="https://www.instagram.com/pny.trainings/" target="_blank">
+                        <FaInstagram className="text-xl hover:text-pink-600" />
+                    </Link>
+                    <Link to="https://www.dmca.com/Protection/Status.aspx?ID=7c917940-1e0d-4855-93f4-76d5632f1b81&refurl=https://www.pnytrainings.com/">
+                        <img
+                            className=" cursor-pointer h-10"
+                            src="https://www.locklizard.com/wp-content/uploads/2023/04/dmca-protected.png"
+                            alt=""
+                        />
+                    </Link>
+                </div>
+
+            </section>
         </div>
     );
 };

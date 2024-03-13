@@ -1,6 +1,6 @@
 /* global gtag */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Searchbar from "../Components/Searchbar";
 import arfatower from "../Assets/image/Image.png";
 import { contactus } from "../Components/Data";
@@ -11,10 +11,17 @@ const Contactus = () => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
+  const [courses, setCourses] = useState([]);
+  const [filteredCourses, setFilteredCourses] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
 
   function SubmitData(e) {
     e.preventDefault();
-    // Create a new FormData object
+    setIsSubmitting(true); // Start submission
     var formData = new FormData();
 
     // Append the data to the FormData object
@@ -22,10 +29,14 @@ const Contactus = () => {
     formData.append("phone", phone);
     formData.append("email", email);
     formData.append("comment", comment);
+    if (selectedCourse) {
+      formData.append("course_name", selectedCourse.course_name);
+    }
+
     // formData.append('comment', comment);
 
     // Use fetch to send the request
-    fetch("https://www.pnytrainings.com/api/contact", {
+    fetch("https://www.admin786.pnytrainings.com/api/contact", {
       method: "POST",
       body: formData,
     })
@@ -35,6 +46,7 @@ const Contactus = () => {
         toast.success(data.message, {
           duration: 5000,
         });
+        setIsSubmitting(false); // End submission on success
         // Add Google Ads Conversion Tracking
         if (typeof gtag === "function") {
           gtag("event", "conversion", {
@@ -51,8 +63,34 @@ const Contactus = () => {
       })
       .catch((error) => {
         console.error("Error:", error);
+        setIsSubmitting(false); // End submission on error
       });
   }
+
+
+  useEffect(() => {
+    fetch('https://www.admin786.pnytrainings.com/api/contact/courses')
+      .then(response => response.json())
+      .then(data => {
+        setCourses(data.courses_list);
+        setFilteredCourses(data.courses_list);
+      })
+      .catch(error => console.error('Error fetching courses:', error));
+  }, []);
+
+  const handleSearchChange = (event) => {
+    const searchTerm = event.target.value;
+    setSearchTerm(searchTerm);
+    setFilteredCourses(courses.filter(course =>
+      course.course_name.toLowerCase().includes(searchTerm.toLowerCase())
+    ));
+  };
+
+  const handleCourseSelect = (course) => {
+    setSelectedCourse(course);
+    setIsDropdownOpen(false); // Optionally close the dropdown after selection
+  };
+
 
   return (
     <>
@@ -63,7 +101,7 @@ const Contactus = () => {
       <section className="lg:h-[254px] bg-[#152438;] text-white flex flex-col justify-center items-center max-sm:p-5">
         <div className="text-[48px] max-sm:text-[24px] font-semibold riseUp 1s ease-out forwards space-y-3">
           <h1
-            className="text-white text-6xl font-bold -z-50 text-center"
+            className="text-white text-2xl md:text-6xl font-bold -z-50 text-center"
             style={{
               animation: 'riseUp 2s ease-out forwards', // Change the duration and ease as needed
             }}
@@ -71,7 +109,7 @@ const Contactus = () => {
             Contact Us
 
           </h1>
-          <h4 className="text-center text-xl">Our Team is always ready to help</h4>
+          <h4 className="text-center text-sm md:text-xl">Our Team is always ready to help</h4>
         </div>
         {/* <div className='text-[20px] font-normal max-sm:text-[16px] max-sm:text-center'>Learn more about the company and the team behind it.</div> */}
       </section>
@@ -139,6 +177,40 @@ const Contactus = () => {
                     value={phone}
                   />
                 </div>
+
+                <div className="dropdown-container">
+                  <div
+                    className="bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 w-full"
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  >
+                    {selectedCourse ? selectedCourse.course_name : 'Select a course'}
+                  </div>
+
+                  {isDropdownOpen && (
+                    <div className="dropdown-menu">
+                      <input
+                        type="text"
+                        placeholder="Search courses"
+                        value={searchTerm}
+                        onChange={handleSearchChange}
+                        className="mb-3 bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 w-full"
+                      />
+                      <ul className="list-none max-h-60 overflow-y-auto cursor-pointer">
+                        {filteredCourses.map(course => (
+                          <li
+                            key={course.id}
+                            className="dropdown-item"
+                            onClick={() => handleCourseSelect(course)}
+                          >
+                            {course.course_name}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+
+
                 <div className="sm:col-span-2">
                   <label
                     htmlFor="message"
@@ -162,8 +234,9 @@ const Contactus = () => {
                 <button
                   className="bg-blue-500 w-full py-[12px] px-[20px] rounded-lg text-white"
                   onClick={SubmitData}
+                  disabled={isSubmitting} // Disable the button when submitting
                 >
-                  Submit
+                  {isSubmitting ? "Loading..." : "Submit"}
                 </button>
               </div>
             </div>
@@ -207,7 +280,7 @@ const Contactus = () => {
                       </Link>
                       <Link
                         to={item.Map}
-                        className=" hover:border-b border-blue-500 font-semibold text-blue-500"
+                        className=" hover:border-b border-blue-500 font-semibold text-red-500"
                         target="_blank"
                         rel="noopener noreferrer"
                       >

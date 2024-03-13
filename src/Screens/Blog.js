@@ -4,6 +4,7 @@ import { Button } from "flowbite-react";
 import { Link } from "react-router-dom";
 import Searchbar from "../Components/Searchbar";
 import { Flowbite } from "flowbite-react";
+import gif from '../Assets/image/gif.gif'
 
 const Blog = () => {
   const [data, setData] = useState([]);
@@ -11,7 +12,7 @@ const Blog = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://www.pnytrainings.com/api/featuredposts/")
+    fetch("https://www.admin786.pnytrainings.com/api/featuredposts/")
       .then((response) => response.json())
       .then((data) => {
         setData(data.featured_posts);
@@ -38,12 +39,18 @@ const Blog = () => {
 
   if (isLoading) {
     return (
-      <div className="loader-container text-center">
-        <div className="loader"></div>
-        {/* <p>Loading...</p> */}
+      <div className="loader-wrapper">
+        {/* Semi-transparent background */}
+        <div className="loader-overlay"></div>
+        {/* Loader */}
+        <div className="loaderContainer">
+          {/* Use the gif as a loader */}
+          <img className="w-52 h-52" src={gif} alt="Loading..." />
+        </div>
       </div>
     );
   }
+
 
   return (
     <Flowbite>

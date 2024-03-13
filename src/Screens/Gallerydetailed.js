@@ -41,7 +41,7 @@ const GalleryDetailed = () => {
   
 
   useEffect(() => {
-    axios.get(`https://www.pnytrainings.com/api/gallery/${id}`)
+    axios.get(`https://www.admin786.pnytrainings.com/api/gallery/${id}`)
       .then(response => {
         // Check if response.data is an array; if not, extract the array correctly
         const imagesArray = Array.isArray(response.data) 

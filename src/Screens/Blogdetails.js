@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import parse, { domToReact } from 'html-react-parser';
 import Searchbar from '../Components/Searchbar'
+import gif from '../Assets/image/gif.gif'
 
 const Blogdetails = () => {
   const { slug } = useParams();
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(`https://www.pnytrainings.com/api/featuredposts/${slug}`)
+    fetch(`https://www.admin786.pnytrainings.com/api/featuredposts/${slug}`)
       .then((response) => response.json())
       .then((jsonData) => {
         setData(jsonData.post_detail); // Assuming post_detail is the correct structure
@@ -19,11 +20,17 @@ const Blogdetails = () => {
     window.scrollTo(0, 0)
   }, [slug]);
 
+
   if (!data) {
     return (
-      <div className="loader-container text-center">
-        <div className="loader"></div>
-        {/* <p>Loading...</p> */}
+      <div className="loader-wrapper">
+        {/* Semi-transparent background */}
+        <div className="loader-overlay"></div>
+        {/* Loader */}
+        <div className="loaderContainer">
+          {/* Use the gif as a loader */}
+          <img className="w-52 h-52" src={gif} alt="Loading..." />
+        </div>
       </div>
     );
   }
@@ -32,19 +39,19 @@ const Blogdetails = () => {
     replace: domNode => {
       if (domNode.type === 'tag') {
         if (domNode.name === 'p') {
-          const props = { className: 'p-3' };
+          const props = { className: 'px-32 py-2 max-sm:p-2 text-justiify' };
           return <p {...props}>{domToReact(domNode.children)}</p>;
         }
         if (domNode.name === 'h3') {
-          const props = { className: 'p-3 text-lg' };
+          const props = { className: 'px-32 py-2 max-sm:p-2 text-lg' };
           return <p {...props}>{domToReact(domNode.children)}</p>;
         }
         if (domNode.name === 'ul') {
-          const props = { className: 'p-3' };
+          const props = { className: 'px-32 py-2 max-sm:p-2' };
           return <p {...props}>{domToReact(domNode.children)}</p>;
         }
         if (domNode.name === 'li') {
-          const props = { className: 'p-3' };
+          const props = { className: 'px-32 py-2 max-sm:p-2' };
           return <p {...props}>{domToReact(domNode.children)}</p>;
         }
       }
@@ -73,7 +80,7 @@ const Blogdetails = () => {
                 <div class="w-full lg:w-1/2 flex justify-center items-center bg-gray-700 p-2 mt-4 lg:mt-0">
                   {/* <!-- Responsive image container --> */}
                   <div class="w-full">
-                    <img class="w-full h-96" src={data.post_image_thumb} alt="" />
+                    <img class="w-full h-52 md:h-96" src={data.post_image_thumb} alt="" />
                   </div>
                 </div>
               </div>

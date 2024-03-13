@@ -285,8 +285,8 @@ export const contactus = [
     image: multan,
     title: "Multan Branch",
     description: "237-B, Model Town, Main Boulevard, Multan",
-    phone: "0309-7772260",
-    phone1: "0309-7774685",
+    phone: "0300-8405591",
+
     Map: "https://maps.app.goo.gl/fkZdwWjPfwk3Z2Ny9",
     link: "https://www.facebook.com/pny.multan/videos/226519397106219"
   },
@@ -295,7 +295,8 @@ export const contactus = [
     image: rawalpindi,
     title: "Rawalpindi Branch",
     description: "Office # 604, Alpha Techno Square NASTP, Old Airport Nur khan Airbase, Chaklala Cantt, Rawalpindi.",
-    phone: "0300-8405591",
+    phone: "0309-7772260",
+    phone1: "0309-7774685",
     Map: "https://maps.app.goo.gl/hdd4wgvG6pcdDjbL9",
     link: "https://www.youtube.com/watch?v=QVo6WNbZ3-o"
   },

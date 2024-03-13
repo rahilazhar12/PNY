@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+
 const Categoriesdata = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     // Fetch data from the provided URL
-    fetch("https://www.pnytrainings.com/api/menu")
+    fetch("https://www.admin786.pnytrainings.com/api/menu")
       .then((response) => response.json())
       .then((data) => {
         setData(data.categories_menu);
@@ -15,6 +16,8 @@ const Categoriesdata = () => {
         console.error("Error fetching data:", error);
       });
   }, []);
+
+  console.log(data)
 
   return (
     <>
@@ -32,23 +35,20 @@ const Categoriesdata = () => {
               </svg>
             </span>
           </button>
-          <ul className="bg-white border z-50 rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32">
-           
-            {data.map((item) => {
-              return (
-                <li className="rounded-sm relative px-3 py-1 dark:text-black hover:bg-gray-100" key={item.url_slug}>
-                  {/* Main Category Link */}
-                  <Link
-                    to={item.url_slug === 'google-scholarship-certification-in-lahore-pakistan' || item.url_slug === 'fast-track-pro-bootcamps' ? `/${item.url_slug}` : `/courses/${item.url_slug}`}
-                    className="w-full text-left flex items-center outline-none focus:outline-none"
-                  >
-                    <span className="pr-1 flex-1">{item.name}</span>
-                  </Link>
-                </li>
-              );
-            })}
-
+          <ul className="bg-white border border-gray-200 z-50 rounded-lg shadow-lg transform scale-0 group-hover:scale-100 absolute transition duration-200 ease-in-out origin-top min-w-36">
+            {data.map((item) => (
+              <li className="rounded-lg relative px-4 py-2 hover:bg-blue-50" key={item.url_slug}>
+                {/* Main Category Link */}
+                <Link
+                  to={item.url_slug === 'google-scholarship-certification-in-lahore-pakistan' || item.url_slug === 'fast-track-pro-bootcamps' ? `/${item.url_slug}` : `/courses/${item.url_slug}`}
+                  className="w-full text-left flex items-center outline-none focus:outline-none text-gray-800 hover:text-blue-600"
+                >
+                  <span className="pr-2 flex-1 text-sm font-medium">{item.name}</span>
+                </Link>
+              </li>
+            ))}
           </ul>
+
         </div>
       </section>
     </>

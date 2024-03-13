@@ -4,7 +4,7 @@ import axios from 'axios';
 import parse, { domToReact } from 'html-react-parser';
 import Searchbar from '../../Components/Searchbar'
 import { Helmet } from 'react-helmet';
-import { Blocks } from 'react-loader-spinner'
+import gif from '../../Assets/image/gif.gif'
 
 const Lahore = () => {
   const [courses, setCourses] = useState({ page_description: '' });
@@ -15,7 +15,7 @@ const Lahore = () => {
     const fetchCourses = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get(`https://www.pnytrainings.com/api/shortcourse/short-courses-in-lahore`);
+        const response = await axios.get(`https://www.admin786.pnytrainings.com/api/shortcourse/short-courses-in-lahore`);
         setCourses(response.data.course);
         setMeta(response.data.metas);
 
@@ -28,55 +28,65 @@ const Lahore = () => {
     };
 
     fetchCourses();
-     window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
   }, []);
 
+  const commonStyles = 'py-2 px-32 max-sm:p-2';
+  const textStyle = `${commonStyles} text-justify`;
+  const titleStyle = `${commonStyles} text-lg`;
+  
   const parsedDescription = parse(courses.page_description, {
     replace: domNode => {
-      if (domNode.type === 'tag') {
-        // For example, add a class to all <p> elements
-        if (domNode.name === 'p') {
-          const props = { className: 'p-5' };
+      if (domNode.type !== 'tag') return;
+  
+      const props = { className: '' };
+      switch (domNode.name) {
+        case 'p':
+          props.className = textStyle;
           return <p {...props}>{domToReact(domNode.children)}</p>;
-        }
-        if (domNode.name === 'h3') {
-          const props = { className: 'p-5 text-lg' };
-          return <p {...props}>{domToReact(domNode.children)}</p>;
-        }
-        if (domNode.name === 'h2') {
-          const props = { className: 'p-5 text-lg' };
-          return <p {...props}>{domToReact(domNode.children)}</p>;
-        }
-        if (domNode.name === 'h1') {
-          const props = { className: 'p-5 text-lg' };
-          return <p {...props}>{domToReact(domNode.children)}</p>;
-        }
-        if (domNode.name === 'ul') {
-          const props = { className: 'p-5' };
-          return <p {...props}>{domToReact(domNode.children)}</p>;
-        }
-        // if (domNode.name === 'a') {
-        //   const props = { className: 'bg-[#0c7ec2] text-white hover:bg-red-500 p-3 w-80 cursor-pointer rounded mx-auto'};
-        //   return <p {...props}>{domToReact(domNode.children)}</p>;
-        // }
+  
+        case 'h1':
+          props.className = `${titleStyle} text-2xl`;
+          return <h1 {...props}>{domToReact(domNode.children)}</h1>;
+  
+        case 'h2':
+          props.className = `${titleStyle} text-xl`;
+          return <h2 {...props}>{domToReact(domNode.children)}</h2>;
+  
+        case 'h3':
+          props.className = titleStyle;
+          return <h3 {...props}>{domToReact(domNode.children)}</h3>;
+  
+        case 'ul':
+          props.className = commonStyles;
+          return <ul {...props}>{domToReact(domNode.children)}</ul>;
+  
+        case 'a':
+          props.className = 'text-blue-500 hover:text-red-500';
+          return <a {...props}>{domToReact(domNode.children)}</a>;
+  
+        // Add more cases for other tags as needed
+  
+        default:
+          return domToReact(domNode.children);
       }
     }
   });
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
-        <Blocks
-          visible={true}
-          height="80"
-          width="80"
-          ariaLabel="blocks-loading"
-          wrapperStyle={{}}
-          wrapperClass="blocks-wrapper"
-        />
+      <div className="loader-wrapper">
+        {/* Semi-transparent background */}
+        <div className="loader-overlay"></div>
+        {/* Loader */}
+        <div className="loaderContainer">
+          {/* Use the gif as a loader */}
+          <img className="w-52 h-52" src={gif} alt="Loading..." />
+        </div>
       </div>
     );
   }
+
 
 
 
@@ -109,7 +119,7 @@ const Lahore = () => {
         <div className='text-[20px] max-sm:text-[24px] font-semibold'>Short Courses</div>
         {/* <div className='text-[20px] font-normal max-sm:text-[16px] max-sm:text-center'>Learn more about the company and the team behind it.</div> */}
       </section>
-      <div className='w-full'>
+      <div className='w-full px-32 py-2'>
         <img className='w-full' src={courses.page_image} alt="" />
       </div>
 

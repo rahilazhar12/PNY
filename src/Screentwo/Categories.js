@@ -3,6 +3,7 @@ import Searchbar from "../Components/Searchbar";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import gif from '../Assets/image/gif.gif'
 
 const Categories = () => {
   const [category, setCategory] = useState(null);
@@ -17,7 +18,7 @@ const Categories = () => {
       setIsLoading(true);
       try {
         const response = await fetch(
-          `https://www.pnytrainings.com/api/category/${slug}`
+          `https://www.admin786.pnytrainings.com/api/category/${slug}`
         );
         if (response.ok) {
           const {
@@ -44,16 +45,40 @@ const Categories = () => {
     window.scrollTo(0, 0);
   }, [slug]);
 
+  useEffect(() => {
+    const handlePopState = () => {
+      window.scrollTo(0, 0);
+    };
+
+    // Listen for popstate event
+    window.addEventListener('popstate', handlePopState);
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []); // Empty dependency array means it runs once on mount
+
+  if ('scrollRestoration' in window.history) {
+    window.history.scrollRestoration = 'manual';
+  }
+
+
+
+
+
   if (isLoading) {
     return (
-      <div className="loader-container text-center">
-        <div className="loader"></div>
-        {/* <p>Loading...</p> */}
+      <div className="loader-wrapper">
+        {/* Semi-transparent background */}
+        <div className="loader-overlay"></div>
+        {/* Loader */}
+        <div className="loaderContainer">
+          {/* Use the gif as a loader */}
+          <img className="w-52 h-52" src={gif} alt="Loading..." />
+        </div>
       </div>
     );
   }
 
-  console.log(category, "cat");
 
   return (
     <>
@@ -80,8 +105,8 @@ const Categories = () => {
           <section className="text-gray-600 body-font bg-[#152438]">
             <div className="container  py-20 mx-auto">
               <div className="flex flex-col text-center w-full">
-                <h1 className=" text-white sm:text-3xl text-4xl  mb-4 text-gray-900 font-bold">
-                  {category.name}{" "}
+                <h1 className=" text-white max-sm::text-3xl md:text-4xl  mb-4  font-bold">
+                  Courses Offer in  {category.name}
                 </h1>
                 <p className="lg:w-2/3 mx-auto leading-relaxed text-sm text-white">
                   {category.description_short}
@@ -96,8 +121,6 @@ const Categories = () => {
         <section className="text-gray-600 body-font bg-gray-100 dark:bg-slate-800">
           <div className="container px-5 py-20 mx-auto">
             <h1 className="text-3xl font-bold text-gray-900 mb-3 ml-5 dark:text-white">
-              {" "}
-              Feature Courses of {category.name}
             </h1>
             <div className="flex flex-wrap -m-4 items-center justify-center">
               {courses.length > 0 &&
@@ -111,26 +134,19 @@ const Categories = () => {
                           className="  cursor-pointer w-full object-cover rounded-xl mb-2"
                         />
                       </Link>
-                      <div className="flex justify-between w-50 mb-4">
-                        <div className="flex">
-                          {/* <i className="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i> */}
-                          <p>{category.name}</p>
-                        </div>
-                        <div className="flex">
-                          {/* <i className="fas fa-clock text-gray-400 mt-1 mx-1"></i> */}
-                        </div>
-                      </div>
+
                       <div className="w-full">
-                        <h2 className="title-font font-medium text-sm text-gray-900 mb-3">
+                        <h2 className="font-semibold text-sm text-gray-900 mb-3">
                           {item.name}
                         </h2>
-                        <h2 className="text-black">
-                          Course Fee : {item.monthly_tution_fee}
-                        </h2>
-                        <h3 className="text-red-500 mt-1 mb-1">
-                          {item.teacher}
-                        </h3>
+
                       </div>
+                      <Link to={`/${item.url_slug}`}>
+                        <div className="flex">
+                          <button className="bg-blue-600 px-3 py-1 rounded text-white">More Details</button>
+
+                        </div>
+                      </Link>
                     </div>
                   </div>
                 ))}

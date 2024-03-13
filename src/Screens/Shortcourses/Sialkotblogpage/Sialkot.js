@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import { Blocks } from 'react-loader-spinner'
+import gif from '../../../Assets/image/gif.gif'
 
 
 const Sialkot = () => {
@@ -13,7 +13,7 @@ const Sialkot = () => {
     const fetchCourses = async () => {
       setIsLoading(true)
       try {
-        const response = await axios.get(`https://www.pnytrainings.com/api/shortcourse/short-course-in-sialkot`);
+        const response = await axios.get(`https://www.admin786.pnytrainings.com/api/shortcourse/short-course-in-sialkot`);
         if (response.data && response.data.courses) {
           setCourses(response.data.courses);
         }
@@ -30,15 +30,14 @@ const Sialkot = () => {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
-        <Blocks
-          visible={true}
-          height="80"
-          width="80"
-          ariaLabel="blocks-loading"
-          wrapperStyle={{}}
-          wrapperClass="blocks-wrapper"
-        />
+      <div className="loader-wrapper">
+        {/* Semi-transparent background */}
+        <div className="loader-overlay"></div>
+        {/* Loader */}
+        <div className="loaderContainer">
+          {/* Use the gif as a loader */}
+          <img className="w-52 h-52" src={gif} alt="Loading..." />
+        </div>
       </div>
     );
   }

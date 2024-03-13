@@ -3,8 +3,7 @@ import axios from 'axios';
 import parse from 'html-react-parser';
 import Searchbar from '../../Components/Searchbar'
 import { Helmet } from 'react-helmet';
-import { Blocks } from 'react-loader-spinner'
-
+import gif from '../../Assets/image/gif.gif'
 
 
 const Rawalpindi = () => {
@@ -15,7 +14,7 @@ const Rawalpindi = () => {
     const fetchCourses = async () => {
       setIsLoading(true)
       try {
-        const response = await axios.get(`https://www.pnytrainings.com/api/shortcourse/short-courses-in-rawalpindi`);
+        const response = await axios.get(`https://www.admin786.pnytrainings.com/api/shortcourse/short-courses-in-rawalpindi`);
         setCourses(response.data.course);
         setMeta(response.data.metas);
 
@@ -32,17 +31,17 @@ const Rawalpindi = () => {
   }, []);
 
 
+
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
-        <Blocks
-          visible={true}
-          height="80"
-          width="80"
-          ariaLabel="blocks-loading"
-          wrapperStyle={{}}
-          wrapperClass="blocks-wrapper"
-        />
+      <div className="loader-wrapper">
+        {/* Semi-transparent background */}
+        <div className="loader-overlay"></div>
+        {/* Loader */}
+        <div className="loaderContainer">
+          {/* Use the gif as a loader */}
+          <img className="w-52 h-52" src={gif} alt="Loading..." />
+        </div>
       </div>
     );
   }
@@ -74,10 +73,10 @@ const Rawalpindi = () => {
         <div className='text-[20px] max-sm:text-[24px] font-semibold'>Short Courses</div>
         {/* <div className='text-[20px] font-normal max-sm:text-[16px] max-sm:text-center'>Learn more about the company and the team behind it.</div> */}
       </section>
-      <div className='w-full'>
-        <img className='w-full' src={courses.page_image} alt="" />
+      <div className='w-full '>
+        <img className='w-full px-32 py-2 max-sm:p-2' src={courses.page_image} alt="" />
       </div>
-      {courses ? parse(courses.page_description) : <p>Loading...</p>}
+      <p className='px-32 py-10 max-sm:p-2 leading-[40px] text-justify'>{courses ? parse(courses.page_description) : <p>Loading...</p>}</p>
     </>
   )
 }

@@ -3,7 +3,7 @@ import axios from 'axios';
 import parse, { domToReact } from 'html-react-parser';
 import { Helmet } from 'react-helmet';
 import Searchbar from '../../Components/Searchbar'
-import { Blocks } from 'react-loader-spinner'
+import gif from '../../Assets/image/gif.gif'
 
 const Multan = () => {
   const [courses, setCourses] = useState([]);
@@ -13,7 +13,7 @@ const Multan = () => {
     const fetchCourses = async () => {
       setIsLoading(true)
       try {
-        const response = await axios.get(`https://www.pnytrainings.com/api/shortcourse/short-courses-in-multan`);
+        const response = await axios.get(`https://www.admin786.pnytrainings.com/api/shortcourse/short-courses-in-multan`);
         if (response.data && response.data.courses) {
           setCourses(response.data.courses);
         }
@@ -32,13 +32,13 @@ const Multan = () => {
     if (node.type === 'tag') {
       switch (node.name) {
         case 'h2':
-          return <h2 className='p-5 text-lg'>{domToReact(node.children)}</h2>;
+          return <h2 className='px-32 py-2 max-sm:p-2 text-lg'>{domToReact(node.children)}</h2>;
         case 'p':
-          return <p className='p-5 text-lg'>{domToReact(node.children)}</p>;
+          return <p className='px-32 py-2 max-sm:p-2 text-lg text-justify'>{domToReact(node.children)}</p>;
         case 'b':
-          return <p className='p-5 text-lg'>{domToReact(node.children)}</p>;
+          return <p className='px-32 py-2 max-sm:p-2 text-lg'>{domToReact(node.children)}</p>;
         case 'h3':
-          return <p className='p-5 text-lg'>{domToReact(node.children)}</p>;
+          return <p className='px-32 py-2 max-sm:p-2 text-lg'>{domToReact(node.children)}</p>;
         // Add more cases for other tags as needed
         default:
           return domToReact(node.children);
@@ -46,21 +46,20 @@ const Multan = () => {
     }
   };
 
+
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
-        <Blocks
-          visible={true}
-          height="80"
-          width="80"
-          ariaLabel="blocks-loading"
-          wrapperStyle={{}}
-          wrapperClass="blocks-wrapper"
-        />
+      <div className="loader-wrapper">
+        {/* Semi-transparent background */}
+        <div className="loader-overlay"></div>
+        {/* Loader */}
+        <div className="loaderContainer">
+          {/* Use the gif as a loader */}
+          <img className="w-52 h-52" src={gif} alt="Loading..." />
+        </div>
       </div>
     );
   }
-
   return (
     <div>
       <section>
@@ -81,7 +80,7 @@ const Multan = () => {
             <link rel="canonical" href={`http://localhost:3000/short-courses-in-multan`} />
           </Helmet>
           <div key={index} className='course-container'>
-            <img src={course.post_image_thumb} alt={course.title} />
+            <img className='px-32 py-2 max-sm:p-2' src={course.post_image_thumb} alt={course.title} />
             <div>{parse(course.description, { replace: styleNode })}</div>
           </div>
         </>

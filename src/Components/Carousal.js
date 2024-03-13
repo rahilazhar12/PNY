@@ -16,7 +16,7 @@ const Carousal = () => {
   useEffect(() => {
     const fetchcarousalimage = async () => {
       try {
-        let response = await fetch("https://www.pnytrainings.com/api/slider");
+        let response = await fetch("https://www.admin786.pnytrainings.com/api/slider");
         const data = await response.json();
         setData(data.sliders);
       } catch (error) {

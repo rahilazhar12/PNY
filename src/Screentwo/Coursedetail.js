@@ -15,18 +15,22 @@ import Modal from "@mui/material/Modal";
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import vector from "../Assets/images/vecter.png";
+import gif from '../Assets/image/gif.gif'
 
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: "auto", // Changed from fixed width to auto to accommodate larger screens
+  maxWidth: "90%", // Ensure it doesn't stretch too much on larger screens
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
+
 
 let modulesData = [
   {
@@ -90,6 +94,7 @@ const Coursedetail = () => {
   const [modules, setModules] = useState([]);
   const [id_address, setId_address] = useState("");
   const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -108,7 +113,7 @@ const Coursedetail = () => {
       try {
         // Replace this URL with the actual URL of the API if you're fetching from a live API
         const response = await fetch(
-          "https://www.pnytrainings.com/api/course/list"
+          "https://www.admin786.pnytrainings.com/api/course/list"
         );
         const data = await response.json();
         setCourses(data.course_list);
@@ -131,7 +136,7 @@ const Coursedetail = () => {
       setIsLoading(true);
       try {
         const response = await fetch(
-          `https://www.pnytrainings.com/api/course/${courseSlug}`
+          `https://www.admin786.pnytrainings.com/api/course/${courseSlug}`
         );
         if (response.ok) {
           const data = await response.json();
@@ -159,7 +164,7 @@ const Coursedetail = () => {
     if (courseData) {
       const fetchData = async () => {
         const response = await fetch(
-          `https://www.pnytrainings.com/api/course/modules/${courseData.id}`
+          `https://www.admin786.pnytrainings.com/api/course/modules/${courseData.id}`
         );
         const data = await response.json();
         setModules(data.course_modules);
@@ -188,9 +193,14 @@ const Coursedetail = () => {
 
   if (isLoading) {
     return (
-      <div className="loader-container text-center">
-        <div className="loader"></div>
-        {/* <p>Loading...</p> */}
+      <div className="loader-wrapper">
+        {/* Semi-transparent background */}
+        <div className="loader-overlay"></div>
+        {/* Loader */}
+        <div className="loaderContainer">
+          {/* Use the gif as a loader */}
+          <img className="w-52 h-52" src={gif} alt="Loading..." />
+        </div>
       </div>
     );
   }
@@ -226,7 +236,7 @@ const Coursedetail = () => {
 
   function SubmitData(e) {
     e.preventDefault();
-
+    setLoading(true); // Start loading
     var name = document.getElementById("name").value;
     var city = document.getElementById("city").value;
     var phone = document.getElementById("phone").value;
@@ -246,7 +256,7 @@ const Coursedetail = () => {
     // formData.append('comment', comment);
 
     // Use fetch to send the request
-    fetch("https://www.pnytrainings.com/api/brochure", {
+    fetch("https://www.admin786.pnytrainings.com/api/brochure", {
       method: "POST",
       body: formData,
     })
@@ -257,15 +267,17 @@ const Coursedetail = () => {
         //   duration: 5000
         // })
         // setOpen(false)
+        setLoading(false);
         alert(data.message);
         brochureLinkRef.current.click();
       })
       .catch((error) => {
         console.error("Error:", error);
+        setLoading(false); // Stop loading on failure
       });
   }
 
-  console.log(courseData.brochure)
+
 
   return (
     <>
@@ -309,13 +321,16 @@ const Coursedetail = () => {
                   </div>
                 </div>
                 <div className="mb-4">
-                  <span className="font-bold">Schedule Dates</span>
+                  <span className="font-bold">View Schedule</span>
+                  <span className="mx-2">|</span>
+                  <span><Link to='/training-schedule'>Click here</Link></span>
+                  {/* <span className="font-bold">Schedule Dates</span>
                   <span className="mx-2">|</span>
                   <span>Lahore</span>
                   <span className="mx-2">|</span>
                   <span>Rawalpindi</span>
                   <span className="mx-2">|</span>
-                  <span>Multan</span>
+                  <span>Multan</span> */}
                 </div>
                 <div className="flex flex-wrap gap-4 max-sm:justify-center">
                   <div>
@@ -344,27 +359,27 @@ const Coursedetail = () => {
                         <Box sx={style}>
                           <div className="outline-none">
                             <div className="p-5 bg-white rounded-lg md:max-w-xl md:mx-auto">
+                              <h2 className="text-lg font-bold text-center text-gray-800 mb-4">
+                                Download the Brochure
+                              </h2>
+                              <p className="text-sm text-center text-gray-600 mb-5">
+                                Fill out the form to receive your brochure.
+                              </p>
                               <form className="space-y-4" onSubmit={SubmitData}>
                                 <div>
-                                  <label
-                                    htmlFor="phone"
-                                    className="text-sm font-medium text-gray-700"
-                                  >
+                                  <label htmlFor="name" className="text-sm font-medium text-gray-700">
                                     Name
                                   </label>
                                   <input
-                                    type="tel"
+                                    type="text"
                                     id="name"
-                                    name="phone"
+                                    name="name"
                                     className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
                                     required
                                   />
                                 </div>
                                 <div>
-                                  <label
-                                    htmlFor="phone"
-                                    className="text-sm font-medium text-gray-700"
-                                  >
+                                  <label htmlFor="phone" className="text-sm font-medium text-gray-700">
                                     Phone
                                   </label>
                                   <input
@@ -376,10 +391,7 @@ const Coursedetail = () => {
                                   />
                                 </div>
                                 <div>
-                                  <label
-                                    htmlFor="email"
-                                    className="text-sm font-medium text-gray-700"
-                                  >
+                                  <label htmlFor="email" className="text-sm font-medium text-gray-700">
                                     Email
                                   </label>
                                   <input
@@ -391,10 +403,7 @@ const Coursedetail = () => {
                                   />
                                 </div>
                                 <div>
-                                  <label
-                                    htmlFor="city"
-                                    className="text-sm font-medium text-gray-700"
-                                  >
+                                  <label htmlFor="city" className="text-sm font-medium text-gray-700">
                                     City
                                   </label>
                                   <input
@@ -408,22 +417,24 @@ const Coursedetail = () => {
                                 <button
                                   type="submit"
                                   className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-sky-600 hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500"
+                                  disabled={loading}
                                 >
-                                  Submit
+                                  {loading ? <div className="loadersmall"></div> : 'Submit'}
                                 </button>
                               </form>
                             </div>
                           </div>
                         </Box>
+
                       </Modal>
                     </div>
                   </div>
-                  <button className="bg-[#308AFF] text-white font-bold py-2 px-4 rounded">
+                  {/* <button className="bg-[#308AFF] text-white font-bold py-2 px-4 rounded">
                     Free Orientation Class
-                  </button>
-                  <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                  </button> */}
+                  <Link to='https://lms.pnytraining.com' className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                     Enroll Now
-                  </button>
+                  </Link>
                 </div>
               </div>
 
@@ -467,8 +478,8 @@ const Coursedetail = () => {
                 <div
                   key={module.id}
                   className={`h-auto md:h-[113px] flex border border-black/25 shadow-lg justify-center items-center ${selectedModuleId === module.id
-                      ? "bg-blue-500 text-white"
-                      : "bg-white"
+                    ? "bg-blue-500 text-white"
+                    : "bg-white"
                     }`}
                   onClick={() => handleModuleClick(module.id)}
                 >
@@ -517,8 +528,8 @@ const Coursedetail = () => {
                 {/* Module Item */}
                 <div
                   className={`flex flex-col border border-black/25 shadow-lg justify-center items-center p-2 cursor-pointer ${selectedModuleId === module.id
-                      ? "bg-blue-500 text-white"
-                      : "bg-white"
+                    ? "bg-blue-500 text-white"
+                    : "bg-white"
                     }`}
                   onClick={() => handleModuleClick(module.id)}
                 >
@@ -528,8 +539,8 @@ const Coursedetail = () => {
                 {/* Accordion Content for Module Details */}
                 <div
                   className={`transition-all duration-500 ease-in-out overflow-hidden ${selectedModuleId === module.id
-                      ? "max-h-screen py-4"
-                      : "max-h-0"
+                    ? "max-h-screen py-4"
+                    : "max-h-0"
                     }`}
                 >
                   {selectedModuleId === module.id && (
@@ -563,7 +574,7 @@ const Coursedetail = () => {
           <div className="bg-blue-50 py-10">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl font-bold text-center text-black mb-6">
-                Develop your Academic network through Diverse Environment
+                Access Complementry Benefits by Enrolling in this Course.
               </h2>
               <p className="text-center text-black w-auto max-sm:w-auto mx-auto mb-10">
                 We discover your personal and professional growth capitalize on
@@ -732,133 +743,29 @@ const Coursedetail = () => {
           </div>
         </section>
 
-        <div className="container">
-          <section class="text-gray-600 body-font px-16">
-            <div class="container py-8 mx-auto">
-              <div class="lg:w-1/1 flex flex-col sm:flex-row sm:items-center items-center mx-auto">
-                <h1 class="flex-grow sm:pr-16 text-2xl font-bold text-black dark:text-white ">
-                  More Courses
-                </h1>
-                {/* <button class="flex-shrink-0 text-white border-0 py-2 px-2 focus:outline-none hover:bg-[#308AFF] rounded text-sm bg-[#308AFF] mt-4 sm:mt-0 sm:w-auto self-center">View All Courses</button> */}
-              </div>
+        {/* Section-13 */}
+        <section
+          className="bg-blue-100"
+          style={{
+            backgroundImage: `url(${vector})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="grid justify-center lg:p-28 md:p-20 max-sm:p-5 ">
+            <div className="lg:text-5xl lg:w-[778px]  max-sm:p- font-bold text-center dark:text-black">
+              Admissions are open for the fresh batch. Let’s grow together!
             </div>
-          </section>
-
-          <section className="text-gray-600 body-font ">
-            <div className="container px-5 py-10 mx-auto ">
-              <div className="flex flex-wrap -m-4">
-                {/* Card 1 */}
-                <div className="w-full md:w-1/2 lg:w-1/4 p-4 flex items-center justify-center">
-                  <div className="p-4 w-64 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
-                    <img
-                      src="/images/1 (4).png"
-                      alt="cdpp"
-                      className="h-40 object-cover rounded-xl mb-2"
-                    />
-                    <div className="flex justify-between mb-4">
-                      <div className="flex">
-                        <i className="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
-                        <p>Design</p>
-                      </div>
-                      <div className="flex">
-                        <i className="fas fa-clock text-gray-400 mt-1 mx-1"></i>
-                        <p>6 Months</p>
-                      </div>
-                    </div>
-                    <div className="w-full">
-                      <h2 className="title-font font-medium text-sm text-gray-900 mb-3">
-                        Certified Digital Media Marketing (CDMM) Expert Course
-                        (06 Months)
-                      </h2>
-                      <h3 className="text-red-500 mb-1.5 mt-1">Ayesha Amjad</h3>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card 2 */}
-                <div className="w-full md:w-1/2 lg:w-1/4 p-4 flex items-center justify-center">
-                  <div className="p-4 w-64 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
-                    <img
-                      src="/images/2 (2).png"
-                      alt="cdpp"
-                      className="w-full rounded h-46 object-cover mb-4"
-                    />
-                    <div class="flex justify-between w-50 mb-4">
-                      <div class="flex">
-                        <i className="fa-solid fa-desktop mr-1 mt-1 text-blue-500"></i>
-                        <p className="text-blue-500">Development</p>
-                      </div>
-                      <div class="flex">
-                        <i class="fas fa-clock text-gray-300 mt-1 mx-1"></i>
-                        <p>6 Months</p>
-                      </div>
-                    </div>
-                    <div className="w-full">
-                      <h2 className="title-font font-medium text-sm mb-4 text-gray-900">
-                        Become a Certified Web Designer & Developer
-                      </h2>
-
-                      <h3 className="text-red-500  mb-2 mt-7">Asim Manzoor</h3>
-                    </div>
-                  </div>
-                </div>
-                {/* Card 3 */}
-                <div className="w-full md:w-1/2 lg:w-1/4 p-4 flex items-center justify-center">
-                  <div className="p-4 w-64 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
-                    <img
-                      src="/images/3 (2).png"
-                      alt="cdpp"
-                      className="w-full rounded h-46 object-cover mb-4"
-                    />
-                    <div class="flex justify-between w-50 mb-4">
-                      <div class="flex">
-                        <i class="fa-solid fa-rectangle-ad mx-1 mt-1 text-blue-500"></i>
-                        <p className="text-blue-500">Marketing</p>
-                      </div>
-                      <div class="flex">
-                        <i class="fas fa-clock text-gray-300 mt-1 mx-1"></i>
-                        <p>6 Months</p>
-                      </div>
-                    </div>
-                    <div className="w-full">
-                      <h2 className="title-font font-medium text-sm text-gray-900">
-                        Become a Certified Full Stack Web Developer
-                      </h2>
-                      <h3 className="text-red-500 mb-2 mt-7">Faisal Javeed</h3>
-                    </div>
-                  </div>
-                </div>
-                {/* Card 4 */}
-                <div className="w-full md:w-1/2 lg:w-1/4 p-4 flex items-center justify-center">
-                  <div className="p-4 w-64 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl ">
-                    <img
-                      src="/images/1 (3).png"
-                      alt="cdpp"
-                      className="w-full rounded h-46 object-cover mb-4"
-                    />
-                    <div class="flex justify-between w-50 mb-4">
-                      <div class="flex">
-                        <i class="fa-solid fa-paintbrush text-blue-500 mt-1 mx-1"></i>
-                        <p text-blue-500>Design</p>
-                      </div>
-                      <div class="flex">
-                        <i class="fas fa-clock text-gray-300 mt-1 mx-1"></i>
-                        <p>6 Months</p>
-                      </div>
-                    </div>
-                    <div className="w-full">
-                      <h2 className="title-font font-medium text-sm text-gray-900 mb-3">
-                        Certified Digital Media Marketing (CDMM) Expert Course
-                        (06 Months)
-                      </h2>
-                      <h3 className="text-red-500  mb-1 mt-0.5">Aqsa Razzaq</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="text-center lg:p-4 max-sm:mt-2">
+              <Link to="https://lms.pnytraining.com/" >
+                {" "}
+                <button className="bg-[#49B2DF] lg:w-48 lg:h-14 text-white rounded max-sm:w-36 max-sm:h-10 dark:text-white">
+                  Enroll Now!
+                </button>{" "}
+              </Link>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </div>
     </>
   );
