@@ -47,20 +47,21 @@ const AboutUs = () => {
 
 
         {/* section-3 */}
-        <section className=' lg:mb-10 lg:mt-10 bg-[#F9FAFB] p-10'>
-          <div className='grid lg:grid-cols-4'>
-            <div className=' col-span-2  xl:ml-36 xl:mt-20 lg:ml-2 lg:justify-start lg:mt-20 md:justify-center xl:justify-start flex md:mt-10'>
-              <img src={ladymobile} alt="" />
+        <section className='mb-10 mt-10 bg-[#F9FAFB] p-10'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
+            <div className='col-span-1 md:col-span-2 xl:ml-36 lg:ml-2 justify-start mt-20 flex'>
+              <img src={ladymobile} alt="" className='w-full' />
             </div>
-            <div className='col-span-2 md:space-y-5'>
-              <div className='text-[#F10900] font-semibold md:text-center lg:text-start xl:text-start max-sm:text-center'>Our Worth Our Achievements!</div>
-              <div className='lg:text-[42px] xl:w-[700px] font-bold xl:text-start lg:text-start md:text-center max-sm:text-center dark:text-black'>Our Multiple branches advanced courses, impactful MOU’s and Thousands of Alumni</div>
-              <div className=' md:flex md:justify-center xl:justify-start lg:justify-start'>
-                <img src={five} alt="" />
+            <div className='col-span-1 md:col-span-2 space-y-5'>
+              <div className='text-[#F10900] font-semibold text-center lg:text-start text-lg md:text-xl xl:text-2xl'>Our Worth Our Achievements!</div>
+              <div className='text-start text-lg md:text-xl xl:text-2xl font-bold w-full xl:w-[700px] dark:text-black'>Our Multiple branches advanced courses, impactful MOU’s and Thousands of Alumni</div>
+              <div className='flex justify-center xl:justify-start lg:justify-start'>
+                <img src={five} alt="" className='w-full' />
               </div>
             </div>
           </div>
         </section>
+
 
         {/* Section-4 */}
         <section className=' xl:h-auto lg:h-auto md:h-auto max-sm:h-auto p-5 max-sm:p-2'>
